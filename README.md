@@ -1,10 +1,10 @@
-## Hi there 👋
-
 ## Miguel Gil - Front End Developer
 
-👨‍💻 About Me
+## 👨‍💻 About Me
+
 I'm a passionate Front End Developer with a background in Environmental Engineering and a strong foundation in web development. My journey in tech has led me from the world of environmental science to the exciting realm of web development, where I combine my analytical skills with creativity to build engaging user interfaces.
-🚀 Skills
+
+## 🚀 Skills
 
 Languages: JavaScript, HTML, CSS
 Frameworks/Libraries: React, Next.js, Bootstrap
@@ -13,13 +13,14 @@ Methodologies: Scrum, Agile
 Tools: Vite, Trello, Mural
 Soft Skills: Proactivity, Strategic Planning, Teamwork, Problem Solving
 
-🎓 Education
+## 🎓 Education
 
 Certified Web Developer - Digital House Coding School (Oct 2022 - Jul 2024)
 Scrum Master Professional Certificate - Certiprof (Jul 2023)
 Environmental Engineering - Universidad de Falcón, Venezuela (2009 - 2014)
 
-💼 Professional Experience
+## 💼 Professional Experience
+
 Front End Developer at Vemex Digital (May 2024 - Present)
 
 Develop responsive web applications using React and Next.js
@@ -39,14 +40,14 @@ Commercial Executive - Dahua Tech, Hikvision, SSTT, Wetland (2017-2024)
 Gained valuable experience in the tech industry as Key Account Manager and Business Development Manager
 Developed strong communication and business acumen skills
 
-🌟 Key Strengths
+## 🌟 Key Strengths
 
 Logical & Critical Thinking
 Adaptability
 Assertive Communication
 Empathy
 
-📫 How to reach me
+## 📫 How to reach me
 
 Email: miguel.gil.9210@gmail.com
 Phone: +56 9 77221088
