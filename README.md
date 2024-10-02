@@ -1,83 +1,89 @@
-## Miguel Gil - Front End Developer
+# Miguel Gil
 
-## 👨‍💻 About Me
+## Desarrollador Front-End
 
-I'm a passionate Front End Developer with a unique background in Environmental Engineering, bringing analytical thinking and problem-solving skills to the world of web development. My journey from environmental science to tech has equipped me with a diverse skill set and a fresh perspective on creating user-centric digital experiences.
+📍 Santiago de Chile | 📞 +56 9 77221088 | 📧 miguel.gil.9210@gmail.com
 
-## 🚀 Technical Skills
+---
 
-Core: JavaScript (ES6+), HTML5, CSS3
-Frameworks/Libraries: React, Next.js
-State Management: Redux (learning)
-Styling: Bootstrap, CSS-in-JS (styled-components)
-Build Tools: Vite, Webpack
-Version Control: Git, GitHub
-Testing: Jest, React Testing Library (familiar)
-API Integration: RESTful APIs, GraphQL (basic)
-Performance Optimization: Lighthouse, Chrome DevTools
-Responsive Design: Mobile-first approach, Flexbox, CSS Grid
+### Perfil Profesional
 
-## 🛠 Tools & Methodologies
+Desarrollador Front-End con sólida formación en tecnologías modernas y experiencia en proyectos de alto impacto. Especializado en React, Next.js, TypeScript y Tailwind CSS. Combino habilidades técnicas con un enfoque estratégico y orientado a resultados, derivado de mi experiencia en roles comerciales y mi formación en ingeniería.
 
-Project Management: Scrum, Agile methodologies
-Collaboration: Trello, Mural
-CI/CD: Familiar with basic concepts, eager to learn more
-Cloud Services: AWS (basic deployment experience)
+---
 
-## 🎓 Education & Certifications
+### Experiencia Profesional
 
-Certified Web Developer - Digital House Coding School (Oct 2022 - Jul 2024)
+#### Desarrollador Front-End, Templiance
 
-Full-stack curriculum with focus on modern front-end technologies
+_Abril 2024 - Presente_
 
-Scrum Master Professional Certificate - Certiprof (Jul 2023)
-Environmental Engineering - Universidad de Falcón, Venezuela (2009 - 2014)
+- Desarrollo integral de la página web utilizando Next.js, TypeScript y Tailwind CSS.
+- Implementación de diseño responsivo y optimización para rendimiento.
+- Despliegue y mantenimiento continuo en Vercel.
 
-Brings unique analytical and problem-solving perspective to development
+#### Desarrollador Full Stack, Co-Working App
 
-## 💼 Professional Experience
+_Mayo 2024 - Junio 2024_
 
-Front End Developer at Vemex Digital (May 2024 - Present)
+- Desarrollo de aplicación de reservas con administración de contenido y usuarios.
+- Front-end: React, JavaScript, Bootstrap.
+- Despliegue en Vercel.
 
-Develop responsive and accessible web applications using React and Next.js
-Implement modern state management solutions and optimize application performance
-Collaborate in cross-functional teams, integrating frontend with RESTful APIs
-Conduct code reviews and implement best practices for clean, maintainable code
-Utilize Chrome DevTools and Lighthouse for performance optimization
+#### Desarrollador Front-End, Curiana Radio Landing Page
 
-Co-Working App Project - Digital House (May 2024 - Jul 2024)
+_Marzo 2024 - Abril 2024_
 
-Led frontend development of a reservation application using React and Vite
-Implemented responsive design with Bootstrap and custom CSS
-Integrated frontend with Java Spring Boot backend via RESTful APIs
-Acted as Scrum Master, facilitating agile development processes
-Deployed application using AWS services, gaining basic cloud experience
+- Diseño UX/UI utilizando Framer.
+- Desarrollo con React y JavaScript.
+- Implementación responsiva y despliegue en Vercel.
 
-Commercial Executive - Tech Industry (2017-2024)
+#### Ejecutivo Comercial, Dahua Technologies e Hikvision
 
-Developed strong communication and business acumen in the tech sector
-Gained valuable insights into user needs and market trends in technology
+_2017 - 2024_
 
-## 🌟 Soft Skills
+- Roles de KAM y BDM en empresas líderes en tecnologías de seguridad.
+- Desarrollo de habilidades en negociación, gestión de cuentas clave y estrategia comercial.
 
-Analytical Thinking & Problem Solving
-Adaptability & Quick Learning
-Effective Communication
-Team Collaboration
-User-Centric Approach
+---
 
-## 🌱 Currently Learning
+### Formación Académica
 
-Advanced React patterns and hooks
-TypeScript for improved code quality
-Web accessibility standards (WCAG)
-Advanced Git workflows
+- **Certified Web Developer**, Digital House Coding School (Oct 2022 - Jun 2024)
+- **Certificado Profesional de Scrum Master**, Certiprof (Julio 2023)
+- **Ingeniero Ambiental**, Universidad de Falcón, Venezuela (2009 - 2014)
 
-## 📫 Let's Connect
+---
 
-Email: miguel.gil.9210@gmail.com
-LinkedIn: [Your LinkedIn Profile]
-Portfolio: [Your Portfolio Website]
-Location: Santiago de Chile
+### Habilidades Técnicas
 
-I'm passionate about creating intuitive, performant, and accessible web experiences. Always eager to learn new technologies and best practices in the ever-evolving world of front-end development. Open to collaboration and exciting projects!
+- Frontend: React, Next.js, TypeScript, JavaScript, HTML5, CSS3
+- Estilizado: Tailwind CSS, Bootstrap
+- Herramientas: Git, Vercel, AWS
+- Metodologías: Scrum, Desarrollo Ágil
+
+---
+
+### Habilidades Blandas
+
+- Pensamiento lógico y crítico
+- Comunicación asertiva
+- Resolución de problemas
+- Trabajo en equipo
+- Adaptabilidad
+- Planificación estratégica
+
+---
+
+### Idiomas
+
+- Español (nativo)
+- Inglés (profesional)
+
+---
+
+### Proyectos Destacados
+
+1. **Templiance**: Desarrollo front-end con Next.js, TypeScript y Tailwind CSS.
+2. **Co-Working App**: Aplicación full-stack para reservas y gestión de espacios.
+3. **Curiana Radio Landing Page**: Diseño y desarrollo de landing page responsiva.
