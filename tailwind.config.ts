@@ -9,9 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        primary: '#1F3A93',
+        secondary: '#1CD6E6',
+        accent: '#FF6D00',
+        neutral: {
+          light: '#F5F5F5',
+          dark: '#2C2C2C',
+        },
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
+      },
+
     },
   },
   plugins: [],
