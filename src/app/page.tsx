@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, Linkedin, Github, Download } from "lucide-react";
 import fotoPerfil from "../../public/fotoPerfil.png";
+import coWorkGif from "../../public/coWorkingGif.gif";
+import templianceGif from "../../public/Templiance Second Iteration.gif";
 
 export default function HomePage() {
   return (
@@ -198,7 +200,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-neutral-light p-4 rounded-lg">
               <Image
-                src="/placeholder.svg?height=200&width=300"
+                src={coWorkGif}
                 alt="Proyecto de IA"
                 width={300}
                 height={200}
@@ -210,7 +212,7 @@ export default function HomePage() {
                 contenido y usuarios.
               </p>
               <Link
-                href="/proyectos/asistente-virtual"
+                href="https://coworking-project-gold.vercel.app/home"
                 className="inline-block mt-2 text-primary hover:underline"
               >
                 Ver detalles
@@ -218,7 +220,7 @@ export default function HomePage() {
             </div>
             <div className="bg-neutral-light p-4 rounded-lg">
               <Image
-                src="/placeholder.svg?height=200&width=300"
+                src={templianceGif}
                 alt="Proyecto Web"
                 width={300}
                 height={200}
@@ -231,19 +233,19 @@ export default function HomePage() {
                 interactivas.
               </p>
               <Link
-                href="/proyectos/elearning"
+                href="https://templiance-front.vercel.app/"
                 className="inline-block mt-2 text-primary hover:underline"
               >
                 Ver detalles
               </Link>
             </div>
           </div>
-          <Link
+          {/* <Link
             href="/proyectos"
             className="inline-block mt-4 text-primary hover:underline"
           >
             Ver todos los proyectos
-          </Link>
+          </Link> */}
         </section>
 
         <section id="proyectos" className="mt-12">
