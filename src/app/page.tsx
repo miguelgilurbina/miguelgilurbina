@@ -293,7 +293,7 @@ export default function HomePage() {
               <div className="flex items-center">
                 <Linkedin className="w-6 h-6 mr-2 text-primary" />
                 <a
-                  href="https://www.linkedin.com/in/miguel-gil"
+                  href="https://www.linkedin.com/in/miguelgilurbina/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline"
@@ -304,7 +304,7 @@ export default function HomePage() {
               <div className="flex items-center">
                 <Github className="w-6 h-6 mr-2 text-primary" />
                 <a
-                  href="https://github.com/miguel-gil"
+                  href="https://github.com/miguelgilurbina"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline"
