@@ -9,13 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#1F3A93',
-        secondary: '#1CD6E6',
-        accent: '#FF6D00',
+        primary: 'rgb(var(--primary) / <alpha-value>)',
+        secondary: 'rgb(var(--secondary) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
         neutral: {
-          light: '#F5F5F5',
-          dark: '#2C2C2C',
+          light: 'rgb(var(--neutral-light) / <alpha-value>)',
+          dark: 'rgb(var(--neutral-dark) / <alpha-value>)',
         },
+        background: 'rgb(var(--background) / <alpha-value>)',
+        foreground: 'rgb(var(--foreground) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['Roboto', 'sans-serif'],
@@ -25,4 +27,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

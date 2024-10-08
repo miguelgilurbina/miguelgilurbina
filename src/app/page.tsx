@@ -7,7 +7,7 @@ import templianceGif from "../../public/Templiance Second Iteration.gif";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background text-foreground">
       <header className="bg-primary text-white py-4">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <h1 className="text-2xl font-heading">Miguel Gil</h1>
@@ -55,8 +55,10 @@ export default function HomePage() {
             />
           </div>
           <div className="flex-1">
-            <h2 className="text-3xl font-heading mb-4">Front End Developer</h2>
-            <p className="text-lg mb-4">
+            <h2 className="text-3xl font-heading mb-4 text-foreground">
+              Front End Developer
+            </h2>
+            <p className="text-lg mb-4 text-foreground">
               Desarrollador Front-End con sólida formación en tecnologías
               modernas especializado en Next.js, TypeScript y Tailwind CSS. Con
               un background en ingeniería ambiental y ventas, aporto una
@@ -85,7 +87,7 @@ export default function HomePage() {
             Experiencia Profesional
           </h2>
           <div className="space-y-4">
-            <div className="bg-neutral-light p-4 rounded-lg">
+            <div className="bg-neutral-light p-4 rounded-lg text-neutral-dark">
               <h3 className="font-heading text-xl">
                 Full Stack Developer - Vemex Digital
               </h3>
@@ -121,9 +123,11 @@ export default function HomePage() {
         </section>
 
         <section id="formacion" className="mt-12">
-          <h2 className="text-2xl font-heading mb-4">Formación</h2>
+          <h2 className="text-2xl font-heading mb-4 text-foreground">
+            Formación
+          </h2>
           <div className="space-y-4">
-            <div className="bg-neutral-light p-4 rounded-lg">
+            <div className="bg-neutral-light p-4 rounded-lg text-neutral-dark">
               <h3 className="font-heading text-xl">Certified Web Developer</h3>
               <p className="text-sm text-neutral-dark">
                 Digital House Coding School | Oct 2022 - Jul 2024
@@ -135,7 +139,7 @@ export default function HomePage() {
                 equipo y comunicación efectiva.
               </p>
             </div>
-            <div className="bg-neutral-light p-4 rounded-lg">
+            <div className="bg-neutral-light p-4 rounded-lg text-neutral-dark">
               <h3 className="font-heading text-xl">
                 Certificado Profesional de Scrum Master
               </h3>
@@ -147,7 +151,7 @@ export default function HomePage() {
                 Scrum (2020).
               </p>
             </div>
-            <div className="bg-neutral-light p-4 rounded-lg">
+            <div className="bg-neutral-light p-4 rounded-lg text-neutral-dark">
               <h3 className="font-heading text-xl">Ingeniero Ambiental</h3>
               <p className="text-sm text-neutral-dark">
                 Universidad de Falcón, Venezuela | 2009 - 2014
@@ -164,9 +168,11 @@ export default function HomePage() {
         </section>
 
         <section id="habilidades" className="mt-12">
-          <h2 className="text-2xl font-heading mb-4">Habilidades</h2>
+          <h2 className="text-2xl font-heading mb-4 text-foreground">
+            Habilidades
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div className="bg-neutral-light p-4 rounded-lg">
+            <div className="bg-neutral-light p-4 rounded-lg text-neutral-dark">
               <h3 className="font-heading text-lg">Técnicas</h3>
               <ul className="mt-2 space-y-1">
                 <li>React / Next.js</li>
@@ -175,16 +181,20 @@ export default function HomePage() {
                 <li>AWS</li>
               </ul>
             </div>
-            <div className="bg-neutral-light p-4 rounded-lg">
-              <h3 className="font-heading text-lg">Metodologías</h3>
+            <div className="bg-neutral-light p-4 rounded-lg text-neutral-dark">
+              <h3 className="font-heading text-lg text-foreground">
+                Metodologías
+              </h3>
               <ul className="mt-2 space-y-1">
                 <li>Scrum</li>
                 <li>Desarrollo Ágil</li>
                 <li>Planificación Estratégica</li>
               </ul>
             </div>
-            <div className="bg-neutral-light p-4 rounded-lg">
-              <h3 className="font-heading text-lg">Personales</h3>
+            <div className="bg-neutral-light p-4 rounded-lg text-neutral-dark">
+              <h3 className="font-heading text-lg text-foreground">
+                Personales
+              </h3>
               <ul className="mt-2 space-y-1">
                 <li>Pensamiento lógico & crítico</li>
                 <li>Proactividad</li>
@@ -196,9 +206,11 @@ export default function HomePage() {
         </section>
 
         <section id="proyectos" className="mt-12">
-          <h2 className="text-2xl font-heading mb-4">Proyectos Destacados</h2>
+          <h2 className="text-2xl font-heading mb-4 text-foreground">
+            Proyectos Destacados
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-neutral-light p-4 rounded-lg">
+            <div className="bg-neutral-light p-4 rounded-lg text-neutral-dark">
               <Image
                 src={coWorkGif}
                 alt="Proyecto de IA"
@@ -218,7 +230,7 @@ export default function HomePage() {
                 Ver detalles
               </Link>
             </div>
-            <div className="bg-neutral-light p-4 rounded-lg">
+            <div className="bg-neutral-light p-4 rounded-lg text-neutral-dark">
               <Image
                 src={templianceGif}
                 alt="Proyecto Web"
@@ -226,7 +238,9 @@ export default function HomePage() {
                 height={200}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="font-heading text-xl">Plataforma E-learning</h3>
+              <h3 className="font-heading text-xl text-foreground">
+                Plataforma E-learning
+              </h3>
               <p className="mt-2">
                 Creé una plataforma de aprendizaje en línea con React y Node.js,
                 incluyendo funcionalidades de video streaming y evaluaciones
@@ -249,9 +263,11 @@ export default function HomePage() {
         </section>
 
         <section id="proyectos" className="mt-12">
-          <h2 className="text-2xl font-heading mb-4">Proyectos Destacados</h2>
-          <div className="bg-neutral-light p-4 rounded-lg">
-            <h3 className="font-heading text-xl">
+          <h2 className="text-2xl font-heading mb-4 text-foreground">
+            Proyectos Destacados
+          </h2>
+          <div className="bg-neutral-light p-4 rounded-lg text-neutral-dark">
+            <h3 className="font-heading text-xl text-foreground">
               CO-WORKING APP - Proyecto Integrador
             </h3>
             <p className="text-sm text-neutral-dark">
@@ -274,8 +290,10 @@ export default function HomePage() {
         </section>
 
         <section id="contacto" className="mt-12">
-          <h2 className="text-2xl font-heading mb-4">Contacto</h2>
-          <div className="bg-neutral-light p-6 rounded-lg">
+          <h2 className="text-2xl font-heading mb-4 text-foreground">
+            Contacto
+          </h2>
+          <div className="bg-neutral-light p-6 rounded-lg text-neutral-dark">
             <div className="space-y-4">
               <div className="flex items-center">
                 <Mail className="w-6 h-6 mr-2 text-primary" />
