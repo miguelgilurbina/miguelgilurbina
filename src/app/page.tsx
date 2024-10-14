@@ -45,9 +45,11 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* HEADER NAVBAR */}
       <header className="bg-primary text-primary-foreground py-4">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold">Miguel Gil</h1>
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
               <Link
@@ -58,6 +60,7 @@ export default function HomePage() {
                 {item.label}
               </Link>
             ))}
+            {/* Theme Toggle for Desktop */}
             <Button
               onClick={toggleDarkMode}
               variant="ghost"
@@ -71,6 +74,8 @@ export default function HomePage() {
               )}
             </Button>
           </nav>
+
+          {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" className="md:hidden p-0">
@@ -80,7 +85,7 @@ export default function HomePage() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[240px] sm:w-[300px] bg-background "
+              className="w-[240px] sm:w-[300px] bg-background"
             >
               <nav className="flex flex-col space-y-4 mt-6">
                 {navItems.map((item) => (
@@ -93,20 +98,23 @@ export default function HomePage() {
                     {item.label}
                   </Link>
                 ))}
+              </nav>
+
+              {/* Theme Toggle for Mobile */}
+              <div className="mt-4">
                 <Button
                   onClick={toggleDarkMode}
                   variant="ghost"
-                  size="sm"
-                  className="w-full justify-start"
+                  size="icon"
+                  className="ml-4"
                 >
                   {darkMode ? (
-                    <Sun className="h-5 w-5 mr-2" />
+                    <Sun className="h-5 w-5" />
                   ) : (
-                    <Moon className="h-5 w-5 mr-2" />
+                    <Moon className="h-5 w-5" />
                   )}
-                  {darkMode ? "Modo Claro" : "Modo Oscuro"}
                 </Button>
-              </nav>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
