@@ -138,11 +138,12 @@ export default function HomePage() {
             </h2>
             <p className="text-base md:text-lg mb-4">
               Desarrollador Front-End con sólida formación en tecnologías
-              modernas especializado en Next.js, TypeScript y Tailwind CSS. Con
-              un background en ingeniería ambiental y ventas, aporto una
-              perspectiva única al desarrollo de software, combinando
-              habilidades técnicas con un fuerte enfoque en la resolución de
-              problemas y la comunicación efectiva.
+              modernas especializado en Next.js, TypeScript y Tailwind CSS.
+              Experiencia sólida en el despliegue de aplicaciones en Vercel y
+              trabajando con AWS Cloud Services. Con un background en ingeniería
+              ambiental y ventas, aporto una perspectiva única al desarrollo de
+              software, combinando habilidades técnicas con un fuerte enfoque en
+              la resolución de problemas y la comunicación efectiva.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a
@@ -207,6 +208,55 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* PROYECTOS */}
+
+        <section id="proyectos" className="mt-12">
+          <h2 className="text-2xl font-bold mb-4">Proyectos Destacados</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-background p-4 rounded-lg">
+              <Image
+                src={coWorkGif}
+                alt="Proyecto de IA"
+                width={300}
+                height={200}
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h3 className="font-bold text-xl">Co-Working App</h3>
+              <p className="mt-2">
+                Desarrollé de una aplicación de reservas con administración de
+                contenido y usuarios.
+              </p>
+              <Link
+                href="https://coworking-project-gold.vercel.app/home"
+                className="inline-block mt-2 text-primary hover:underline"
+              >
+                Ver detalles
+              </Link>
+            </div>
+            <div className="bg-background p-4 rounded-lg">
+              <Image
+                src={templianceGif}
+                alt="Proyecto Web"
+                width={300}
+                height={200}
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h3 className="font-bold text-xl">Plataforma E-learning</h3>
+              <p className="mt-2">
+                Creé una plataforma de aprendizaje en línea con React y Node.js,
+                incluyendo funcionalidades de video streaming y evaluaciones
+                interactivas.
+              </p>
+              <Link
+                href="https://templiance-front.vercel.app/"
+                className="inline-block mt-2 text-primary hover:underline"
+              >
+                Ver detalles
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* FORMACIÓN */}
 
         <section id="formacion" className="mt-12">
@@ -260,10 +310,16 @@ export default function HomePage() {
             <div className="bg-background p-4 rounded-lg">
               <h3 className="font-bold text-lg">Técnicas</h3>
               <ul className="mt-2 space-y-1">
-                <li>React / Next.js</li>
-                <li>Java Spring Boot</li>
-                <li>MongoDB / MySQL</li>
-                <li>AWS</li>
+                <li>Lenguajes: JavaScript (ES6+), TypeScript</li>
+                <li>Frameworks y Librerías: React, Next.js</li>
+                <li>Estilos: Tailwind CSS, Bootstrap, Styled-Components</li>
+                <li>
+                  Herramientas de Desarrollo: V0 by Vercel, Git, Webpack, Babel
+                </li>
+                <li>Cloud y Despliegue: Vercel, AWS (EC2, S3, RDS)</li>
+                <li>Testing: Jest, React Testing Library</li>
+                <li>Performance: Lighthouse, Web Vitals</li>
+                <li>CI/CD: GitHub Actions</li>
               </ul>
             </div>
             <div className="bg-background p-4 rounded-lg">
@@ -286,52 +342,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="proyectos" className="mt-12">
-          <h2 className="text-2xl font-bold mb-4">Proyectos Destacados</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-background p-4 rounded-lg">
-              <Image
-                src={coWorkGif}
-                alt="Proyecto de IA"
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h3 className="font-bold text-xl">Co-Working App</h3>
-              <p className="mt-2">
-                Desarrollé de una aplicación de reservas con administración de
-                contenido y usuarios.
-              </p>
-              <Link
-                href="https://coworking-project-gold.vercel.app/home"
-                className="inline-block mt-2 text-primary hover:underline"
-              >
-                Ver detalles
-              </Link>
-            </div>
-            <div className="bg-background p-4 rounded-lg">
-              <Image
-                src={templianceGif}
-                alt="Proyecto Web"
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h3 className="font-bold text-xl">Plataforma E-learning</h3>
-              <p className="mt-2">
-                Creé una plataforma de aprendizaje en línea con React y Node.js,
-                incluyendo funcionalidades de video streaming y evaluaciones
-                interactivas.
-              </p>
-              <Link
-                href="https://templiance-front.vercel.app/"
-                className="inline-block mt-2 text-primary hover:underline"
-              >
-                Ver detalles
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* CONTACTO */}
 
         <section id="contacto" className="mt-12">
           <h2 className="text-2xl font-bold mb-4">Contacto</h2>
