@@ -223,8 +223,15 @@ export default function HomePage() {
               />
               <h3 className="font-bold text-xl">Co-Working App</h3>
               <p className="mt-2">
-                Desarrollé de una aplicación de reservas con administración de
-                contenido y usuarios.
+                Colaboré en el desarrollo de una aplicación de reservas,
+                centrándome en el Front End. Utilicé Vite como entorno de
+                desarrollo, construí la interfaz con componentes React en
+                JavaScript, y apliqué estilos con Bootstrap para lograr un
+                diseño responsivo. Como Scrum Master, lideré el proyecto
+                utilizando Mural y Trello para gestionar las ceremonias ágiles,
+                mejorando la comunicación del equipo en cada Sprint y asegurando
+                la alineación entre el desarrollo Front End y los objetivos del
+                proyecto.
               </p>
               <Link
                 href="https://coworking-project-gold.vercel.app/home"
@@ -243,9 +250,12 @@ export default function HomePage() {
               />
               <h3 className="font-bold text-xl">Plataforma E-learning</h3>
               <p className="mt-2">
-                Creé una plataforma de aprendizaje en línea con React y Node.js,
-                incluyendo funcionalidades de video streaming y evaluaciones
-                interactivas.
+                Templiance es una plataforma web moderna que funciona como un
+                marketplace de templates corporativos, enfocados en ayudar a
+                profesionales y empresas a superar auditorías y certificaciones
+                en áreas cruciales como calidad y seguridad. A través de nuestra
+                oferta de plantillas personalizables, los usuarios pueden
+                prepararse mejor para cumplir con las regulaciones y estándares.
               </p>
               <Link
                 href="https://templiance-front.vercel.app/"
