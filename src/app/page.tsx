@@ -176,33 +176,24 @@ export default function HomePage() {
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Mayo 2024 - Presente
               </p>
-              <ul className="mt-2 list-disc list-inside">
-                <li>
-                  Desarrollo de aplicaciones web responsivas con React y Next.js
-                </li>
-                <li>
-                  Integración de bases de datos MongoDB y despliegue en AWS
-                </li>
-                <li>
-                  Mantenimiento y optimización de aplicaciones web existentes
-                </li>
-                <li>
-                  Realización de pruebas manuales y de usuario, documentación y
-                  resolución de bugs
-                </li>
-              </ul>
-            </div>
-            <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
-              <h3 className="font-bold text-xl">Ejecutivo Comercial</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                2017 - 2024 | Chile
-              </p>
-              <p className="mt-2">
-                Trabajé en cargos comerciales (KAM, BDM) para empresas líderes
-                en la manufactura y desarrollo de tecnologías de seguridad como
-                Dahua Technologies e Hikvision. Esta experiencia me introdujo al
-                mundo de la tecnología, mejoró mis habilidades blandas y me
-                enseñó sobre negocios.
+              <p className="mt-2 list-disc list-inside">
+                Colaboro con el equipo de desarrollo para crear aplicaciones web
+                responsivas y visualmente atractivas utilizando React y Next.js.
+                Implementando diseños de UI/UX, asegurando que cumplan con los
+                estándares y especificaciones de la empresa. Mantengo y
+                actualizo sitios web y aplicaciones web existentes. Optimizo
+                aplicaciones web para máxima velocidad y escalabilidad.
+                Participo en revisiones de código y contribuyo a la mejora de
+                estándares de codificación y mejores prácticas. Control de
+                Calidad: Realizo pruebas manuales para asegurar la calidad y
+                funcionalidad de las aplicaciones web. Llevo a cabo pruebas de
+                usuario para recopilar comentarios e identificar áreas de
+                mejora. Desarrollo, documento y mantengo casos de prueba,
+                scripts y planes de prueba. Identifico, documento y doy
+                seguimiento a errores, y trabajo en estrecha colaboración con
+                los desarrolladores para asegurar que sean resueltos. Participo
+                en el desarrollo y ejecución de pruebas de regresión, pruebas de
+                rendimiento y pruebas de usabilidad.
               </p>
             </div>
           </div>
@@ -270,7 +261,7 @@ export default function HomePage() {
         {/* FORMACIÓN */}
 
         <section id="formacion" className="mt-12">
-          <h2 className="text-2xl font-heading mb-4">Formación</h2>
+          <h2 className="text-2xl font-bold mb-4">Formación</h2>
           <div className="space-y-4">
             <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
               <h3 className="font-heading text-xl">Certified Web Developer</h3>
