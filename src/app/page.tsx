@@ -153,7 +153,7 @@ export default function HomePage() {
                 Contactar
               </a>
               <a
-                href="/cv-miguel-gil.pdf"
+                href="../../public/Miguel Gil - Front End - ESP.pdf"
                 className="bg-secondary text-secondary-foreground font-bold py-2 px-4 rounded flex items-center justify-center w-full md:w-auto"
                 download
               >
@@ -239,7 +239,7 @@ export default function HomePage() {
                 height={200}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="font-bold text-xl">Plataforma E-learning</h3>
+              <h3 className="font-bold text-xl">Templiance</h3>
               <p className="mt-2">
                 Templiance es una plataforma web moderna que funciona como un
                 marketplace de templates corporativos, enfocados en ayudar a
