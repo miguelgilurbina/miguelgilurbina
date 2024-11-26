@@ -3,21 +3,13 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Mail,
-  Phone,
-  Linkedin,
-  Github,
-  Download,
-  Menu,
-  Sun,
-  Moon,
-} from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Menu, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import fotoPerfil from "../../public/fotoPerfil.png";
 import coWorkGif from "../../public/coWorkingGif.gif";
 import templianceGif from "../../public/Templiance Second Iteration.gif";
+import { DownloadButton } from "./components/DownloadButton";
 
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -152,14 +144,7 @@ export default function HomePage() {
               >
                 Contactar
               </a>
-              <a
-                href="/Miguel Gil - Front End - ESP.pdf"
-                className="bg-secondary text-secondary-foreground font-bold py-2 px-4 rounded flex items-center justify-center w-full md:w-auto"
-                download
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Descargar CV
-              </a>
+              <DownloadButton />
             </div>
           </div>
         </section>
