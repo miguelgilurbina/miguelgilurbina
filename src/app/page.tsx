@@ -38,7 +38,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* HEADER NAVBAR */}
-      <header className="bg-primary text-primary-foreground py-4">
+      <header className="bg-background text-foreground py-4 border-b border-border">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold">Miguel Gil</h1>
           {/* Desktop Navigation */}
@@ -47,7 +47,7 @@ export default function HomePage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="hover:text-secondary-foreground"
+                className="px-3 py-2 rounded-md transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 {item.label}
               </Link>
@@ -84,7 +84,7 @@ export default function HomePage() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-foreground hover:text-secondary"
+                    className="px-3 py-2 rounded-md transition-colors hover:bg-primary hover:text-primary-foreground"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
