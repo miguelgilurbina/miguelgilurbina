@@ -1,89 +1,102 @@
 # Miguel Gil
 
-## Desarrollador Front-End
+## AI Solutions Architect & Full Stack Developer
 
 📍 Santiago de Chile | 📞 +56 9 77221088 | 📧 miguel.gil.9210@gmail.com
 
----
+### About Me
 
-### Perfil Profesional
+Innovative developer specializing in AI integration and modern web development. Combining technical expertise with creative problem-solving to build next-generation applications. Experience in AI model evaluation, prompt engineering, and full-stack development with a focus on user experience and performance.
 
-Desarrollador Front-End con sólida formación en tecnologías modernas y experiencia en proyectos de alto impacto. Especializado en React, Next.js, TypeScript y Tailwind CSS. Combino habilidades técnicas con un enfoque estratégico y orientado a resultados, derivado de mi experiencia en roles comerciales y mi formación en ingeniería.
+### 🚀 Featured Projects
 
----
+#### Prompt Maker
 
-### Experiencia Profesional
+AI-powered prompt management platform
 
-#### Desarrollador Front-End, Templiance
+- **Tech Stack:** Next.js 14, TypeScript, Tailwind CSS, Shadcn/ui
+- **Features:**
+  - Intuitive prompt creation and management
+  - Advanced search and categorization
+  - Real-time collaboration tools
+  - Modern, responsive design
+- **Status:** In active development
 
-_Abril 2024 - Presente_
+#### Templiance
 
-- Desarrollo integral de la página web utilizando Next.js, TypeScript y Tailwind CSS.
-- Implementación de diseño responsivo y optimización para rendimiento.
-- Despliegue y mantenimiento continuo en Vercel.
+Compliance template marketplace platform
 
-#### Desarrollador Full Stack, Co-Working App
+- **Tech Stack:** Next.js, TypeScript, Tailwind CSS
+- **Features:**
+  - Dynamic template marketplace
+  - Advanced search functionality
+  - User authentication
+  - Responsive design
+- **Status:** Production
 
-_Mayo 2024 - Junio 2024_
+#### Curiana Radio
 
-- Desarrollo de aplicación de reservas con administración de contenido y usuarios.
-- Front-end: React, JavaScript, Bootstrap.
-- Despliegue en Vercel.
+Cultural preservation and creative platform
 
-#### Desarrollador Front-End, Curiana Radio Landing Page
+- **Tech Stack:** Next.js, React, Framer Motion
+- **Features:**
+  - Dynamic content grid
+  - Multimedia integration
+  - Interactive storytelling
+- **Status:** In development
 
-_Marzo 2024 - Abril 2024_
+### 💻 Technical Skills
 
-- Diseño UX/UI utilizando Framer.
-- Desarrollo con React y JavaScript.
-- Implementación responsiva y despliegue en Vercel.
+#### Development
 
-#### Ejecutivo Comercial, Dahua Technologies e Hikvision
+- Next.js 14
+- TypeScript/JavaScript
+- React
+- Tailwind CSS
+- Node.js
 
-_2017 - 2024_
+#### AI & Tools
 
-- Roles de KAM y BDM en empresas líderes en tecnologías de seguridad.
-- Desarrollo de habilidades en negociación, gestión de cuentas clave y estrategia comercial.
+- Prompt Engineering
+- LLM Integration
+- Midjourney
+- AI Model Evaluation
+- Creative AI Solutions
 
----
+#### Infrastructure
 
-### Formación Académica
+- Vercel
+- AWS
+- Git/GitHub
+- CI/CD
 
-- **Certified Web Developer**, Digital House Coding School (Oct 2022 - Jun 2024)
-- **Certificado Profesional de Scrum Master**, Certiprof (Julio 2023)
-- **Ingeniero Ambiental**, Universidad de Falcón, Venezuela (2009 - 2014)
+### 🌟 Professional Experience
 
----
+**AI Research Contributor** - Outlier
 
-### Habilidades Técnicas
+- Evaluating and improving AI model performance
+- Developing test cases and scenarios
+- Contributing to best practices in AI interaction
 
-- Frontend: React, Next.js, TypeScript, JavaScript, HTML5, CSS3
-- Estilizado: Tailwind CSS, Bootstrap
-- Herramientas: Git, Vercel, AWS
-- Metodologías: Scrum, Desarrollo Ágil
+**Full Stack Developer** - Freelance
 
----
+- Building modern web applications
+- Integrating AI solutions
+- Leading technical projects
 
-### Habilidades Blandas
+### 📚 Education & Certifications
 
-- Pensamiento lógico y crítico
-- Comunicación asertiva
-- Resolución de problemas
-- Trabajo en equipo
-- Adaptabilidad
-- Planificación estratégica
+- Certified Web Developer - Digital House Coding School
+- Professional Scrum Master - Certiprof
+- Environmental Engineering - Universidad de Falcón
 
----
+### 🌎 Languages
 
-### Idiomas
+- Spanish (Native)
+- English (Professional)
 
-- Español (nativo)
-- Inglés (profesional)
+### 📫 Get in Touch
 
----
-
-### Proyectos Destacados
-
-1. **Templiance**: Desarrollo front-end con Next.js, TypeScript y Tailwind CSS.
-2. **Co-Working App**: Aplicación full-stack para reservas y gestión de espacios.
-3. **Curiana Radio Landing Page**: Diseño y desarrollo de landing page responsiva.
+- LinkedIn: [\[Your LinkedIn\]](https://www.linkedin.com/in/miguelgilurbina/)
+- GitHub: [\[Your GitHub\]](https://github.com/miguelgilurbina)
+- Portfolio: [\[Your Portfolio\]](https://miguelgilurbina.vercel.app/)
