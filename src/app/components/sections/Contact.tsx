@@ -97,22 +97,66 @@ export function Contact() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:miguel.gil.9210@gmail.com?subject=Oportunidad%20Laboral%20-%20Desarrollador%20IA&body=Hola%20Miguel,%0D%0A%0D%0AHe%20visto%20tu%20portafolio%20y%20me%20interesa%20conversar%20sobre..."
-                className="inline-flex items-center justify-center bg-primary text-primary-foreground font-semibold py-3 px-8 rounded-lg hover:bg-primary/90 transition-colors group"
-              >
-                <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                Contactar por Email
-              </a>
+              <div className="relative group">
+                <a
+                  href="mailto:miguel.gil.9210@gmail.com?subject=Oportunidad%20Laboral%20-%20Desarrollador%20IA&body=Hola%20Miguel,%0D%0A%0D%0AHe%20visto%20tu%20portafolio%20y%20me%20interesa%20conversar%20sobre..."
+                  className="inline-flex items-center justify-center bg-primary text-primary-foreground font-semibold py-3 px-8 rounded-lg hover:bg-primary/90 transition-colors group-hover:shadow-lg"
+                  onClick={() => {
+                    // Add a small delay to check if the email client opened
+                    const clicked = Date.now();
+                    setTimeout(() => {
+                      // If we're still on the page after a delay, show instructions
+                      if (Date.now() - clicked < 2000) {
+                        const shouldShow = window.confirm(
+                          "Parece que tu navegador no abrió automáticamente el cliente de correo. ¿Deseas copiar el correo electrónico al portapapeles?"
+                        );
+                        if (shouldShow) {
+                          navigator.clipboard.writeText(
+                            "miguel.gil.9210@gmail.com"
+                          );
+                          alert("Correo copiado al portapapeles");
+                        }
+                      }
+                    }, 500);
+                  }}
+                >
+                  <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  Contactar por Email
+                </a>
+                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                  miguel.gil.9210@gmail.com
+                </div>
+              </div>
 
               <a
-                href="https://wa.me/56977221088?text=Hola%20Miguel!%20Vi%20tu%20portafolio%20y%20me%20interesa%20conversar%20sobre%20oportunidades%20laborales."
+                href="https://web.whatsapp.com/send?phone=56977221088&text=Hola%20Miguel!%20Vi%20tu%20portafolio%20y%20me%20interesa%20conversar%20sobre%20oportunidades%20laborales."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center border border-border font-semibold py-3 px-8 rounded-lg hover:bg-accent transition-colors group"
+                className="relative group inline-flex items-center justify-center border border-border font-semibold py-3 px-8 rounded-lg hover:bg-accent transition-colors hover:shadow-lg"
+                onClick={() => {
+                  // Fallback to web.whatsapp.com if the app doesn't open
+                  if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) {
+                    window.location.href = `whatsapp://send?phone=56977221088&text=${encodeURIComponent(
+                      "Hola Miguel! Vi tu portafolio y me interesa conversar sobre oportunidades laborales."
+                    )}`;
+
+                    // If still here after a short delay, open web version
+                    setTimeout(() => {
+                      window.open(
+                        `https://web.whatsapp.com/send?phone=56977221088&text=${encodeURIComponent(
+                          "Hola Miguel! Vi tu portafolio y me interesa conversar sobre oportunidades laborales."
+                        )}`,
+                        "_blank"
+                      );
+                    }, 500);
+                  }
+                }}
               >
                 <MessageSquare className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                 WhatsApp
+                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                  +56 9 7722 1088
+                </span>
               </a>
             </div>
           </div>
