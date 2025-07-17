@@ -1,8 +1,8 @@
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground py-4 mt-12">
+    <footer className="bg-primary text-primary-foreground py-4 mt-4">
       <div className="container mx-auto px-4 text-center text-sm md:text-base">
-        <p>&copy; 2024 Miguel Gil. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Miguel Gil. Todos los derechos reservados.</p>
         <div className="mt-2 flex justify-center space-x-4">
           <a
             href="https://github.com/miguelgilurbina"

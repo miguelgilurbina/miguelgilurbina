@@ -1,6 +1,6 @@
 # Miguel Gil
 
-## AI Solutions Architect & Full Stack Developer
+## AI First Full Stack Developer & Implementation Specialist
 
 **8+ years combining commercial strategy with cutting-edge AI development**
 
