@@ -1,76 +1,202 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
+    /* Updated color palette for AI-First identity */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
+    
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
- 
+    
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
- 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
- 
+    
+    /* AI-First primary colors */
+    --primary: 217 91% 60%; /* Tech Blue #0066FF */
+    --primary-foreground: 0 0% 98%;
+    
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
- 
+    
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
- 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
- 
+    
+    --accent: 167 82% 41%; /* AI Green #00D4AA */
+    --accent-foreground: 0 0% 9%;
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
+    
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
- 
-    --radius: 0.5rem;
+    --ring: 217 91% 60%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom AI-First colors */
+    --ai-blue: 217 91% 60%; /* #0066FF */
+    --tech-green: 167 82% 41%; /* #00D4AA */
+    --energy-orange: 18 95% 60%; /* #FF6B35 */
+    --gradient-start: 217 91% 60%;
+    --gradient-end: 167 82% 41%;
   }
- 
+  
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
- 
+    
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
- 
+    
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
- 
+    
+    --primary: 217 91% 60%; /* Same tech blue in dark */
+    --primary-foreground: 222.2 84% 4.9%;
+    
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
- 
+    
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
- 
-    --accent: 217.2 32.6% 17.5%;
+    
+    --accent: 167 82% 41%; /* AI Green consistent */
     --accent-foreground: 210 40% 98%;
- 
+    
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
- 
+    
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 217 91% 60%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
+  
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Smooth scrolling for navigation */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom gradient utilities */
+  .gradient-ai {
+    background: linear-gradient(135deg, hsl(var(--ai-blue)) 0%, hsl(var(--tech-green)) 100%);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--ai-blue)) 0%, hsl(var(--tech-green)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Enhanced focus states */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+  
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+}
+
+@layer components {
+  /* Enhanced container with proper spacing */
+  .container-custom {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  /* Card component with AI-themed styling */
+  .card-ai {
+    @apply bg-card border border-border/50 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  
+  /* Button enhancements for AI theme */
+  .btn-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white;
+  }
+  
+  .btn-ai-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Typography improvements */
+.prose-ai {
+  @apply text-foreground;
+}
+
+.prose-ai h1 {
+  @apply text-4xl font-bold tracking-tight lg:text-5xl;
+}
+
+.prose-ai h2 {
+  @apply text-3xl font-semibold tracking-tight;
+}
+
+.prose-ai h3 {
+  @apply text-2xl font-semibold;
+}
+
+.prose-ai p {
+  @apply leading-7 text-muted-foreground;
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 640px) {
+  .container-custom {
+    @apply px-4;
   }
 }

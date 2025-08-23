@@ -1,21 +1,46 @@
-import { useState, useEffect } from 'react';
+"use client"
 
-export function useTheme() {
-  const [darkMode, setDarkMode] = useState(false);
+import * as React from "react"
+import { useTheme } from "next-themes"
+import { Button } from "@/components/ui/Button"
+import { Sun, Moon, Monitor } from "lucide-react"
 
-  useEffect(() => {
-    // Check system preference and localStorage
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    setDarkMode(savedTheme === 'dark' || (!savedTheme && systemPrefersDark));
-  }, []);
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
 
-  useEffect(() => {
-    // Update classList and localStorage
-    document.documentElement.classList.toggle('dark', darkMode);
-    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
-  }, [darkMode]);
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
-  return { darkMode, setDarkMode };
+  if (!mounted) {
+    return (
+      <Button variant="ghost" size="icon" >
+        <div className="h-4 w-4" />
+        <span className="sr-only">Toggle theme </span>
+      </Button>
+    )
+  }
+
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={() => {
+        if (theme === 'light') {
+          setTheme('dark')
+        } else if (theme === 'dark') {
+          setTheme('system')
+        } else {
+          setTheme('light')
+        }
+      }}
+      className="hover:bg-accent hover:text-accent-foreground transition-colors"
+    >
+      {theme === 'light' && <Sun className="h-4 w-4" />}
+      {theme === 'dark' && <Moon className="h-4 w-4" />}
+      {theme === 'system' && <Monitor className="h-4 w-4" />}
+      <span className="sr-only">Toggle theme</span>
+    </Button>
+  )
 }
