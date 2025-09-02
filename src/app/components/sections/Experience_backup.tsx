@@ -14,7 +14,7 @@ const experiences: Experience[] = [
   {
     title: "AI Research Contributor",
     company: "Outlier",
-    period: "2024 - Presente",
+    period: "Noviembre 2024 - Presente",
     description: [
       "Evaluación y mejora de modelos de IA líderes en el mercado",
       "Desarrollo de casos de prueba y escenarios para evaluar capacidades de IA",
@@ -26,7 +26,7 @@ const experiences: Experience[] = [
   {
     title: "Full Stack Developer",
     company: "Vemex Digital",
-    period: "Mayo 2024 - Diciembre 2024",
+    period: "Mayo 2024 - Presente",
     description: [
       "Desarrollo de aplicaciones web responsivas con React y Next.js",
       "Implementación de diseños UI/UX siguiendo estándares empresariales",
