@@ -40,6 +40,30 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
+    id: "cargoelectric",
+    title: "Full Stack Developer",
+    company: "Cargo Eléctric",
+    period: "Sep 2024 - Presente",
+    type: "current",
+    icon: Code,
+    highlight: "Desarrollo de plataforma de gestión logística para flotas eléctricas",
+    description: [
+      "Desarrollo de aplicación móvil con Ionic 7 y Angular 17 para registro de datos de rutas logísticas en tiempo real",
+      "Diseño e implementación de nueva aplicación de back office para facturación, gestión administrativa y visión de directorio",
+      "Integración completa con Firebase (Firestore, Authentication, Storage) para gestión de datos y usuarios multi-rol",
+      "Desarrollo de dashboards analíticos con Chart.js para métricas operacionales y optimización de última milla",
+      "Automatización de procesos de facturación digital y generación de reportes para clientes de retail",
+    ],
+    skills: [
+      "Ionic 7",
+      "Angular 17",
+      "Firebase",
+      "TypeScript",
+      "Chart.js",
+      "Logistics Systems",
+    ],
+  },
+  {
     id: "vemex",
     title: "Full Stack Developer & QA Specialist",
     company: "Vemex Digital",
@@ -107,7 +131,7 @@ export function Experience() {
             Experiencia Profesional
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            8+ años combinando estrategia comercial con desarrollo tecnológico
+            9+ años combinando estrategia comercial con desarrollo tecnológico
             especializado en IA
           </p>
         </div>

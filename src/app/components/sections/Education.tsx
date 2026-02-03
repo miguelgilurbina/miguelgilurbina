@@ -12,6 +12,13 @@ interface Education {
 
 const educationList: Education[] = [
   {
+    title: "Diplomado en IA Generativa en Organizaciones",
+    institution: "Desafío Latam",
+    period: "2024",
+    description:
+      "Diplomado especializado en implementación de soluciones de IA generativa en contextos empresariales. Desarrollo de proyectos con LangChain, sistemas RAG (Retrieval Augmented Generation), LangGraph para orquestación de agentes, LangServe, y despliegue con Docker. Proyecto final: chatbot médico conversacional con arquitectura multi-agente, integración de APIs externas, y gestión de estado con PostgreSQL.",
+  },
+  {
     title: "Certified Web Developer",
     institution: "Digital House Coding School",
     period: "Oct 2022 - Jul 2024",
