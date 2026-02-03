@@ -21,8 +21,8 @@ const experiences: ExperienceItem[] = [
     id: "outlier",
     title: "AI Research Contributor",
     company: "Outlier",
-    period: "Nov 2024 - Presente",
-    type: "current",
+    period: "Nov 2024 - Ago 2025",
+    type: "recent",
     icon: Brain,
     highlight: "Evaluando modelos de IA líderes del mercado",
     description: [
