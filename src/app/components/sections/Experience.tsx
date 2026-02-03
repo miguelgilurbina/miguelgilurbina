@@ -18,6 +18,31 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    id: "cargoelectric",
+    title: "Full Stack Developer & Product Owner",
+    company: "Cargo Eléctric",
+    period: "Sep 2025 - Presente",
+    type: "current",
+    icon: Code,
+    highlight: "Doble rol: desarrollo técnico y gestión de producto para plataforma logística de flotas eléctricas",
+    description: [
+      "Product Owner & Full Stack Developer de web app Next.js: liderazgo end-to-end desde ideación hasta implementación de funcionalidades de back office, facturación y gestión administrativa",
+      "Arquitectura y desarrollo de modelo de datos escalable en Firebase para cobertura operacional completa de la empresa",
+      "Mejora continua de app móvil existente (Ionic 7 + Angular 17) con foco en optimización del registro de rutas logísticas en tiempo real",
+      "Desarrollo de dashboards analíticos con Chart.js para métricas de rendimiento de última milla y toma de decisiones estratégicas",
+      "Automatización de procesos críticos: facturación digital, reportes operacionales para clientes retail y visibilidad de flota en tiempo real",
+    ],
+    skills: [
+      "Product Ownership",
+      "Next.js",
+      "Ionic 7",
+      "Angular 17",
+      "Firebase",
+      "TypeScript",
+      "Chart.js",
+    ],
+  },
+  {
     id: "outlier",
     title: "AI Research Contributor",
     company: "Outlier",
@@ -37,30 +62,6 @@ const experiences: ExperienceItem[] = [
       "Prompt Engineering",
       "Quality Assurance",
       "International Collaboration",
-    ],
-  },
-  {
-    id: "cargoelectric",
-    title: "Full Stack Developer",
-    company: "Cargo Eléctric",
-    period: "Sep 2025 - Presente",
-    type: "current",
-    icon: Code,
-    highlight: "Desarrollo de plataforma de gestión logística para flotas eléctricas",
-    description: [
-      "Desarrollo de aplicación móvil con Ionic 7 y Angular 17 para registro de datos de rutas logísticas en tiempo real",
-      "Diseño e implementación de nueva aplicación de back office para facturación, gestión administrativa y visión de directorio",
-      "Integración completa con Firebase (Firestore, Authentication, Storage) para gestión de datos y usuarios multi-rol",
-      "Desarrollo de dashboards analíticos con Chart.js para métricas operacionales y optimización de última milla",
-      "Automatización de procesos de facturación digital y generación de reportes para clientes de retail",
-    ],
-    skills: [
-      "Ionic 7",
-      "Angular 17",
-      "Firebase",
-      "TypeScript",
-      "Chart.js",
-      "Logistics Systems",
     ],
   },
   {
