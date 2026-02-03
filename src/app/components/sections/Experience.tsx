@@ -43,7 +43,7 @@ const experiences: ExperienceItem[] = [
     id: "cargoelectric",
     title: "Full Stack Developer",
     company: "Cargo Eléctric",
-    period: "Sep 2024 - Presente",
+    period: "Sep 2025 - Presente",
     type: "current",
     icon: Code,
     highlight: "Desarrollo de plataforma de gestión logística para flotas eléctricas",
