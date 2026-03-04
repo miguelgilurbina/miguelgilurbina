@@ -1,0 +1,198 @@
+export const es = {
+  nav: {
+    experience:  "Experiencia",
+    education:   "Formación",
+    skills:      "Habilidades",
+    projects:    "Proyectos",
+    contact:     "Contacto",
+  },
+
+  hero: {
+    badge:       "Disponible para nuevas oportunidades",
+    title:       "AI First Full Stack Developer & Implementation Specialist",
+    subtitle:    "8+ años combinando estrategia comercial con desarrollo de IA empresarial",
+    description: "Especialista en crear soluciones de IA que resuelven problemas empresariales reales. Combino mi experiencia gestionando redes de distribución con expertise técnico en modelos de lenguaje y desarrollo full-stack para democratizar el acceso a tecnologías avanzadas.",
+    featuredLabel: "🚀 Proyecto Destacado: Prompt Maker",
+    featuredDesc:  "Plataforma live que democratiza el acceso a herramientas de IA",
+    ctaContact:  "Contactar",
+    ctaProjects: "Ver Proyectos",
+    viewLive:    "Ver Live",
+    viewCode:    "Código",
+  },
+
+  featuredProject: {
+    badge:       "🚀 Proyecto Destacado",
+    title:       "Prompt Maker",
+    description: "Plataforma que democratiza el acceso a herramientas de IA mediante un repositorio colaborativo de prompts optimizados",
+    liveStatus:  "Live en producción",
+    problemTitle: "¿Qué problema resuelve?",
+    problemDesc:  "Muchos usuarios encuentran barreras para aprovechar las capacidades de la IA generativa. Prompt Maker elimina esta fricción creando un ecosistema donde la comunidad puede contribuir, descubrir y optimizar prompts para diferentes casos de uso empresariales y personales.",
+    featuresTitle: "Características principales",
+    stackTitle:    "Stack Tecnológico",
+    impactTitle:   "💡 Impacto del proyecto",
+    impactDesc:    "Democratiza el acceso a herramientas de IA avanzadas, permitiendo que usuarios sin conocimientos técnicos profundos aprovechen las mejores prácticas de la comunidad.",
+    ctaLive:       "Ver Aplicación Live",
+    ctaCode:       "Ver Código Fuente",
+    features: [
+      { title: "Variables Dinámicas",       description: "Sistema de prompts parametrizables y reutilizables" },
+      { title: "Colaboración Comunitaria",  description: "Plataforma para compartir y descubrir prompts optimizados" },
+      { title: "Control de Acceso",         description: "Gestión granular de visibilidad público/privado" },
+      { title: "Preview en Tiempo Real",    description: "Visualización inmediata antes de guardar o compartir" },
+    ],
+  },
+
+  experience: {
+    sectionTitle:   "Experiencia Profesional",
+    sectionSubtitle: "9+ años combinando estrategia comercial con desarrollo tecnológico especializado en IA",
+    current:        "Actual",
+    keySkills:      "Competencias clave:",
+    calloutTitle:   "Transición Estratégica hacia la Tecnología",
+    calloutDesc:    "Después de 6 años liderando procesos comerciales y optimizando redes de distribución, decidí aplicar este conocimiento empresarial al desarrollo de soluciones tecnológicas. Mi experiencia en canales y stakeholder management me permite crear herramientas de IA que realmente resuelven problemas de negocio reales.",
+    items: [
+      {
+        title:     "Full Stack Developer & Product Owner",
+        company:   "Cargo Eléctric",
+        period:    "Sep 2025 - Presente",
+        highlight: "Doble rol: desarrollo técnico y gestión de producto para plataforma logística de flotas eléctricas",
+        bullets: [
+          "Product Owner & Full Stack Developer de web app Next.js: liderazgo end-to-end desde ideación hasta implementación de funcionalidades de back office, facturación y gestión administrativa",
+          "Arquitectura y desarrollo de modelo de datos escalable en Firebase para cobertura operacional completa de la empresa",
+          "Mejora continua de app móvil existente (Ionic 7 + Angular 17) con foco en optimización del registro de rutas logísticas en tiempo real",
+          "Desarrollo de dashboards analíticos con Chart.js para métricas de rendimiento de última milla y toma de decisiones estratégicas",
+          "Automatización de procesos críticos: facturación digital, reportes operacionales para clientes retail y visibilidad de flota en tiempo real",
+        ],
+        skills: ["Product Ownership", "Next.js", "Ionic 7", "Angular 17", "Firebase", "TypeScript", "Chart.js"],
+      },
+      {
+        title:     "AI Research Contributor",
+        company:   "Outlier",
+        period:    "Nov 2024 - Ago 2025",
+        highlight: "Evaluando modelos de IA líderes del mercado",
+        bullets: [
+          "Evaluación directa de modelos de IA como GPT-4, Claude y Gemini para uso empresarial",
+          "Desarrollo de metodologías para medir rendimiento y establecer estándares de calidad",
+          "Colaboración con equipos internacionales para mejores prácticas en prompt engineering",
+          "Creación de casos de prueba especializados para validación empresarial",
+          "Optimización de instrucciones para maximizar efectividad en contextos de negocio",
+        ],
+        skills: ["Model Evaluation", "Prompt Engineering", "Quality Assurance", "International Collaboration"],
+      },
+      {
+        title:     "Full Stack Developer & QA Specialist",
+        company:   "Vemex Digital",
+        period:    "Mayo - Dic 2024",
+        highlight: "Desarrollo web moderno con enfoque en calidad",
+        bullets: [
+          "Desarrollo de aplicaciones web responsivas con React y Next.js siguiendo estándares empresariales",
+          "Implementación de estrategias de testing y quality assurance comprehensivas",
+          "Optimización de aplicaciones para máxima velocidad y escalabilidad",
+          "Participación en revisiones de código y mejora de estándares de desarrollo",
+          "Gestión completa del ciclo de vida de errores y resolución de issues",
+        ],
+        skills: ["React", "Next.js", "TypeScript", "Testing", "Performance Optimization"],
+      },
+      {
+        title:     "Gestión Comercial y Desarrollo de Canales",
+        company:   "Hikvision, Dahua, SSTT, Orama, Wetland",
+        period:    "2017 - 2023",
+        highlight: "6 años optimizando redes de distribución y canales comerciales",
+        bullets: [
+          "Gestión directa de redes de subdistribuidores a nivel nacional en sector tecnológico",
+          "Análisis de datos de ventas y comportamiento de canales para optimización de rendimiento",
+          "Implementación de procesos estandarizados en ecosistemas de distribución complejos",
+          "Liderazgo de proyectos comerciales incluyendo licitaciones públicas (Mercado Público)",
+          "Diseño y ejecución de programas de capacitación técnica para equipos y socios de canal",
+          "Gestión de logística internacional y coordinación entre múltiples stakeholders",
+        ],
+        skills: ["Channel Management", "Data Analysis", "Process Optimization", "Project Leadership", "Stakeholder Management"],
+      },
+    ],
+  },
+
+  skills: {
+    sectionTitle:   "Competencias Técnicas",
+    sectionSubtitle: "Habilidades verificables desarrolladas a través de experiencia práctica y proyectos reales",
+    specialization: "🎯 Especialización",
+    verifiedNote:   "Todas las competencias verificables con proyectos reales",
+    categories: [
+      {
+        title:       "Desarrollo de Productos con IA",
+        description: "Experiencia práctica desarrollando e integrando soluciones de IA",
+        highlight:   true,
+        skills: [
+          { name: "Prompt Engineering Especializado",   context: "The Prompt Academy + experiencia en Outlier" },
+          { name: "Stack React/Next.js/TypeScript",     context: "Prompt Maker + experiencia en Vemex Digital" },
+          { name: "Gestión de Datos con PostgreSQL/Prisma", context: "Arquitectura implementada en Prompt Maker" },
+          { name: "Integración de IA",                  context: "Workflows con ChatGPT, Claude y Gemini" },
+        ],
+      },
+      {
+        title:       "Stack Técnico",
+        description: "Tecnologías con las que tengo experiencia demostrable",
+        highlight:   false,
+        skills: [
+          { name: "Next.js 15 & React 19",              context: "Prompt Maker + proyectos profesionales" },
+          { name: "TypeScript/JavaScript",              context: "Todos los proyectos recientes" },
+          { name: "PostgreSQL & Prisma ORM",            context: "Base de datos de Prompt Maker" },
+          { name: "Tailwind CSS & UI Systems",          context: "Styling en todos los proyectos" },
+          { name: "Git/GitHub & Vercel",                context: "Control de versiones y deployment" },
+          { name: "Testing (Jest, React Testing Library)", context: "Experiencia en Vemex Digital" },
+        ],
+      },
+      {
+        title:       "Liderazgo y Gestión",
+        description: "Competencias empresariales y de gestión desarrolladas",
+        highlight:   false,
+        skills: [
+          { name: "Scrum Master Certificado",           context: "Metodologías ágiles para equipos tecnológicos" },
+          { name: "Gestión de Canales Comerciales",     context: "6 años liderando redes de distribución" },
+          { name: "Desarrollo de Equipos",              context: "Programas de capacitación y adopción tecnológica" },
+          { name: "Análisis de Datos Comerciales",      context: "Optimización de performance en canales" },
+        ],
+      },
+    ],
+  },
+
+  education: {
+    sectionTitle:   "Formación",
+    sectionSubtitle: "Aprendizaje continuo como pilar del desarrollo profesional",
+  },
+
+  contact: {
+    sectionTitle:    "¡Trabajemos Juntos!",
+    sectionSubtitle: "¿Buscas un desarrollador que combine experiencia empresarial con expertise en IA? Conversemos sobre cómo puedo aportar valor a tu equipo.",
+    availableBadge:  "Disponible para nuevas oportunidades",
+    projectTitle:    "¿Tienes un proyecto en mente?",
+    projectDesc:     "Estoy buscando oportunidades en tech para aplicar mi experiencia en IA y desarrollo. ¡Hablemos de cómo puedo contribuir a tu visión!",
+    emailCta:        "Contactar por Email",
+    whatsappCta:     "WhatsApp",
+    location:        "Ubicación",
+    locationValue:   "Santiago, Chile",
+    locationNote:    "Modalidad híbrida preferida",
+    availability:    "Disponibilidad",
+    availabilityVal: "Inmediata",
+    availabilityNote: "Tiempo completo o part-time",
+    cvTitle:         "CV Actualizado",
+    cvDesc:          "Descarga mi CV completo",
+    finalCta:        "🚀 ¿Listo para construir algo increíble juntos?",
+    responseTime:    "Respondo todos los emails en menos de 24 horas",
+    viewProfile:     "Ver perfil",
+    viewCode:        "Ver código",
+    linkedin:        "Conectemos profesionalmente",
+    github:          "Explora mi código y repositorios",
+  },
+
+  footer: {
+    rights: "Todos los derechos reservados.",
+  },
+
+  projects: {
+    sectionTitle:   "Otros Proyectos",
+    sectionSubtitle: "Proyectos adicionales que muestran el alcance de mi experiencia",
+    viewLive:       "Ver Live",
+    viewCode:       "Ver Código",
+    live:           "Live",
+  },
+};
+
+export type Translations = typeof es;
