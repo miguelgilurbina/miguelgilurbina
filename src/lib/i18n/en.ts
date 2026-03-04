@@ -1,0 +1,238 @@
+import { Translations } from "./es";
+
+export const en: Translations = {
+  nav: {
+    experience:  "Experience",
+    education:   "Education",
+    skills:      "Skills",
+    projects:    "Projects",
+    contact:     "Contact",
+  },
+
+  hero: {
+    badge:       "Open to new opportunities",
+    title:       "AI First Full Stack Developer & Implementation Specialist",
+    subtitle:    "8+ years combining commercial strategy with enterprise AI development",
+    description: "Specialist in building AI solutions that solve real business problems. I combine my experience managing distribution networks with technical expertise in language models and full-stack development to democratize access to advanced technologies.",
+    featuredLabel: "🚀 Featured Project: Prompt Maker",
+    featuredDesc:  "Live platform democratizing access to AI tools",
+    ctaContact:  "Get in Touch",
+    ctaProjects: "View Projects",
+    viewLive:    "View Live",
+    viewCode:    "Code",
+  },
+
+  featuredProject: {
+    badge:       "🚀 Featured Project",
+    title:       "Prompt Maker",
+    description: "A platform that democratizes access to AI tools through a collaborative repository of optimized prompts",
+    liveStatus:  "Live in production",
+    problemTitle: "What problem does it solve?",
+    problemDesc:  "Many users face barriers when trying to leverage generative AI capabilities. Prompt Maker removes this friction by creating an ecosystem where the community can contribute, discover, and optimize prompts for different business and personal use cases.",
+    featuresTitle: "Key features",
+    stackTitle:    "Tech Stack",
+    impactTitle:   "💡 Project impact",
+    impactDesc:    "Democratizes access to advanced AI tools, allowing users without deep technical knowledge to leverage community best practices.",
+    ctaLive:       "View Live App",
+    ctaCode:       "View Source Code",
+    features: [
+      { title: "Dynamic Variables",       description: "Parameterizable and reusable prompt system" },
+      { title: "Community Collaboration", description: "Platform to share and discover optimized prompts" },
+      { title: "Access Control",          description: "Granular public/private visibility management" },
+      { title: "Real-time Preview",       description: "Immediate visualization before saving or sharing" },
+    ],
+  },
+
+  experience: {
+    sectionTitle:    "Professional Experience",
+    sectionSubtitle: "9+ years combining commercial strategy with AI-specialized technology development",
+    current:         "Current",
+    keySkills:       "Key skills:",
+    calloutTitle:    "Strategic Transition to Technology",
+    calloutDesc:     "After 6 years leading commercial processes and optimizing distribution networks, I decided to apply this business knowledge to developing technological solutions. My experience in channel management and stakeholder management allows me to build AI tools that genuinely solve real business problems.",
+    items: [
+      {
+        title:     "Full Stack Developer & Product Owner",
+        company:   "Cargo Eléctric",
+        period:    "Sep 2025 - Present",
+        highlight: "Dual role: technical development and product management for an electric fleet logistics platform",
+        bullets: [
+          "Product Owner & Full Stack Developer for Next.js web app: end-to-end leadership from ideation to implementation of back office, billing, and administrative management features",
+          "Architecture and development of a scalable Firebase data model for full operational coverage of the company",
+          "Continuous improvement of existing mobile app (Ionic 7 + Angular 17) focused on optimizing real-time logistics route tracking",
+          "Development of analytical dashboards with Chart.js for last-mile performance metrics and strategic decision-making",
+          "Automation of critical processes: digital billing, operational reports for retail clients, and real-time fleet visibility",
+        ],
+        skills: ["Product Ownership", "Next.js", "Ionic 7", "Angular 17", "Firebase", "TypeScript", "Chart.js"],
+      },
+      {
+        title:     "AI Research Contributor",
+        company:   "Outlier",
+        period:    "Nov 2024 - Aug 2025",
+        highlight: "Evaluating leading AI models in the market",
+        bullets: [
+          "Direct evaluation of AI models such as GPT-4, Claude, and Gemini for enterprise use",
+          "Development of methodologies to measure performance and establish quality standards",
+          "Collaboration with international teams on prompt engineering best practices",
+          "Creation of specialized test cases for enterprise validation",
+          "Optimization of instructions to maximize effectiveness in business contexts",
+        ],
+        skills: ["Model Evaluation", "Prompt Engineering", "Quality Assurance", "International Collaboration"],
+      },
+      {
+        title:     "Full Stack Developer & QA Specialist",
+        company:   "Vemex Digital",
+        period:    "May - Dec 2024",
+        highlight: "Modern web development with a quality focus",
+        bullets: [
+          "Development of responsive web applications with React and Next.js following enterprise standards",
+          "Implementation of comprehensive testing and quality assurance strategies",
+          "Application optimization for maximum speed and scalability",
+          "Participation in code reviews and improvement of development standards",
+          "Full bug lifecycle management and issue resolution",
+        ],
+        skills: ["React", "Next.js", "TypeScript", "Testing", "Performance Optimization"],
+      },
+      {
+        title:     "Commercial Management & Channel Development",
+        company:   "Hikvision, Dahua, SSTT, Orama, Wetland",
+        period:    "2017 - 2023",
+        highlight: "6 years optimizing distribution networks and commercial channels",
+        bullets: [
+          "Direct management of national sub-distributor networks in the technology sector",
+          "Sales data analysis and channel behavior monitoring to optimize performance",
+          "Implementation of standardized processes in complex distribution ecosystems",
+          "Leadership of commercial projects including public tenders (Mercado Público)",
+          "Design and execution of technical training programs for teams and channel partners",
+          "International logistics management and coordination among multiple stakeholders",
+        ],
+        skills: ["Channel Management", "Data Analysis", "Process Optimization", "Project Leadership", "Stakeholder Management"],
+      },
+    ],
+  },
+
+  skills: {
+    sectionTitle:    "Technical Skills",
+    sectionSubtitle: "Verifiable skills developed through hands-on experience and real projects",
+    specialization:  "🎯 Specialization",
+    verifiedNote:    "All skills verifiable with real projects",
+    categories: [
+      {
+        title:       "AI Product Development",
+        description: "Hands-on experience building and integrating AI solutions",
+        highlight:   true,
+        skills: [
+          { name: "Specialized Prompt Engineering",        context: "The Prompt Academy + Outlier experience" },
+          { name: "React/Next.js/TypeScript Stack",        context: "Prompt Maker + Vemex Digital experience" },
+          { name: "Data Management with PostgreSQL/Prisma", context: "Architecture implemented in Prompt Maker" },
+          { name: "AI Integration",                        context: "Workflows with ChatGPT, Claude, and Gemini" },
+        ],
+      },
+      {
+        title:       "Technical Stack",
+        description: "Technologies with demonstrable hands-on experience",
+        highlight:   false,
+        skills: [
+          { name: "Next.js 15 & React 19",               context: "Prompt Maker + professional projects" },
+          { name: "TypeScript/JavaScript",                context: "All recent projects" },
+          { name: "PostgreSQL & Prisma ORM",              context: "Prompt Maker database" },
+          { name: "Tailwind CSS & UI Systems",            context: "Styling across all projects" },
+          { name: "Git/GitHub & Vercel",                  context: "Version control and deployment" },
+          { name: "Testing (Jest, React Testing Library)", context: "Vemex Digital experience" },
+        ],
+      },
+      {
+        title:       "Leadership & Management",
+        description: "Business and management competencies developed over time",
+        highlight:   false,
+        skills: [
+          { name: "Certified Scrum Master",               context: "Agile methodologies for tech teams" },
+          { name: "Commercial Channel Management",        context: "6 years leading distribution networks" },
+          { name: "Team Development",                     context: "Training programs and technology adoption" },
+          { name: "Commercial Data Analysis",             context: "Channel performance optimization" },
+        ],
+      },
+    ],
+  },
+
+  education: {
+    sectionTitle:    "Education",
+    sectionSubtitle: "Continuous learning as a pillar of professional development",
+    items: [
+      {
+        title:       "Diploma in Generative AI in Organizations",
+        institution: "Universidad de Chile, Faculty of Economics and Business",
+        period:      "Oct 2025 - Jan 2026",
+        description: "Specialized diploma in implementing generative AI solutions in enterprise contexts. Project development with LangChain, RAG systems (Retrieval Augmented Generation), LangGraph for agent orchestration, LangServe, and Docker deployment. Final project: conversational medical chatbot with multi-agent architecture, external API integration, and state management with PostgreSQL.",
+      },
+      {
+        title:       "Certified Web Developer",
+        institution: "Digital House Coding School",
+        period:      "Oct 2022 - Jul 2024",
+        description: "Interdisciplinary course covering Front End, Back End, Infrastructure, and databases. Also focused on soft skills such as learning agility, teamwork, and effective communication.",
+      },
+      {
+        title:       "Professional Scrum Master Certificate",
+        institution: "Certiprof",
+        period:      "July 2023",
+        description: "Certified Scrum Master course based on the official Scrum Guide (2020).",
+      },
+      {
+        title:       "Environmental Engineer",
+        institution: "Universidad de Falcón, Venezuela",
+        period:      "2009 - 2014",
+        description: "Graduated with honors for thesis titled: Assessment of the sandy beach status at Villa Marina - Punta Salina, Paraguaná, Venezuela, based on characterization of natural and anthropogenic factors.",
+      },
+    ],
+  },
+
+  contact: {
+    sectionTitle:    "Let's Work Together!",
+    sectionSubtitle: "Looking for a developer who combines business experience with AI expertise? Let's talk about how I can add value to your team.",
+    availableBadge:  "Open to new opportunities",
+    projectTitle:    "Have a project in mind?",
+    projectDesc:     "I'm looking for tech opportunities to apply my AI and development experience. Let's talk about how I can contribute to your vision!",
+    emailCta:        "Contact by Email",
+    whatsappCta:     "WhatsApp",
+    location:        "Location",
+    locationValue:   "Santiago, Chile",
+    locationNote:    "Hybrid work preferred",
+    availability:    "Availability",
+    availabilityVal: "Immediate",
+    availabilityNote: "Full-time or part-time",
+    cvTitle:         "Updated CV",
+    cvDesc:          "Download my full CV",
+    finalCta:        "🚀 Ready to build something amazing together?",
+    responseTime:    "I reply to all emails within 24 hours",
+    viewProfile:     "View profile",
+    viewCode:        "View code",
+    linkedin:        "Let's connect professionally",
+    github:          "Explore my code and repositories",
+  },
+
+  footer: {
+    rights: "All rights reserved.",
+  },
+
+  projects: {
+    sectionTitle:    "Other Projects",
+    sectionSubtitle: "Additional projects showcasing the breadth of my experience",
+    viewLive:        "View Live",
+    viewCode:        "View Code",
+    live:            "Live",
+    items: [
+      {
+        id:          "tuweben7dias",
+        title:       "Tu Web En 7 Días",
+        description: "Optimized landing page for lead capture for my web development service. Full system with functional forms, automated emails, and smart inter-page navigation. First commercial product developed and deployed in record time.",
+        category:    "Landing Page",
+      },
+      {
+        id:          "gabriel-colmenares-website",
+        title:       "Gabriel Colmenares - Personal Website",
+        description: "Personal website for a comedian built with a narrative focus and premium user experience. Full implementation with React, Next.js, and Framer Motion, including a modular component system, social media integration, and conversion-optimized responsive design.",
+        category:    "Personal Portfolio",
+      },
+    ],
+  },
+};

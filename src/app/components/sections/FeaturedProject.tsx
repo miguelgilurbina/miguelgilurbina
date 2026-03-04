@@ -4,149 +4,105 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ExternalLink, Github, Zap, Users, Shield, Code } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
+import { slideUp, staggerContainer, staggerItem } from "@/lib/animations";
+import promptMakerImage from "../../../../public/prompt-maker-image.png";
 
-import promptMakerImage from "../../../../public/prompt-maker-image.png"; // Agregar esta imagen
+const FEATURE_ICONS = [Zap, Users, Shield, Code];
+const TECH_STACK = ["Next.js 16", "React 19", "TypeScript", "PostgreSQL", "Prisma ORM", "Next-Auth"];
 
 export function FeaturedProject() {
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
-
-  const features = [
-    {
-      icon: Zap,
-      title: "Variables Dinámicas",
-      description: "Sistema de prompts parametrizables y reutilizables",
-    },
-    {
-      icon: Users,
-      title: "Colaboración Comunitaria",
-      description: "Plataforma para compartir y descubrir prompts optimizados",
-    },
-    {
-      icon: Shield,
-      title: "Control de Acceso",
-      description: "Gestión granular de visibilidad público/privado",
-    },
-    {
-      icon: Code,
-      title: "Preview en Tiempo Real",
-      description: "Visualización inmediata antes de guardar o compartir",
-    },
-  ];
-
-  const techStack = [
-    "Next.js 16",
-    "React 19",
-    "TypeScript",
-    "PostgreSQL",
-    "Prisma ORM",
-    "Next-Auth",
-  ];
+  const { t } = useLanguage();
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const fp = t.featuredProject;
 
   return (
     <section id="proyecto-destacado" className="mt-16 mb-16" ref={ref}>
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
+        variants={slideUp}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
       >
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            🚀 Proyecto Destacado
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Prompt Maker</h2>
+          <span className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
+            {fp.badge}
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{fp.title}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Plataforma que democratiza el acceso a herramientas de IA mediante
-            un repositorio colaborativo de prompts optimizados
+            {fp.description}
           </p>
         </div>
 
         {/* Main Project Card */}
-        <div className="bg-card border-2 border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mb-8">
-          {/* Project Image/Video Area */}
-          <div className="relative bg-gradient-to-br from-primary/5 to-secondary/5 p-4 md:p-8">
-            <div className="relative aspect-video bg-background rounded-lg border border-border overflow-hidden">
+        <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-warm-sm card-hover-glow mb-8">
+          {/* Image area */}
+          <div className="relative bg-gradient-to-br from-primary/5 to-accent/30 p-4 md:p-8">
+            <div className="relative aspect-video bg-background rounded-xl border border-border overflow-hidden">
               <Image
                 src={promptMakerImage}
-                alt="Vista previa de Prompt Maker"
+                alt={`${fp.title} preview`}
                 fill
-                className="object-cover hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 80vw"
               />
-
-              {/* Overlay gradient for better text readability if needed */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
             </div>
-
-            {/* Live/Status Badge */}
-            <div className="absolute top-4 right-4">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-600 text-sm font-medium border border-green-500/20">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                Live en producción
-              </div>
+            {/* Live badge */}
+            <div className="absolute top-6 right-6">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-500/10 text-green-600 text-sm font-medium border border-green-500/20">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                {fp.liveStatus}
+              </span>
             </div>
           </div>
 
-          {/* Project Content */}
-          <div className="p-8">
-            {/* Description */}
+          {/* Content */}
+          <div className="p-6 md:p-8">
+            {/* Problem */}
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4">
-                ¿Qué problema resuelve?
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Muchos usuarios encuentran barreras para aprovechar las
-                capacidades de la IA generativa. Prompt Maker elimina esta
-                fricción creando un ecosistema donde la comunidad puede
-                contribuir, descubrir y optimizar prompts para diferentes casos
-                de uso empresariales y personales.
-              </p>
+              <h3 className="text-xl font-semibold mb-3">{fp.problemTitle}</h3>
+              <p className="text-muted-foreground leading-relaxed">{fp.problemDesc}</p>
             </div>
 
-            {/* Features Grid */}
+            {/* Features */}
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-6">
-                Características principales
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {features.map((feature, index) => {
-                  const Icon = feature.icon;
+              <h3 className="text-xl font-semibold mb-5">{fp.featuresTitle}</h3>
+              <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 gap-3"
+                variants={staggerContainer}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+              >
+                {fp.features.map((feature, i) => {
+                  const Icon = FEATURE_ICONS[i];
                   return (
                     <motion.div
                       key={feature.title}
-                      className="flex items-start space-x-3 p-4 rounded-lg bg-background border border-border hover:border-primary/20 transition-colors"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={inView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.4, delay: 0.1 * index }}
+                      variants={staggerItem}
+                      className="flex items-start gap-3 p-4 rounded-xl bg-background border border-border hover:border-primary/25 transition-colors card-hover-glow"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-5 h-5 text-primary" />
+                      <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-4 h-4 text-primary" />
                       </div>
                       <div>
-                        <h4 className="font-medium text-sm mb-1">
-                          {feature.title}
-                        </h4>
-                        <p className="text-xs text-muted-foreground">
-                          {feature.description}
-                        </p>
+                        <h4 className="font-medium text-sm mb-0.5">{feature.title}</h4>
+                        <p className="text-xs text-muted-foreground">{feature.description}</p>
                       </div>
                     </motion.div>
                   );
                 })}
-              </div>
+              </motion.div>
             </div>
 
             {/* Tech Stack */}
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4">Stack Tecnológico</h3>
+              <h3 className="text-xl font-semibold mb-4">{fp.stackTitle}</h3>
               <div className="flex flex-wrap gap-2">
-                {techStack.map((tech) => (
+                {TECH_STACK.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full border border-border"
+                    className="px-3 py-1 bg-accent text-accent-foreground text-sm rounded-full border border-primary/15 font-medium"
                   >
                     {tech}
                   </span>
@@ -154,39 +110,36 @@ export function FeaturedProject() {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
+            {/* Actions */}
+            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <motion.a
                 href="https://prompt-maker-steel.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-primary text-primary-foreground font-semibold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors group flex-1"
+                className="inline-flex items-center justify-center bg-primary text-primary-foreground font-semibold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors group flex-1 shadow-indigo-sm"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <ExternalLink className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                Ver Aplicación Live
-              </a>
-
-              <a
+                {fp.ctaLive}
+              </motion.a>
+              <motion.a
                 href="https://github.com/miguelgilurbina/prompt-maker"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center border border-border font-semibold py-3 px-6 rounded-lg hover:bg-accent transition-colors group flex-1"
+                className="inline-flex items-center justify-center border border-border font-semibold py-3 px-6 rounded-lg hover:bg-accent hover:border-primary/25 transition-colors group flex-1"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <Github className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
-                Ver Código Fuente
-              </a>
+                {fp.ctaCode}
+              </motion.a>
             </div>
 
-            {/* Impact Statement */}
-            <div className="mt-8 p-4 bg-primary/5 border border-primary/10 rounded-lg">
-              <p className="text-sm font-medium text-primary mb-1">
-                💡 Impacto del proyecto
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Democratiza el acceso a herramientas de IA avanzadas,
-                permitiendo que usuarios sin conocimientos técnicos profundos
-                aprovechen las mejores prácticas de la comunidad.
-              </p>
+            {/* Impact */}
+            <div className="p-4 bg-primary/5 border border-primary/15 rounded-xl">
+              <p className="text-sm font-medium text-primary mb-1">{fp.impactTitle}</p>
+              <p className="text-sm text-muted-foreground">{fp.impactDesc}</p>
             </div>
           </div>
         </div>
