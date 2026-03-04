@@ -156,6 +156,32 @@ export const es = {
   education: {
     sectionTitle:   "Formación",
     sectionSubtitle: "Aprendizaje continuo como pilar del desarrollo profesional",
+    items: [
+      {
+        title:       "Diplomado en IA Generativa en Organizaciones",
+        institution: "Universidad de Chile, Facultad de Economía y Negocios",
+        period:      "Oct 2025 - Ene 2026",
+        description: "Diplomado especializado en implementación de soluciones de IA generativa en contextos empresariales. Desarrollo de proyectos con LangChain, sistemas RAG (Retrieval Augmented Generation), LangGraph para orquestación de agentes, LangServe, y despliegue con Docker. Proyecto final: chatbot médico conversacional con arquitectura multi-agente, integración de APIs externas, y gestión de estado con PostgreSQL.",
+      },
+      {
+        title:       "Certified Web Developer",
+        institution: "Digital House Coding School",
+        period:      "Oct 2022 - Jul 2024",
+        description: "Curso interdisciplinario que cubre desarrollo Front End, Back End, Infraestructura y bases de datos. También se enfoca en habilidades blandas como agilidad de aprendizaje, trabajo en equipo y comunicación efectiva.",
+      },
+      {
+        title:       "Certificado Profesional de Scrum Master",
+        institution: "Certiprof",
+        period:      "Julio 2023",
+        description: "Curso certificado de Scrum Master, basado en la guía oficial de Scrum (2020).",
+      },
+      {
+        title:       "Ingeniero Ambiental",
+        institution: "Universidad de Falcón, Venezuela",
+        period:      "2009 - 2014",
+        description: "Egresado con reconocimiento por trabajo de grado titulado: Evaluación del estado de la playa arenosa de Villa Marina - Punta Salina, Paraguaná, Venezuela, en base a la caracterización de los factores naturales y antropogénicos con mención honorífica.",
+      },
+    ],
   },
 
   contact: {
@@ -192,6 +218,20 @@ export const es = {
     viewLive:       "Ver Live",
     viewCode:       "Ver Código",
     live:           "Live",
+    items: [
+      {
+        id:          "tuweben7dias",
+        title:       "Tu Web En 7 Días",
+        description: "Landing page optimizada para captura de leads de mi servicio de desarrollo web. Sistema completo con formularios funcionales, emails automáticos y navegación inteligente entre páginas. Primer producto comercial desarrollado y desplegado en tiempo récord.",
+        category:    "Landing Page",
+      },
+      {
+        id:          "gabriel-colmenares-website",
+        title:       "Gabriel Colmenares - Sitio Web Personal",
+        description: "Sitio web personal para comediante desarrollado con enfoque narrativo y experiencia de usuario premium. Implementación completa con React, Next.js y Framer Motion, incluyendo sistema de componentes modulares, integración de redes sociales y diseño responsive optimizado para conversión.",
+        category:    "Portfolio Personal",
+      },
+    ],
   },
 };
 

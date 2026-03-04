@@ -158,6 +158,32 @@ export const en: Translations = {
   education: {
     sectionTitle:    "Education",
     sectionSubtitle: "Continuous learning as a pillar of professional development",
+    items: [
+      {
+        title:       "Diploma in Generative AI in Organizations",
+        institution: "Universidad de Chile, Faculty of Economics and Business",
+        period:      "Oct 2025 - Jan 2026",
+        description: "Specialized diploma in implementing generative AI solutions in enterprise contexts. Project development with LangChain, RAG systems (Retrieval Augmented Generation), LangGraph for agent orchestration, LangServe, and Docker deployment. Final project: conversational medical chatbot with multi-agent architecture, external API integration, and state management with PostgreSQL.",
+      },
+      {
+        title:       "Certified Web Developer",
+        institution: "Digital House Coding School",
+        period:      "Oct 2022 - Jul 2024",
+        description: "Interdisciplinary course covering Front End, Back End, Infrastructure, and databases. Also focused on soft skills such as learning agility, teamwork, and effective communication.",
+      },
+      {
+        title:       "Professional Scrum Master Certificate",
+        institution: "Certiprof",
+        period:      "July 2023",
+        description: "Certified Scrum Master course based on the official Scrum Guide (2020).",
+      },
+      {
+        title:       "Environmental Engineer",
+        institution: "Universidad de Falcón, Venezuela",
+        period:      "2009 - 2014",
+        description: "Graduated with honors for thesis titled: Assessment of the sandy beach status at Villa Marina - Punta Salina, Paraguaná, Venezuela, based on characterization of natural and anthropogenic factors.",
+      },
+    ],
   },
 
   contact: {
@@ -194,5 +220,19 @@ export const en: Translations = {
     viewLive:        "View Live",
     viewCode:        "View Code",
     live:            "Live",
+    items: [
+      {
+        id:          "tuweben7dias",
+        title:       "Tu Web En 7 Días",
+        description: "Optimized landing page for lead capture for my web development service. Full system with functional forms, automated emails, and smart inter-page navigation. First commercial product developed and deployed in record time.",
+        category:    "Landing Page",
+      },
+      {
+        id:          "gabriel-colmenares-website",
+        title:       "Gabriel Colmenares - Personal Website",
+        description: "Personal website for a comedian built with a narrative focus and premium user experience. Full implementation with React, Next.js, and Framer Motion, including a modular component system, social media integration, and conversion-optimized responsive design.",
+        category:    "Personal Portfolio",
+      },
+    ],
   },
 };
