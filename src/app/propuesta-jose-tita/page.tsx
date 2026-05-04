@@ -236,75 +236,53 @@ export default function PropuestaJoseTita() {
       <section className={s.precios} id="precios">
         <div className={`${s.container} ${s.fadeIn}`}>
           <div className={s.goldLine} />
-          <h2 className={s.sectionTitle}>Tres opciones. <em>Una sola decisión.</em></h2>
+          <h2 className={s.sectionTitle}>La propuesta. <em>Simple y directa.</em></h2>
           <p className={`${s.sectionLead} ${s.sans}`}>
-            Sin letra chica. Sin permanencia indefinida. Comenzamos con lo que tenga sentido para ustedes.
+            Un primer proyecto acotado para demostrar el valor antes de cualquier compromiso mayor.
           </p>
-          <div className={s.preciosGrid}>
 
-            {/* Opción B */}
-            <div className={s.precioCard}>
-              <div className={s.precioHead}>
-                <span className={s.precioBadge}>Opción B</span>
-                <div className={s.precioNombre}>Por proyecto</div>
-                <div className={s.precioDesc}>Precio fijo por cada fase. Sin compromiso de continuidad.</div>
-              </div>
-              <div className={s.precioBody}>
-                <div className={s.precioValor}>$8M – $14M</div>
-                <div className={`${s.precioMoneda} ${s.sans}`}>CLP por fase completada · IVA incluido</div>
-                <ul className={s.precioFeatures}>
-                  <li>Ideal para comenzar sin compromiso largo</li>
-                  <li>50% al inicio, 50% contra entrega</li>
-                  <li>Cada fase es un contrato independiente</li>
-                  <li>Entregables claros antes de pagar</li>
-                </ul>
+          <div className={s.precioUnico}>
+            <div className={s.precioUnicoHead}>
+              <span className={s.precioBadge}>Proyecto inicial · 1 mes</span>
+              <div className={s.precioUnicoValor}>$500.000</div>
+              <div className={s.precioUnicoSub}>CLP + IVA</div>
+              <div className={s.pagoSteps}>
+                <div className={s.pagoStep}>
+                  <div className={s.pagoPct}>50%</div>
+                  <div className={s.pagoAmt}>$250.000</div>
+                  <div className={s.pagoLbl}>Al inicio</div>
+                </div>
+                <div className={s.pagoDivider}>→</div>
+                <div className={s.pagoStep}>
+                  <div className={s.pagoPct}>50%</div>
+                  <div className={s.pagoAmt}>$250.000</div>
+                  <div className={s.pagoLbl}>Al finalizar las 4 semanas</div>
+                </div>
               </div>
             </div>
-
-            {/* Opción A — Recomendada */}
-            <div className={`${s.precioCard} ${s.featured}`}>
-              <div className={s.precioHead}>
-                <span className={s.precioBadge}>★ Recomendado · Opción A</span>
-                <div className={s.precioNombre}>Asesoría continua</div>
-                <div className={s.precioDesc}>Reunión semanal + soporte permanente + entregables recurrentes.</div>
+            <div className={s.precioUnicoBody}>
+              <div className={s.precioUnicoItem}>
+                <span className={s.precioUnicoCheck}>✓</span>
+                <span>Una visita semanal de media jornada durante un mes</span>
               </div>
-              <div className={s.precioBody}>
-                <div className={s.precioValor}>$3,5M – $4,5M</div>
-                <div className={`${s.precioMoneda} ${s.sans}`}>CLP al mes · IVA incluido</div>
-                <ul className={s.precioFeatures}>
-                  <li>Compromiso inicial de 3 meses</li>
-                  <li>Reunión semanal fija con José</li>
-                  <li>Soporte prioritario ante cualquier duda</li>
-                  <li>Ajustes y mejoras continuas sin costo extra</li>
-                  <li>El consultor está disponible, no solo cuando hay proyecto</li>
-                </ul>
+              <div className={s.precioUnicoItem}>
+                <span className={s.precioUnicoCheck}>✓</span>
+                <span>Configuramos el sistema de búsqueda automática de remates</span>
+              </div>
+              <div className={s.precioUnicoItem}>
+                <span className={s.precioUnicoCheck}>✓</span>
+                <span>Al final del mes, José tiene el primer reporte semanal funcionando</span>
+              </div>
+              <div className={s.precioUnicoItem}>
+                <span className={s.precioUnicoCheck}>✓</span>
+                <span>Sin compromiso de continuidad — seguimos si tiene sentido</span>
               </div>
             </div>
-
-            {/* Opción C */}
-            <div className={s.precioCard}>
-              <div className={s.precioHead}>
-                <span className={s.precioBadge}>Opción C</span>
-                <div className={s.precioNombre}>Modelo mixto</div>
-                <div className={s.precioDesc}>Retainer reducido + tarifa por proyecto específico.</div>
-              </div>
-              <div className={s.precioBody}>
-                <div className={s.precioValor}>$2M / mes</div>
-                <div className={`${s.precioMoneda} ${s.sans}`}>+ $3M por proyecto adicional · IVA incluido</div>
-                <ul className={s.precioFeatures}>
-                  <li>Mínimo 2 meses de retainer</li>
-                  <li>Flexibilidad para escalar en el tiempo</li>
-                  <li>Buen punto de entrada si hay dudas del alcance</li>
-                  <li>Se ajusta a medida que crece la relación</li>
-                </ul>
-              </div>
-            </div>
-
           </div>
+
           <p className={`${s.precioNota} ${s.sans}`}>
-            Todos los valores en pesos chilenos. Pago mensual anticipado vía transferencia bancaria.
-            La Opción A es la recomendada porque alinea los incentivos: el consultor gana cuando
-            José gana, no solo cuando entrega un proyecto puntual.
+            Si al terminar el mes el sistema entrega valor real, conversamos cómo continuar.
+            Si no, no hay más que hablar.
           </p>
         </div>
       </section>
@@ -359,12 +337,15 @@ export default function PropuestaJoseTita() {
           </p>
           <div className={s.ctaButtons}>
             <a
-              href="mailto:miguel.gil.9210@gmail.com?subject=Consultor%C3%ADa%20IA%20-%20Propuesta%20Jos%C3%A9"
+              href="https://wa.me/56977221088?text=Hola%20Miguel%2C%20vi%20tu%20propuesta%20y%20quiero%20agendar%20una%20reuni%C3%B3n."
               className={s.btnPrimary}
             >
               Agendar reunión de seguimiento
             </a>
             <a href="#fases" className={s.btnSecondary}>Revisar las fases</a>
+          </div>
+          <div className={s.ctaPhone}>
+            <a href="tel:+56977221088">+56 9 7722 1088</a>
           </div>
           <div className={s.ctaFootnote}>
             Esta propuesta tiene validez de 30 días desde su emisión.<br />

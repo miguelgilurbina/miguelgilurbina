@@ -565,6 +565,22 @@
   transform: translateY(-1px);
 }
 
+.ctaPhone {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 16px;
+}
+
+.ctaPhone a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.ctaPhone a:hover {
+  text-decoration: underline;
+}
+
 .ctaNote {
   font-size: 0.82rem;
   color: var(--muted);

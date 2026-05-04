@@ -275,11 +275,14 @@ export default function PropuestaDobleCilindro() {
           <h2>¿Te interesa? Hablemos.</h2>
           <p>Escribime y coordinamos una llamada corta para ver si encajamos.</p>
           <a
-            href="mailto:miguel.gil.9210@gmail.com?subject=Propuesta%20web%20%E2%80%94%20quiero%20saber%20m%C3%A1s"
+            href="https://wa.me/56977221088?text=Hola%20Miguel%2C%20vi%20tu%20propuesta%20y%20quiero%20saber%20m%C3%A1s."
             className={s.btnMain}
           >
             Escribir a miguel.gil.9210@gmail.com
           </a>
+          <div className={s.ctaPhone}>
+            o llamar al <a href="tel:+56977221088">+56 9 7722 1088</a>
+          </div>
           <div className={s.ctaNote}>Propuesta válida por 30 días · Mayo 2026</div>
         </div>
       </div>
