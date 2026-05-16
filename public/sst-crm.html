@@ -24,8 +24,6 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--dark); color: var(--text); line-height: 1.6; }
-
-  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,17,23,0.92); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--border); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
   .nav-logo { display: flex; align-items: center; gap: 10px; }
   .nav-logo-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--red); display: flex; align-items: center; justify-content: center; }
@@ -34,8 +32,6 @@
   .nav-brand span { color: var(--red); }
   .nav-cta { background: var(--red); color: #fff; padding: 8px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s; }
   .nav-cta:hover { background: var(--red-dark); }
-
-  /* HERO */
   .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 100px 40px 80px; background: var(--dark); position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(200,16,46,0.08) 0%, transparent 70%); pointer-events: none; }
   .hero-inner { max-width: 900px; text-align: center; }
@@ -52,26 +48,19 @@
   .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
   .btn-secondary { background: transparent; color: var(--text); padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 600; border: 0.5px solid rgba(255,255,255,0.2); cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
   .btn-secondary:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.04); }
-  .hero-scroll { margin-top: 60px; color: var(--muted); font-size: 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
   .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(200,16,46,0.6), transparent); }
-
-  /* SECTION BASE */
   section { padding: 90px 40px; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-tag { font-size: 11px; color: var(--red); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
   .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -1px; color: #fff; margin-bottom: 16px; line-height: 1.1; }
   .section-title span { color: var(--red); }
   .section-sub { font-size: 17px; color: var(--muted); max-width: 580px; line-height: 1.65; margin-bottom: 56px; }
-
-  /* PROBLEMA */
   .problema { background: var(--dark2); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
   .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
   .pain-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 22px 24px; }
   .pain-icon { width: 38px; height: 38px; border-radius: 8px; background: rgba(200,16,46,0.1); border: 0.5px solid var(--border-red); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; font-size: 18px; }
   .pain-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
   .pain-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-  /* MODULOS */
   .modulos { background: var(--dark); }
   .mod-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
   .mod-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 22px 24px; transition: border-color 0.2s; }
@@ -80,8 +69,6 @@
   .mod-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
   .mod-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
   .mod-badge { display: inline-flex; align-items: center; gap: 4px; background: rgba(200,16,46,0.1); border: 0.5px solid var(--border-red); border-radius: 10px; padding: 2px 8px; font-size: 10px; color: #e84060; margin-top: 10px; font-weight: 500; }
-
-  /* CASA */
   .casa { background: var(--navy); border-top: 0.5px solid rgba(255,255,255,0.06); border-bottom: 0.5px solid rgba(255,255,255,0.06); }
   .casa-intro { font-size: 19px; color: rgba(255,255,255,0.75); line-height: 1.7; max-width: 680px; margin-bottom: 56px; font-style: italic; border-left: 3px solid var(--red); padding-left: 20px; }
   .casa-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; }
@@ -89,12 +76,9 @@
   .casa-step { text-align: center; padding: 0 20px; position: relative; z-index: 1; }
   .casa-step-num { width: 72px; height: 72px; border-radius: 50%; background: var(--dark); border: 2px solid var(--red); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; flex-direction: column; gap: 2px; }
   .casa-step-icon { font-size: 24px; }
-  .casa-step-label { font-size: 9px; color: var(--red); font-weight: 700; letter-spacing: 0.1em; }
   .casa-step-title { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px; }
   .casa-step-phase { font-size: 11px; color: var(--red); font-weight: 600; margin-bottom: 10px; }
   .casa-step-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.65; }
-
-  /* DASHBOARD */
   .dashboard-section { background: var(--dark2); border-top: 0.5px solid var(--border); }
   .db-wrap { border-radius: 14px; overflow: hidden; border: 0.5px solid var(--border-red); box-shadow: 0 0 60px rgba(200,16,46,0.08); }
   .db-hdr { background: var(--navy); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--red); }
@@ -143,8 +127,6 @@
   .ar-txt { font-size: 10px; color: rgba(255,255,255,0.5); line-height: 1.5; }
   .ar-time { font-size: 9px; color: rgba(255,255,255,0.25); }
   .db-slabel { font-size: 11px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
-
-  /* MIGUEL */
   .miguel { background: var(--dark); }
   .miguel-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .miguel-left .tag { font-size: 11px; color: var(--red); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
@@ -163,8 +145,6 @@
   .proof-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(200,16,46,0.1); border: 0.5px solid var(--border-red); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
   .proof-title { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 3px; }
   .proof-desc { font-size: 12px; color: var(--muted); }
-
-  /* CTA FINAL */
   .cta-final { background: var(--navy); border-top: 0.5px solid rgba(255,255,255,0.07); text-align: center; }
   .cta-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(200,16,46,0.1); border: 0.5px solid var(--border-red); border-radius: 20px; padding: 6px 16px; font-size: 12px; color: #e84060; font-weight: 500; margin-bottom: 28px; }
   .cta-final h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: #fff; letter-spacing: -1.5px; margin-bottom: 14px; line-height: 1.1; }
@@ -172,33 +152,22 @@
   .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .cta-price { margin-top: 24px; font-size: 14px; color: rgba(255,255,255,0.3); }
   .cta-price strong { color: rgba(255,255,255,0.6); }
-
-  /* FOOTER */
   footer { background: var(--dark); border-top: 0.5px solid var(--border); padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; }
   .footer-brand { font-size: 13px; color: var(--muted); }
   .footer-brand strong { color: rgba(255,255,255,0.5); }
   .footer-links { display: flex; gap: 20px; }
   .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; }
   .footer-links a:hover { color: var(--red); }
-
   @media (max-width: 768px) {
-    nav { padding: 0 20px; }
-    section { padding: 70px 20px; }
-    .hero { padding: 100px 20px 70px; }
-    .casa-steps { grid-template-columns: 1fr; }
-    .casa-steps::before { display: none; }
-    .casa-step { margin-bottom: 32px; }
+    nav { padding: 0 20px; } section { padding: 70px 20px; } .hero { padding: 100px 20px 70px; }
+    .casa-steps { grid-template-columns: 1fr; } .casa-steps::before { display: none; } .casa-step { margin-bottom: 32px; }
     .miguel-inner { grid-template-columns: 1fr; gap: 40px; }
-    .db-metrics { grid-template-columns: repeat(2, 1fr); }
-    .db-pipeline { grid-template-columns: repeat(2, 1fr); }
-    .db-bottom { grid-template-columns: 1fr; }
+    .db-metrics { grid-template-columns: repeat(2, 1fr); } .db-pipeline { grid-template-columns: repeat(2, 1fr); } .db-bottom { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 12px; text-align: center; }
   }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
   <div class="nav-logo">
     <div class="nav-logo-mark"><span>SST</span></div>
@@ -206,8 +175,6 @@
   </div>
   <a href="#cta" class="nav-cta">Quiero la oferta</a>
 </nav>
-
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-eyebrow">Sistema construido para OTECs — no adaptado</div>
@@ -223,314 +190,117 @@
       <a href="#cta" class="btn-primary">Quiero la oferta →</a>
       <a href="#dashboard" class="btn-secondary">Ver el sistema</a>
     </div>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-    </div>
+    <div style="margin-top:60px;display:flex;flex-direction:column;align-items:center"><div class="scroll-line"></div></div>
   </div>
 </section>
-
-<!-- PROBLEMA -->
 <section class="problema">
   <div class="section-inner">
     <div class="section-tag">El problema actual</div>
     <h2 class="section-title">Cada cotización <span>cuesta horas.</span><br/>Y eso tiene un precio.</h2>
     <p class="section-sub">El flujo manual de SST funciona — pero tiene un costo oculto que crece con cada requerimiento perdido.</p>
     <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">📥</div>
-        <div class="pain-title">Requerimientos en Excel</div>
-        <div class="pain-desc">Los archivos llegan desde Red de Capacitaciones y alguien los procesa a mano, uno por uno, buscando duplicados sin herramientas.</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">📊</div>
-        <div class="pain-title">Cotizaciones en PowerPoint</div>
-        <div class="pain-desc">Cada propuesta se construye desde cero en PPT. Sin código correlativo, sin control de versiones, sin subcotizaciones por alternativa.</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">📧</div>
-        <div class="pain-title">Seguimiento por correo</div>
-        <div class="pain-desc">El estado de cada requerimiento vive en bandejas de entrada. No hay pipeline visible, no hay historial, no hay alertas de seguimiento.</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">📉</div>
-        <div class="pain-title">Sin visión ejecutiva</div>
-        <div class="pain-desc">El director no puede ver el pipeline en tiempo real. No hay métricas de conversión, ni revenue proyectado, ni cursos más solicitados del mes.</div>
-      </div>
+      <div class="pain-card"><div class="pain-icon">📥</div><div class="pain-title">Requerimientos en Excel</div><div class="pain-desc">Los archivos llegan desde Red de Capacitaciones y alguien los procesa a mano, uno por uno, buscando duplicados sin herramientas.</div></div>
+      <div class="pain-card"><div class="pain-icon">📊</div><div class="pain-title">Cotizaciones en PowerPoint</div><div class="pain-desc">Cada propuesta se construye desde cero en PPT. Sin código correlativo, sin control de versiones, sin subcotizaciones por alternativa.</div></div>
+      <div class="pain-card"><div class="pain-icon">📧</div><div class="pain-title">Seguimiento por correo</div><div class="pain-desc">El estado de cada requerimiento vive en bandejas de entrada. No hay pipeline visible, no hay historial, no hay alertas de seguimiento.</div></div>
+      <div class="pain-card"><div class="pain-icon">📉</div><div class="pain-title">Sin visión ejecutiva</div><div class="pain-desc">El director no puede ver el pipeline en tiempo real. No hay métricas de conversión, ni revenue proyectado, ni cursos más solicitados del mes.</div></div>
     </div>
   </div>
 </section>
-
-<!-- MÓDULOS -->
 <section class="modulos" id="modulos">
   <div class="section-inner">
     <div class="section-tag">La solución</div>
     <h2 class="section-title">8 módulos. <span>Un solo flujo.</span><br/>Construido para SST.</h2>
     <p class="section-sub">Cada módulo resuelve una parte específica del proceso real — no una funcionalidad genérica de CRM que hay que adaptar.</p>
     <div class="mod-grid">
-      <div class="mod-card">
-        <div class="mod-num">01</div>
-        <div class="mod-title">Importador de Red de Capacitaciones</div>
-        <div class="mod-desc">Lee automáticamente los archivos .xls exportados desde Red de Capacitaciones. Detecta duplicados por huella digital y añade solo los requerimientos nuevos al pipeline.</div>
-      </div>
-      <div class="mod-card">
-        <div class="mod-num">02</div>
-        <div class="mod-title">Pipeline kanban de 5 etapas</div>
-        <div class="mod-desc">Tablero visual con etapas: Recibido → Contacto → Cotización → Especial → Cerrado. Cada tarjeta captura timestamps, estados internos y tags sin exponer complejidad innecesaria.</div>
-      </div>
-      <div class="mod-card">
-        <div class="mod-num">03</div>
-        <div class="mod-title">Módulo de cotizaciones</div>
-        <div class="mod-desc">Genera cotizaciones con código correlativo (COT-2026-XXXX) y subcotizaciones por alternativa (-01, -02, -03). Incluye precio, costos directos, margen, comisión y rentabilidad estimada.</div>
-      </div>
-      <div class="mod-card">
-        <div class="mod-num">04</div>
-        <div class="mod-title">Base de cursos y relatores</div>
-        <div class="mod-desc">Catálogo de cursos con códigos SENCE, modalidad, distinción codificado/no codificado y temarios. Base de instructores para estimación de costos por requerimiento.</div>
-      </div>
-      <div class="mod-card">
-        <div class="mod-num">05</div>
-        <div class="mod-title">Output PDF o HTML flexible</div>
-        <div class="mod-desc">Genera la cotización final en el formato que prefiera SST: PDF con identidad visual de la empresa o página HTML equivalente. El formato se ajusta sin cambios de código.</div>
-      </div>
-      <div class="mod-card">
-        <div class="mod-num">06</div>
-        <div class="mod-title">Asistente IA integrado</div>
-        <div class="mod-desc">Convierte correos y mensajes de WhatsApp en requerimientos listos para cotizar. Mejora el texto comercial de las propuestas y genera automáticamente el cuerpo del correo.</div>
-        <div class="mod-badge">✦ Claude API</div>
-      </div>
-      <div class="mod-card">
-        <div class="mod-num">07</div>
-        <div class="mod-title">Dashboard ejecutivo</div>
-        <div class="mod-desc">Vista gerencial en tiempo real: pipeline por etapa, tasa de conversión, cursos más solicitados, revenue proyectado y cerrado, y actividad reciente del equipo.</div>
-      </div>
-      <div class="mod-card">
-        <div class="mod-num">08</div>
-        <div class="mod-title">Autenticación y roles</div>
-        <div class="mod-desc">Login seguro con roles diferenciados: Administrador, Coordinador y Director. Cada uno con permisos y vistas adaptadas a su función dentro de SST.</div>
-      </div>
+      <div class="mod-card"><div class="mod-num">01</div><div class="mod-title">Importador de Red de Capacitaciones</div><div class="mod-desc">Lee automáticamente los archivos .xls exportados desde Red de Capacitaciones. Detecta duplicados por huella digital y añade solo los requerimientos nuevos al pipeline.</div></div>
+      <div class="mod-card"><div class="mod-num">02</div><div class="mod-title">Pipeline kanban de 5 etapas</div><div class="mod-desc">Tablero visual: Recibido → Contacto → Cotización → Especial → Cerrado. Cada tarjeta captura timestamps, estados internos y tags sin exponer complejidad innecesaria.</div></div>
+      <div class="mod-card"><div class="mod-num">03</div><div class="mod-title">Módulo de cotizaciones</div><div class="mod-desc">Genera cotizaciones con código correlativo (COT-2026-XXXX) y subcotizaciones por alternativa (-01, -02, -03). Incluye precio, costos directos, margen, comisión y rentabilidad estimada.</div></div>
+      <div class="mod-card"><div class="mod-num">04</div><div class="mod-title">Base de cursos y relatores</div><div class="mod-desc">Catálogo de cursos con códigos SENCE, modalidad, distinción codificado/no codificado y temarios. Base de instructores para estimación de costos por requerimiento.</div></div>
+      <div class="mod-card"><div class="mod-num">05</div><div class="mod-title">Output PDF o HTML flexible</div><div class="mod-desc">Genera la cotización final en el formato que prefiera SST: PDF con identidad visual de la empresa o página HTML equivalente. El formato se ajusta sin cambios de código.</div></div>
+      <div class="mod-card"><div class="mod-num">06</div><div class="mod-title">Asistente IA integrado</div><div class="mod-desc">Convierte correos y mensajes de WhatsApp en requerimientos listos para cotizar. Mejora el texto comercial de las propuestas y genera automáticamente el cuerpo del correo.</div><div class="mod-badge">✦ Claude API</div></div>
+      <div class="mod-card"><div class="mod-num">07</div><div class="mod-title">Dashboard ejecutivo</div><div class="mod-desc">Vista gerencial en tiempo real: pipeline por etapa, tasa de conversión, cursos más solicitados, revenue proyectado y cerrado, y actividad reciente del equipo.</div></div>
+      <div class="mod-card"><div class="mod-num">08</div><div class="mod-title">Autenticación y roles</div><div class="mod-desc">Login seguro con roles diferenciados: Administrador, Coordinador y Director. Cada uno con permisos y vistas adaptadas a su función dentro de SST.</div></div>
     </div>
   </div>
 </section>
-
-<!-- CASA -->
 <section class="casa">
   <div class="section-inner">
     <div class="section-tag">Cómo se construye</div>
     <h2 class="section-title">Construir software<br/>es como <span>construir una casa.</span></h2>
     <p class="casa-intro">"Antes de ver el resultado, hay que cimentar, cablear, diseñar y decorar. Cada etapa tiene su orden y su propósito. Así es como se levanta el sistema CRM de SST de Chile."</p>
     <div class="casa-steps">
-      <div class="casa-step">
-        <div class="casa-step-num">
-          <div class="casa-step-icon">📐</div>
-        </div>
-        <div class="casa-step-phase">Semanas 1–3</div>
-        <div class="casa-step-title">El plano y los permisos</div>
-        <div class="casa-step-desc">Planificación y arquitectura. Antes de poner un ladrillo, sabemos exactamente qué vamos a construir. Levantamos el flujo real de SST, mapeamos cada requerimiento y diseñamos la arquitectura completa del sistema.</div>
-      </div>
-      <div class="casa-step">
-        <div class="casa-step-num">
-          <div class="casa-step-icon">🔧</div>
-        </div>
-        <div class="casa-step-phase">Semanas 4–8</div>
-        <div class="casa-step-title">La plomería y el cableado</div>
-        <div class="casa-step-desc">Base de datos y motor del negocio. Todo lo invisible que hace funcionar la casa. La base de datos, la lógica que importa el Excel de Red de Capacitaciones, calcula márgenes y mueve los datos donde deben estar.</div>
-      </div>
-      <div class="casa-step">
-        <div class="casa-step-num">
-          <div class="casa-step-icon">🎨</div>
-        </div>
-        <div class="casa-step-phase">Semanas 9–12</div>
-        <div class="casa-step-title">El diseño interior</div>
-        <div class="casa-step-desc">Interfaz y experiencia de uso. La pintura, los pisos, la disposición de los ambientes. El tablero kanban del pipeline, los formularios de cotización, la vista ejecutiva — lo que hace que trabajar en el sistema se sienta natural.</div>
-      </div>
+      <div class="casa-step"><div class="casa-step-num"><div class="casa-step-icon">📐</div></div><div class="casa-step-phase">Semanas 1–3</div><div class="casa-step-title">El plano y los permisos</div><div class="casa-step-desc">Planificación y arquitectura. Levantamos el flujo real de SST, mapeamos cada requerimiento y diseñamos la arquitectura completa del sistema.</div></div>
+      <div class="casa-step"><div class="casa-step-num"><div class="casa-step-icon">🔧</div></div><div class="casa-step-phase">Semanas 4–8</div><div class="casa-step-title">La plomería y el cableado</div><div class="casa-step-desc">Base de datos y motor del negocio. La lógica que importa el Excel de Red de Capacitaciones, calcula márgenes y mueve los datos donde deben estar.</div></div>
+      <div class="casa-step"><div class="casa-step-num"><div class="casa-step-icon">🎨</div></div><div class="casa-step-phase">Semanas 9–12</div><div class="casa-step-title">El diseño interior</div><div class="casa-step-desc">Interfaz y experiencia de uso. El tablero kanban del pipeline, los formularios de cotización, la vista ejecutiva — lo que hace que trabajar en el sistema se sienta natural.</div></div>
     </div>
   </div>
 </section>
-
-<!-- DASHBOARD -->
 <section class="dashboard-section" id="dashboard">
   <div class="section-inner">
     <div class="section-tag">Vista previa del sistema</div>
     <h2 class="section-title">El dashboard que <span>Eric verá</span><br/>desde el primer día.</h2>
     <p class="section-sub" style="margin-bottom:40px;">Visión gerencial completa del negocio en tiempo real — sin exportar a Excel, sin preguntar al equipo.</p>
-
     <div class="db-wrap">
-      <!-- header -->
       <div class="db-hdr">
-        <div class="db-logo-wrap">
-          <div class="db-logo-circle">SST</div>
-          <div class="db-logo-text">
-            <div class="cap">Capacitaciones</div>
-            <div class="brand">SST <em>DE CHILE</em></div>
-          </div>
-        </div>
-        <div class="db-user">
-          <div style="text-align:right">
-            <div class="db-uname">Eric Reyes</div>
-            <div class="db-urole">Director</div>
-          </div>
-          <div class="db-av">ER</div>
-        </div>
+        <div class="db-logo-wrap"><div class="db-logo-circle">SST</div><div class="db-logo-text"><div class="cap">Capacitaciones</div><div class="brand">SST <em>DE CHILE</em></div></div></div>
+        <div class="db-user"><div style="text-align:right"><div class="db-uname">Eric Reyes</div><div class="db-urole">Director</div></div><div class="db-av">ER</div></div>
       </div>
-
-      <!-- body -->
       <div class="db-body">
-        <div class="db-status">
-          <div class="db-sdot"></div>
-          <span class="db-stxt">Sistema activo · Mayo 2026</span>
-          <span class="db-sver">CRM SST v1.0</span>
-        </div>
-
-        <div>
-          <div class="db-slabel">Resumen ejecutivo</div>
+        <div class="db-status"><div class="db-sdot"></div><span class="db-stxt">Sistema activo · Mayo 2026</span><span class="db-sver">CRM SST v1.0</span></div>
+        <div><div class="db-slabel">Resumen ejecutivo</div>
           <div class="db-metrics">
-            <div class="db-metric accent">
-              <div class="db-mlabel">Requerimientos activos</div>
-              <div class="db-mval">34</div>
-              <div class="db-msub"><span class="up">+8</span> vs. mes anterior</div>
-            </div>
-            <div class="db-metric">
-              <div class="db-mlabel">Revenue proyectado</div>
-              <div class="db-mval">$18.4M</div>
-              <div class="db-msub">CLP · pipeline abierto</div>
-            </div>
-            <div class="db-metric">
-              <div class="db-mlabel">Revenue cerrado</div>
-              <div class="db-mval">$6.2M</div>
-              <div class="db-msub"><span class="up">↑ 22%</span> vs. abril</div>
-            </div>
-            <div class="db-metric">
-              <div class="db-mlabel">Tasa de conversión</div>
-              <div class="db-mval">38%</div>
-              <div class="db-msub">Cotización → Cerrado</div>
-            </div>
+            <div class="db-metric accent"><div class="db-mlabel">Requerimientos activos</div><div class="db-mval">34</div><div class="db-msub"><span class="up">+8</span> vs. mes anterior</div></div>
+            <div class="db-metric"><div class="db-mlabel">Revenue proyectado</div><div class="db-mval">$18.4M</div><div class="db-msub">CLP · pipeline abierto</div></div>
+            <div class="db-metric"><div class="db-mlabel">Revenue cerrado</div><div class="db-mval">$6.2M</div><div class="db-msub"><span class="up">↑ 22%</span> vs. abril</div></div>
+            <div class="db-metric"><div class="db-mlabel">Tasa de conversión</div><div class="db-mval">38%</div><div class="db-msub">Cotización → Cerrado</div></div>
           </div>
         </div>
-
-        <div>
-          <div class="db-slabel">Pipeline de cotizaciones</div>
+        <div><div class="db-slabel">Pipeline de cotizaciones</div>
           <div class="db-pipeline">
-            <div class="kol">
-              <div class="kol-hdr"><span class="kol-t">Recibido</span><span class="kol-n">7</span></div>
-              <div class="kc bl"><div class="kc-n">Minera Collahuasi</div><div class="kc-d">Trabajo en altura · 24 px</div></div>
-              <div class="kc bl"><div class="kc-n">Sodimac Maipú</div><div class="kc-d">HSEC básico · 40 px</div></div>
-              <div class="kc bl"><div class="kc-n">CMPC Planta</div><div class="kc-d">Eléctrico Clase D · 12 px</div></div>
-            </div>
-            <div class="kol">
-              <div class="kol-hdr"><span class="kol-t">Contacto</span><span class="kol-n">9</span></div>
-              <div class="kc or"><div class="kc-n">Codelco Andina</div><div class="kc-d">Prevención riesgos · 60 px</div></div>
-              <div class="kc or"><div class="kc-n">Walmart Chile</div><div class="kc-d">Manipulación manual · 35 px</div></div>
-            </div>
-            <div class="kol">
-              <div class="kol-hdr"><span class="kol-t">Cotización</span><span class="kol-n">11</span></div>
-              <div class="kc re"><div class="kc-n">Anglo American</div><div class="kc-d">COT-2026-0041 · $1.2M</div></div>
-              <div class="kc re"><div class="kc-n">Arauco</div><div class="kc-d">COT-2026-0038 · $840K</div></div>
-              <div class="kc re"><div class="kc-n">Latam Airlines</div><div class="kc-d">COT-2026-0036 · $620K</div></div>
-            </div>
-            <div class="kol">
-              <div class="kol-hdr"><span class="kol-t">Especial</span><span class="kol-n">4</span></div>
-              <div class="kc pu"><div class="kc-n">BHP Escondida</div><div class="kc-d">COT-2026-0031-02 · $3.4M</div></div>
-              <div class="kc pu"><div class="kc-n">Engie Chile</div><div class="kc-d">Gas Clase 3 · licitación</div></div>
-            </div>
-            <div class="kol">
-              <div class="kol-hdr"><span class="kol-t">Cerrado</span><span class="kol-n">3</span></div>
-              <div class="kc gr"><div class="kc-n">Falabella Retail</div><div class="kc-d">$920K · 12/05</div></div>
-              <div class="kc gr"><div class="kc-n">VTR Fibra</div><div class="kc-d">$480K · 08/05</div></div>
-            </div>
+            <div class="kol"><div class="kol-hdr"><span class="kol-t">Recibido</span><span class="kol-n">7</span></div><div class="kc bl"><div class="kc-n">Minera Collahuasi</div><div class="kc-d">Trabajo en altura · 24 px</div></div><div class="kc bl"><div class="kc-n">Sodimac Maipú</div><div class="kc-d">HSEC básico · 40 px</div></div></div>
+            <div class="kol"><div class="kol-hdr"><span class="kol-t">Contacto</span><span class="kol-n">9</span></div><div class="kc or"><div class="kc-n">Codelco Andina</div><div class="kc-d">Prevención riesgos · 60 px</div></div><div class="kc or"><div class="kc-n">Walmart Chile</div><div class="kc-d">Manipulación manual · 35 px</div></div></div>
+            <div class="kol"><div class="kol-hdr"><span class="kol-t">Cotización</span><span class="kol-n">11</span></div><div class="kc re"><div class="kc-n">Anglo American</div><div class="kc-d">COT-2026-0041 · $1.2M</div></div><div class="kc re"><div class="kc-n">Arauco</div><div class="kc-d">COT-2026-0038 · $840K</div></div></div>
+            <div class="kol"><div class="kol-hdr"><span class="kol-t">Especial</span><span class="kol-n">4</span></div><div class="kc pu"><div class="kc-n">BHP Escondida</div><div class="kc-d">COT-2026-0031-02 · $3.4M</div></div></div>
+            <div class="kol"><div class="kol-hdr"><span class="kol-t">Cerrado</span><span class="kol-n">3</span></div><div class="kc gr"><div class="kc-n">Falabella Retail</div><div class="kc-d">$920K · 12/05</div></div><div class="kc gr"><div class="kc-n">VTR Fibra</div><div class="kc-d">$480K · 08/05</div></div></div>
           </div>
         </div>
-
         <div class="db-bottom">
-          <div class="db-panel">
-            <div class="db-plabel">Cursos más solicitados — mayo</div>
+          <div class="db-panel"><div class="db-plabel">Cursos más solicitados — mayo</div>
             <div class="cr"><span class="cr-name">Trabajo en altura</span><div class="cr-right"><div class="cr-bar" style="width:70px;background:var(--red)"></div><span class="cr-n">18</span></div></div>
             <div class="cr"><span class="cr-name">Eléctrico Clase D</span><div class="cr-right"><div class="cr-bar" style="width:54px;background:#e84060"></div><span class="cr-n">14</span></div></div>
             <div class="cr"><span class="cr-name">HSEC básico</span><div class="cr-right"><div class="cr-bar" style="width:42px;background:#f4a24b"></div><span class="cr-n">11</span></div></div>
             <div class="cr"><span class="cr-name">Gas Clase 3</span><div class="cr-right"><div class="cr-bar" style="width:30px;background:#4b8bf4"></div><span class="cr-n">8</span></div></div>
-            <div class="cr"><span class="cr-name">Manipulación manual</span><div class="cr-right"><div class="cr-bar" style="width:18px;background:#4bf47a"></div><span class="cr-n">5</span></div></div>
           </div>
-          <div class="db-panel">
-            <div class="db-plabel">Actividad reciente del equipo</div>
+          <div class="db-panel"><div class="db-plabel">Actividad reciente del equipo</div>
             <div class="ar"><div class="ar-dot" style="background:#4bf47a"></div><div><div class="ar-txt">Lisbeth cerró COT-2026-0028 con Falabella Retail</div><div class="ar-time">Hace 2 horas</div></div></div>
             <div class="ar"><div class="ar-dot" style="background:var(--red)"></div><div><div class="ar-txt">IA generó propuesta para Anglo American (3 subcotizaciones)</div><div class="ar-time">Hace 4 horas</div></div></div>
             <div class="ar"><div class="ar-dot" style="background:#4b8bf4"></div><div><div class="ar-txt">7 requerimientos importados desde Red de Capacitaciones</div><div class="ar-time">Hoy 08:14</div></div></div>
-            <div class="ar"><div class="ar-dot" style="background:#f4a24b"></div><div><div class="ar-txt">BHP Escondida movido a Especial · requiere revisión</div><div class="ar-time">Ayer 17:32</div></div></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- MIGUEL -->
 <section class="miguel">
   <div class="section-inner">
     <div class="miguel-inner">
       <div class="miguel-left">
         <div class="tag">Quién lo construye</div>
         <h2>Miguel Gil Urbina</h2>
-        <p class="bio">AI First Full Stack Developer con 8+ años combinando estrategia comercial con desarrollo de software. Construyo productos que entienden el negocio porque primero lo viví. Este sistema no es un template adaptado — es arquitectura a medida del flujo real de SST.</p>
-        <div class="stack-list">
-          <span class="stack-tag">Next.js 15</span>
-          <span class="stack-tag">TypeScript</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">Prisma ORM</span>
-          <span class="stack-tag">Claude API</span>
-          <span class="stack-tag">NextAuth.js</span>
-          <span class="stack-tag">Vercel</span>
-          <span class="stack-tag">Tailwind CSS</span>
-        </div>
-        <div class="miguel-stats">
-          <div class="mstat">
-            <div class="mstat-val">8+</div>
-            <div class="mstat-label">años de experiencia</div>
-          </div>
-          <div class="mstat">
-            <div class="mstat-val">3</div>
-            <div class="mstat-label">productos en producción</div>
-          </div>
-          <div class="mstat">
-            <div class="mstat-val">3m</div>
-            <div class="mstat-label">entrega comprometida</div>
-          </div>
-        </div>
+        <p class="bio">AI First Full Stack Developer con 8+ años combinando estrategia comercial con desarrollo de software. Construyo productos que entienden el negocio porque primero lo viví.</p>
+        <div class="stack-list"><span class="stack-tag">Next.js 15</span><span class="stack-tag">TypeScript</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Prisma ORM</span><span class="stack-tag">Claude API</span><span class="stack-tag">NextAuth.js</span><span class="stack-tag">Vercel</span><span class="stack-tag">Tailwind CSS</span></div>
+        <div class="miguel-stats"><div class="mstat"><div class="mstat-val">8+</div><div class="mstat-label">años de experiencia</div></div><div class="mstat"><div class="mstat-val">3</div><div class="mstat-label">productos en producción</div></div><div class="mstat"><div class="mstat-val">3m</div><div class="mstat-label">entrega comprometida</div></div></div>
       </div>
       <div class="miguel-right">
         <h3>Por qué funciona este proyecto</h3>
-        <div class="proof-item">
-          <div class="proof-icon">🏗️</div>
-          <div>
-            <div class="proof-title">Experiencia en gestión de canales comerciales</div>
-            <div class="proof-desc">6 años liderando redes de distribución. Entiendo el flujo comercial desde adentro, no solo desde el código.</div>
-          </div>
-        </div>
-        <div class="proof-item">
-          <div class="proof-icon">⚡</div>
-          <div>
-            <div class="proof-title">Velocidad de entrega con IA</div>
-            <div class="proof-desc">Uso Claude y herramientas de IA para acelerar el desarrollo sin sacrificar calidad. 262 horas de trabajo en 3 meses calendario.</div>
-          </div>
-        </div>
-        <div class="proof-item">
-          <div class="proof-icon">🚀</div>
-          <div>
-            <div class="proof-title">Productos en producción ahora</div>
-            <div class="proof-desc">Prompt Maker, Cargo Eléctric webapp, Tu Web en 7 Días — sistemas reales usados por equipos reales.</div>
-          </div>
-        </div>
-        <div class="proof-item">
-          <div class="proof-icon">🎓</div>
-          <div>
-            <div class="proof-title">Diplomado IA Generativa en Organizaciones</div>
-            <div class="proof-desc">Universidad de Chile — LangChain, RAG, LangGraph, arquitectura multi-agente. Aplicado directamente al asistente IA de este sistema.</div>
-          </div>
-        </div>
+        <div class="proof-item"><div class="proof-icon">🏗️</div><div><div class="proof-title">Experiencia en gestión de canales comerciales</div><div class="proof-desc">6 años liderando redes de distribución. Entiendo el flujo comercial desde adentro, no solo desde el código.</div></div></div>
+        <div class="proof-item"><div class="proof-icon">⚡</div><div><div class="proof-title">Velocidad de entrega con IA</div><div class="proof-desc">Uso Claude y herramientas de IA para acelerar el desarrollo sin sacrificar calidad. 262 horas de trabajo en 3 meses calendario.</div></div></div>
+        <div class="proof-item"><div class="proof-icon">🚀</div><div><div class="proof-title">Productos en producción ahora</div><div class="proof-desc">Prompt Maker, Cargo Eléctric webapp, Tu Web en 7 Días — sistemas reales usados por equipos reales.</div></div></div>
+        <div class="proof-item"><div class="proof-icon">🎓</div><div><div class="proof-title">Diplomado IA Generativa — U. de Chile</div><div class="proof-desc">LangChain, RAG, LangGraph, arquitectura multi-agente. Aplicado directamente al asistente IA de este sistema.</div></div></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- CTA FINAL -->
 <section class="cta-final" id="cta">
   <div class="section-inner" style="max-width:700px;">
     <div class="cta-badge">✦ Cupos limitados — Mayo 2026</div>
@@ -543,16 +313,9 @@
     <div class="cta-price">Inversión total: <strong>$4.500.000 CLP · pago único</strong> · 4 hitos · sin mensualidades</div>
   </div>
 </section>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-brand">Desarrollado por <strong>Miguel Gil Urbina</strong> · <a href="https://miguelgilurbina.com" style="color:var(--red);text-decoration:none">miguelgilurbina.com</a></div>
-  <div class="footer-links">
-    <a href="https://miguelgilurbina.com">Portfolio</a>
-    <a href="mailto:miguel.gil.9210@gmail.com">Contacto</a>
-    <a href="https://sstdechile.cl">SST de Chile</a>
-  </div>
+  <div class="footer-links"><a href="https://miguelgilurbina.com">Portfolio</a><a href="mailto:miguel.gil.9210@gmail.com">Contacto</a><a href="https://sstdechile.cl">SST de Chile</a></div>
 </footer>
-
 </body>
 </html>
