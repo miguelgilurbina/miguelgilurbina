@@ -86,15 +86,15 @@ section{padding:90px 40px}
 .casa-intro{font-size:18px;color:rgba(255,255,255,.7);line-height:1.7;max-width:680px;margin-bottom:40px;font-style:italic;border-left:3px solid var(--red);padding-left:20px}
 
 .casa-split-wrap{border-radius:16px;overflow:hidden;border:.5px solid rgba(255,255,255,.09);box-shadow:0 0 80px rgba(0,0,0,.5)}
-.casa-split{display:grid;grid-template-columns:58% 42%;align-items:stretch}
-.casa-left{position:relative;background:#080d18}
+.casa-split{display:grid;grid-template-columns:60% 40%;align-items:stretch}
+.casa-left{position:relative;background:#080d18;order:1}
 #house-canvas{width:100%;height:440px;display:block}
 .house-phase-bar{display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 20px;background:rgba(0,0,0,.5);border-top:.5px solid rgba(255,255,255,.06)}
-.hpi{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.22);transition:all .4s ease;padding:5px 12px;border-radius:20px;cursor:pointer}
-.hpi.active{background:rgba(255,255,255,.07)}
-.hpi-sep{font-size:10px;color:rgba(255,255,255,.14)}
+.hpi{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.55);transition:all .4s ease;padding:5px 12px;border-radius:20px;cursor:pointer}
+.hpi.active{background:rgba(255,255,255,.1);color:#fff}
+.hpi-sep{font-size:10px;color:rgba(255,255,255,.3)}
 
-.casa-right{position:relative;border-left:.5px solid rgba(255,255,255,.07)}
+.casa-right{position:relative;border-right:.5px solid rgba(255,255,255,.07);order:0}
 .app-panel{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;pointer-events:none;display:flex;flex-direction:column}
 .app-panel.active{opacity:1;pointer-events:auto}
 
@@ -112,9 +112,11 @@ section{padding:90px 40px}
 .step-num{width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:rgba(255,255,255,.2);flex-shrink:0;transition:all .35s ease;letter-spacing:0}
 .step-track{width:1.5px;flex:1;min-height:14px;background:rgba(255,255,255,.06);margin:5px auto 0;transition:background .35s}
 .step-body{flex:1;padding:9px 14px 9px 8px}
-.step-eyebrow{font-size:9px;color:rgba(255,255,255,.2);margin-bottom:2px;font-style:italic;transition:color .35s;letter-spacing:.02em;line-height:1.3}
-.step-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.32);line-height:1.3;transition:color .35s;margin-bottom:0}
+.step-eyebrow{font-size:9px;color:rgba(255,255,255,.45);margin-bottom:2px;font-style:italic;transition:color .35s;letter-spacing:.02em;line-height:1.3}
+.step-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.65);line-height:1.3;transition:color .35s;margin-bottom:0}
 .step-desc{font-size:10px;color:rgba(255,255,255,.0);line-height:1.55;overflow:hidden;max-height:0;opacity:0;transition:max-height .45s ease,opacity .35s ease,color .35s}
+.step-date{display:inline-flex;align-items:center;gap:4px;font-size:8px;color:rgba(255,255,255,.28);background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);border-radius:10px;padding:2px 7px;margin-top:5px;font-weight:500;letter-spacing:.02em;transition:color .35s,background .35s}
+.step-item.step-active .step-date{color:rgba(255,255,255,.6);background:rgba(255,255,255,.07)}
 
 /* Done state */
 .step-item.step-done .step-num{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.3);background:rgba(255,255,255,.03)}
@@ -263,14 +265,28 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 4
 .footer-links a{font-size:12px;color:var(--muted);text-decoration:none}
 .footer-links a:hover{color:var(--red)}
 
+/* DESCUENTO BANNER */
+.descuento-banner{background:linear-gradient(135deg,rgba(74,222,128,.06) 0%,rgba(74,222,128,.03) 100%);border:.5px solid rgba(74,222,128,.22);border-radius:14px;padding:24px 28px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.descuento-left{display:flex;flex-direction:column;gap:8px}
+.descuento-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4ade80;background:rgba(74,222,128,.1);border:.5px solid rgba(74,222,128,.2);border-radius:20px;padding:4px 12px;width:fit-content}
+.descuento-title{font-size:16px;font-weight:700;color:#fff;line-height:1.3}
+.descuento-sub{font-size:13px;color:rgba(255,255,255,.45)}
+.descuento-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
+.descuento-original{font-size:13px;color:rgba(255,255,255,.3);text-decoration:line-through}
+.descuento-final{font-size:26px;font-weight:800;color:#4ade80;letter-spacing:-1px;line-height:1}
+.descuento-final span{font-size:12px;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:0}
+.descuento-urgency{font-size:11px;color:rgba(74,222,128,.7);font-weight:600}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:0 20px}
   section{padding:70px 20px}
   .hero{padding:100px 20px 70px}
   .casa-split{grid-template-columns:1fr}
-  .casa-right{display:none}
-  #house-canvas{height:300px}
+  .casa-left{order:0}
+  .casa-right{order:1;border-right:none;border-top:.5px solid rgba(255,255,255,.07)}
+  .steps-panel{height:380px}
+  #house-canvas{height:260px}
   .db-metrics{grid-template-columns:repeat(2,1fr)}
   .db-pipeline{grid-template-columns:repeat(2,1fr)}
   .db-bottom{grid-template-columns:1fr}
@@ -289,8 +305,7 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 4
     <div class="nav-logo-mark"><span>SST</span></div>
     <div class="nav-brand">CRM <span>SST</span></div>
   </div>
-  <!-- REPLACE +56912345678 with Miguel's WhatsApp number -->
-  <a href="https://wa.me/56912345678?text=Hola%20Miguel%2C%20quiero%20conversar%20sobre%20el%20CRM%20para%20SST." class="nav-cta">💬 Conversemos</a>
+  <a href="https://wa.me/56977221088?text=Hola%20Migue%2C%20me%20gustar%C3%ADa%20agendar%20contigo%20una%20reuni%C3%B3n%20!" class="nav-cta">📅 Agendar reunión</a>
 </nav>
 
 <!-- HERO -->
@@ -418,6 +433,7 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 4
                 <div class="step-body">
                   <div class="step-eyebrow">El plano y los permisos</div>
                   <div class="step-title">Planificación y arquitectura</div>
+                  <span class="step-date">📅 23 May – 6 Jun</span>
                   <div class="step-desc">Levantamos el flujo real de SST, mapeamos cada requerimiento y diseñamos la arquitectura completa antes de escribir una línea de código.</div>
                 </div>
               </div>
@@ -427,6 +443,7 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 4
                 <div class="step-body">
                   <div class="step-eyebrow">La plomería y el cableado</div>
                   <div class="step-title">Base de datos y motor del negocio</div>
+                  <span class="step-date">📅 6 Jun – 20 Jun</span>
                   <div class="step-desc">Esquema PostgreSQL, APIs RESTful y lógica de importación del Excel de Red de Capacitaciones. Todo lo invisible que mueve los datos.</div>
                 </div>
               </div>
@@ -436,6 +453,7 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 4
                 <div class="step-body">
                   <div class="step-eyebrow">El diseño interior y los acabados</div>
                   <div class="step-title">Interfaz y experiencia de uso</div>
+                  <span class="step-date">📅 20 Jun – 4 Jul</span>
                   <div class="step-desc">Pipeline kanban, módulo de cotizaciones y formularios del equipo. Lo que hace que trabajar en el sistema sea rápido y claro para SST.</div>
                 </div>
               </div>
@@ -445,6 +463,7 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 4
                 <div class="step-body">
                   <div class="step-eyebrow">El sistema domótico</div>
                   <div class="step-title">Asistente integrado con IA</div>
+                  <span class="step-date">📅 4 Jul – 18 Jul</span>
                   <div class="step-desc">Claude API integrada en el sistema: convierte correos y WhatsApp en requerimientos listos, mejora propuestas y genera correos automáticamente.</div>
                 </div>
               </div>
@@ -454,6 +473,7 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 4
                 <div class="step-body">
                   <div class="step-eyebrow">La vista desde el techo</div>
                   <div class="step-title">Dashboard ejecutivo</div>
+                  <span class="step-date">📅 18 Jul – 1 Ago</span>
                   <div class="step-desc">Vista gerencial en tiempo real: pipeline, conversión, revenue proyectado y cerrado. Claridad del estado comercial en cualquier momento.</div>
                 </div>
               </div>
@@ -463,6 +483,7 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 4
                 <div class="step-body">
                   <div class="step-eyebrow">Los cimientos y el terreno</div>
                   <div class="step-title">Despliegue en producción</div>
+                  <span class="step-date">📅 1 Ago – 23 Ago</span>
                   <div class="step-desc">Sistema en producción con dominio real. Vercel + Railway configurados y la infraestructura cubierta durante todo el contrato.</div>
                 </div>
               </div>
@@ -472,6 +493,7 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 4
                 <div class="step-body">
                   <div class="step-eyebrow">La garantía post-mudanza</div>
                   <div class="step-title">Marcha blanca y soporte</div>
+                  <span class="step-date">📅 23 Ago – 23 Oct</span>
                   <div class="step-desc">Dos meses de operación acompañada para ajustar cualquier gotera antes de que SST viva definitivamente en el sistema.</div>
                 </div>
               </div>
@@ -763,13 +785,25 @@ footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 4
       </div>
     </div>
 
+    <!-- Descuento banner -->
+    <div class="descuento-banner">
+      <div class="descuento-left">
+        <span class="descuento-tag" id="descuento-tag">⚡ Oferta por tiempo limitado</span>
+        <div class="descuento-title">10% de descuento si comenzamos antes del 23 de mayo</div>
+        <div class="descuento-sub">El precio baja si firmamos esta semana. Sin condiciones adicionales.</div>
+      </div>
+      <div class="descuento-right">
+        <div class="descuento-original">$4.500.000</div>
+        <div class="descuento-final">$4.050.000 <span>CLP · neto</span></div>
+        <div class="descuento-urgency">Válido hasta el 23 de mayo de 2026</div>
+      </div>
+    </div>
+
     <!-- Subtle CTA -->
     <div class="hitos-cta">
       <p>Las conversaciones ya pasaron. Solo falta dar el primer paso.</p>
       <div class="cta-buttons">
-        <!-- REPLACE +56912345678 with Miguel's WhatsApp number -->
-        <a href="https://wa.me/56912345678?text=Hola%20Miguel%2C%20seguimos%20con%20el%20CRM%20para%20SST." class="btn-primary" style="font-size:15px;padding:14px 32px">💬 Hablemos por WhatsApp</a>
-        <a href="mailto:miguel.gil.9210@gmail.com?subject=CRM SST — Siguiente paso" class="btn-secondary" style="font-size:15px;padding:14px 32px">Escribir un correo</a>
+        <a href="https://wa.me/56977221088?text=Hola%20Migue%2C%20me%20gustar%C3%ADa%20agendar%20contigo%20una%20reuni%C3%B3n%20!" class="btn-primary" style="font-size:15px;padding:14px 32px">📅 Agendar reunión</a>
       </div>
     </div>
 
@@ -984,6 +1018,21 @@ function animate(){
 resize();window.addEventListener('resize',resize);animate();
 function selectPhase(i){manualMode=true;phaseTimer=0;applyPhase(i);clearTimeout(window._phaseT);window._phaseT=setTimeout(function(){manualMode=false;},12000);}
 document.querySelectorAll('.hpi').forEach(function(el){el.addEventListener('click',function(){selectPhase(parseInt(el.dataset.p));});});
+})();
+
+// Descuento countdown
+(function(){
+  var deadline = new Date('2026-05-23T23:59:59');
+  var tag = document.getElementById('descuento-tag');
+  var banner = tag && tag.closest('.descuento-banner');
+  if(!tag) return;
+  var diff = Math.ceil((deadline - new Date()) / 86400000);
+  if(diff <= 0){
+    if(banner) banner.style.display = 'none';
+    return;
+  }
+  var label = diff === 1 ? 'Queda 1 día' : 'Quedan ' + diff + ' días';
+  tag.textContent = '⚡ Oferta por tiempo limitado · ' + label;
 })();
 </script>
 </body>
