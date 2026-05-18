@@ -6,139 +6,1033 @@
 <title>CRM SST de Chile — Sistema de Cotizaciones a Medida</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <style>
-  :root { --red:#C8102E;--red-dark:#9e0d24;--navy:#1B2944;--dark:#0d1117;--dark2:#131820;--surface:#181e2c;--surface2:#1e2538;--border:rgba(255,255,255,0.07);--border-red:rgba(200,16,46,0.25);--text:rgba(255,255,255,0.87);--muted:rgba(255,255,255,0.42); }
-  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--dark);color:var(--text);line-height:1.6}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.92);backdrop-filter:blur(12px);border-bottom:.5px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:60px}
-  .nav-logo{display:flex;align-items:center;gap:10px}.nav-logo-mark{width:32px;height:32px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center}.nav-logo-mark span{font-size:11px;font-weight:800;font-style:italic;color:#fff}.nav-brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.3px}.nav-brand span{color:var(--red)}.nav-cta{background:var(--red);color:#fff;padding:8px 20px;border-radius:6px;font-size:13px;font-weight:600;border:none;cursor:pointer;text-decoration:none;transition:background .2s}.nav-cta:hover{background:var(--red-dark)}
-  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 40px 80px;background:var(--dark);position:relative;overflow:hidden}.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(200,16,46,.08) 0%,transparent 70%);pointer-events:none}.hero-inner{max-width:900px;text-align:center}.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(200,16,46,.1);border:.5px solid var(--border-red);border-radius:20px;padding:5px 14px;font-size:12px;color:#e84060;font-weight:500;letter-spacing:.04em;margin-bottom:28px}.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--red);display:inline-block}.hero h1{font-size:clamp(36px,6vw,68px);font-weight:800;line-height:1.08;letter-spacing:-2px;color:#fff;margin-bottom:22px}.hero h1 span{color:var(--red)}.hero-sub{font-size:clamp(16px,2.5vw,20px);color:var(--muted);max-width:600px;margin:0 auto 40px;line-height:1.6}.hero-pills{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:44px}.pill{display:flex;align-items:center;gap:6px;background:var(--surface);border:.5px solid var(--border);border-radius:20px;padding:6px 14px;font-size:12px;color:var(--muted)}.pill-dot{width:5px;height:5px;border-radius:50%}.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}.btn-primary{background:var(--red);color:#fff;padding:14px 32px;border-radius:8px;font-size:15px;font-weight:700;border:none;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}.btn-primary:hover{background:var(--red-dark);transform:translateY(-1px)}.btn-secondary{background:transparent;color:var(--text);padding:14px 32px;border-radius:8px;font-size:15px;font-weight:600;border:.5px solid rgba(255,255,255,.2);cursor:pointer;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}.btn-secondary:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.04)}.hero-scroll{margin-top:60px;color:var(--muted);font-size:12px;display:flex;flex-direction:column;align-items:center;gap:8px}.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(200,16,46,.6),transparent)}
-  section{padding:90px 40px}.section-inner{max-width:1100px;margin:0 auto}.section-tag{font-size:11px;color:var(--red);font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}.section-title{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-1px;color:#fff;margin-bottom:16px;line-height:1.1}.section-title span{color:var(--red)}.section-sub{font-size:17px;color:var(--muted);max-width:580px;line-height:1.65;margin-bottom:56px}
-  .problema{background:var(--dark2);border-top:.5px solid var(--border);border-bottom:.5px solid var(--border)}.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.pain-card{background:var(--surface);border:.5px solid var(--border);border-radius:12px;padding:22px 24px}.pain-icon{width:38px;height:38px;border-radius:8px;background:rgba(200,16,46,.1);border:.5px solid var(--border-red);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px}.pain-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}.pain-desc{font-size:13px;color:var(--muted);line-height:1.6}
-  .modulos{background:var(--dark)}.mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.mod-card{background:var(--surface);border:.5px solid var(--border);border-radius:12px;padding:22px 24px;transition:border-color .2s}.mod-card:hover{border-color:var(--border-red)}.mod-num{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.08em;margin-bottom:10px}.mod-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}.mod-desc{font-size:13px;color:var(--muted);line-height:1.6}.mod-badge{display:inline-flex;align-items:center;gap:4px;background:rgba(200,16,46,.1);border:.5px solid var(--border-red);border-radius:10px;padding:2px 8px;font-size:10px;color:#e84060;margin-top:10px;font-weight:500}
-  .casa{background:var(--navy);border-top:.5px solid rgba(255,255,255,.06);border-bottom:.5px solid rgba(255,255,255,.06)}.casa-intro{font-size:19px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px;margin-bottom:40px;font-style:italic;border-left:3px solid var(--red);padding-left:20px}
-  .house-canvas-wrap{position:relative;border-radius:16px;overflow:hidden;border:.5px solid rgba(255,255,255,.08);margin-bottom:40px;background:#080d18}#house-canvas{width:100%;height:420px;display:block}.house-phase-bar{display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 20px;background:rgba(0,0,0,.35);border-top:.5px solid rgba(255,255,255,.06)}.hpi{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.22);transition:all .4s ease;padding:5px 14px;border-radius:20px;cursor:pointer}.hpi.active{background:rgba(255,255,255,.07)}.hpi-sep{font-size:10px;color:rgba(255,255,255,.14)}.house-hint{position:absolute;bottom:48px;right:18px;font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.04em;pointer-events:none}
-  .casa-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.casa-step{text-align:center;padding:24px 20px;background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:14px;cursor:pointer;transition:all .35s ease;opacity:.4}.casa-step:hover{background:rgba(255,255,255,.05);opacity:.7}.casa-step.active{opacity:1}.casa-step-icon-wrap{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;transition:all .35s ease}.casa-step-icon{font-size:22px}.casa-step-phase{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;color:rgba(255,255,255,.3);transition:color .35s}.casa-step-title{font-size:15px;font-weight:800;color:#fff;margin-bottom:8px}.casa-step-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65}
-  .dashboard-section{background:var(--dark2);border-top:.5px solid var(--border)}.db-wrap{border-radius:14px;overflow:hidden;border:.5px solid var(--border-red);box-shadow:0 0 60px rgba(200,16,46,.08)}.db-hdr{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--red)}.db-logo-wrap{display:flex;align-items:center;gap:10px}.db-logo-circle{width:34px;height:34px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;font-style:italic;color:#fff}.db-logo-text .cap{font-size:7px;color:rgba(255,255,255,.35);letter-spacing:.1em;text-transform:uppercase}.db-logo-text .brand{font-size:15px;font-weight:800;color:#fff;font-style:italic;letter-spacing:-.5px}.db-logo-text .brand em{font-style:normal;font-size:10px;font-weight:600;color:rgba(255,255,255,.6)}.db-user{display:flex;align-items:center;gap:8px}.db-av{width:30px;height:30px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff}.db-uname{font-size:12px;color:#fff;font-weight:500}.db-urole{font-size:10px;color:rgba(255,255,255,.38)}.db-body{background:#0d1117;padding:16px 20px;display:grid;gap:14px}.db-status{display:flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(200,16,46,.07);border-radius:6px;border:.5px solid var(--border-red)}.db-sdot{width:6px;height:6px;border-radius:50%;background:#4ade80}.db-stxt{font-size:10px;color:rgba(255,255,255,.4)}.db-sver{margin-left:auto;font-size:10px;color:var(--red);font-weight:500}.db-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.db-metric{background:#181e2c;border-radius:8px;padding:12px 14px;border:.5px solid rgba(255,255,255,.06)}.db-metric.accent{border-top:2px solid var(--red)}.db-mlabel{font-size:10px;color:rgba(255,255,255,.35);margin-bottom:5px}.db-mval{font-size:22px;font-weight:700;color:#fff;letter-spacing:-.5px}.db-msub{font-size:10px;color:rgba(255,255,255,.3);margin-top:3px}.db-msub .up{color:#4ade80}.db-pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.kol{background:#181e2c;border-radius:8px;padding:10px;border:.5px solid rgba(255,255,255,.06)}.kol-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.kol-t{font-size:10px;color:rgba(255,255,255,.4);font-weight:500}.kol-n{background:rgba(255,255,255,.06);border-radius:8px;padding:1px 6px;font-size:10px;color:rgba(255,255,255,.3)}.kc{background:#1e2538;border-radius:6px;padding:8px;margin-bottom:6px;border-left:2px solid}.kc.bl{border-color:#4b8bf4}.kc.or{border-color:#f4a24b}.kc.re{border-color:var(--red)}.kc.pu{border-color:#a24bf4}.kc.gr{border-color:#4bf47a}.kc-n{font-size:10px;color:rgba(255,255,255,.8);font-weight:500}.kc-d{font-size:9px;color:rgba(255,255,255,.28);margin-top:3px}.db-bottom{display:grid;grid-template-columns:1fr 1fr;gap:10px}.db-panel{background:#181e2c;border-radius:8px;padding:12px 14px;border:.5px solid rgba(255,255,255,.06)}.db-plabel{font-size:10px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}.cr{display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:.5px solid rgba(255,255,255,.04)}.cr:last-child{border-bottom:none}.cr-name{font-size:11px;color:rgba(255,255,255,.6)}.cr-right{display:flex;align-items:center;gap:6px}.cr-bar{height:4px;border-radius:2px}.cr-n{font-size:10px;color:rgba(255,255,255,.3);min-width:18px;text-align:right}.ar{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:.5px solid rgba(255,255,255,.04)}.ar:last-child{border-bottom:none}.ar-dot{width:6px;height:6px;border-radius:50%;margin-top:4px;flex-shrink:0}.ar-txt{font-size:10px;color:rgba(255,255,255,.5);line-height:1.5}.ar-time{font-size:9px;color:rgba(255,255,255,.25)}.db-slabel{font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
-  .miguel{background:var(--dark)}.miguel-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.miguel-left .tag{font-size:11px;color:var(--red);font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}.miguel-left h2{font-size:36px;font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:14px;line-height:1.1}.miguel-left .bio{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:28px}.stack-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}.stack-tag{background:var(--surface);border:.5px solid var(--border);border-radius:6px;padding:5px 12px;font-size:12px;color:rgba(255,255,255,.6);font-weight:500}.miguel-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.mstat{background:var(--surface);border:.5px solid var(--border);border-radius:10px;padding:14px;text-align:center}.mstat-val{font-size:24px;font-weight:800;color:var(--red);letter-spacing:-1px}.mstat-label{font-size:11px;color:var(--muted);margin-top:3px}.miguel-right{background:var(--surface);border:.5px solid var(--border);border-radius:16px;padding:28px}.miguel-right h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:18px}.proof-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:.5px solid var(--border)}.proof-item:last-child{border-bottom:none}.proof-icon{width:36px;height:36px;border-radius:8px;background:rgba(200,16,46,.1);border:.5px solid var(--border-red);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}.proof-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:3px}.proof-desc{font-size:12px;color:var(--muted)}
-  .cta-final{background:var(--navy);border-top:.5px solid rgba(255,255,255,.07);text-align:center}.cta-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,16,46,.1);border:.5px solid var(--border-red);border-radius:20px;padding:6px 16px;font-size:12px;color:#e84060;font-weight:500;margin-bottom:28px}.cta-final h2{font-size:clamp(28px,4vw,48px);font-weight:800;color:#fff;letter-spacing:-1.5px;margin-bottom:14px;line-height:1.1}.cta-final p{font-size:17px;color:rgba(255,255,255,.5);margin-bottom:44px}.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}.cta-price{margin-top:24px;font-size:14px;color:rgba(255,255,255,.3)}.cta-price strong{color:rgba(255,255,255,.6)}
-  footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between}.footer-brand{font-size:13px;color:var(--muted)}.footer-brand strong{color:rgba(255,255,255,.5)}.footer-links{display:flex;gap:20px}.footer-links a{font-size:12px;color:var(--muted);text-decoration:none}.footer-links a:hover{color:var(--red)}
-  @media(max-width:768px){nav{padding:0 20px}section{padding:70px 20px}.hero{padding:100px 20px 70px}#house-canvas{height:280px}.casa-steps{grid-template-columns:1fr}.miguel-inner{grid-template-columns:1fr;gap:40px}.db-metrics{grid-template-columns:repeat(2,1fr)}.db-pipeline{grid-template-columns:repeat(2,1fr)}.db-bottom{grid-template-columns:1fr}footer{flex-direction:column;gap:12px;text-align:center}}
+:root{--red:#C8102E;--red-dark:#9e0d24;--navy:#1B2944;--dark:#0d1117;--dark2:#131820;--surface:#181e2c;--surface2:#1e2538;--border:rgba(255,255,255,0.07);--border-red:rgba(200,16,46,0.25);--text:rgba(255,255,255,0.87);--muted:rgba(255,255,255,0.42);--green:#4ade80;--blue:#4b8bf4;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--dark);color:var(--text);line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,17,23,.94);backdrop-filter:blur(16px);border-bottom:.5px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-mark{width:32px;height:32px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center}
+.nav-logo-mark span{font-size:11px;font-weight:800;font-style:italic;color:#fff}
+.nav-brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.3px}
+.nav-brand span{color:var(--red)}
+.nav-cta{background:var(--red);color:#fff;padding:8px 20px;border-radius:6px;font-size:13px;font-weight:600;border:none;cursor:pointer;text-decoration:none;transition:background .2s;display:flex;align-items:center;gap:6px}
+.nav-cta:hover{background:var(--red-dark)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 40px 80px;background:var(--dark);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(200,16,46,.09) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:900px;text-align:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(200,16,46,.1);border:.5px solid var(--border-red);border-radius:20px;padding:5px 14px;font-size:12px;color:#e84060;font-weight:500;letter-spacing:.04em;margin-bottom:28px}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--red);display:inline-block}
+.hero h1{font-size:clamp(36px,6vw,68px);font-weight:800;line-height:1.08;letter-spacing:-2px;color:#fff;margin-bottom:22px}
+.hero h1 span{color:var(--red)}
+.hero-sub{font-size:clamp(15px,2.2vw,19px);color:var(--muted);max-width:600px;margin:0 auto 40px;line-height:1.65}
+.hero-pills{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.pill{display:flex;align-items:center;gap:6px;background:var(--surface);border:.5px solid var(--border);border-radius:20px;padding:6px 14px;font-size:12px;color:var(--muted)}
+.pill-dot{width:5px;height:5px;border-radius:50%}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--red);color:#fff;padding:14px 32px;border-radius:8px;font-size:15px;font-weight:700;border:none;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--red-dark);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--text);padding:14px 32px;border-radius:8px;font-size:15px;font-weight:600;border:.5px solid rgba(255,255,255,.2);cursor:pointer;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.04)}
+.hero-scroll{margin-top:60px;color:var(--muted);font-size:12px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(200,16,46,.6),transparent)}
+
+/* SECTIONS */
+section{padding:90px 40px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;color:#e84060;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;background:rgba(200,16,46,.08);border:.5px solid rgba(200,16,46,.2);border-radius:20px;padding:4px 12px}
+.section-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);display:inline-block;flex-shrink:0}
+.section-title{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-1px;color:#fff;margin-bottom:16px;line-height:1.1}
+.section-title span{color:var(--red)}
+.section-sub{font-size:17px;color:var(--muted);max-width:580px;line-height:1.65;margin-bottom:56px}
+
+/* PROBLEMA */
+.problema{background:var(--dark2);border-top:.5px solid var(--border);border-bottom:.5px solid var(--border)}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:40px}
+.pain-card{background:var(--surface);border:.5px solid var(--border);border-radius:12px;padding:22px 24px}
+.pain-icon{width:38px;height:38px;border-radius:8px;background:rgba(200,16,46,.1);border:.5px solid var(--border-red);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px}
+.pain-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.pain-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ROI STRIP */
+.roi-strip{background:var(--surface);border:.5px solid var(--border);border-radius:14px;padding:24px 16px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px}
+.roi-item{text-align:center;padding:10px 18px}
+.roi-num{display:block;font-size:30px;font-weight:800;color:#fff;letter-spacing:-1px;line-height:1}
+.roi-num small{font-size:13px;font-weight:600;color:var(--muted);margin-left:2px}
+.roi-label{font-size:11px;color:var(--muted);margin-top:5px;display:block;white-space:nowrap}
+.roi-op{font-size:20px;color:var(--muted);padding:0 4px;flex-shrink:0}
+.roi-item.pain .roi-num{color:var(--red)}
+.roi-item.gain{background:rgba(74,222,128,.05);border:.5px solid rgba(74,222,128,.2);border-radius:10px}
+.roi-item.gain .roi-num{color:var(--green)}
+.roi-arrow{font-size:20px;color:var(--muted);padding:0 12px;flex-shrink:0}
+.roi-caption{width:100%;text-align:center;margin-top:16px;font-size:12px;color:var(--muted)}
+.roi-caption strong{color:rgba(255,255,255,.5)}
+
+/* MODULOS */
+.modulos{background:var(--dark)}
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.mod-card{background:var(--surface);border:.5px solid var(--border);border-radius:12px;padding:22px 24px;transition:border-color .2s}
+.mod-card:hover{border-color:var(--border-red)}
+.mod-num{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.08em;margin-bottom:10px}
+.mod-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.mod-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.mod-badge{display:inline-flex;align-items:center;gap:4px;background:rgba(200,16,46,.1);border:.5px solid var(--border-red);border-radius:10px;padding:2px 8px;font-size:10px;color:#e84060;margin-top:10px;font-weight:500}
+
+/* CASA - SPLIT LAYOUT */
+.casa{background:var(--navy);border-top:.5px solid rgba(255,255,255,.06);border-bottom:.5px solid rgba(255,255,255,.06)}
+.casa-intro{font-size:18px;color:rgba(255,255,255,.7);line-height:1.7;max-width:680px;margin-bottom:40px;font-style:italic;border-left:3px solid var(--red);padding-left:20px}
+
+.casa-split-wrap{border-radius:16px;overflow:hidden;border:.5px solid rgba(255,255,255,.09);box-shadow:0 0 80px rgba(0,0,0,.5)}
+.casa-split{display:grid;grid-template-columns:60% 40%;align-items:stretch}
+.casa-left{position:relative;background:#080d18;order:1}
+#house-canvas{width:100%;height:440px;display:block}
+.house-phase-bar{display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 20px;background:rgba(0,0,0,.5);border-top:.5px solid rgba(255,255,255,.06)}
+.hpi{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.55);transition:all .4s ease;padding:5px 12px;border-radius:20px;cursor:pointer}
+.hpi.active{background:rgba(255,255,255,.1);color:#fff}
+.hpi-sep{font-size:10px;color:rgba(255,255,255,.3)}
+
+.casa-right{position:relative;border-right:.5px solid rgba(255,255,255,.07);order:0}
+.app-panel{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;pointer-events:none;display:flex;flex-direction:column}
+.app-panel.active{opacity:1;pointer-events:auto}
+
+/* STEPS PANEL — 7 pasos de construcción */
+.steps-panel{height:100%;display:flex;flex-direction:column;background:#07090f}
+.steps-hdr{padding:12px 16px 10px;border-bottom:.5px solid rgba(255,255,255,.05);flex-shrink:0;display:flex;align-items:center;justify-content:space-between}
+.steps-hdr-title{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.steps-hdr-count{font-size:9px;color:rgba(255,255,255,.15);font-weight:500}
+.steps-list{flex:1;overflow-y:auto;padding:6px 0}
+.steps-list::-webkit-scrollbar{width:3px}
+.steps-list::-webkit-scrollbar-track{background:transparent}
+.steps-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:2px}
+.step-item{display:flex;gap:0;cursor:default;transition:background .35s ease}
+.step-left{display:flex;flex-direction:column;align-items:center;width:40px;flex-shrink:0;padding:11px 0 0 12px}
+.step-num{width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:rgba(255,255,255,.2);flex-shrink:0;transition:all .35s ease;letter-spacing:0}
+.step-track{width:1.5px;flex:1;min-height:14px;background:rgba(255,255,255,.06);margin:5px auto 0;transition:background .35s}
+.step-body{flex:1;padding:9px 14px 9px 8px}
+.step-eyebrow{font-size:9px;color:rgba(255,255,255,.45);margin-bottom:2px;font-style:italic;transition:color .35s;letter-spacing:.02em;line-height:1.3}
+.step-title{font-size:12px;font-weight:700;color:rgba(255,255,255,.65);line-height:1.3;transition:color .35s;margin-bottom:0}
+.step-desc{font-size:10px;color:rgba(255,255,255,.0);line-height:1.55;overflow:hidden;max-height:0;opacity:0;transition:max-height .45s ease,opacity .35s ease,color .35s}
+.step-date{display:inline-flex;align-items:center;gap:4px;font-size:8px;color:rgba(255,255,255,.28);background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);border-radius:10px;padding:2px 7px;margin-top:5px;font-weight:500;letter-spacing:.02em;transition:color .35s,background .35s}
+.step-item.step-active .step-date{color:rgba(255,255,255,.6);background:rgba(255,255,255,.07)}
+
+/* Done state */
+.step-item.step-done .step-num{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.3);background:rgba(255,255,255,.03)}
+.step-item.step-done .step-eyebrow{color:rgba(255,255,255,.28)}
+.step-item.step-done .step-title{color:rgba(255,255,255,.45)}
+.step-item.step-done .step-track{background:rgba(255,255,255,.12)}
+
+/* Active — phase 0 blue */
+.step-item.step-active[data-phase="0"]{background:rgba(75,139,244,.04)}
+.step-item.step-active[data-phase="0"] .step-num{border-color:#4b8bf4;color:#4b8bf4;background:rgba(75,139,244,.12)}
+.step-item.step-active[data-phase="0"] .step-eyebrow{color:#4b8bf4;opacity:.75}
+.step-item.step-active[data-phase="0"] .step-track{background:rgba(75,139,244,.25)}
+/* Active — phase 1 orange */
+.step-item.step-active[data-phase="1"]{background:rgba(244,162,75,.04)}
+.step-item.step-active[data-phase="1"] .step-num{border-color:#f4a24b;color:#f4a24b;background:rgba(244,162,75,.12)}
+.step-item.step-active[data-phase="1"] .step-eyebrow{color:#f4a24b;opacity:.8}
+.step-item.step-active[data-phase="1"] .step-track{background:rgba(244,162,75,.25)}
+/* Active — phase 2 red */
+.step-item.step-active[data-phase="2"]{background:rgba(200,16,46,.04)}
+.step-item.step-active[data-phase="2"] .step-num{border-color:#C8102E;color:#e84060;background:rgba(200,16,46,.12)}
+.step-item.step-active[data-phase="2"] .step-eyebrow{color:#e84060;opacity:.8}
+.step-item.step-active[data-phase="2"] .step-track{background:rgba(200,16,46,.22)}
+/* Active shared */
+.step-item.step-active .step-title{color:#fff}
+.step-item.step-active .step-desc{max-height:80px;opacity:1;color:rgba(255,255,255,.42);margin-top:6px}
+
+/* STACK SECTION */
+.stack-section{background:var(--dark);border-top:.5px solid var(--border)}
+.stack-diagram{display:grid;grid-template-columns:28px 1fr;gap:0;max-width:820px;margin:0 auto}
+.stack-flow{position:relative;padding-top:14px;padding-bottom:14px}
+.stack-flow-line{position:absolute;left:50%;transform:translateX(-50%);top:14px;bottom:14px;width:1.5px;background:linear-gradient(to bottom,rgba(75,139,244,.35),rgba(162,75,244,.35),rgba(200,16,46,.35),rgba(74,222,128,.35))}
+.stack-flow-dot{position:absolute;left:50%;width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 8px rgba(255,255,255,.7);transform:translateX(-50%);animation:stackDot 3.2s ease-in-out infinite}
+@keyframes stackDot{0%{top:14px;opacity:0}8%{opacity:1}88%{opacity:.9}100%{top:calc(100% - 14px);opacity:0}}
+.stack-layers{padding-left:18px;display:flex;flex-direction:column;gap:0}
+.stack-layer{background:var(--surface);border:.5px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .25s,transform .2s,box-shadow .25s;cursor:default}
+.stack-layer:hover{border-color:rgba(255,255,255,.16);transform:translateX(3px);box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.sl-top-bar{height:2px}
+.sl-content{padding:14px 18px 16px}
+.sl-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
+.sl-icon{font-size:20px;width:28px;flex-shrink:0;line-height:1.2}
+.sl-name{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.3px;margin-bottom:3px}
+.sl-role{font-size:11px;color:var(--muted);line-height:1.4}
+.sl-tech-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:0}
+.sl-tech{background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.1);border-radius:6px;padding:3px 10px;font-size:11px;color:rgba(255,255,255,.5);font-weight:500;transition:border-color .2s,color .2s}
+.stack-layer:hover .sl-tech{border-color:rgba(255,255,255,.18);color:rgba(255,255,255,.75)}
+.sl-desc{font-size:12px;color:var(--muted);line-height:1.65;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .3s ease,margin .4s}
+.stack-layer:hover .sl-desc{max-height:120px;opacity:1;margin-top:12px}
+.sl-connector{display:flex;align-items:center;gap:0;height:28px;position:relative}
+.sl-conn-label{font-size:9px;color:rgba(255,255,255,.18);letter-spacing:.07em;font-weight:600;text-transform:uppercase;position:absolute;left:50%;transform:translateX(-50%) translateY(-50%);top:50%;background:var(--dark);padding:0 8px;white-space:nowrap}
+@media(max-width:900px){.stack-diagram{grid-template-columns:1fr}.stack-flow{display:none}.stack-layers{padding-left:0}}
+
+/* DASHBOARD */
+.dashboard-section{background:var(--dark2);border-top:.5px solid var(--border)}
+.db-wrap{border-radius:14px;overflow:hidden;border:.5px solid var(--border-red);box-shadow:0 0 60px rgba(200,16,46,.08)}
+.db-hdr{background:var(--navy);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--red)}
+.db-logo-wrap{display:flex;align-items:center;gap:10px}
+.db-logo-circle{width:34px;height:34px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;font-style:italic;color:#fff}
+.db-logo-text .cap{font-size:7px;color:rgba(255,255,255,.35);letter-spacing:.1em;text-transform:uppercase}
+.db-logo-text .brand{font-size:15px;font-weight:800;color:#fff;font-style:italic;letter-spacing:-.5px}
+.db-logo-text .brand em{font-style:normal;font-size:10px;font-weight:600;color:rgba(255,255,255,.6)}
+.db-user{display:flex;align-items:center;gap:8px}
+.db-av{width:30px;height:30px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff}
+.db-uname{font-size:12px;color:#fff;font-weight:500}
+.db-urole{font-size:10px;color:rgba(255,255,255,.38)}
+.db-body{background:#0d1117;padding:16px 20px;display:grid;gap:14px}
+.db-status{display:flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(200,16,46,.07);border-radius:6px;border:.5px solid var(--border-red)}
+.db-sdot{width:6px;height:6px;border-radius:50%;background:#4ade80}
+.db-stxt{font-size:10px;color:rgba(255,255,255,.4)}
+.db-sver{margin-left:auto;font-size:10px;color:var(--red);font-weight:500}
+.db-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.db-metric{background:#181e2c;border-radius:8px;padding:12px 14px;border:.5px solid rgba(255,255,255,.06)}
+.db-metric.accent{border-top:2px solid var(--red)}
+.db-mlabel{font-size:10px;color:rgba(255,255,255,.35);margin-bottom:5px}
+.db-mval{font-size:22px;font-weight:700;color:#fff;letter-spacing:-.5px}
+.db-msub{font-size:10px;color:rgba(255,255,255,.3);margin-top:3px}
+.db-msub .up{color:#4ade80}
+.db-pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.kol{background:#181e2c;border-radius:8px;padding:10px;border:.5px solid rgba(255,255,255,.06)}
+.kol-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.kol-t{font-size:10px;color:rgba(255,255,255,.4);font-weight:500}
+.kol-n{background:rgba(255,255,255,.06);border-radius:8px;padding:1px 6px;font-size:10px;color:rgba(255,255,255,.3)}
+.kc{background:#1e2538;border-radius:6px;padding:8px;margin-bottom:6px;border-left:2px solid}
+.kc.bl{border-color:#4b8bf4}.kc.or{border-color:#f4a24b}.kc.re{border-color:var(--red)}.kc.pu{border-color:#a24bf4}.kc.gr{border-color:#4bf47a}
+.kc-n{font-size:10px;color:rgba(255,255,255,.8);font-weight:500}
+.kc-d{font-size:9px;color:rgba(255,255,255,.28);margin-top:3px}
+.db-bottom{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.db-panel{background:#181e2c;border-radius:8px;padding:12px 14px;border:.5px solid rgba(255,255,255,.06)}
+.db-plabel{font-size:10px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.cr{display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:.5px solid rgba(255,255,255,.04)}
+.cr:last-child{border-bottom:none}
+.cr-name{font-size:11px;color:rgba(255,255,255,.6)}
+.cr-right{display:flex;align-items:center;gap:6px}
+.cr-bar{height:4px;border-radius:2px}
+.cr-n{font-size:10px;color:rgba(255,255,255,.3);min-width:18px;text-align:right}
+.ar{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:.5px solid rgba(255,255,255,.04)}
+.ar:last-child{border-bottom:none}
+.ar-dot{width:6px;height:6px;border-radius:50%;margin-top:4px;flex-shrink:0}
+.ar-txt{font-size:10px;color:rgba(255,255,255,.5);line-height:1.5}
+.ar-time{font-size:9px;color:rgba(255,255,255,.25)}
+.db-slabel{font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+
+/* HITOS */
+.hitos-section{background:var(--navy);border-top:.5px solid rgba(255,255,255,.07)}
+.hitos-section .section-sub{margin-bottom:40px}
+.hitos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px}
+@media(max-width:900px){.hitos-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.hitos-grid{grid-template-columns:1fr}}
+.hito-card{background:var(--surface);border:.5px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.hito-card:hover{transform:translateY(-2px);border-color:rgba(var(--hc-rgb),.35,var(--hc))}
+.hito-top-bar{height:3px;background:var(--hc)}
+.hito-card-body{padding:22px 20px 20px;flex:1;display:flex;flex-direction:column}
+.hito-num{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hc);margin-bottom:8px;opacity:.85}
+.hito-name{font-size:15px;font-weight:800;color:#fff;margin-bottom:14px;line-height:1.25;letter-spacing:-.3px}
+.hito-deliverables{list-style:none;display:flex;flex-direction:column;gap:6px;flex:1;margin-bottom:20px}
+.hito-deliverables li{font-size:12px;color:rgba(255,255,255,.55);display:flex;align-items:flex-start;gap:7px;line-height:1.4}
+.hito-deliverables li::before{content:'✓';color:var(--hc);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px}
+.hito-amount-block{background:rgba(0,0,0,.2);border:.5px solid rgba(255,255,255,.06);border-radius:8px;padding:12px 14px;text-align:center}
+.hito-pct{font-size:10px;color:rgba(255,255,255,.35);font-weight:600;letter-spacing:.06em;margin-bottom:4px}
+.hito-price{font-size:19px;font-weight:800;color:#fff;letter-spacing:-.5px}
+.hito-price small{font-size:11px;font-weight:500;color:rgba(255,255,255,.35);margin-left:3px}
+
+/* Progress bar */
+.hitos-progress{border-radius:8px;overflow:hidden;border:.5px solid rgba(255,255,255,.07);margin-bottom:28px;height:8px;display:flex;background:rgba(255,255,255,.04)}
+.hitos-progress-seg{flex:1;transition:opacity .3s}
+.hitos-progress-seg:not(:last-child){border-right:.5px solid rgba(255,255,255,.06)}
+
+/* Total row */
+.hitos-total{background:var(--surface);border:.5px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:12px}
+.hitos-total-label{font-size:13px;color:rgba(255,255,255,.45);font-weight:500}
+.hitos-total-sum{display:flex;align-items:baseline;gap:10px}
+.hitos-total-sum .amount{font-size:32px;font-weight:800;color:#fff;letter-spacing:-1.5px}
+.hitos-total-sum .currency{font-size:14px;color:rgba(255,255,255,.4);font-weight:500}
+.hitos-total-tags{display:flex;gap:8px;flex-wrap:wrap}
+.hitos-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.1);border-radius:20px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,.4);font-weight:500}
+
+/* Hitos CTA */
+.hitos-cta{text-align:center;padding-top:4px}
+.hitos-cta p{font-size:15px;color:rgba(255,255,255,.45);margin-bottom:24px;line-height:1.6}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:.5px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between}
+.footer-brand{font-size:13px;color:var(--muted)}
+.footer-brand strong{color:rgba(255,255,255,.5)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:12px;color:var(--muted);text-decoration:none}
+.footer-links a:hover{color:var(--red)}
+
+/* DESCUENTO BANNER */
+.descuento-banner{background:linear-gradient(135deg,rgba(74,222,128,.06) 0%,rgba(74,222,128,.03) 100%);border:.5px solid rgba(74,222,128,.22);border-radius:14px;padding:24px 28px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.descuento-left{display:flex;flex-direction:column;gap:8px}
+.descuento-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4ade80;background:rgba(74,222,128,.1);border:.5px solid rgba(74,222,128,.2);border-radius:20px;padding:4px 12px;width:fit-content}
+.descuento-title{font-size:16px;font-weight:700;color:#fff;line-height:1.3}
+.descuento-sub{font-size:13px;color:rgba(255,255,255,.45)}
+.descuento-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
+.descuento-original{font-size:13px;color:rgba(255,255,255,.3);text-decoration:line-through}
+.descuento-final{font-size:26px;font-weight:800;color:#4ade80;letter-spacing:-1px;line-height:1}
+.descuento-final span{font-size:12px;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:0}
+.descuento-urgency{font-size:11px;color:rgba(74,222,128,.7);font-weight:600}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:0 20px}
+  section{padding:70px 20px}
+  .hero{padding:100px 20px 70px}
+  .casa-split{grid-template-columns:1fr}
+  .casa-left{order:0}
+  .casa-right{order:1;border-right:none;border-top:.5px solid rgba(255,255,255,.07)}
+  .steps-panel{height:380px}
+  #house-canvas{height:260px}
+  .db-metrics{grid-template-columns:repeat(2,1fr)}
+  .db-pipeline{grid-template-columns:repeat(2,1fr)}
+  .db-bottom{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:12px;text-align:center}
+  .roi-strip{gap:0}
+  .roi-arrow{display:none}
+  .roi-item{padding:8px 12px}
+}
 </style>
 </head>
 <body>
-<nav><div class="nav-logo"><div class="nav-logo-mark"><span>SST</span></div><div class="nav-brand">CRM <span>SST</span></div></div><a href="#cta" class="nav-cta">Quiero la oferta</a></nav>
-<section class="hero"><div class="hero-inner"><div class="hero-eyebrow">Sistema construido para OTECs — no adaptado</div><h1>El CRM que entiende<br/>cómo trabaja <span>una OTEC</span></h1><p class="hero-sub">Digitaliza el ciclo completo de cotizaciones — desde el Excel de Red de Capacitaciones hasta el PDF firmado — sin mensualidades, sin adaptaciones, sin compromisos de largo plazo.</p><div class="hero-pills"><div class="pill"><div class="pill-dot" style="background:#4ade80"></div>3 meses de entrega</div><div class="pill"><div class="pill-dot" style="background:var(--red)"></div>$4.500.000 CLP · pago único</div><div class="pill"><div class="pill-dot" style="background:#4b8bf4"></div>8 módulos integrados</div><div class="pill"><div class="pill-dot" style="background:#f4a24b"></div>IA con Claude API incluida</div></div><div class="hero-actions"><a href="#cta" class="btn-primary">Quiero la oferta →</a><a href="#dashboard" class="btn-secondary">Ver el sistema</a></div><div class="hero-scroll"><div class="scroll-line"></div></div></div></section>
-<section class="problema"><div class="section-inner"><div class="section-tag">El problema actual</div><h2 class="section-title">Cada cotización <span>cuesta horas.</span><br/>Y eso tiene un precio.</h2><p class="section-sub">El flujo manual de SST funciona — pero tiene un costo oculto que crece con cada requerimiento perdido.</p><div class="pain-grid"><div class="pain-card"><div class="pain-icon">📥</div><div class="pain-title">Requerimientos en Excel</div><div class="pain-desc">Los archivos llegan desde Red de Capacitaciones y alguien los procesa a mano, uno por uno, buscando duplicados sin herramientas.</div></div><div class="pain-card"><div class="pain-icon">📊</div><div class="pain-title">Cotizaciones en PowerPoint</div><div class="pain-desc">Cada propuesta se construye desde cero en PPT. Sin código correlativo, sin control de versiones, sin subcotizaciones por alternativa.</div></div><div class="pain-card"><div class="pain-icon">📧</div><div class="pain-title">Seguimiento por correo</div><div class="pain-desc">El estado de cada requerimiento vive en bandejas de entrada. No hay pipeline visible, no hay historial, no hay alertas de seguimiento.</div></div><div class="pain-card"><div class="pain-icon">📉</div><div class="pain-title">Sin visión ejecutiva</div><div class="pain-desc">El director no puede ver el pipeline en tiempo real. No hay métricas de conversión, ni revenue proyectado, ni cursos más solicitados del mes.</div></div></div></div></section>
-<section class="modulos" id="modulos"><div class="section-inner"><div class="section-tag">La solución</div><h2 class="section-title">8 módulos. <span>Un solo flujo.</span><br/>Construido para SST.</h2><p class="section-sub">Cada módulo resuelve una parte específica del proceso real — no una funcionalidad genérica de CRM que hay que adaptar.</p><div class="mod-grid"><div class="mod-card"><div class="mod-num">01</div><div class="mod-title">Importador de Red de Capacitaciones</div><div class="mod-desc">Lee automáticamente los archivos .xls exportados desde Red de Capacitaciones. Detecta duplicados por huella digital y añade solo los requerimientos nuevos al pipeline.</div></div><div class="mod-card"><div class="mod-num">02</div><div class="mod-title">Pipeline kanban de 5 etapas</div><div class="mod-desc">Tablero visual con etapas: Recibido → Contacto → Cotización → Especial → Cerrado. Cada tarjeta captura timestamps, estados internos y tags sin exponer complejidad innecesaria.</div></div><div class="mod-card"><div class="mod-num">03</div><div class="mod-title">Módulo de cotizaciones</div><div class="mod-desc">Genera cotizaciones con código correlativo (COT-2026-XXXX) y subcotizaciones por alternativa (-01, -02, -03). Incluye precio, costos directos, margen, comisión y rentabilidad estimada.</div></div><div class="mod-card"><div class="mod-num">04</div><div class="mod-title">Base de cursos y relatores</div><div class="mod-desc">Catálogo de cursos con códigos SENCE, modalidad, distinción codificado/no codificado y temarios. Base de instructores para estimación de costos por requerimiento.</div></div><div class="mod-card"><div class="mod-num">05</div><div class="mod-title">Output PDF o HTML flexible</div><div class="mod-desc">Genera la cotización final en el formato que prefiera SST: PDF con identidad visual de la empresa o página HTML equivalente. El formato se ajusta sin cambios de código.</div></div><div class="mod-card"><div class="mod-num">06</div><div class="mod-title">Asistente IA integrado</div><div class="mod-desc">Convierte correos y mensajes de WhatsApp en requerimientos listos para cotizar. Mejora el texto comercial de las propuestas y genera automáticamente el cuerpo del correo.</div><div class="mod-badge">✦ Claude API</div></div><div class="mod-card"><div class="mod-num">07</div><div class="mod-title">Dashboard ejecutivo</div><div class="mod-desc">Vista gerencial en tiempo real: pipeline por etapa, tasa de conversión, cursos más solicitados, revenue proyectado y cerrado, y actividad reciente del equipo.</div></div><div class="mod-card"><div class="mod-num">08</div><div class="mod-title">Autenticación y roles</div><div class="mod-desc">Login seguro con roles diferenciados: Administrador, Coordinador y Director. Cada uno con permisos y vistas adaptadas a su función dentro de SST.</div></div></div></div></section>
-<section class="casa"><div class="section-inner"><div class="section-tag">Cómo se construye</div><h2 class="section-title">Construir software<br/>es como <span>construir una casa.</span></h2><p class="casa-intro">"Antes de ver el resultado, hay que cimentar, cablear, diseñar y decorar. Cada etapa tiene su orden y su propósito. Así es como se levanta el sistema CRM de SST de Chile."</p><div class="house-canvas-wrap"><canvas id="house-canvas"></canvas><div class="house-hint">Haz clic en una etapa para explorarla</div><div class="house-phase-bar"><span class="hpi active" data-p="0">📐 Plano</span><span class="hpi-sep">→</span><span class="hpi" data-p="1">🔧 Estructura</span><span class="hpi-sep">→</span><span class="hpi" data-p="2">🎨 Terminaciones</span></div></div><div class="casa-steps"><div class="casa-step active" data-phase="0"><div class="casa-step-icon-wrap"><div class="casa-step-icon">📐</div></div><div class="casa-step-phase">Semanas 1–3</div><div class="casa-step-title">El plano y los permisos</div><div class="casa-step-desc">Planificación y arquitectura. Antes de poner un ladrillo, sabemos exactamente qué vamos a construir. Levantamos el flujo real de SST, mapeamos cada requerimiento y diseñamos la arquitectura completa del sistema.</div></div><div class="casa-step" data-phase="1"><div class="casa-step-icon-wrap"><div class="casa-step-icon">🔧</div></div><div class="casa-step-phase">Semanas 4–8</div><div class="casa-step-title">La plomería y el cableado</div><div class="casa-step-desc">Base de datos y motor del negocio. Todo lo invisible que hace funcionar la casa. La base de datos, la lógica que importa el Excel de Red de Capacitaciones, calcula márgenes y mueve los datos donde deben estar.</div></div><div class="casa-step" data-phase="2"><div class="casa-step-icon-wrap"><div class="casa-step-icon">🎨</div></div><div class="casa-step-phase">Semanas 9–12</div><div class="casa-step-title">El diseño interior</div><div class="casa-step-desc">Interfaz y experiencia de uso. La pintura, los pisos, la disposición de los ambientes. El tablero kanban del pipeline, los formularios de cotización, la vista ejecutiva — lo que hace que trabajar en el sistema se sienta natural.</div></div></div></div></section>
-<section class="dashboard-section" id="dashboard"><div class="section-inner"><div class="section-tag">Vista previa del sistema</div><h2 class="section-title">El dashboard que <span>Eric verá</span><br/>desde el primer día.</h2><p class="section-sub" style="margin-bottom:40px;">Visión gerencial completa del negocio en tiempo real — sin exportar a Excel, sin preguntar al equipo.</p><div class="db-wrap"><div class="db-hdr"><div class="db-logo-wrap"><div class="db-logo-circle">SST</div><div class="db-logo-text"><div class="cap">Capacitaciones</div><div class="brand">SST <em>DE CHILE</em></div></div></div><div class="db-user"><div style="text-align:right"><div class="db-uname">Eric Reyes</div><div class="db-urole">Director</div></div><div class="db-av">ER</div></div></div><div class="db-body"><div class="db-status"><div class="db-sdot"></div><span class="db-stxt">Sistema activo · Mayo 2026</span><span class="db-sver">CRM SST v1.0</span></div><div><div class="db-slabel">Resumen ejecutivo</div><div class="db-metrics"><div class="db-metric accent"><div class="db-mlabel">Requerimientos activos</div><div class="db-mval">34</div><div class="db-msub"><span class="up">+8</span> vs. mes anterior</div></div><div class="db-metric"><div class="db-mlabel">Revenue proyectado</div><div class="db-mval">$18.4M</div><div class="db-msub">CLP · pipeline abierto</div></div><div class="db-metric"><div class="db-mlabel">Revenue cerrado</div><div class="db-mval">$6.2M</div><div class="db-msub"><span class="up">↑ 22%</span> vs. abril</div></div><div class="db-metric"><div class="db-mlabel">Tasa de conversión</div><div class="db-mval">38%</div><div class="db-msub">Cotización → Cerrado</div></div></div></div><div><div class="db-slabel">Pipeline de cotizaciones</div><div class="db-pipeline"><div class="kol"><div class="kol-hdr"><span class="kol-t">Recibido</span><span class="kol-n">7</span></div><div class="kc bl"><div class="kc-n">Minera Collahuasi</div><div class="kc-d">Trabajo en altura · 24 px</div></div><div class="kc bl"><div class="kc-n">Sodimac Maipú</div><div class="kc-d">HSEC básico · 40 px</div></div><div class="kc bl"><div class="kc-n">CMPC Planta</div><div class="kc-d">Eléctrico Clase D · 12 px</div></div></div><div class="kol"><div class="kol-hdr"><span class="kol-t">Contacto</span><span class="kol-n">9</span></div><div class="kc or"><div class="kc-n">Codelco Andina</div><div class="kc-d">Prevención riesgos · 60 px</div></div><div class="kc or"><div class="kc-n">Walmart Chile</div><div class="kc-d">Manipulación manual · 35 px</div></div></div><div class="kol"><div class="kol-hdr"><span class="kol-t">Cotización</span><span class="kol-n">11</span></div><div class="kc re"><div class="kc-n">Anglo American</div><div class="kc-d">COT-2026-0041 · $1.2M</div></div><div class="kc re"><div class="kc-n">Arauco</div><div class="kc-d">COT-2026-0038 · $840K</div></div><div class="kc re"><div class="kc-n">Latam Airlines</div><div class="kc-d">COT-2026-0036 · $620K</div></div></div><div class="kol"><div class="kol-hdr"><span class="kol-t">Especial</span><span class="kol-n">4</span></div><div class="kc pu"><div class="kc-n">BHP Escondida</div><div class="kc-d">COT-2026-0031-02 · $3.4M</div></div><div class="kc pu"><div class="kc-n">Engie Chile</div><div class="kc-d">Gas Clase 3 · licitación</div></div></div><div class="kol"><div class="kol-hdr"><span class="kol-t">Cerrado</span><span class="kol-n">3</span></div><div class="kc gr"><div class="kc-n">Falabella Retail</div><div class="kc-d">$920K · 12/05</div></div><div class="kc gr"><div class="kc-n">VTR Fibra</div><div class="kc-d">$480K · 08/05</div></div></div></div></div><div class="db-bottom"><div class="db-panel"><div class="db-plabel">Cursos más solicitados — mayo</div><div class="cr"><span class="cr-name">Trabajo en altura</span><div class="cr-right"><div class="cr-bar" style="width:70px;background:var(--red)"></div><span class="cr-n">18</span></div></div><div class="cr"><span class="cr-name">Eléctrico Clase D</span><div class="cr-right"><div class="cr-bar" style="width:54px;background:#e84060"></div><span class="cr-n">14</span></div></div><div class="cr"><span class="cr-name">HSEC básico</span><div class="cr-right"><div class="cr-bar" style="width:42px;background:#f4a24b"></div><span class="cr-n">11</span></div></div><div class="cr"><span class="cr-name">Gas Clase 3</span><div class="cr-right"><div class="cr-bar" style="width:30px;background:#4b8bf4"></div><span class="cr-n">8</span></div></div><div class="cr"><span class="cr-name">Manipulación manual</span><div class="cr-right"><div class="cr-bar" style="width:18px;background:#4bf47a"></div><span class="cr-n">5</span></div></div></div><div class="db-panel"><div class="db-plabel">Actividad reciente del equipo</div><div class="ar"><div class="ar-dot" style="background:#4bf47a"></div><div><div class="ar-txt">Lisbeth cerró COT-2026-0028 con Falabella Retail</div><div class="ar-time">Hace 2 horas</div></div></div><div class="ar"><div class="ar-dot" style="background:var(--red)"></div><div><div class="ar-txt">IA generó propuesta para Anglo American (3 subcotizaciones)</div><div class="ar-time">Hace 4 horas</div></div></div><div class="ar"><div class="ar-dot" style="background:#4b8bf4"></div><div><div class="ar-txt">7 requerimientos importados desde Red de Capacitaciones</div><div class="ar-time">Hoy 08:14</div></div></div><div class="ar"><div class="ar-dot" style="background:#f4a24b"></div><div><div class="ar-txt">BHP Escondida movido a Especial · requiere revisión</div><div class="ar-time">Ayer 17:32</div></div></div></div></div></div></div></div></section>
-<section class="miguel"><div class="section-inner"><div class="miguel-inner"><div class="miguel-left"><div class="tag">Quién lo construye</div><h2>Miguel Gil Urbina</h2><p class="bio">AI First Full Stack Developer con 8+ años combinando estrategia comercial con desarrollo de software. Construyo productos que entienden el negocio porque primero lo viví. Este sistema no es un template adaptado — es arquitectura a medida del flujo real de SST.</p><div class="stack-list"><span class="stack-tag">Next.js 15</span><span class="stack-tag">TypeScript</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Prisma ORM</span><span class="stack-tag">Claude API</span><span class="stack-tag">NextAuth.js</span><span class="stack-tag">Vercel</span><span class="stack-tag">Tailwind CSS</span></div><div class="miguel-stats"><div class="mstat"><div class="mstat-val">8+</div><div class="mstat-label">años de experiencia</div></div><div class="mstat"><div class="mstat-val">3</div><div class="mstat-label">productos en producción</div></div><div class="mstat"><div class="mstat-val">3m</div><div class="mstat-label">entrega comprometida</div></div></div></div><div class="miguel-right"><h3>Por qué funciona este proyecto</h3><div class="proof-item"><div class="proof-icon">🏗️</div><div><div class="proof-title">Experiencia en gestión de canales comerciales</div><div class="proof-desc">6 años liderando redes de distribución. Entiendo el flujo comercial desde adentro, no solo desde el código.</div></div></div><div class="proof-item"><div class="proof-icon">⚡</div><div><div class="proof-title">Velocidad de entrega con IA</div><div class="proof-desc">Uso Claude y herramientas de IA para acelerar el desarrollo sin sacrificar calidad. 262 horas de trabajo en 3 meses calendario.</div></div></div><div class="proof-item"><div class="proof-icon">🚀</div><div><div class="proof-title">Productos en producción ahora</div><div class="proof-desc">Prompt Maker, Cargo Eléctric webapp, Tu Web en 7 Días — sistemas reales usados por equipos reales.</div></div></div><div class="proof-item"><div class="proof-icon">🎓</div><div><div class="proof-title">Diplomado IA Generativa en Organizaciones</div><div class="proof-desc">Universidad de Chile — LangChain, RAG, LangGraph, arquitectura multi-agente. Aplicado directamente al asistente IA de este sistema.</div></div></div></div></div></div></section>
-<section class="cta-final" id="cta"><div class="section-inner" style="max-width:700px"><div class="cta-badge">✦ Cupos limitados — Mayo 2026</div><h2>¿Por dónde<br/>quieres entrar?</h2><p>Sin presión. Sin compromiso. Solo elige cómo seguimos.</p><div class="cta-buttons"><a href="mailto:miguel.gil.9210@gmail.com?subject=Quiero la oferta — CRM SST" class="btn-primary" style="font-size:16px;padding:16px 36px">Quiero la oferta →</a><a href="mailto:miguel.gil.9210@gmail.com?subject=Quiero más valor — CRM SST" class="btn-secondary" style="font-size:16px;padding:16px 36px">Quiero más valor →</a></div><div class="cta-price">Inversión total: <strong>$4.500.000 CLP · pago único</strong> · 4 hitos · sin mensualidades</div></div></section>
-<footer><div class="footer-brand">Desarrollado por <strong>Miguel Gil Urbina</strong> · <a href="https://miguelgilurbina.com" style="color:var(--red);text-decoration:none">miguelgilurbina.com</a></div><div class="footer-links"><a href="https://miguelgilurbina.com">Portfolio</a><a href="mailto:miguel.gil.9210@gmail.com">Contacto</a><a href="https://sstdechile.cl">SST de Chile</a></div></footer>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark"><span>SST</span></div>
+    <div class="nav-brand">CRM <span>SST</span></div>
+  </div>
+  <a href="https://wa.me/56977221088?text=Hola%20Migue%2C%20me%20gustar%C3%ADa%20agendar%20contigo%20una%20reuni%C3%B3n%20!" class="nav-cta">📅 Agendar reunión</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Sistema construido para OTECs — no adaptado</div>
+    <h1>El CRM que entiende<br/>cómo trabaja <span>una OTEC</span></h1>
+    <p class="hero-sub">Del Excel de Red de Capacitaciones al PDF firmado en minutos. Sin mensualidades. Sin adaptaciones. Construido para el flujo real de SST.</p>
+    <div class="hero-pills">
+      <div class="pill"><div class="pill-dot" style="background:#4ade80"></div>3 meses de entrega</div>
+      <div class="pill"><div class="pill-dot" style="background:var(--red)"></div>$4.500.000 CLP · pago único</div>
+      <div class="pill"><div class="pill-dot" style="background:#4b8bf4"></div>8 módulos integrados</div>
+      <div class="pill"><div class="pill-dot" style="background:#f4a24b"></div>IA con Claude API incluida</div>
+    </div>
+    <div class="hero-scroll"><div class="scroll-line"></div></div>
+  </div>
+</section>
+
+<!-- PROBLEMA + ROI -->
+<section class="problema">
+  <div class="section-inner">
+    <div class="section-tag">El problema actual</div>
+    <h2 class="section-title">Cada cotización <span>cuesta horas.</span><br/>Y eso tiene un precio.</h2>
+    <p class="section-sub">El flujo manual de SST funciona — pero tiene un costo oculto que crece con cada requerimiento perdido.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">📥</div>
+        <div class="pain-title">Requerimientos en Excel</div>
+        <div class="pain-desc">Los archivos llegan desde Red de Capacitaciones y alguien los procesa a mano, uno por uno, buscando duplicados sin herramientas.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📊</div>
+        <div class="pain-title">Cotizaciones en PowerPoint</div>
+        <div class="pain-desc">Cada propuesta se construye desde cero en PPT. Sin código correlativo, sin control de versiones, sin subcotizaciones por alternativa.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📧</div>
+        <div class="pain-title">Seguimiento por correo</div>
+        <div class="pain-desc">El estado de cada requerimiento vive en bandejas de entrada. No hay pipeline visible, no hay historial, no hay alertas de seguimiento.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📉</div>
+        <div class="pain-title">Sin visión ejecutiva</div>
+        <div class="pain-desc">El director no puede ver el pipeline en tiempo real. No hay métricas de conversión, ni revenue proyectado, ni cursos más solicitados del mes.</div>
+      </div>
+    </div>
+    <!-- ROI STRIP -->
+    <div class="roi-strip">
+      <div class="roi-item">
+        <span class="roi-num">15</span>
+        <span class="roi-label">req. por semana</span>
+      </div>
+      <span class="roi-op">×</span>
+      <div class="roi-item">
+        <span class="roi-num">90<small>min</small></span>
+        <span class="roi-label">por cotización manual</span>
+      </div>
+      <span class="roi-op">=</span>
+      <div class="roi-item pain">
+        <span class="roi-num">90<small>hrs</small></span>
+        <span class="roi-label">mensuales en trabajo manual</span>
+      </div>
+      <span class="roi-arrow">→</span>
+      <div class="roi-item gain">
+        <span class="roi-num">&lt;5<small>min</small></span>
+        <span class="roi-label">por cotización con el CRM</span>
+      </div>
+      <p class="roi-caption">Eso equivale a recuperar más de <strong>2 semanas de trabajo</strong> cada mes — dedicadas a cerrar negocios, no a armar propuestas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MODULOS -->
+<section class="modulos" id="modulos">
+  <div class="section-inner">
+    <div class="section-tag">La solución</div>
+    <h2 class="section-title">8 módulos. <span>Un solo flujo.</span><br/>Construido para SST.</h2>
+    <p class="section-sub">Cada módulo resuelve una parte específica del proceso real — no una funcionalidad genérica de CRM que hay que adaptar.</p>
+    <div class="mod-grid">
+      <div class="mod-card"><div class="mod-num">01</div><div class="mod-title">Importador de Red de Capacitaciones</div><div class="mod-desc">Lee automáticamente los archivos .xls exportados desde Red de Capacitaciones. Detecta duplicados por huella digital y añade solo los requerimientos nuevos al pipeline.</div></div>
+      <div class="mod-card"><div class="mod-num">02</div><div class="mod-title">Pipeline kanban de 5 etapas</div><div class="mod-desc">Tablero visual con etapas: Recibido → Contacto → Cotización → Especial → Cerrado. Cada tarjeta captura timestamps, estados internos y tags sin exponer complejidad innecesaria.</div></div>
+      <div class="mod-card"><div class="mod-num">03</div><div class="mod-title">Módulo de cotizaciones</div><div class="mod-desc">Genera cotizaciones con código correlativo (COT-2026-XXXX) y subcotizaciones por alternativa (-01, -02, -03). Incluye precio, costos directos, margen, comisión y rentabilidad estimada.</div></div>
+      <div class="mod-card"><div class="mod-num">04</div><div class="mod-title">Base de cursos y relatores</div><div class="mod-desc">Catálogo de cursos con códigos SENCE, modalidad, distinción codificado/no codificado y temarios. Base de instructores para estimación de costos por requerimiento.</div></div>
+      <div class="mod-card"><div class="mod-num">05</div><div class="mod-title">Output PDF o HTML flexible</div><div class="mod-desc">Genera la cotización final en el formato que prefiera SST: PDF con identidad visual de la empresa o página HTML equivalente. El formato se ajusta sin cambios de código.</div></div>
+      <div class="mod-card"><div class="mod-num">06</div><div class="mod-title">Asistente IA integrado</div><div class="mod-desc">Convierte correos y mensajes de WhatsApp en requerimientos listos para cotizar. Mejora el texto comercial de las propuestas y genera automáticamente el cuerpo del correo.</div><div class="mod-badge">✦ Claude API</div></div>
+      <div class="mod-card"><div class="mod-num">07</div><div class="mod-title">Dashboard ejecutivo</div><div class="mod-desc">Vista gerencial en tiempo real: pipeline por etapa, tasa de conversión, cursos más solicitados, revenue proyectado y cerrado, y actividad reciente del equipo.</div></div>
+      <div class="mod-card"><div class="mod-num">08</div><div class="mod-title">Autenticación y roles</div><div class="mod-desc">Login seguro con roles diferenciados: Administrador, Coordinador y Director. Cada uno con permisos y vistas adaptadas a su función dentro de SST.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASA - SPLIT LAYOUT -->
+<section class="casa">
+  <div class="section-inner">
+    <div class="section-tag">Cómo se construye</div>
+    <h2 class="section-title">Construir software<br/>es como <span>construir una casa.</span></h2>
+    <p class="casa-intro">"Antes de ver el resultado, hay que cimentar, cablear, diseñar y decorar. Cada etapa tiene su orden y su propósito. Así es como se levanta el sistema CRM de SST de Chile."</p>
+
+    <div class="casa-split-wrap">
+      <div class="casa-split">
+
+        <!-- LEFT: Three.js House -->
+        <div class="casa-left">
+          <canvas id="house-canvas"></canvas>
+          <div class="house-phase-bar">
+            <span class="hpi active" data-p="0">📐 Plano</span>
+            <span class="hpi-sep">→</span>
+            <span class="hpi" data-p="1">🔧 Estructura</span>
+            <span class="hpi-sep">→</span>
+            <span class="hpi" data-p="2">🎨 Terminaciones</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: 7-step construction timeline -->
+        <div class="casa-right">
+          <div class="steps-panel">
+            <div class="steps-hdr">
+              <span class="steps-hdr-title">Etapas de construcción</span>
+              <span class="steps-hdr-count">7 pasos</span>
+            </div>
+            <div class="steps-list">
+
+              <div class="step-item step-active" data-phase="0">
+                <div class="step-left"><div class="step-num">01</div><div class="step-track"></div></div>
+                <div class="step-body">
+                  <div class="step-eyebrow">El plano y los permisos</div>
+                  <div class="step-title">Planificación y arquitectura</div>
+                  <span class="step-date">📅 23 May – 6 Jun</span>
+                  <div class="step-desc">Levantamos el flujo real de SST, mapeamos cada requerimiento y diseñamos la arquitectura completa antes de escribir una línea de código.</div>
+                </div>
+              </div>
+
+              <div class="step-item step-active" data-phase="0">
+                <div class="step-left"><div class="step-num">02</div><div class="step-track"></div></div>
+                <div class="step-body">
+                  <div class="step-eyebrow">La plomería y el cableado</div>
+                  <div class="step-title">Base de datos y motor del negocio</div>
+                  <span class="step-date">📅 6 Jun – 20 Jun</span>
+                  <div class="step-desc">Esquema PostgreSQL, APIs RESTful y lógica de importación del Excel de Red de Capacitaciones. Todo lo invisible que mueve los datos.</div>
+                </div>
+              </div>
+
+              <div class="step-item" data-phase="1">
+                <div class="step-left"><div class="step-num">03</div><div class="step-track"></div></div>
+                <div class="step-body">
+                  <div class="step-eyebrow">El diseño interior y los acabados</div>
+                  <div class="step-title">Interfaz y experiencia de uso</div>
+                  <span class="step-date">📅 20 Jun – 4 Jul</span>
+                  <div class="step-desc">Pipeline kanban, módulo de cotizaciones y formularios del equipo. Lo que hace que trabajar en el sistema sea rápido y claro para SST.</div>
+                </div>
+              </div>
+
+              <div class="step-item" data-phase="1">
+                <div class="step-left"><div class="step-num">04</div><div class="step-track"></div></div>
+                <div class="step-body">
+                  <div class="step-eyebrow">El sistema domótico</div>
+                  <div class="step-title">Asistente integrado con IA</div>
+                  <span class="step-date">📅 4 Jul – 18 Jul</span>
+                  <div class="step-desc">Claude API integrada en el sistema: convierte correos y WhatsApp en requerimientos listos, mejora propuestas y genera correos automáticamente.</div>
+                </div>
+              </div>
+
+              <div class="step-item" data-phase="2">
+                <div class="step-left"><div class="step-num">05</div><div class="step-track"></div></div>
+                <div class="step-body">
+                  <div class="step-eyebrow">La vista desde el techo</div>
+                  <div class="step-title">Dashboard ejecutivo</div>
+                  <span class="step-date">📅 18 Jul – 1 Ago</span>
+                  <div class="step-desc">Vista gerencial en tiempo real: pipeline, conversión, revenue proyectado y cerrado. Claridad del estado comercial en cualquier momento.</div>
+                </div>
+              </div>
+
+              <div class="step-item" data-phase="2">
+                <div class="step-left"><div class="step-num">06</div><div class="step-track"></div></div>
+                <div class="step-body">
+                  <div class="step-eyebrow">Los cimientos y el terreno</div>
+                  <div class="step-title">Despliegue en producción</div>
+                  <span class="step-date">📅 1 Ago – 23 Ago</span>
+                  <div class="step-desc">Sistema en producción con dominio real. Vercel + Railway configurados y la infraestructura cubierta durante todo el contrato.</div>
+                </div>
+              </div>
+
+              <div class="step-item" data-phase="2">
+                <div class="step-left"><div class="step-num">07</div><div class="step-track" style="background:transparent"></div></div>
+                <div class="step-body">
+                  <div class="step-eyebrow">La garantía post-mudanza</div>
+                  <div class="step-title">Marcha blanca y soporte</div>
+                  <span class="step-date">📅 23 Ago – 23 Oct</span>
+                  <div class="step-desc">Dos meses de operación acompañada para ajustar cualquier gotera antes de que SST viva definitivamente en el sistema.</div>
+                </div>
+              </div>
+
+            </div><!-- /steps-list -->
+          </div><!-- /steps-panel -->
+        </div><!-- /casa-right -->
+      </div><!-- /casa-split -->
+    </div><!-- /casa-split-wrap -->
+  </div>
+</section>
+
+<!-- STACK TECNOLÓGICO -->
+<section class="stack-section">
+  <div class="section-inner">
+    <div class="section-tag">Stack tecnológico</div>
+    <h2 class="section-title">5 capas. <span>Un solo sistema.</span><br/>Tecnología de producción.</h2>
+    <p class="section-sub">Cada pieza fue elegida por su madurez, su ecosistema y su compatibilidad con el flujo real de una OTEC. No prototipo — infraestructura que opera 24/7.</p>
+
+    <div class="stack-diagram">
+      <!-- Animated flow line -->
+      <div class="stack-flow">
+        <div class="stack-flow-line"></div>
+        <div class="stack-flow-dot"></div>
+      </div>
+
+      <!-- Layers -->
+      <div class="stack-layers">
+
+        <div class="stack-layer">
+          <div class="sl-top-bar" style="background:#4b8bf4"></div>
+          <div class="sl-content">
+            <div class="sl-header">
+              <div class="sl-icon">🖥️</div>
+              <div><div class="sl-name">Interfaz de usuario</div><div class="sl-role">Lo que ve y usa el equipo SST cada día</div></div>
+            </div>
+            <div class="sl-tech-row">
+              <div class="sl-tech">Next.js 16</div>
+              <div class="sl-tech">React</div>
+              <div class="sl-tech">Tailwind CSS</div>
+            </div>
+            <div class="sl-desc">Aplicación web con renderizado híbrido (SSR + CSR). Las vistas del pipeline, módulo de cotizaciones y dashboard ejecutivo corren en React con acceso inmediato desde cualquier navegador — sin instalación, sin actualizaciones manuales.</div>
+          </div>
+        </div>
+
+        <div class="sl-connector"><div class="sl-conn-label">HTTP · JSON · REST</div></div>
+
+        <div class="stack-layer">
+          <div class="sl-top-bar" style="background:#f4a24b"></div>
+          <div class="sl-content">
+            <div class="sl-header">
+              <div class="sl-icon">⚙️</div>
+              <div><div class="sl-name">API y lógica de negocio</div><div class="sl-role">El motor que procesa cada requerimiento y cotización</div></div>
+            </div>
+            <div class="sl-tech-row">
+              <div class="sl-tech">Next.js API Routes</div>
+              <div class="sl-tech">NextAuth.js</div>
+              <div class="sl-tech">SheetJS</div>
+              <div class="sl-tech">Puppeteer</div>
+            </div>
+            <div class="sl-desc">API Routes serverless para cada endpoint. NextAuth gestiona sesiones y roles (Admin, Coordinador, Director). SheetJS importa los archivos .xls de Red de Capacitaciones. Puppeteer genera los PDF de cotización con la identidad visual de SST.</div>
+          </div>
+        </div>
+
+        <div class="sl-connector"><div class="sl-conn-label">Prisma ORM · SQL</div></div>
+
+        <div class="stack-layer">
+          <div class="sl-top-bar" style="background:#a24bf4"></div>
+          <div class="sl-content">
+            <div class="sl-header">
+              <div class="sl-icon">🗄️</div>
+              <div><div class="sl-name">Base de datos</div><div class="sl-role">Donde vive cada requerimiento, cotización y curso</div></div>
+            </div>
+            <div class="sl-tech-row">
+              <div class="sl-tech">PostgreSQL</div>
+              <div class="sl-tech">Prisma ORM</div>
+            </div>
+            <div class="sl-desc">Base de datos relacional con esquema estricto: empresas, requerimientos, cotizaciones, cursos e instructores en tablas relacionadas. Prisma gestiona las migraciones con tipado estático, previniendo inconsistencias en producción.</div>
+          </div>
+        </div>
+
+        <div class="sl-connector"><div class="sl-conn-label">HTTPS · API Key</div></div>
+
+        <div class="stack-layer">
+          <div class="sl-top-bar" style="background:#C8102E"></div>
+          <div class="sl-content">
+            <div class="sl-header">
+              <div class="sl-icon">✦</div>
+              <div><div class="sl-name">Inteligencia artificial</div><div class="sl-role">El asistente que trabaja con el equipo, no por encima</div></div>
+            </div>
+            <div class="sl-tech-row">
+              <div class="sl-tech">Claude API</div>
+              <div class="sl-tech">claude-sonnet-4-5</div>
+              <div class="sl-tech">Anthropic</div>
+            </div>
+            <div class="sl-desc">Anthropic Claude API integrado directamente. Convierte correos y mensajes de WhatsApp en requerimientos estructurados, mejora el texto comercial de las propuestas y genera automáticamente los correos para Eléctrico Clase D y Gas Clase 3. La arquitectura está preparada para expandir sus capacidades en fases posteriores.</div>
+          </div>
+        </div>
+
+        <div class="sl-connector"><div class="sl-conn-label">CI/CD · Git · Deploy</div></div>
+
+        <div class="stack-layer">
+          <div class="sl-top-bar" style="background:#4ade80"></div>
+          <div class="sl-content">
+            <div class="sl-header">
+              <div class="sl-icon">☁️</div>
+              <div><div class="sl-name">Infraestructura</div><div class="sl-role">Lo que mantiene la casa en pie 24/7</div></div>
+            </div>
+            <div class="sl-tech-row">
+              <div class="sl-tech">Vercel</div>
+              <div class="sl-tech">Supabase</div>
+            </div>
+            <div class="sl-desc">Vercel despliega el frontend y la API con CI/CD automático en cada commit — sin downtime. Supabase provee PostgreSQL gestionado en producción con backups automáticos, autenticación y panel de administración incluidos. Ambos cubiertos por Miguel durante todo el contrato.</div>
+          </div>
+        </div>
+
+      </div><!-- /stack-layers -->
+    </div><!-- /stack-diagram -->
+  </div>
+</section>
+
+<!-- DASHBOARD PREVIEW -->
+<section class="dashboard-section" id="dashboard">
+  <div class="section-inner">
+    <div class="section-tag">Vista previa del sistema</div>
+    <h2 class="section-title">El dashboard que <span>Eric verá</span><br/>desde el primer día.</h2>
+    <p class="section-sub" style="margin-bottom:40px">Visión gerencial completa del negocio en tiempo real — sin exportar a Excel, sin preguntar al equipo.</p>
+    <div class="db-wrap">
+      <div class="db-hdr">
+        <div class="db-logo-wrap">
+          <div class="db-logo-circle">SST</div>
+          <div class="db-logo-text"><div class="cap">Capacitaciones</div><div class="brand">SST <em>DE CHILE</em></div></div>
+        </div>
+        <div class="db-user">
+          <div style="text-align:right"><div class="db-uname">Eric Reyes</div><div class="db-urole">Director</div></div>
+          <div class="db-av">ER</div>
+        </div>
+      </div>
+      <div class="db-body">
+        <div class="db-status"><div class="db-sdot"></div><span class="db-stxt">Sistema activo · Mayo 2026</span><span class="db-sver">CRM SST v1.0</span></div>
+        <div>
+          <div class="db-slabel">Resumen ejecutivo</div>
+          <div class="db-metrics">
+            <div class="db-metric accent"><div class="db-mlabel">Requerimientos activos</div><div class="db-mval">34</div><div class="db-msub"><span class="up">+8</span> vs. mes anterior</div></div>
+            <div class="db-metric"><div class="db-mlabel">Revenue proyectado</div><div class="db-mval">$18.4M</div><div class="db-msub">CLP · pipeline abierto</div></div>
+            <div class="db-metric"><div class="db-mlabel">Revenue cerrado</div><div class="db-mval">$6.2M</div><div class="db-msub"><span class="up">↑ 22%</span> vs. abril</div></div>
+            <div class="db-metric"><div class="db-mlabel">Tasa de conversión</div><div class="db-mval">38%</div><div class="db-msub">Cotización → Cerrado</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="db-slabel">Pipeline de cotizaciones</div>
+          <div class="db-pipeline">
+            <div class="kol"><div class="kol-hdr"><span class="kol-t">Recibido</span><span class="kol-n">7</span></div><div class="kc bl"><div class="kc-n">Minera Collahuasi</div><div class="kc-d">Trabajo en altura · 24 px</div></div><div class="kc bl"><div class="kc-n">Sodimac Maipú</div><div class="kc-d">HSEC básico · 40 px</div></div><div class="kc bl"><div class="kc-n">CMPC Planta</div><div class="kc-d">Eléctrico Clase D · 12 px</div></div></div>
+            <div class="kol"><div class="kol-hdr"><span class="kol-t">Contacto</span><span class="kol-n">9</span></div><div class="kc or"><div class="kc-n">Codelco Andina</div><div class="kc-d">Prevención riesgos · 60 px</div></div><div class="kc or"><div class="kc-n">Walmart Chile</div><div class="kc-d">Manipulación manual · 35 px</div></div></div>
+            <div class="kol"><div class="kol-hdr"><span class="kol-t">Cotización</span><span class="kol-n">11</span></div><div class="kc re"><div class="kc-n">Anglo American</div><div class="kc-d">COT-2026-0041 · $1.2M</div></div><div class="kc re"><div class="kc-n">Arauco</div><div class="kc-d">COT-2026-0038 · $840K</div></div><div class="kc re"><div class="kc-n">Latam Airlines</div><div class="kc-d">COT-2026-0036 · $620K</div></div></div>
+            <div class="kol"><div class="kol-hdr"><span class="kol-t">Especial</span><span class="kol-n">4</span></div><div class="kc pu"><div class="kc-n">BHP Escondida</div><div class="kc-d">COT-2026-0031-02 · $3.4M</div></div><div class="kc pu"><div class="kc-n">Engie Chile</div><div class="kc-d">Gas Clase 3 · licitación</div></div></div>
+            <div class="kol"><div class="kol-hdr"><span class="kol-t">Cerrado</span><span class="kol-n">3</span></div><div class="kc gr"><div class="kc-n">Falabella Retail</div><div class="kc-d">$920K · 12/05</div></div><div class="kc gr"><div class="kc-n">VTR Fibra</div><div class="kc-d">$480K · 08/05</div></div></div>
+          </div>
+        </div>
+        <div class="db-bottom">
+          <div class="db-panel">
+            <div class="db-plabel">Cursos más solicitados — mayo</div>
+            <div class="cr"><span class="cr-name">Trabajo en altura</span><div class="cr-right"><div class="cr-bar" style="width:70px;background:var(--red)"></div><span class="cr-n">18</span></div></div>
+            <div class="cr"><span class="cr-name">Eléctrico Clase D</span><div class="cr-right"><div class="cr-bar" style="width:54px;background:#e84060"></div><span class="cr-n">14</span></div></div>
+            <div class="cr"><span class="cr-name">HSEC básico</span><div class="cr-right"><div class="cr-bar" style="width:42px;background:#f4a24b"></div><span class="cr-n">11</span></div></div>
+            <div class="cr"><span class="cr-name">Gas Clase 3</span><div class="cr-right"><div class="cr-bar" style="width:30px;background:#4b8bf4"></div><span class="cr-n">8</span></div></div>
+            <div class="cr"><span class="cr-name">Manipulación manual</span><div class="cr-right"><div class="cr-bar" style="width:18px;background:#4bf47a"></div><span class="cr-n">5</span></div></div>
+          </div>
+          <div class="db-panel">
+            <div class="db-plabel">Actividad reciente del equipo</div>
+            <div class="ar"><div class="ar-dot" style="background:#4bf47a"></div><div><div class="ar-txt">Lisbeth cerró COT-2026-0028 con Falabella Retail</div><div class="ar-time">Hace 2 horas</div></div></div>
+            <div class="ar"><div class="ar-dot" style="background:var(--red)"></div><div><div class="ar-txt">IA generó propuesta para Anglo American (3 subcotizaciones)</div><div class="ar-time">Hace 4 horas</div></div></div>
+            <div class="ar"><div class="ar-dot" style="background:#4b8bf4"></div><div><div class="ar-txt">7 requerimientos importados desde Red de Capacitaciones</div><div class="ar-time">Hoy 08:14</div></div></div>
+            <div class="ar"><div class="ar-dot" style="background:#f4a24b"></div><div><div class="ar-txt">BHP Escondida movido a Especial · requiere revisión</div><div class="ar-time">Ayer 17:32</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HITOS DE PAGO -->
+<section class="hitos-section" id="cta">
+  <div class="section-inner">
+    <div class="section-tag">Forma de pago</div>
+    <h2 class="section-title">4 hitos. <span>4 entregas.</span><br/>Un solo proyecto.</h2>
+    <p class="section-sub">Cada pago está atado a una entrega concreta. No se avanza al siguiente hito hasta que el anterior esté aprobado por SST.</p>
+
+    <!-- HITO CARDS -->
+    <div class="hitos-grid">
+
+      <!-- Hito 1 -->
+      <div class="hito-card" style="--hc:#4b8bf4">
+        <div class="hito-top-bar"></div>
+        <div class="hito-card-body">
+          <div class="hito-num">Hito 01 · Al firmar</div>
+          <div class="hito-name">Firma del contrato</div>
+          <ul class="hito-deliverables">
+            <li>Inicio formal del proyecto</li>
+            <li>Arquitectura técnica documentada</li>
+            <li>Base de datos en ambiente de desarrollo</li>
+          </ul>
+          <div class="hito-amount-block">
+            <div class="hito-pct">25% del proyecto</div>
+            <div class="hito-price">$1.125.000<small>CLP</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hito 2 -->
+      <div class="hito-card" style="--hc:#f4a24b">
+        <div class="hito-top-bar"></div>
+        <div class="hito-card-body">
+          <div class="hito-num">Hito 02 · Aprobación staging</div>
+          <div class="hito-name">Sistema funcional en staging</div>
+          <ul class="hito-deliverables">
+            <li>CRM operativo en ambiente de pruebas</li>
+            <li>Importador Excel + pipeline completo</li>
+            <li>Cotizaciones, IA activa y dashboard</li>
+            <li>Output PDF o HTML funcionando</li>
+          </ul>
+          <div class="hito-amount-block">
+            <div class="hito-pct">25% del proyecto</div>
+            <div class="hito-price">$1.125.000<small>CLP</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hito 3 -->
+      <div class="hito-card" style="--hc:#C8102E">
+        <div class="hito-top-bar"></div>
+        <div class="hito-card-body">
+          <div class="hito-num">Hito 03 · Go-live</div>
+          <div class="hito-name">Despliegue en producción</div>
+          <ul class="hito-deliverables">
+            <li>Sistema en producción con dominio real</li>
+            <li>Capacitación al equipo SST</li>
+            <li>Infraestructura cubierta sin cobro extra</li>
+          </ul>
+          <div class="hito-amount-block">
+            <div class="hito-pct">35% del proyecto</div>
+            <div class="hito-price">$1.575.000<small>CLP</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hito 4 -->
+      <div class="hito-card" style="--hc:#4ade80">
+        <div class="hito-top-bar"></div>
+        <div class="hito-card-body">
+          <div class="hito-num">Hito 04 · Fin marcha blanca</div>
+          <div class="hito-name">Cierre de marcha blanca</div>
+          <ul class="hito-deliverables">
+            <li>2 meses de operación acompañada</li>
+            <li>Reporte de costos operativos reales</li>
+            <li>Documentación técnica final</li>
+          </ul>
+          <div class="hito-amount-block">
+            <div class="hito-pct">15% del proyecto</div>
+            <div class="hito-price">$675.000<small>CLP</small></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /hitos-grid -->
+
+    <!-- Progress bar proporcional 25/25/35/15 -->
+    <div class="hitos-progress">
+      <div class="hitos-progress-seg" style="flex:25;background:#4b8bf4"></div>
+      <div class="hitos-progress-seg" style="flex:25;background:#f4a24b"></div>
+      <div class="hitos-progress-seg" style="flex:35;background:#C8102E"></div>
+      <div class="hitos-progress-seg" style="flex:15;background:#4ade80"></div>
+    </div>
+
+    <!-- Total -->
+    <div class="hitos-total">
+      <div>
+        <div class="hitos-total-label">Inversión total del proyecto</div>
+        <div class="hitos-total-sum">
+          <span class="amount">$4.500.000</span>
+          <span class="currency">CLP · neto</span>
+        </div>
+      </div>
+      <div class="hitos-total-tags">
+        <span class="hitos-tag">4 hitos de entrega</span>
+        <span class="hitos-tag">3 meses de desarrollo</span>
+        <span class="hitos-tag">Sin mensualidades</span>
+        <span class="hitos-tag">Pago contra entrega</span>
+      </div>
+    </div>
+
+    <!-- Descuento banner -->
+    <div class="descuento-banner">
+      <div class="descuento-left">
+        <span class="descuento-tag" id="descuento-tag">⚡ Oferta por tiempo limitado</span>
+        <div class="descuento-title">10% de descuento si comenzamos antes del 23 de mayo</div>
+        <div class="descuento-sub">El precio baja si firmamos esta semana. Sin condiciones adicionales.</div>
+      </div>
+      <div class="descuento-right">
+        <div class="descuento-original">$4.500.000</div>
+        <div class="descuento-final">$4.050.000 <span>CLP · neto</span></div>
+        <div class="descuento-urgency">Válido hasta el 23 de mayo de 2026</div>
+      </div>
+    </div>
+
+    <!-- Subtle CTA -->
+    <div class="hitos-cta">
+      <p>Las conversaciones ya pasaron. Solo falta dar el primer paso.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/56977221088?text=Hola%20Migue%2C%20me%20gustar%C3%ADa%20agendar%20contigo%20una%20reuni%C3%B3n%20!" class="btn-primary" style="font-size:15px;padding:14px 32px">📅 Agendar reunión</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Desarrollado por <strong>Miguel Gil Urbina</strong> · <a href="https://miguelgilurbina.com" style="color:var(--red);text-decoration:none">miguelgilurbina.com</a></div>
+  <div class="footer-links">
+    <a href="https://miguelgilurbina.com">Portfolio</a>
+    <a href="mailto:miguel.gil.9210@gmail.com">Contacto</a>
+    <a href="https://sstdechile.cl">SST de Chile</a>
+  </div>
+</footer>
+
 <script>
 (function(){
 'use strict';
 var canvas=document.getElementById('house-canvas');
 if(!canvas||typeof THREE==='undefined')return;
 function W(){return canvas.parentElement.clientWidth}
-function H(){return Math.min(460,Math.max(260,W()*.44))}
+function H(){return canvas.clientHeight||440}
 var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});
 renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-renderer.shadowMap.enabled=true;
-renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
 var scene=new THREE.Scene();
+scene.fog=new THREE.FogExp2(0x060b16,0.036);
 var camera=new THREE.PerspectiveCamera(38,W()/H(),.1,200);
-camera.position.set(9,6,9);camera.lookAt(0,1.8,0);
-function resize(){var w=W(),h=H();canvas.style.height=h+'px';renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
-scene.add(new THREE.AmbientLight(0x1a2844,6));
+function resize(){var w=W(),h=H();renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
+
+/* LIGHTS */
+scene.add(new THREE.AmbientLight(0x0d1a33,8));
 var sun=new THREE.DirectionalLight(0xffffff,3.5);
-sun.position.set(8,12,6);sun.castShadow=true;
-sun.shadow.mapSize.width=1024;sun.shadow.mapSize.height=1024;
-sun.shadow.camera.near=.5;sun.shadow.camera.far=50;
-sun.shadow.camera.left=-10;sun.shadow.camera.right=10;
-sun.shadow.camera.top=10;sun.shadow.camera.bottom=-10;
+sun.position.set(8,14,6);sun.castShadow=true;
+sun.shadow.mapSize.width=2048;sun.shadow.mapSize.height=2048;
+sun.shadow.camera.near=.5;sun.shadow.camera.far=60;
+sun.shadow.camera.left=-12;sun.shadow.camera.right=12;
+sun.shadow.camera.top=12;sun.shadow.camera.bottom=-12;
 scene.add(sun);
-var fill=new THREE.DirectionalLight(0x2255aa,1);fill.position.set(-5,3,-5);scene.add(fill);
-var ground=new THREE.Mesh(new THREE.PlaneGeometry(40,40),new THREE.MeshStandardMaterial({color:0x06090f,roughness:1}));
+var fill=new THREE.DirectionalLight(0x2255aa,1.4);fill.position.set(-6,4,-6);scene.add(fill);
+var accentLight=new THREE.PointLight(0x4b8bf4,10,14);
+accentLight.position.set(0,4,0);scene.add(accentLight);
+
+/* GROUND */
+var ground=new THREE.Mesh(new THREE.PlaneGeometry(50,50),new THREE.MeshStandardMaterial({color:0x040810,roughness:1}));
 ground.rotation.x=-Math.PI/2;ground.position.y=-.02;ground.receiveShadow=true;scene.add(ground);
+/* Tech floor grid */
+(function(){var sz=12,div=24,geo=new THREE.BufferGeometry(),v=[];var step=sz/div;
+for(var i=-sz/2;i<=sz/2+.001;i+=step){v.push(i,.003,-sz/2,i,.003,sz/2);v.push(-sz/2,.003,i,sz/2,.003,i)}
+geo.setAttribute('position',new THREE.Float32BufferAttribute(v,3));
+scene.add(new THREE.LineSegments(geo,new THREE.LineBasicMaterial({color:0x0d1a33,transparent:true,opacity:.55})));
+})();
+
+/* PHASE DATA */
 var PC=[0x4b8bf4,0xf4a24b,0xC8102E];
-var PE=[0x1a3a8a,0x8a5a10,0x6e0818];
-var DC=0x141c2e;
+var PE=[0x0d1c44,0x553300,0x3d0008];
+var DC=0x0e1626;
 var groups=[[],[],[]];
-function mkMat(c,e,ei,op){return new THREE.MeshStandardMaterial({color:c,emissive:e,emissiveIntensity:ei||0,roughness:.78,metalness:.05,transparent:op<1,opacity:op!==undefined?op:1})}
-function box(phase,w,h,d,x,y,z,ry){var m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mkMat(DC,0x000000,0,1));m.position.set(x,y,z);if(ry)m.rotation.y=ry;m.castShadow=true;m.receiveShadow=true;scene.add(m);groups[phase].push(m);return m}
-function cyl(phase,rT,rB,h,seg,x,y,z,ry){var m=new THREE.Mesh(new THREE.CylinderGeometry(rT,rB,h,seg),mkMat(DC,0x000000,0,1));m.position.set(x,y,z);if(ry)m.rotation.y=ry;m.castShadow=true;m.receiveShadow=true;scene.add(m);groups[phase].push(m);return m}
-// Phase 0: Foundation
+var edgeGroups=[[],[],[]];
+var phaseActivatedAt=[-999,-999,-999];
+var ANIM_DUR=.8,DROP=3.2;
+
+function mkMat(c){return new THREE.MeshStandardMaterial({color:c,emissive:0,emissiveIntensity:0,roughness:.72,metalness:.1})}
+
+function box(phase,w,h,d,x,y,z,ry){
+  var geo=new THREE.BoxGeometry(w,h,d);
+  var m=new THREE.Mesh(geo,mkMat(DC));
+  m.position.set(x,y,z);if(ry)m.rotation.y=ry;
+  m.castShadow=true;m.receiveShadow=true;
+  m.userData.baseY=y;
+  var eg=new THREE.EdgesGeometry(geo,20);
+  var el=new THREE.LineSegments(eg,new THREE.LineBasicMaterial({color:PC[phase],transparent:true,opacity:0,depthWrite:false}));
+  m.add(el);edgeGroups[phase].push(el);
+  scene.add(m);groups[phase].push(m);return m;
+}
+function cyl(phase,rT,rB,h,seg,x,y,z,ry){
+  var geo=new THREE.CylinderGeometry(rT,rB,h,seg);
+  var m=new THREE.Mesh(geo,mkMat(DC));
+  m.position.set(x,y,z);if(ry)m.rotation.y=ry;
+  m.castShadow=true;m.receiveShadow=true;
+  m.userData.baseY=y;
+  var eg=new THREE.EdgesGeometry(geo,20);
+  var el=new THREE.LineSegments(eg,new THREE.LineBasicMaterial({color:PC[phase],transparent:true,opacity:0,depthWrite:false}));
+  m.add(el);edgeGroups[phase].push(el);
+  scene.add(m);groups[phase].push(m);return m;
+}
+
+/* GEOMETRY — Phase 0: Foundation */
 box(0,4.6,.28,4.6,0,.14,0);
 box(0,4,.06,4,0,.31,0);
 box(0,4.6,.08,.12,0,.28,2.24);box(0,4.6,.08,.12,0,.28,-2.24);
 box(0,.12,.08,4.6,-2.24,.28,0);box(0,.12,.08,4.6,2.24,.28,0);
-(function(){var geo=new THREE.BufferGeometry(),v=[];for(var i=-2;i<=2.01;i+=.5){v.push(i,.33,-2.2,i,.33,2.2);v.push(-2.2,.33,i,2.2,.33,i)}geo.setAttribute('position',new THREE.Float32BufferAttribute(v,3));var lines=new THREE.LineSegments(geo,new THREE.LineBasicMaterial({color:DC,transparent:true,opacity:.5}));scene.add(lines);groups[0].push(lines)})();
-// Phase 1: Walls
+(function(){var geo=new THREE.BufferGeometry(),v=[];for(var i=-2;i<=2.01;i+=.5){v.push(i,.33,-2.2,i,.33,2.2);v.push(-2.2,.33,i,2.2,.33,i)}
+geo.setAttribute('position',new THREE.Float32BufferAttribute(v,3));
+var l=new THREE.LineSegments(geo,new THREE.LineBasicMaterial({color:DC,transparent:true,opacity:.4}));
+scene.add(l);groups[0].push(l);
+})();
+/* Phase 1: Walls */
 var wH=3.2,wT=.22,wL=4,wY=.28+wH/2;
-box(1,wL,wH,wT,0,wY,-wL/2);
-box(1,wT,wH,wL,-wL/2,wY,0);
-box(1,wT,wH*.55,wL,wL/2,.28+wH*.275,0);
-box(1,wT,wH*.4,wL,wL/2,.28+wH-wH*.2,0);
-box(1,1.3,wH,wT,-1.35,wY,wL/2);
-box(1,1.3,wH,wT,1.35,wY,wL/2);
-box(1,1.05,wH-2.05,wT,0,.28+2.05+(wH-2.05)/2,wL/2);
-box(1,.16,wH,.16,0,wY,0);
-// Phase 2: Roof + details
+box(1,wL,wH,wT,0,wY,-wL/2);box(1,wT,wH,wL,-wL/2,wY,0);
+box(1,wT,wH*.55,wL,wL/2,.28+wH*.275,0);box(1,wT,wH*.4,wL,wL/2,.28+wH-wH*.2,0);
+box(1,1.3,wH,wT,-1.35,wY,wL/2);box(1,1.3,wH,wT,1.35,wY,wL/2);
+box(1,1.05,wH-2.05,wT,0,.28+2.05+(wH-2.05)/2,wL/2);box(1,.16,wH,.16,0,wY,0);
+/* Phase 2: Roof + finishes */
 var rBase=.28+wH;
 cyl(2,0,2.97,1.9,4,0,rBase+.95,0,Math.PI/4);
-box(2,4.5,.12,4.5,0,rBase+.06,0);
-box(2,.38,1.1,.38,1,rBase+.7,-1);
-box(2,.5,.12,.5,1,rBase+1.32,-1);
-box(2,.78,.68,.16,-1.35,.28+1.9,wL/2+.06);
-box(2,.78,.68,.16,1.35,.28+1.9,wL/2+.06);
-box(2,.05,.68,.2,-1.35,.28+1.9,wL/2+.06);
-box(2,.78,.05,.2,-1.35,.28+1.9,wL/2+.06);
-box(2,.2,.68,.78,wL/2+.06,.28+1.9,0);
-box(2,.92,1.85,.16,0,.28+.925,wL/2+.06);
-box(2,.06,.06,.08,.34,.28+.9,wL/2+.14);
-box(2,1.1,.1,.32,0,.28,wL/2+.26);
-// Apply phase
-var activePhase=0;
+box(2,4.5,.12,4.5,0,rBase+.06,0);box(2,.38,1.1,.38,1,rBase+.7,-1);box(2,.5,.12,.5,1,rBase+1.32,-1);
+box(2,.78,.68,.16,-1.35,.28+1.9,wL/2+.06);box(2,.78,.68,.16,1.35,.28+1.9,wL/2+.06);
+box(2,.05,.68,.2,-1.35,.28+1.9,wL/2+.06);box(2,.78,.05,.2,-1.35,.28+1.9,wL/2+.06);
+box(2,.2,.68,.78,wL/2+.06,.28+1.9,0);box(2,.92,1.85,.16,0,.28+.925,wL/2+.06);
+box(2,.06,.06,.08,.34,.28+.9,wL/2+.14);box(2,1.1,.1,.32,0,.28,wL/2+.26);
+
+/* PARTICLES */
+var N=120,pPos=new Float32Array(N*3),pSpd=new Float32Array(N),pOff=new Float32Array(N);
+for(var i=0;i<N;i++){pPos[i*3]=(Math.random()-.5)*5;pPos[i*3+1]=Math.random()*7;pPos[i*3+2]=(Math.random()-.5)*5;pSpd[i]=.3+Math.random()*.5;pOff[i]=Math.random()*Math.PI*2;}
+var pGeo=new THREE.BufferGeometry();pGeo.setAttribute('position',new THREE.Float32BufferAttribute(pPos,3));
+var pMat=new THREE.PointsMaterial({color:0x4b8bf4,size:.07,transparent:true,opacity:.55,depthWrite:false});
+scene.add(new THREE.Points(pGeo,pMat));
+
+/* PHASE MANAGEMENT */
+var activePhase=0,clockNow=0;
+function easeOut(t){return 1-Math.pow(Math.max(0,1-t),3)}
+
 function applyPhase(p){
   activePhase=p;
-  groups.forEach(function(meshes,gp){
-    meshes.forEach(function(mesh){
-      var m=mesh.material;if(!m)return;
-      if(gp<p){m.color.setHex(PC[gp]);if(m.emissive)m.emissive.setHex(PE[gp]);m.emissiveIntensity=.07;m.transparent=false;m.opacity=.75}
-      else if(gp===p){m.color.setHex(PC[gp]);if(m.emissive)m.emissive.setHex(PE[gp]);m.emissiveIntensity=.48;m.transparent=false;m.opacity=1}
-      else{m.color.setHex(DC);if(m.emissive)m.emissive.setHex(0x000000);m.emissiveIntensity=0;m.transparent=true;m.opacity=.11}
-      m.needsUpdate=true;
-    });
+  phaseActivatedAt[p]=clockNow;
+  accentLight.color.setHex(PC[p]);
+  pMat.color.setHex(PC[p]);
+  document.querySelectorAll('.hpi').forEach(function(el,i){
+    el.classList.toggle('active',i===p);
+    el.style.color=i===p?'#'+PC[i].toString(16).padStart(6,'0'):'';
   });
-  document.querySelectorAll('.hpi').forEach(function(el,i){el.classList.toggle('active',i===p);el.style.color=i===p?'#'+PC[i].toString(16).padStart(6,'0'):''});
-  document.querySelectorAll('.casa-step').forEach(function(el,i){
-    var on=i===p;el.classList.toggle('active',on);
-    var c=PC[i],r=(c>>16)&0xff,g=(c>>8)&0xff,b=c&0xff;
-    el.style.borderColor=on?'rgba('+r+','+g+','+b+',.45)':'';
-    var wrap=el.querySelector('.casa-step-icon-wrap');
-    if(wrap){wrap.style.borderColor=on?'rgba('+r+','+g+','+b+',.6)':'';wrap.style.background=on?'rgba('+r+','+g+','+b+',.12)':''}
-    var ph=el.querySelector('.casa-step-phase');if(ph)ph.style.color=on?'rgba('+r+','+g+','+b+',.9)':'';
+  // Sync 7-step timeline
+  document.querySelectorAll('.step-item').forEach(function(el){
+    var sp=parseInt(el.dataset.phase);
+    el.classList.remove('step-active','step-done');
+    if(sp===p) el.classList.add('step-active');
+    else if(sp<p) el.classList.add('step-done');
   });
 }
 applyPhase(0);
-var orbitAngle=.55,phaseTimer=0,manualMode=false,PHASE_DUR=3.8;
+phaseActivatedAt[0]=-999; // treat phase 0 as already built
+
+var orbitAngle=.55,phaseTimer=0,manualMode=false,PHASE_DUR=5.5;
 var clock=new THREE.Clock();
+
 function animate(){
   requestAnimationFrame(animate);
   var dt=Math.min(clock.getDelta(),.1);
-  orbitAngle+=dt*.17;
-  var R=11.5;
+  clockNow+=dt;
+
+  /* Camera slow orbit + gentle vertical bob */
+  orbitAngle+=dt*.11;
+  var R=12.5;
   camera.position.x=Math.cos(orbitAngle)*R;
   camera.position.z=Math.sin(orbitAngle)*R;
-  camera.position.y=6.5;
+  camera.position.y=6.2+Math.sin(clockNow*.22)*.7;
   camera.lookAt(0,1.8,0);
-  if(!manualMode){phaseTimer+=dt;if(phaseTimer>=PHASE_DUR){phaseTimer=0;applyPhase((activePhase+1)%3)}}
+
+  /* Accent light pulse */
+  var pulse=.5+.5*Math.sin(clockNow*2.5);
+  accentLight.intensity=4+pulse*9;
+  accentLight.position.x=Math.cos(orbitAngle*1.8)*2;
+  accentLight.position.z=Math.sin(orbitAngle*1.8)*2;
+  accentLight.position.y=3.5+pulse*.9;
+
+  /* Mesh material + build animation */
+  groups.forEach(function(meshes,gp){
+    var elapsed=clockNow-phaseActivatedAt[gp];
+    var ef=easeOut(elapsed/ANIM_DUR);
+    meshes.forEach(function(mesh){
+      /* Build-in: rise from below */
+      if(mesh.userData.baseY!==undefined){
+        if(gp<=activePhase){mesh.position.y=mesh.userData.baseY-DROP*(1-ef);}
+        else{mesh.position.y=mesh.userData.baseY;}
+      }
+      var m=mesh.material;if(!m||!m.color)return;
+      if(gp<activePhase){m.color.setHex(PC[gp]);if(m.emissive)m.emissive.setHex(PE[gp]);m.emissiveIntensity=.06;m.transparent=false;m.opacity=.82;}
+      else if(gp===activePhase){m.color.setHex(PC[gp]);if(m.emissive)m.emissive.setHex(PE[gp]);m.emissiveIntensity=.22+pulse*.22;m.transparent=false;m.opacity=1;}
+      else{m.color.setHex(DC);if(m.emissive)m.emissive.setHex(0);m.emissiveIntensity=0;m.transparent=true;m.opacity=.07;}
+      m.needsUpdate=true;
+    });
+  });
+
+  /* Edge glow */
+  edgeGroups.forEach(function(edges,gp){
+    edges.forEach(function(el){
+      var m=el.material;
+      if(gp<activePhase){m.color.setHex(PC[gp]);m.opacity=.15;}
+      else if(gp===activePhase){m.color.setHex(PC[gp]);m.opacity=.3+pulse*.38;}
+      else{m.opacity=0;}
+      m.needsUpdate=true;
+    });
+  });
+
+  /* Particles */
+  var pa=pGeo.attributes.position.array;
+  for(var i=0;i<N;i++){
+    pa[i*3+1]+=pSpd[i]*dt*.32;
+    pa[i*3]+=Math.sin(clockNow*.55+pOff[i])*.0015;
+    if(pa[i*3+1]>8){pa[i*3]=(Math.random()-.5)*4;pa[i*3+1]=0;pa[i*3+2]=(Math.random()-.5)*4;}
+  }
+  pGeo.attributes.position.needsUpdate=true;
+  pMat.opacity=.28+pulse*.32;
+
+  /* Auto phase */
+  if(!manualMode){phaseTimer+=dt;if(phaseTimer>=PHASE_DUR){phaseTimer=0;applyPhase((activePhase+1)%3);}}
   renderer.render(scene,camera);
 }
 resize();window.addEventListener('resize',resize);animate();
-function selectPhase(i){manualMode=true;phaseTimer=0;applyPhase(i);clearTimeout(window._phaseT);window._phaseT=setTimeout(function(){manualMode=false},9000)}
-document.querySelectorAll('.casa-step').forEach(function(el,i){el.addEventListener('click',function(){selectPhase(i)})});
-document.querySelectorAll('.hpi').forEach(function(el){el.addEventListener('click',function(){selectPhase(parseInt(el.dataset.p))})});
+function selectPhase(i){manualMode=true;phaseTimer=0;applyPhase(i);clearTimeout(window._phaseT);window._phaseT=setTimeout(function(){manualMode=false;},12000);}
+document.querySelectorAll('.hpi').forEach(function(el){el.addEventListener('click',function(){selectPhase(parseInt(el.dataset.p));});});
+})();
+
+// Descuento countdown
+(function(){
+  var deadline = new Date('2026-05-23T23:59:59');
+  var tag = document.getElementById('descuento-tag');
+  var banner = tag && tag.closest('.descuento-banner');
+  if(!tag) return;
+  var diff = Math.ceil((deadline - new Date()) / 86400000);
+  if(diff <= 0){
+    if(banner) banner.style.display = 'none';
+    return;
+  }
+  var label = diff === 1 ? 'Queda 1 día' : 'Quedan ' + diff + ' días';
+  tag.textContent = '⚡ Oferta por tiempo limitado · ' + label;
 })();
 </script>
 </body>
