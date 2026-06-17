@@ -46,14 +46,16 @@ export const es = {
     sectionSubtitle: "9+ años combinando estrategia comercial con desarrollo tecnológico especializado en IA",
     current:        "Actual",
     keySkills:      "Competencias clave:",
+    caseStudyLabel: "Ver historia del proyecto",
     calloutTitle:   "Transición Estratégica hacia la Tecnología",
     calloutDesc:    "Después de 6 años liderando procesos comerciales y optimizando redes de distribución, decidí aplicar este conocimiento empresarial al desarrollo de soluciones tecnológicas. Mi experiencia en canales y stakeholder management me permite crear herramientas de IA que realmente resuelven problemas de negocio reales.",
     items: [
       {
-        title:     "Full Stack Developer & Product Owner",
-        company:   "Cargo Eléctric",
-        period:    "Sep 2025 - Presente",
-        highlight: "Doble rol: desarrollo técnico y gestión de producto para plataforma logística de flotas eléctricas",
+        title:        "Full Stack Developer & Product Owner",
+        company:      "Cargo Eléctric",
+        period:       "Sep 2025 - Presente",
+        highlight:    "Doble rol: desarrollo técnico y gestión de producto para plataforma logística de flotas eléctricas",
+        caseStudyUrl: "/cargo-electric",
         bullets: [
           "Product Owner & Full Stack Developer de web app Next.js: liderazgo end-to-end desde ideación hasta implementación de funcionalidades de back office, facturación y gestión administrativa",
           "Arquitectura y desarrollo de modelo de datos escalable en Firebase para cobertura operacional completa de la empresa",
@@ -217,6 +219,7 @@ export const es = {
     sectionSubtitle: "Proyectos adicionales que muestran el alcance de mi experiencia",
     viewLive:       "Ver Live",
     viewCode:       "Ver Código",
+    viewCaseStudy:  "Ver Case Study",
     live:           "Live",
     items: [
       {

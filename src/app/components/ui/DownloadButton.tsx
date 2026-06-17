@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
 
 const CV_FILES = {
@@ -45,20 +45,15 @@ export function DownloadButton() {
   const labels = LABELS[lang];
 
   return (
-    <Button
+    <motion.button
       onClick={handleDownload}
       disabled={isDownloading}
-      variant="secondary"
-      className="w-full md:w-auto font-bold bg-accent text-accent-foreground py-2 px-4 rounded text-center"
+      className="inline-flex items-center justify-center border border-border font-semibold py-3 px-6 rounded-lg hover:bg-accent hover:border-primary/30 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
     >
-      {isDownloading ? (
-        labels.loading
-      ) : (
-        <>
-          <Download className="w-4 h-4 mr-2" />
-          {labels.idle}
-        </>
-      )}
-    </Button>
+      <Download className="w-4 h-4 mr-2" />
+      {isDownloading ? labels.loading : labels.idle}
+    </motion.button>
   );
 }

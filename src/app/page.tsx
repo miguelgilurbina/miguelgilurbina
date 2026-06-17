@@ -16,7 +16,6 @@ import fotoPerfil from "../../public/fotoPerfil.png";
 // import templianceGif from "../../public/Templiance Second Iteration.gif";
 import tuwebenGif from "../../public/TuwebenGif.gif";
 import gabrielWebsiteGif from "../../public/gabrielWebsiteGif.gif";
-
 // Definición de proyectos
 const additionalProjectsList = [
   // {

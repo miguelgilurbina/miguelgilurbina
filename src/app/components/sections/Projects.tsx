@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight, BookOpen } from "lucide-react";
 import { StaticImageData } from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { staggerContainer, staggerItem, slideUp } from "@/lib/animations";
@@ -13,7 +14,8 @@ interface AdditionalProject {
   title: string;
   description: string;
   image: StaticImageData;
-  liveUrl: string;
+  liveUrl?: string;
+  internalUrl?: string;
   githubUrl?: string;
   technologies: string[];
   status: string;
@@ -83,15 +85,25 @@ export function Projects({ projects }: ProjectsProps) {
                   </div>
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      {pr.viewLive}
-                    </a>
+                    {project.internalUrl ? (
+                      <Link
+                        href={project.internalUrl}
+                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium"
+                      >
+                        <BookOpen className="w-4 h-4" />
+                        {pr.viewCaseStudy ?? "Ver Case Study"}
+                      </Link>
+                    ) : project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        {pr.viewLive}
+                      </a>
+                    ) : null}
                   </div>
                 </div>
 
@@ -118,15 +130,25 @@ export function Projects({ projects }: ProjectsProps) {
 
                   {/* Actions */}
                   <div className="flex gap-2">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors"
-                    >
-                      <ExternalLink className="w-3.5 h-3.5" />
-                      {pr.viewLive}
-                    </a>
+                    {project.internalUrl ? (
+                      <Link
+                        href={project.internalUrl}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors"
+                      >
+                        <BookOpen className="w-3.5 h-3.5" />
+                        {pr.viewCaseStudy ?? "Ver Case Study"}
+                      </Link>
+                    ) : project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                        {pr.viewLive}
+                      </a>
+                    ) : null}
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}

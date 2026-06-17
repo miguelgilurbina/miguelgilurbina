@@ -48,14 +48,16 @@ export const en: Translations = {
     sectionSubtitle: "9+ years combining commercial strategy with AI-specialized technology development",
     current:         "Current",
     keySkills:       "Key skills:",
+    caseStudyLabel:  "View project story",
     calloutTitle:    "Strategic Transition to Technology",
     calloutDesc:     "After 6 years leading commercial processes and optimizing distribution networks, I decided to apply this business knowledge to developing technological solutions. My experience in channel management and stakeholder management allows me to build AI tools that genuinely solve real business problems.",
     items: [
       {
-        title:     "Full Stack Developer & Product Owner",
-        company:   "Cargo Eléctric",
-        period:    "Sep 2025 - Present",
-        highlight: "Dual role: technical development and product management for an electric fleet logistics platform",
+        title:        "Full Stack Developer & Product Owner",
+        company:      "Cargo Eléctric",
+        period:       "Sep 2025 - Present",
+        highlight:    "Dual role: technical development and product management for an electric fleet logistics platform",
+        caseStudyUrl: "/cargo-electric",
         bullets: [
           "Product Owner & Full Stack Developer for Next.js web app: end-to-end leadership from ideation to implementation of back office, billing, and administrative management features",
           "Architecture and development of a scalable Firebase data model for full operational coverage of the company",
@@ -219,6 +221,7 @@ export const en: Translations = {
     sectionSubtitle: "Additional projects showcasing the breadth of my experience",
     viewLive:        "View Live",
     viewCode:        "View Code",
+    viewCaseStudy:   "View Case Study",
     live:            "Live",
     items: [
       {

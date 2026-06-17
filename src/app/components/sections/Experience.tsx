@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Briefcase, TrendingUp, Code, Brain, Building } from "lucide-react";
+import { Briefcase, TrendingUp, Code, Brain, Building, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { staggerContainer, timelineItem, slideUp } from "@/lib/animations";
 
@@ -105,6 +106,18 @@ export function Experience() {
                               </span>
                             ))}
                           </div>
+                        </div>
+                      )}
+
+                      {item.caseStudyUrl && (
+                        <div className="mt-4 pt-4 border-t border-border">
+                          <Link
+                            href={item.caseStudyUrl}
+                            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors group"
+                          >
+                            {exp.caseStudyLabel ?? "Ver historia del proyecto"}
+                            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                          </Link>
                         </div>
                       )}
                     </div>

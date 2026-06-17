@@ -85,43 +85,6 @@ export function Hero({ image }: HeroProps) {
           {t.hero.description}
         </motion.p>
 
-        {/* Featured project card */}
-        <motion.div
-          variants={staggerItem}
-          className="mb-8 rounded-xl border border-primary/20 bg-accent/60 p-4 card-hover-glow"
-        >
-          <div className="flex items-center justify-between gap-4 flex-wrap">
-            <div className="text-left">
-              <h3 className="font-semibold text-base mb-0.5">{t.hero.featuredLabel}</h3>
-              <p className="text-sm text-muted-foreground">{t.hero.featuredDesc}</p>
-            </div>
-            <div className="flex gap-2 flex-shrink-0">
-              <motion.a
-                href="https://prompt-maker-steel.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"
-                {...hoverGlow}
-                whileTap={{ scale: 0.97 }}
-              >
-                <ExternalLink className="w-3.5 h-3.5" />
-                {t.hero.viewLive}
-              </motion.a>
-              <motion.a
-                href="https://github.com/miguelgilurbina/prompt-maker"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-border rounded-md text-sm font-medium hover:bg-background/80 transition-colors"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <Github className="w-3.5 h-3.5" />
-                {t.hero.viewCode}
-              </motion.a>
-            </div>
-          </div>
-        </motion.div>
-
         {/* CTA buttons */}
         <motion.div
           variants={staggerItem}
