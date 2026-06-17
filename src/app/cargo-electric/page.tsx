@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const stats = [
-  { value: "14", label: "camiones BYD" },
-  { value: "154", label: "locales SMU" },
+  { value: "14", label: "camiones eléctricos" },
+  { value: "154", label: "puntos de destino" },
   { value: "16", label: "conductores" },
   { value: "4", label: "módulos en producción" },
   { value: "5", label: "meses de desarrollo" },
@@ -49,7 +49,7 @@ const milestones = [
     date: "23 Enero – 4 Febrero 2026",
     title: "Sistema de Facturación / Proformas",
     description:
-      "Módulo completo de billing: generación de proformas con el modelo de precios de SMU, filtros por fecha, flujo de aprobación y exportación a Excel.",
+      "Módulo completo de billing: generación de proformas con el modelo de precios del cliente, filtros por fecha, flujo de aprobación y exportación a Excel.",
     highlight: true,
   },
   {
@@ -57,7 +57,7 @@ const milestones = [
     date: "Marzo 2026",
     title: "Refinamiento de Rutas y exportación a Excel",
     description:
-      "Ordenamiento multinivel, formato de montos, actualización de tarifas SMU 2026, exportación de proformas a Excel y segunda versión del heatmap de operación por camión.",
+      "Ordenamiento multinivel, formato de montos, actualización de tarifas 2026, exportación de proformas a Excel y segunda versión del heatmap de operación por camión.",
     highlight: false,
   },
   {
@@ -65,7 +65,7 @@ const milestones = [
     date: "13–20 Marzo 2026",
     title: "Administración: Locales, Camiones y Usuarios",
     description:
-      "Páginas CRUD dedicadas para gestionar los 154 locales SMU, la flota de 14 camiones BYD y los conductores/administradores del sistema.",
+      "Páginas CRUD dedicadas para gestionar los 154 puntos de destino, la flota de 14 camiones y los conductores/administradores del sistema.",
     highlight: true,
   },
   {
@@ -139,11 +139,11 @@ const featureBlocks = [
     tag: "Facturación",
     title: "Proformas — del registro a la factura en un flujo",
     description:
-      "Carga rutas completadas desde Firestore o desde Excel, las agrupa por camión y calcula montos según la matriz de precios activa de SMU.",
+      "Carga rutas completadas desde Firestore o desde Excel, las agrupa por camión y calcula montos según la matriz de precios activa del cliente.",
     bullets: [
       "Agrupación automática por camión con IVA 19% calculado",
       "Cards expandibles para revisar y corregir ruta a ruta",
-      "Excel fiel al formato de referencia SMU con fórmulas incluidas",
+      "Excel fiel al formato de referencia del cliente con fórmulas incluidas",
       "Flujo completo: carga → revisión → descarga en una sola pantalla",
     ],
     image: { src: "/images/now-billing.webm", alt: "Módulo de Facturación" },
@@ -156,12 +156,12 @@ const adminCards = [
     tag: "Locales",
     title: "Puntos de destino",
     description:
-      "154 locales SMU con código, nombre y estado. Un local inactivo desaparece de la asignación de rutas sin perder historial.",
+      "154 puntos de destino con código, nombre y estado. Un local inactivo desaparece de la asignación de rutas sin perder historial.",
     image: { src: "/images/now-locales.webm", alt: "Gestión de Locales" },
   },
   {
     tag: "Camiones",
-    title: "Flota BYD",
+    title: "Flota eléctrica",
     description:
       "14 unidades con patente y estado operativo. Un camión fuera de servicio no aparece disponible en el resumen diario ni en rutas.",
     image: { src: "/images/now-camiones.webm", alt: "Gestión de Camiones" },
@@ -230,7 +230,7 @@ export default function HistoriaPage() {
               </div>
 
               <h1 className="mb-4 text-[clamp(1.75rem,5vw,2.75rem)] font-bold leading-[1.15] tracking-tight">
-                Construí la plataforma operacional
+                Plataforma operacional
                 <span className="text-blue-400"> desde cero</span>
               </h1>
 
@@ -243,7 +243,7 @@ export default function HistoriaPage() {
               <div className="flex flex-wrap gap-2">
                 <RolePill icon={IconBriefcase} label="Product Owner" />
                 <RolePill icon={IconCode} label="Full-Stack Engineer" />
-                <RolePill icon={IconCalendarStats} label="Ene 2026 – hoy" />
+                <RolePill icon={IconCalendarStats} label="Sep 2025 – hoy" />
               </div>
             </div>
 
@@ -253,9 +253,9 @@ export default function HistoriaPage() {
                 El problema que resolvemos
               </p>
               <p className="mb-5 text-[1rem] leading-7 text-slate-300">
-                Cargo Electric opera una flota de 14 camiones eléctricos BYD que atienden 154 locales de SMU —
-                y lo gestionaba todo con Google Sheets dispersos, sin visibilidad en tiempo real y con
-                facturación calculada a mano cada período.
+                Cargo Electric opera una flota de camiones eléctricos de reparto urbano — y lo gestionaba
+                todo con Google Sheets dispersos, sin visibilidad en tiempo real y con facturación
+                calculada a mano cada período.
               </p>
               <ul className="space-y-2.5">
                 {[
@@ -311,7 +311,7 @@ export default function HistoriaPage() {
                 <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Una sola plataforma para toda la operación</li>
                 <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Datos en tiempo real desde Firestore</li>
                 <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Analítica operacional con KPIs y tendencias históricas</li>
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Facturación automatizada con modelo de precios SMU</li>
+                <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Facturación automatizada con modelo de precios del cliente</li>
                 <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Arquitectura escalable lista para nuevos clientes</li>
               </ul>
             </div>

@@ -153,7 +153,7 @@ export function ArchitectureDiagram() {
             <IconReceipt className="mb-2 size-5 text-yellow-400" stroke={1.75} />
             <p className="text-[12px] font-semibold text-white">Facturación</p>
             <p className="mt-0.5 text-[11px] leading-relaxed text-slate-400">
-              Proformas · pricing SMU · aprobación · Excel · analytics de billing
+              Proformas · pricing cliente · aprobación · Excel · analytics de billing
             </p>
           </div>
           <div className="rounded-lg border border-slate-700 bg-slate-800/60 p-3">
@@ -195,12 +195,12 @@ export function ArchitectureDiagram() {
           >
             <div className="divide-y divide-slate-800">
               <CollectionRow name="routes"         description="Rutas diarias — estado, montos, camión, conductor (colección activa)" />
-              <CollectionRow name="locales"         description="154 tiendas SMU con código y nombre" />
-              <CollectionRow name="camiones"        description="14 unidades BYD, estado operativo y documentación" />
+              <CollectionRow name="locales"         description="154 puntos de destino con código y nombre" />
+              <CollectionRow name="camiones"        description="14 unidades eléctricas, estado operativo y documentación" />
               <CollectionRow name="usuarios"        description="Conductores y admins con roles y estado activo/inactivo" />
               <CollectionRow name="proformas"       description="Proformas generadas con estado de aprobación" />
               <CollectionRow name="pricing_tables"  description="Historial de tablas de precios cargo×turno+IVA" />
-              <CollectionRow name="clients"         description="Clientes (actualmente SMU)" />
+              <CollectionRow name="clients"         description="Clientes del sistema" />
             </div>
           </Box>
         </div>
