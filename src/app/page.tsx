@@ -2,7 +2,7 @@
 
 // src/app/page.tsx
 import { Hero } from "./components/sections/Hero";
-import { FeaturedProject } from "./components/sections/FeaturedProject";
+// import { FeaturedProject } from "./components/sections/FeaturedProject";
 import { Experience } from "./components/sections/Experience";
 import { Projects } from "./components/sections/Projects";
 import { Skills } from "./components/sections/Skills";
@@ -77,7 +77,7 @@ export default function HomePage() {
       <Header />
       <main className="container mx-auto px-4 py-8">
         <Hero image={fotoPerfil} />
-        <FeaturedProject />
+        {/* <FeaturedProject /> */}
         <Experience />
         <Projects projects={additionalProjectsList} />
         <Skills />
