@@ -13,7 +13,7 @@ interface AdditionalProject {
   id: string;
   title: string;
   description: string;
-  image: StaticImageData;
+  image?: StaticImageData;
   liveUrl?: string;
   internalUrl?: string;
   githubUrl?: string;
@@ -65,13 +65,21 @@ export function Projects({ projects }: ProjectsProps) {
               <div className="bg-card border border-border rounded-xl overflow-hidden card-hover-glow">
                 {/* Image */}
                 <div className="relative aspect-video bg-gradient-to-br from-primary/5 to-accent/30 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/20">
+                      <span className="text-4xl font-bold text-primary/20 select-none">
+                        {project.title.charAt(0)}
+                      </span>
+                    </div>
+                  )}
                   <div className="absolute top-3 left-3">
                     <span className="px-2.5 py-1 rounded-full bg-background/90 backdrop-blur-sm text-xs font-medium border border-border/50">
                       {project.category}

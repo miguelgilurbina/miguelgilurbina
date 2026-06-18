@@ -234,6 +234,18 @@ export const es = {
         description: "Sitio web personal para comediante desarrollado con enfoque narrativo y experiencia de usuario premium. Implementación completa con React, Next.js y Framer Motion, incluyendo sistema de componentes modulares, integración de redes sociales y diseño responsive optimizado para conversión.",
         category:    "Portfolio Personal",
       },
+      {
+        id:          "portokali",
+        title:       "Portokali",
+        description: "Migración completa de WordPress a Next.js para restaurante griego en Santiago. Deploy en Vercel, gestión de correos con GoDaddy y desarrollo asistido con Claude Code.",
+        category:    "Migración Web",
+      },
+      {
+        id:          "bendita-hackathon",
+        title:       "Hackathon IA — BenditaIA",
+        description: "Landing para hackathon de inteligencia artificial desarrollada en equipo con BenditaIA. Lideré los flujos de inscripción y el frontend completo usando Lovable como herramienta de desarrollo.",
+        category:    "Hackathon",
+      },
     ],
   },
 };

@@ -236,6 +236,18 @@ export const en: Translations = {
         description: "Personal website for a comedian built with a narrative focus and premium user experience. Full implementation with React, Next.js, and Framer Motion, including a modular component system, social media integration, and conversion-optimized responsive design.",
         category:    "Personal Portfolio",
       },
+      {
+        id:          "portokali",
+        title:       "Portokali",
+        description: "Full migration from WordPress to Next.js for a Greek restaurant in Santiago. Deployed on Vercel, email management via GoDaddy, and development assisted with Claude Code.",
+        category:    "Web Migration",
+      },
+      {
+        id:          "bendita-hackathon",
+        title:       "AI Hackathon — BenditaIA",
+        description: "Landing page for an AI hackathon built as part of the BenditaIA team. Led the registration flows and full frontend development using Lovable.",
+        category:    "Hackathon",
+      },
     ],
   },
 };

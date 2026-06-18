@@ -53,9 +53,9 @@ const additionalProjectsList = [
     title: "Gabriel Colmenares - Sitio Web Personal",
     description:
       "Sitio web personal para comediante desarrollado con enfoque narrativo y experiencia de usuario premium. Implementación completa con React, Next.js y Framer Motion, incluyendo sistema de componentes modulares, integración de redes sociales y diseño responsive optimizado para conversión.",
-    image: gabrielWebsiteGif, // Necesitarás crear/capturar este GIF
-    liveUrl: "https://gabrielcolmenares.com", // URL actual del sitio
-    githubUrl: "https://github.com/miguelgilurbina/gabriel-colmenares-web", // Si es público
+    image: gabrielWebsiteGif,
+    liveUrl: "https://gabrielcolmenares.com",
+    githubUrl: "https://github.com/miguelgilurbina/gabriel-colmenares-web",
     technologies: [
       "Next.js",
       "TypeScript",
@@ -67,7 +67,26 @@ const additionalProjectsList = [
     status: "live" as const,
     category: "Portfolio Personal",
   },
-  // Eliminar Co-Working y Curiana por ahora
+  {
+    id: "portokali",
+    title: "Portokali",
+    description:
+      "Migración completa de WordPress a Next.js para restaurante griego en Santiago. Deploy en Vercel, gestión de correos con GoDaddy y desarrollo asistido con Claude Code.",
+    liveUrl: "https://portokali.cl",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "GoDaddy Mail", "Claude Code"],
+    status: "live" as const,
+    category: "Migración Web",
+  },
+  {
+    id: "bendita-hackathon",
+    title: "Hackathon IA — BenditaIA",
+    description:
+      "Landing para hackathon de inteligencia artificial desarrollada en equipo con BenditaIA. Lideré los flujos de inscripción y el frontend completo usando Lovable como herramienta de desarrollo.",
+    liveUrl: "https://bendita-hackathon-ia.lovable.app/",
+    technologies: ["Lovable", "React", "TypeScript", "Tailwind CSS"],
+    status: "live" as const,
+    category: "Hackathon",
+  },
 ];
 
 export default function HomePage() {
