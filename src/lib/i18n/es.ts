@@ -334,7 +334,7 @@ export const es = {
       {
         id:          "portokali",
         title:       "Portokali",
-        description: "Migración completa de WordPress a Next.js para restaurante griego en Santiago. Deploy en Vercel, gestión de correos con GoDaddy y desarrollo asistido con Claude Code.",
+        description: "Migración completa de WordPress a Next.js para café de especialidad en Vitacura. Carta, catering y delivery integrados. Deploy en Vercel, gestión de correos con GoDaddy y desarrollo asistido con Claude Code.",
         category:    "Migración Web",
       },
       {

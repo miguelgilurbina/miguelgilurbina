@@ -336,7 +336,7 @@ export const en: Translations = {
       {
         id:          "portokali",
         title:       "Portokali",
-        description: "Full migration from WordPress to Next.js for a Greek restaurant in Santiago. Deployed on Vercel, email management via GoDaddy, and development assisted with Claude Code.",
+        description: "Full migration from WordPress to Next.js for a specialty coffee shop in Vitacura, Santiago. Menu, catering, and delivery integrated. Deployed on Vercel, email management via GoDaddy, and development assisted with Claude Code.",
         category:    "Web Migration",
       },
       {
