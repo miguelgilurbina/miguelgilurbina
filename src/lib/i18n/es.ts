@@ -1,10 +1,11 @@
 export const es = {
   nav: {
-    experience:  "Experiencia",
-    education:   "Formación",
-    skills:      "Habilidades",
-    projects:    "Proyectos",
-    contact:     "Contacto",
+    experience:        "Experiencia",
+    education:         "Formación",
+    skills:            "Habilidades",
+    projects:          "Proyectos",
+    contact:           "Contacto",
+    creativeDirection: "Dirección Creativa",
   },
 
   hero: {

@@ -2,11 +2,12 @@ import { Translations } from "./es";
 
 export const en: Translations = {
   nav: {
-    experience:  "Experience",
-    education:   "Education",
-    skills:      "Skills",
-    projects:    "Projects",
-    contact:     "Contact",
+    experience:        "Experience",
+    education:         "Education",
+    skills:            "Skills",
+    projects:          "Projects",
+    contact:           "Contact",
+    creativeDirection: "Creative Direction",
   },
 
   hero: {
