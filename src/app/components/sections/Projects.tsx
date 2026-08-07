@@ -14,6 +14,8 @@ interface AdditionalProject {
   title: string;
   description: string;
   image?: StaticImageData;
+  /** Ruta a un mp4 en /public. Sustituye a los GIF: mismo resultado, ~90% menos peso. */
+  video?: string;
   liveUrl?: string;
   internalUrl?: string;
   githubUrl?: string;
@@ -65,7 +67,18 @@ export function Projects({ projects }: ProjectsProps) {
               <div className="bg-card border border-border rounded-xl overflow-hidden card-hover-glow">
                 {/* Image */}
                 <div className="relative aspect-video bg-gradient-to-br from-primary/5 to-accent/30 overflow-hidden">
-                  {project.image ? (
+                  {project.video ? (
+                    <video
+                      src={project.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      aria-label={project.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : project.image ? (
                     <Image
                       src={project.image}
                       alt={project.title}

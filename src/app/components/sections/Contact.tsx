@@ -65,7 +65,7 @@ export function Contact() {
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <motion.a
-                href="mailto:miguel.gil.9210@gmail.com?subject=Oportunidad%20Laboral%20-%20Desarrollador%20IA"
+                href="mailto:miguel.gil.9210@gmail.com?subject=Contacto%20desde%20el%20portafolio"
                 className="inline-flex items-center justify-center bg-primary text-primary-foreground font-semibold py-3 px-7 rounded-lg hover:bg-primary/90 transition-colors shadow-indigo-sm"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}

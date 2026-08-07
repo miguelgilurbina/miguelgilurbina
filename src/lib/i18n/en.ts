@@ -12,7 +12,7 @@ export const en: Translations = {
   },
 
   hero: {
-    badge:       "Open to new opportunities",
+    badge:       "Available for projects and new opportunities",
     title:       "AI First Full Stack Developer & Implementation Specialist",
     subtitle:    "8+ years combining commercial strategy with enterprise AI development",
     description: "Specialist in building AI solutions that solve real business problems. I combine my experience managing distribution networks with technical expertise in language models and full-stack development to democratize access to advanced technologies.",
@@ -20,6 +20,7 @@ export const en: Translations = {
     featuredDesc:  "Live platform democratizing access to AI tools",
     ctaContact:  "Get in Touch",
     ctaProjects: "View Projects",
+    ctaServices: "See services and pricing",
     viewLive:    "View Live",
     viewCode:    "Code",
   },
@@ -192,10 +193,10 @@ export const en: Translations = {
 
   contact: {
     sectionTitle:    "Let's Work Together!",
-    sectionSubtitle: "Looking for a developer who combines business experience with AI expertise? Let's talk about how I can add value to your team.",
-    availableBadge:  "Open to new opportunities",
+    sectionSubtitle: "Need something built, or someone to join your team? Both conversations interest me.",
+    availableBadge:  "Available for projects and new opportunities",
     projectTitle:    "Have a project in mind?",
-    projectDesc:     "I'm looking for tech opportunities to apply my AI and development experience. Let's talk about how I can contribute to your vision!",
+    projectDesc:     "Tell me what you need and I'll be straight with you about whether I can help, what it costs, and how long it takes. If you'd rather see pricing first, it's all published on the services page.",
     emailCta:        "Contact by Email",
     whatsappCta:     "WhatsApp",
     location:        "Location",

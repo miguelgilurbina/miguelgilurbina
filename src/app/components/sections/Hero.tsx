@@ -91,25 +91,25 @@ export function Hero({ image }: HeroProps) {
           className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start"
         >
           <motion.a
-            href="#contacto"
+            href="/servicios"
             className="inline-flex items-center justify-center bg-primary text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-colors group shadow-indigo-sm"
             whileHover={{ scale: 1.03, boxShadow: "0 4px 24px hsl(245 58% 51% / 0.35)" }}
             whileTap={{ scale: 0.98 }}
           >
-            {t.hero.ctaContact}
+            {t.hero.ctaServices}
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
           </motion.a>
 
-          <DownloadButton />
-
           <motion.a
-            href="#proyectos"
+            href="#contacto"
             className="inline-flex items-center justify-center border border-border font-semibold py-3 px-6 rounded-lg hover:bg-accent hover:border-primary/30 transition-colors"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            {t.hero.ctaProjects}
+            {t.hero.ctaContact}
           </motion.a>
+
+          <DownloadButton />
         </motion.div>
       </motion.div>
     </section>

@@ -10,7 +10,7 @@ export const es = {
   },
 
   hero: {
-    badge:       "Disponible para nuevas oportunidades",
+    badge:       "Disponible para proyectos y nuevas oportunidades",
     title:       "AI First Full Stack Developer & Implementation Specialist",
     subtitle:    "8+ años combinando estrategia comercial con desarrollo de IA empresarial",
     description: "Especialista en crear soluciones de IA que resuelven problemas empresariales reales. Combino mi experiencia gestionando redes de distribución con expertise técnico en modelos de lenguaje y desarrollo full-stack para democratizar el acceso a tecnologías avanzadas.",
@@ -18,6 +18,7 @@ export const es = {
     featuredDesc:  "Plataforma live que democratiza el acceso a herramientas de IA",
     ctaContact:  "Contactar",
     ctaProjects: "Ver Proyectos",
+    ctaServices: "Ver servicios y precios",
     viewLive:    "Ver Live",
     viewCode:    "Código",
   },
@@ -190,10 +191,10 @@ export const es = {
 
   contact: {
     sectionTitle:    "¡Trabajemos Juntos!",
-    sectionSubtitle: "¿Buscas un desarrollador que combine experiencia empresarial con expertise en IA? Conversemos sobre cómo puedo aportar valor a tu equipo.",
-    availableBadge:  "Disponible para nuevas oportunidades",
+    sectionSubtitle: "¿Necesitas construir algo, o sumar a alguien a tu equipo? Las dos conversaciones me interesan.",
+    availableBadge:  "Disponible para proyectos y nuevas oportunidades",
     projectTitle:    "¿Tienes un proyecto en mente?",
-    projectDesc:     "Estoy buscando oportunidades en tech para aplicar mi experiencia en IA y desarrollo. ¡Hablemos de cómo puedo contribuir a tu visión!",
+    projectDesc:     "Cuéntame qué necesitas y te digo con franqueza si puedo ayudarte, cuánto cuesta y en cuánto tiempo. Si prefieres ver precios primero, están todos publicados en la página de servicios.",
     emailCta:        "Contactar por Email",
     whatsappCta:     "WhatsApp",
     location:        "Ubicación",
