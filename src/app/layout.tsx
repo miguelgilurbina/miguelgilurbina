@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Miguel Gil",
   },
   description:
-    "Desarrollo web y soluciones de IA para negocios en Chile. Landing pages en 7 días desde $250.000, sistemas a medida y agentes con LLM. Full Stack Developer con 8+ años combinando estrategia comercial y tecnología.",
+    "Desarrollo web y soluciones de IA para negocios en Chile: sitios, sistemas a medida, agentes con LLM y dirección creativa. Full Stack Developer con 8+ años combinando estrategia comercial y tecnología.",
   keywords: [
     "Desarrollo web Chile",
     "Landing page Santiago",
@@ -111,20 +111,12 @@ export default function RootLayout({
                   provider: { "@id": "https://miguelgilurbina.com/#person" },
                   areaServed: { "@type": "Country", name: "Chile" },
                   availableLanguage: ["es", "en"],
-                  priceRange: "$$",
                   makesOffer: [
-                    {
-                      "@type": "Offer",
-                      itemOffered: { "@type": "Service", name: "Landing page profesional en 7 días" },
-                      price: "250000",
-                      priceCurrency: "CLP",
-                    },
-                    {
-                      "@type": "Offer",
-                      itemOffered: { "@type": "Service", name: "Mantención web mensual" },
-                      price: "25000",
-                      priceCurrency: "CLP",
-                    },
+                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Desarrollo de sitios web y landing pages" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Aplicaciones y sistemas a medida" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "IA aplicada y agentes con modelos de lenguaje" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Dirección creativa y producción audiovisual con IA" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Product ownership y consultoría técnica" } },
                   ],
                 },
               ],

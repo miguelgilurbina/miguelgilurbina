@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Servicios — Desarrollo web y soluciones de IA",
+  title: "Servicios — Desarrollo, IA y dirección creativa",
   description:
-    "Landing pages en 7 días desde $250.000 CLP, sistemas a medida y automatización con IA. Precios publicados y plazos comprometidos. Santiago, Chile.",
+    "Sitios web, sistemas a medida, agentes con IA, dirección creativa y product ownership. Cinco frentes de trabajo, cada uno respaldado por proyectos en producción. Santiago, Chile.",
   alternates: { canonical: "https://miguelgilurbina.com/servicios" },
   openGraph: {
     title: "Servicios — Miguel Gil",
     description:
-      "Landing pages en 7 días desde $250.000 CLP, sistemas a medida y automatización con IA.",
+      "Sitios web, sistemas a medida, agentes con IA y dirección creativa. Cada área respaldada por proyectos reales.",
     url: "https://miguelgilurbina.com/servicios",
   },
 };

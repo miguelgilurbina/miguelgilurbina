@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Check, ArrowRight, Clock, Mail, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { Check, ArrowRight, ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 import { useLanguage } from "@/context/LanguageContext";
@@ -14,18 +15,19 @@ import {
 } from "@/lib/animations";
 
 const WHATSAPP_URL =
-  "https://wa.me/56977221088?text=Hola%20Miguel!%20Vi%20tus%20servicios%20y%20quiero%20cotizar%20un%20proyecto.";
+  "https://wa.me/56977221088?text=Hola%20Miguel!%20Vi%20tus%20servicios%20y%20quiero%20conversar%20un%20proyecto.";
 const EMAIL_URL =
-  "mailto:miguel.gil.9210@gmail.com?subject=Cotizaci%C3%B3n%20de%20proyecto";
+  "mailto:miguel.gil.9210@gmail.com?subject=Consulta%20de%20proyecto";
 
 export default function ServiciosPage() {
   const { t } = useLanguage();
   const s = t.services;
 
-  const [pkgRef, pkgInView] = useInView({ threshold: 0.05, triggerOnce: true });
-  const [procRef, procInView] = useInView({ threshold: 0.1, triggerOnce: true });
-  const [faqRef, faqInView] = useInView({ threshold: 0.1, triggerOnce: true });
-  const [ctaRef, ctaInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [areasRef, areasIn] = useInView({ threshold: 0.03, triggerOnce: true });
+  const [prodRef, prodIn] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [procRef, procIn] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [faqRef, faqIn] = useInView({ threshold: 0.08, triggerOnce: true });
+  const [ctaRef, ctaIn] = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -34,7 +36,12 @@ export default function ServiciosPage() {
       <main className="container mx-auto px-4 py-8">
         {/* ── Hero ──────────────────────────────────────────────────────── */}
         <section className="pt-10 pb-16 text-center max-w-3xl mx-auto">
-          <motion.div variants={badgeEntrance} initial="hidden" animate="visible" className="mb-5 inline-flex">
+          <motion.div
+            variants={badgeEntrance}
+            initial="hidden"
+            animate="visible"
+            className="mb-5 inline-flex"
+          >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               {s.badge}
@@ -60,99 +67,115 @@ export default function ServiciosPage() {
           </motion.p>
         </section>
 
-        {/* ── Paquetes ──────────────────────────────────────────────────── */}
-        <section ref={pkgRef} className="mb-20">
+        {/* ── Áreas de trabajo ──────────────────────────────────────────── */}
+        <section ref={areasRef} className="mb-16">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
-            animate={pkgInView ? "visible" : "hidden"}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start"
+            animate={areasIn ? "visible" : "hidden"}
+            className="space-y-5 max-w-4xl mx-auto"
           >
-            {s.packages.map((pkg) => (
-              <motion.div
-                key={pkg.id}
-                variants={staggerItem}
-                className={[
-                  "relative flex flex-col h-full rounded-2xl border p-7 bg-card transition-shadow duration-200",
-                  pkg.popular
-                    ? "border-primary/40 shadow-indigo-md lg:-mt-3 lg:pb-10"
-                    : "border-border hover:border-primary/25",
-                ].join(" ")}
-              >
-                {pkg.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-semibold bg-primary text-primary-foreground whitespace-nowrap">
-                    {s.popular}
-                  </span>
-                )}
-
-                <h2 className="text-lg font-bold mb-2">{pkg.name}</h2>
-
-                <div className="mb-1 flex items-baseline gap-2 flex-wrap">
-                  <span className="text-3xl font-bold text-primary">{pkg.price}</span>
-                </div>
-                <p className="text-xs text-muted-foreground mb-4">{pkg.priceNote}</p>
-
-                <div className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground mb-5">
-                  <Clock className="w-3.5 h-3.5" />
-                  {pkg.timeline}
-                </div>
-
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                  {pkg.description}
-                </p>
-
-                <ul className="space-y-2.5 mb-7 flex-1">
-                  {pkg.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm">
-                      <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-foreground/85">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={[
-                    "inline-flex items-center justify-center gap-2 w-full py-2.5 px-5 rounded-lg font-semibold text-sm transition-colors group",
-                    pkg.popular
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "border border-border hover:bg-accent hover:border-primary/30",
-                  ].join(" ")}
+            {s.areas.map((area, i) => {
+              const isExternal = area.url.startsWith("http");
+              return (
+                <motion.article
+                  key={area.id}
+                  variants={staggerItem}
+                  className="rounded-2xl border border-border bg-card p-7 md:p-8 hover:border-primary/25 transition-colors duration-200"
                 >
-                  {s.ctaPrimary}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </a>
-              </motion.div>
-            ))}
-          </motion.div>
+                  <div className="flex flex-col md:flex-row md:items-start gap-6">
+                    {/* Encabezado del área */}
+                    <div className="md:w-64 flex-shrink-0">
+                      <span className="text-xs font-bold text-primary/30 tabular-nums block mb-2">
+                        0{i + 1}
+                      </span>
+                      <h2 className="text-lg font-bold mb-2 leading-snug">{area.name}</h2>
+                      <p className="text-sm text-primary font-medium leading-snug">
+                        {area.tagline}
+                      </p>
+                    </div>
 
-          {/* Mantención */}
+                    {/* Cuerpo */}
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                        {area.description}
+                      </p>
+
+                      <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 mb-3">
+                        {s.deliverLabel}
+                      </h3>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 mb-6">
+                        {area.deliverables.map((d) => (
+                          <li key={d} className="flex items-start gap-2.5 text-sm">
+                            <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                            <span className="text-foreground/85">{d}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Respaldo: lo que hace creíble el área */}
+                      <div className="rounded-xl bg-accent/50 border border-border/60 p-4">
+                        <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 mb-2">
+                          {s.evidenceLabel}
+                        </h3>
+                        <p className="text-sm text-foreground/80 leading-relaxed">
+                          {area.evidence}
+                        </p>
+                        {area.url &&
+                          (isExternal ? (
+                            <a
+                              href={area.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-primary hover:underline"
+                            >
+                              {s.seeProject}
+                              <ArrowUpRight className="w-3.5 h-3.5" />
+                            </a>
+                          ) : (
+                            <Link
+                              href={area.url}
+                              className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-primary hover:underline"
+                            >
+                              {s.seeProject}
+                              <ArrowRight className="w-3.5 h-3.5" />
+                            </Link>
+                          ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </motion.div>
+        </section>
+
+        {/* ── Vía de precio fijo ────────────────────────────────────────── */}
+        <section ref={prodRef} className="mb-20">
           <motion.div
             variants={slideUp}
             initial="hidden"
-            animate={pkgInView ? "visible" : "hidden"}
-            className="mt-6 rounded-2xl border border-border bg-accent/40 p-7 flex flex-col md:flex-row md:items-center gap-6"
+            animate={prodIn ? "visible" : "hidden"}
+            className="max-w-4xl mx-auto rounded-2xl border border-primary/20 bg-primary/5 p-7 md:p-8 flex flex-col md:flex-row md:items-center gap-6"
           >
-            <div className="md:w-72 flex-shrink-0">
-              <h3 className="font-bold mb-1.5">{s.maintenance.title}</h3>
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-2xl font-bold text-primary">{s.maintenance.price}</span>
-                <span className="text-sm text-muted-foreground">{s.perMonth}</span>
-              </div>
+            <div className="flex-1">
+              <span className="inline-block mb-3 px-3 py-1 rounded-full text-xs font-semibold bg-primary/15 text-primary">
+                {s.productized.label}
+              </span>
+              <h2 className="text-lg font-bold mb-2">{s.productized.title}</h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                {s.maintenance.description}
+                {s.productized.description}
               </p>
             </div>
-            <ul className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
-              {s.maintenance.features.map((f) => (
-                <li key={f} className="flex items-start gap-2.5 text-sm">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground/85">{f}</span>
-                </li>
-              ))}
-            </ul>
+            <a
+              href={s.productized.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors flex-shrink-0 group"
+            >
+              {s.productized.cta}
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
           </motion.div>
         </section>
 
@@ -161,7 +184,7 @@ export default function ServiciosPage() {
           <motion.div
             variants={slideUp}
             initial="hidden"
-            animate={procInView ? "visible" : "hidden"}
+            animate={procIn ? "visible" : "hidden"}
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold mb-3">{s.processTitle}</h2>
@@ -171,8 +194,8 @@ export default function ServiciosPage() {
           <motion.div
             variants={staggerContainer}
             initial="hidden"
-            animate={procInView ? "visible" : "hidden"}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
+            animate={procIn ? "visible" : "hidden"}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto"
           >
             {s.process.map((p) => (
               <motion.div
@@ -193,7 +216,7 @@ export default function ServiciosPage() {
           <motion.h2
             variants={slideUp}
             initial="hidden"
-            animate={faqInView ? "visible" : "hidden"}
+            animate={faqIn ? "visible" : "hidden"}
             className="text-3xl font-bold mb-10 text-center"
           >
             {s.faqTitle}
@@ -202,7 +225,7 @@ export default function ServiciosPage() {
           <motion.div
             variants={staggerContainer}
             initial="hidden"
-            animate={faqInView ? "visible" : "hidden"}
+            animate={faqIn ? "visible" : "hidden"}
             className="space-y-3"
           >
             {s.faq.map((item) => (
@@ -217,9 +240,7 @@ export default function ServiciosPage() {
                     +
                   </span>
                 </summary>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                  {item.a}
-                </p>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.a}</p>
               </motion.details>
             ))}
           </motion.div>
@@ -230,7 +251,7 @@ export default function ServiciosPage() {
           <motion.div
             variants={slideUp}
             initial="hidden"
-            animate={ctaInView ? "visible" : "hidden"}
+            animate={ctaIn ? "visible" : "hidden"}
             className="max-w-2xl mx-auto text-center rounded-2xl border border-primary/20 bg-accent/50 p-12"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-4">{s.finalTitle}</h2>
