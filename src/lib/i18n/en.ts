@@ -8,6 +8,7 @@ export const en: Translations = {
     projects:          "Projects",
     contact:           "Contact",
     creativeDirection: "Creative Direction",
+    services:          "Services",
   },
 
   hero: {
@@ -215,6 +216,100 @@ export const en: Translations = {
 
   footer: {
     rights: "All rights reserved.",
+  },
+
+  services: {
+    metaTitle:       "Services — Web development and AI solutions",
+    metaDescription: "Landing pages in 7 days from CLP $250,000, custom systems and AI automation. Clear pricing, no endless quoting.",
+    badge:           "Available for projects",
+    title:           "Let's work together",
+    subtitle:        "Published prices and committed timelines. No endless quoting, no surprises at the end of the project.",
+    popular:         "Most requested",
+    from:            "from",
+    perMonth:        "/month",
+    ctaPrimary:      "Message me on WhatsApp",
+    ctaSecondary:    "Send an email",
+    includesLabel:   "Includes",
+    packages: [
+      {
+        id:          "landing",
+        name:        "Professional landing page",
+        price:       "$250,000",
+        priceNote:   "CLP · 50/50 payment · VAT not included",
+        timeline:    "7 business days",
+        popular:     true,
+        description: "Your page ready to bring in clients: fast, responsive, and with a contact form that reaches your inbox.",
+        features: [
+          "Custom responsive design",
+          "Base SEO so you show up on Google",
+          "Working contact form",
+          "Ultra-fast loading (Next.js)",
+          "Analytics configured",
+          "Delivered with source code",
+        ],
+      },
+      {
+        id:          "sistema",
+        name:        "Custom system",
+        price:       "$500,000",
+        priceNote:   "CLP · indicative, depends on scope",
+        timeline:    "4 to 8 weeks",
+        popular:     false,
+        description: "Automating a process that eats your hours today: dashboards, integrations, and flows built around how you actually operate.",
+        features: [
+          "Assessment of your current process",
+          "Database and admin dashboard",
+          "Automation of repetitive tasks",
+          "Integrations with external services",
+          "Training included",
+        ],
+      },
+      {
+        id:          "ia",
+        name:        "AI solutions",
+        price:       "Let's talk",
+        priceNote:   "depends on use case",
+        timeline:    "depends on scope",
+        popular:     false,
+        description: "Chatbots, agents, and automation with language models. Graduate diploma in Generative AI (Universidad de Chile) and multi-agent systems running in production.",
+        features: [
+          "Chatbots over your own documentation (RAG)",
+          "Agents that carry tasks end to end",
+          "Integration with ChatGPT, Claude, and Gemini",
+          "AI-assisted audiovisual production",
+        ],
+      },
+    ],
+    maintenance: {
+      title:       "Monthly maintenance",
+      price:       "$25,000",
+      description: "So your site isn't left on its own after delivery.",
+      features: [
+        "Security updates",
+        "Weekly backup",
+        "Technical support",
+        "2 minor changes per month",
+      ],
+    },
+    processTitle:    "How we work",
+    processSubtitle: "No mystery: you know what happens at each stage, and when.",
+    process: [
+      { step: "01", title: "First conversation", desc: "A 30-minute call to understand what you need. Free, no strings attached." },
+      { step: "02", title: "Proposal and agreement", desc: "Scope, timeline, and price in writing. We start with 50%." },
+      { step: "03", title: "Progress review", desc: "I show you the work running before it's finished, so we correct in time." },
+      { step: "04", title: "Delivery and handover", desc: "Everything deployed, with the code and access in your name." },
+    ],
+    faqTitle: "Frequently asked questions",
+    faq: [
+      { q: "Do prices include VAT?",                    a: "No. Published prices are net; if you need an invoice, the corresponding VAT is added." },
+      { q: "What if I need changes later?",             a: "Minor adjustments during development are included. After delivery you can take the maintenance plan or request specific changes quoted separately." },
+      { q: "Are domain and hosting included?",          a: "Deployment is, and in most cases it carries no monthly cost. You buy the domain yourself (about CLP $15,000 a year for a .cl) and I configure it at no extra charge." },
+      { q: "Do you work with clients outside Chile?",   a: "Yes. I work remotely and have collaborated with international teams; we can coordinate in Spanish or English." },
+      { q: "Do I own the code?",                        a: "Always. Delivery includes the source code and access in your name. You're not locked in with me." },
+    ],
+    finalTitle:    "Shall we start?",
+    finalSubtitle: "Tell me what you need and I'll be straight with you about whether I can help, what it costs, and how long it takes.",
+    responseNote:  "I reply to every message within 24 hours.",
   },
 
   projects: {

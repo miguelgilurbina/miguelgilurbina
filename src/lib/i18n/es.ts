@@ -6,6 +6,7 @@ export const es = {
     projects:          "Proyectos",
     contact:           "Contacto",
     creativeDirection: "Dirección Creativa",
+    services:          "Servicios",
   },
 
   hero: {
@@ -213,6 +214,100 @@ export const es = {
 
   footer: {
     rights: "Todos los derechos reservados.",
+  },
+
+  services: {
+    metaTitle:       "Servicios — Desarrollo web y soluciones de IA",
+    metaDescription: "Landing pages en 7 días desde $250.000, sistemas a medida y automatización con IA. Precios claros, sin cotizaciones eternas.",
+    badge:           "Disponible para proyectos",
+    title:           "Trabajemos juntos",
+    subtitle:        "Precios publicados y plazos comprometidos. Sin cotizaciones eternas ni sorpresas al final del proyecto.",
+    popular:         "Más pedido",
+    from:            "desde",
+    perMonth:        "/mes",
+    ctaPrimary:      "Conversemos por WhatsApp",
+    ctaSecondary:    "Escribir por email",
+    includesLabel:   "Incluye",
+    packages: [
+      {
+        id:          "landing",
+        name:        "Landing page profesional",
+        price:       "$250.000",
+        priceNote:   "CLP · pago 50/50 · IVA no incluido",
+        timeline:    "7 días hábiles",
+        popular:     true,
+        description: "Tu página lista para captar clientes: rápida, responsive y con formulario que llega a tu correo.",
+        features: [
+          "Diseño responsive a medida",
+          "SEO base para aparecer en Google",
+          "Formulario de contacto funcional",
+          "Carga ultrarrápida (Next.js)",
+          "Analítica configurada",
+          "Entrega con código fuente",
+        ],
+      },
+      {
+        id:          "sistema",
+        name:        "Sistema a medida",
+        price:       "$500.000",
+        priceNote:   "CLP · referencial según alcance",
+        timeline:    "4 a 8 semanas",
+        popular:     false,
+        description: "Automatización de un proceso que hoy te consume horas: paneles, integraciones y flujos hechos para tu operación.",
+        features: [
+          "Levantamiento del proceso actual",
+          "Base de datos y panel de administración",
+          "Automatización de tareas repetitivas",
+          "Integraciones con servicios externos",
+          "Capacitación de uso incluida",
+        ],
+      },
+      {
+        id:          "ia",
+        name:        "Soluciones con IA",
+        price:       "A convenir",
+        priceNote:   "según caso de uso",
+        timeline:    "según alcance",
+        popular:     false,
+        description: "Chatbots, agentes y automatización con modelos de lenguaje. Diplomado en IA Generativa (U. de Chile) y sistemas multi-agente en producción.",
+        features: [
+          "Chatbots sobre tu propia documentación (RAG)",
+          "Agentes que ejecutan tareas end-to-end",
+          "Integración con ChatGPT, Claude y Gemini",
+          "Producción audiovisual con IA",
+        ],
+      },
+    ],
+    maintenance: {
+      title:       "Mantención mensual",
+      price:       "$25.000",
+      description: "Para que tu sitio no se quede solo después de la entrega.",
+      features: [
+        "Actualizaciones de seguridad",
+        "Respaldo semanal",
+        "Soporte técnico",
+        "2 cambios menores al mes",
+      ],
+    },
+    processTitle:    "Cómo trabajamos",
+    processSubtitle: "Sin misterio: sabes qué pasa en cada etapa y cuándo.",
+    process: [
+      { step: "01", title: "Conversación inicial",  desc: "30 minutos por videollamada para entender qué necesitas. Sin costo ni compromiso." },
+      { step: "02", title: "Propuesta y acuerdo",   desc: "Alcance, plazo y precio por escrito. Empezamos con el 50%." },
+      { step: "03", title: "Avance para revisar",   desc: "Te muestro el trabajo funcionando antes de terminarlo, para corregir a tiempo." },
+      { step: "04", title: "Entrega y traspaso",    desc: "Todo desplegado, con el código y los accesos a tu nombre." },
+    ],
+    faqTitle: "Preguntas frecuentes",
+    faq: [
+      { q: "¿Los precios incluyen IVA?",              a: "No. Los valores publicados son netos; si necesitas boleta o factura se agrega el IVA correspondiente." },
+      { q: "¿Qué pasa si necesito cambios después?",  a: "Los ajustes menores durante el desarrollo están incluidos. Después de la entrega puedes tomar el plan de mantención o pedirme cambios puntuales cotizados aparte." },
+      { q: "¿El dominio y el hosting están incluidos?", a: "El despliegue sí, y en la mayoría de los casos queda sin costo mensual. El dominio lo compras tú (unos $15.000 al año un .cl) y yo lo configuro sin cobrar por eso." },
+      { q: "¿Trabajas con clientes fuera de Chile?",  a: "Sí. Trabajo de forma remota y he colaborado con equipos internacionales; podemos coordinar en español o inglés." },
+      { q: "¿Me quedo con el código?",                a: "Sí, siempre. La entrega incluye el código fuente y los accesos a tu nombre. No quedas amarrado conmigo." },
+    ],
+    finalTitle:    "¿Empezamos?",
+    finalSubtitle: "Cuéntame qué necesitas y te digo con franqueza si puedo ayudarte, cuánto cuesta y en cuánto tiempo.",
+    responseNote:  "Respondo todos los mensajes en menos de 24 horas.",
   },
 
   projects: {

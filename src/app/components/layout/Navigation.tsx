@@ -10,12 +10,15 @@ interface NavigationProps {
   onClose?: () => void;
 }
 
-const NAV_HREFS = [
+const SECTION_HREFS = [
   { href: "#experiencia", key: "experience" },
   { href: "#formacion",   key: "education"  },
   { href: "#habilidades", key: "skills"     },
   { href: "#proyectos",   key: "projects"   },
-  { href: "#contacto",    key: "contact"    },
+] as const;
+
+const PAGE_HREFS = [
+  { href: "/direccion-creativa", key: "creativeDirection" },
 ] as const;
 
 export function Navigation({ mobile, onClose }: NavigationProps) {
@@ -23,10 +26,10 @@ export function Navigation({ mobile, onClose }: NavigationProps) {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState("");
 
-  const isCreativePage = pathname === "/direccion-creativa";
+  const isHome = pathname === "/";
 
   useEffect(() => {
-    if (isCreativePage) return;
+    if (!isHome) return;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -38,7 +41,7 @@ export function Navigation({ mobile, onClose }: NavigationProps) {
 
     document.querySelectorAll("section[id]").forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, [isCreativePage]);
+  }, [isHome]);
 
   const linkClass = (active: boolean) =>
     [
@@ -51,27 +54,41 @@ export function Navigation({ mobile, onClose }: NavigationProps) {
 
   return (
     <>
-      {NAV_HREFS.map(({ href, key }) => {
-        const isActive = !isCreativePage && activeSection === href.slice(1);
-        return (
-          <Link
-            key={href}
-            href={isCreativePage ? `/${href}` : href}
-            scroll={false}
-            onClick={onClose}
-            className={linkClass(isActive)}
-          >
-            {t.nav[key as keyof typeof t.nav]}
-          </Link>
-        );
-      })}
+      {SECTION_HREFS.map(({ href, key }) => (
+        <Link
+          key={href}
+          href={isHome ? href : `/${href}`}
+          onClick={onClose}
+          className={linkClass(isHome && activeSection === href.slice(1))}
+        >
+          {t.nav[key as keyof typeof t.nav]}
+        </Link>
+      ))}
 
+      {PAGE_HREFS.map(({ href, key }) => (
+        <Link
+          key={href}
+          href={href}
+          onClick={onClose}
+          className={linkClass(pathname === href)}
+        >
+          {t.nav[key as keyof typeof t.nav]}
+        </Link>
+      ))}
+
+      {/* Servicios es la ruta de conversión: va destacada, no como un link más. */}
       <Link
-        href="/direccion-creativa"
+        href="/servicios"
         onClick={onClose}
-        className={linkClass(isCreativePage)}
+        className={[
+          "px-4 py-1.5 rounded-md text-sm font-semibold transition-all duration-200",
+          mobile ? "text-center" : "",
+          pathname === "/servicios"
+            ? "bg-primary text-primary-foreground"
+            : "bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground",
+        ].join(" ")}
       >
-        {t.nav.creativeDirection}
+        {t.nav.services}
       </Link>
     </>
   );
