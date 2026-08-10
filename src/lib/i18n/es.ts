@@ -4,7 +4,6 @@ export const es = {
     experience:        "Experiencia",
     education:         "Formación",
     skills:            "Habilidades",
-    projects:          "Proyectos",
     contact:           "Contacto",
     creativeDirection: "Dirección Creativa",
     services:          "Servicios",
@@ -18,7 +17,6 @@ export const es = {
     featuredLabel: "🚀 Proyecto Destacado: Curiana Radio",
     featuredDesc:  "Laboratorio propio de simulación multi-agente con 60 agentes LLM",
     ctaContact:  "Contactar",
-    ctaProjects: "Ver Proyectos",
     ctaServices: "Ver qué puedo construir",
     viewLive:    "Ver Live",
     viewCode:    "Código",
@@ -437,40 +435,6 @@ export const es = {
     responseNote:  "Respondo todos los mensajes en menos de 24 horas.",
   },
 
-  projects: {
-    sectionTitle:   "Otros Proyectos",
-    sectionSubtitle: "Proyectos adicionales que muestran el alcance de mi experiencia",
-    viewLive:       "Ver Live",
-    viewCode:       "Ver Código",
-    viewCaseStudy:  "Ver Case Study",
-    live:           "Live",
-    items: [
-      {
-        id:          "tuweben7dias",
-        title:       "Tu Web En 7 Días",
-        description: "Landing page optimizada para captura de leads de mi servicio de desarrollo web. Sistema completo con formularios funcionales, emails automáticos y navegación inteligente entre páginas. Primer producto comercial desarrollado y desplegado en tiempo récord.",
-        category:    "Landing Page",
-      },
-      {
-        id:          "gabriel-colmenares-website",
-        title:       "Gabriel Colmenares - Sitio Web Personal",
-        description: "Sitio web personal para comediante desarrollado con enfoque narrativo y experiencia de usuario premium. Implementación completa con React, Next.js y Framer Motion, incluyendo sistema de componentes modulares, integración de redes sociales y diseño responsive optimizado para conversión.",
-        category:    "Portfolio Personal",
-      },
-      {
-        id:          "portokali",
-        title:       "Portokali",
-        description: "Migración completa de WordPress a Next.js para café de especialidad en Vitacura. Carta, catering y delivery integrados. Deploy en Vercel, gestión de correos con GoDaddy y desarrollo asistido con Claude Code.",
-        category:    "Migración Web",
-      },
-      {
-        id:          "bendita-hackathon",
-        title:       "Hackathon IA — BenditaIA",
-        description: "Landing para hackathon de inteligencia artificial desarrollada en equipo con BenditaIA. Lideré los flujos de inscripción y el frontend completo usando Lovable como herramienta de desarrollo.",
-        category:    "Hackathon",
-      },
-    ],
-  },
 };
 
 export type Translations = typeof es;

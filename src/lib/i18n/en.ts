@@ -6,7 +6,6 @@ export const en: Translations = {
     experience:        "Experience",
     education:         "Education",
     skills:            "Skills",
-    projects:          "Projects",
     contact:           "Contact",
     creativeDirection: "Creative Direction",
     services:          "Services",
@@ -20,7 +19,6 @@ export const en: Translations = {
     featuredLabel: "🚀 Featured Project: Curiana Radio",
     featuredDesc:  "A personal multi-agent simulation lab running 60 LLM agents",
     ctaContact:  "Get in Touch",
-    ctaProjects: "View Projects",
     ctaServices: "See what I can build",
     viewLive:    "View Live",
     viewCode:    "Code",
@@ -439,38 +437,4 @@ export const en: Translations = {
     responseNote:  "I reply to every message within 24 hours.",
   },
 
-  projects: {
-    sectionTitle:    "Other Projects",
-    sectionSubtitle: "Additional projects showcasing the breadth of my experience",
-    viewLive:        "View Live",
-    viewCode:        "View Code",
-    viewCaseStudy:   "View Case Study",
-    live:            "Live",
-    items: [
-      {
-        id:          "tuweben7dias",
-        title:       "Tu Web En 7 Días",
-        description: "Optimized landing page for lead capture for my web development service. Full system with functional forms, automated emails, and smart inter-page navigation. First commercial product developed and deployed in record time.",
-        category:    "Landing Page",
-      },
-      {
-        id:          "gabriel-colmenares-website",
-        title:       "Gabriel Colmenares - Personal Website",
-        description: "Personal website for a comedian built with a narrative focus and premium user experience. Full implementation with React, Next.js, and Framer Motion, including a modular component system, social media integration, and conversion-optimized responsive design.",
-        category:    "Personal Portfolio",
-      },
-      {
-        id:          "portokali",
-        title:       "Portokali",
-        description: "Full migration from WordPress to Next.js for a specialty coffee shop in Vitacura, Santiago. Menu, catering, and delivery integrated. Deployed on Vercel, email management via GoDaddy, and development assisted with Claude Code.",
-        category:    "Web Migration",
-      },
-      {
-        id:          "bendita-hackathon",
-        title:       "AI Hackathon — BenditaIA",
-        description: "Landing page for an AI hackathon built as part of the BenditaIA team. Led the registration flows and full frontend development using Lovable.",
-        category:    "Hackathon",
-      },
-    ],
-  },
 };

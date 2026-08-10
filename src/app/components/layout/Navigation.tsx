@@ -15,7 +15,6 @@ const SECTION_HREFS = [
   { href: "#experiencia", key: "experience" },
   { href: "#formacion",   key: "education"  },
   { href: "#habilidades", key: "skills"     },
-  { href: "#proyectos",   key: "projects"   },
 ] as const;
 
 const PAGE_HREFS = [
