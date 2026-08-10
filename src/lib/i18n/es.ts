@@ -151,6 +151,7 @@ export const es = {
         company:   "Bendita IA — Claude Impact Lab Chile 2026",
         period:    "Abr - Ago 2026",
         highlight: "Plataforma de hackathon operada por agentes IA para el Chile Fintech Forum, con Anthropic como Technical Partner",
+        caseStudyUrl: "/claude-impact-lab",
         bullets: [
           "Lead Frontend de la plataforma que corrió el evento completo: 899 postulaciones, 48 equipos en competencia y 1.834 evaluaciones registradas en 48 horas",
           "Desarrollo del leaderboard en vivo con Supabase Realtime y de la ceremonia de premiación proyectada ante 250 asistentes",

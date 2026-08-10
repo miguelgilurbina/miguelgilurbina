@@ -153,6 +153,7 @@ export const en: Translations = {
         company:   "Bendita IA — Claude Impact Lab Chile 2026",
         period:    "Apr - Aug 2026",
         highlight: "A hackathon platform operated by AI agents for Chile Fintech Forum, with Anthropic as Technical Partner",
+        caseStudyUrl: "/claude-impact-lab",
         bullets: [
           "Lead Frontend of the platform that ran the entire event: 899 applications, 48 competing teams and 1,834 evaluations recorded in 48 hours",
           "Built the live leaderboard on Supabase Realtime and the awards ceremony projected to an audience of 250",

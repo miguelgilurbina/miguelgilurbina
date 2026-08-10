@@ -30,6 +30,7 @@ const featuredWorkList: FeaturedWorkItem[] = [
       "Playwright",
       "Vercel",
     ],
+    internalUrl: "/claude-impact-lab",
     liveUrl: "https://fintech.benditaia.cl/es/claude-impact-lab",
     secondaryUrl: "https://fintech.benditaia.cl/es/claude-impact-lab-kpi",
   },
