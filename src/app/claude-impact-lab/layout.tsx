@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Claude Impact Lab Chile 2026 — Agentes de IA operando un evento real",
+  title: "Claude Impact Lab Chile — Agentes de IA operando eventos reales",
   description:
-    "Lead Frontend de la plataforma que corrió el primer Claude Impact Lab de América Latina: 899 postulaciones, 48 equipos y 1.834 evaluaciones en 48 horas, con cuatro agentes Claude en producción.",
+    "Lead Frontend de la plataforma que corrió el primer Claude Impact Lab de América Latina y su segunda vertical: 899 postulaciones y 1.834 evaluaciones solo en la edición Fintech, con cuatro agentes Claude en producción.",
   alternates: { canonical: "https://miguelgilurbina.com/claude-impact-lab" },
   openGraph: {
-    title: "Claude Impact Lab Chile 2026 — Case study",
+    title: "Claude Impact Lab Chile — Case study",
     description:
-      "Cuatro agentes Claude en producción, 899 postulaciones y una auditoría de divergencia entre humano e IA sobre 1.834 evaluaciones.",
+      "Una plataforma multi-tenant que corrió dos verticales del programa de Anthropic en Chile, con cuatro agentes Claude en producción.",
     url: "https://miguelgilurbina.com/claude-impact-lab",
   },
 };
