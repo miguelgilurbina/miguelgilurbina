@@ -2,7 +2,7 @@
 
 // src/app/page.tsx
 import { Hero } from "./components/sections/Hero";
-import { FeaturedProject } from "./components/sections/FeaturedProject";
+// import { FeaturedProject } from "./components/sections/FeaturedProject";
 import { FeaturedWork, type FeaturedWorkItem } from "./components/sections/FeaturedWork";
 import { Experience } from "./components/sections/Experience";
 import { Projects } from "./components/sections/Projects";
@@ -59,6 +59,7 @@ const featuredWorkList: FeaturedWorkItem[] = [
       "Supabase",
       "Vercel Blob",
     ],
+    internalUrl: "/direccion-creativa",
     liveUrl: "https://curiana-radio.vercel.app",
     githubUrl: "https://github.com/miguelgilurbina/curiana-radio",
   },
@@ -131,7 +132,9 @@ export default function HomePage() {
       <main className="container mx-auto px-4 py-8">
         <Hero image={fotoPerfil} />
         <FeaturedWork items={featuredWorkList} />
-        <FeaturedProject />
+        {/* Prompt Maker dejó de ser un proyecto aparte: hoy es la galería dentro de
+            Curiana Radio, que ya aparece en Trabajo Destacado. */}
+        {/* <FeaturedProject /> */}
         <Experience />
         <Projects projects={additionalProjectsList} />
         <Skills />
