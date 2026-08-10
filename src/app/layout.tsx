@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://miguelgilurbina.com"),
+  metadataBase: new URL("https://www.miguelgilurbina.com"),
   title: {
     default: "Miguel Gil — AI First Full Stack Developer",
     template: "%s | Miguel Gil",
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     "Miguel Gil",
     "Freelance developer Chile",
   ],
-  authors: [{ name: "Miguel Gil Urbina", url: "https://miguelgilurbina.com" }],
+  authors: [{ name: "Miguel Gil Urbina", url: "https://www.miguelgilurbina.com" }],
   creator: "Miguel Gil Urbina",
   openGraph: {
     type: "website",
     locale: "es_CL",
     alternateLocale: "en_US",
-    url: "https://miguelgilurbina.com",
+    url: "https://www.miguelgilurbina.com",
     siteName: "Miguel Gil — Portfolio",
     title: "Miguel Gil — Desarrollo Web & Soluciones de IA",
     description:
@@ -64,11 +64,11 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   alternates: {
-    canonical: "https://miguelgilurbina.com",
+    canonical: "https://www.miguelgilurbina.com",
     languages: {
-      "es-CL": "https://miguelgilurbina.com",
-      "en-US": "https://miguelgilurbina.com",
-      "x-default": "https://miguelgilurbina.com",
+      "es-CL": "https://www.miguelgilurbina.com",
+      "en-US": "https://www.miguelgilurbina.com",
+      "x-default": "https://www.miguelgilurbina.com",
     },
   },
 };
@@ -87,9 +87,9 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "Person",
-                  "@id": "https://miguelgilurbina.com/#person",
+                  "@id": "https://www.miguelgilurbina.com/#person",
                   name: "Miguel Gil Urbina",
-                  url: "https://miguelgilurbina.com",
+                  url: "https://www.miguelgilurbina.com",
                   jobTitle: "Full Stack Developer & AI Implementation Specialist",
                   worksFor: { "@type": "Organization", name: "Cargo Eléctric" },
                   address: { "@type": "PostalAddress", addressLocality: "Santiago", addressCountry: "CL" },
@@ -105,10 +105,10 @@ export default function RootLayout({
                 },
                 {
                   "@type": "ProfessionalService",
-                  "@id": "https://miguelgilurbina.com/#service",
+                  "@id": "https://www.miguelgilurbina.com/#service",
                   name: "Miguel Gil — Desarrollo Web & IA",
-                  url: "https://miguelgilurbina.com/servicios",
-                  provider: { "@id": "https://miguelgilurbina.com/#person" },
+                  url: "https://www.miguelgilurbina.com/servicios",
+                  provider: { "@id": "https://www.miguelgilurbina.com/#person" },
                   areaServed: { "@type": "Country", name: "Chile" },
                   availableLanguage: ["es", "en"],
                   makesOffer: [
