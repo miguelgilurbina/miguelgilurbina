@@ -369,8 +369,8 @@ export const es = {
           "Integración con ChatGPT, Claude y Gemini",
           "Evaluación y medición de resultados",
         ],
-        evidence: "Simulador Caquetío: sesenta agentes reconstruyendo una lengua extinta, con experimento de control y métricas publicadas. Más un chatbot médico multi-agente con LangGraph y RAG, y nueve meses evaluando modelos en Outlier.",
-        url:      "/direccion-creativa",
+        evidence: "Claude Impact Lab Chile 2026: la plataforma que corrió el evento completo con cuatro agentes Claude en producción, 899 postulaciones y 1.834 evaluaciones, con Anthropic como Technical Partner. Más el Simulador Caquetío —sesenta agentes y experimento de control— y nueve meses evaluando modelos en Outlier.",
+        url:      "/claude-impact-lab",
       },
       {
         id:       "creativa",
