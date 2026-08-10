@@ -40,6 +40,9 @@ export const es = {
         period:  "Abr — Ago 2026",
         tagline: "Chile fue uno de los países seleccionados para el programa Impact Lab de Anthropic, y esta es la plataforma que lo corrió: postulación, selección, evaluación asistida por IA y premiación en vivo. La misma base de código operó las dos verticales del programa: Fintech, con FinteChile en el Chile Fintech Forum de mayo, y Longevidad, con Caja La Araucana sobre datos de salud, en agosto. Distinto partner, dominio y rúbrica en cada una.",
         secondaryLabel: "Impact Report",
+        // Las cifras de volumen son de la edicion Fintech, la unica con impact
+        // report publico. Longevidad (5-6 ago 2026) solo tiene proyecciones en
+        // su sitio; cuando publique resultados, agregar sus numeros aqui.
         metrics: [
           { value: "2",     label: "verticales sobre la misma plataforma" },
           { value: "899",   label: "postulaciones procesadas (edición Fintech)" },

@@ -42,6 +42,9 @@ export const en: Translations = {
         period:  "Apr — Aug 2026",
         tagline: "Chile was one of the countries selected for Anthropic's Impact Lab program, and this is the platform that ran it: applications, selection, AI-assisted evaluation and the live awards ceremony. The same codebase operated both verticals of the program: Fintech, with FinteChile at May's Chile Fintech Forum, and Longevity, with Caja La Araucana over health data, in August. A different partner, domain and rubric each time.",
         secondaryLabel: "Impact Report",
+        // Volume figures are from the Fintech edition, the only one with a public
+        // impact report. Longevity (5-6 Aug 2026) has projections only on its
+        // site; once it publishes results, add its numbers here.
         metrics: [
           { value: "2",     label: "verticals on the same platform" },
           { value: "899",   label: "applications processed (Fintech edition)" },
