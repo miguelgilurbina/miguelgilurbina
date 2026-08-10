@@ -11,6 +11,7 @@ interface NavigationProps {
 }
 
 const SECTION_HREFS = [
+  { href: "#destacados",  key: "featured"   },
   { href: "#experiencia", key: "experience" },
   { href: "#formacion",   key: "education"  },
   { href: "#habilidades", key: "skills"     },
