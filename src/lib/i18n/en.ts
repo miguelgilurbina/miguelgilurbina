@@ -196,7 +196,7 @@ export const en: Translations = {
     sectionSubtitle: "Need something built, or someone to join your team? Both conversations interest me.",
     availableBadge:  "Available for projects and new opportunities",
     projectTitle:    "Have a project in mind?",
-    projectDesc:     "Tell me what you need and I'll be straight with you about whether I can help, what it costs, and how long it takes. If you'd rather see pricing first, it's all published on the services page.",
+    projectDesc:     "Tell me what you need and I'll be straight with you about whether I can help, what it would cost, and how long it takes. If you'd rather see what I work on first, it's all on the services page.",
     emailCta:        "Contact by Email",
     whatsappCta:     "WhatsApp",
     location:        "Location",

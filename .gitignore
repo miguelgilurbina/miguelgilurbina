@@ -37,3 +37,6 @@ next-env.d.ts
 
 # claude code
 .claude/worktrees/
+
+# parches de trabajo locales
+*.patch

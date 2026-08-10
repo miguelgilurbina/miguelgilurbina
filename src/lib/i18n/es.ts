@@ -194,7 +194,7 @@ export const es = {
     sectionSubtitle: "¿Necesitas construir algo, o sumar a alguien a tu equipo? Las dos conversaciones me interesan.",
     availableBadge:  "Disponible para proyectos y nuevas oportunidades",
     projectTitle:    "¿Tienes un proyecto en mente?",
-    projectDesc:     "Cuéntame qué necesitas y te digo con franqueza si puedo ayudarte, cuánto cuesta y en cuánto tiempo. Si prefieres ver precios primero, están todos publicados en la página de servicios.",
+    projectDesc:     "Cuéntame qué necesitas y te digo con franqueza si puedo ayudarte, cuánto costaría y en cuánto tiempo. Si quieres ver antes en qué trabajo, está todo en la página de servicios.",
     emailCta:        "Contactar por Email",
     whatsappCta:     "WhatsApp",
     location:        "Ubicación",
