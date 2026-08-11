@@ -26,7 +26,9 @@ export const en: Translations = {
 
   featuredWork: {
     sectionTitle:    "Featured Work",
-    sectionSubtitle: "Three systems in production: AI agents running both editions of a real programme, a logistics platform that replaced spreadsheets, and a personal multi-agent simulation lab.",
+    // Restore this version when Curiana Radio is ready:
+    // sectionSubtitle: "Three systems in production: AI agents running both editions of a real programme, a logistics platform that replaced spreadsheets, and a personal multi-agent simulation lab.",
+    sectionSubtitle: "Two systems in production: AI agents running both editions of a real programme, and a logistics platform that replaced spreadsheets with a single operations tool.",
     viewLive:        "View Live",
     viewCode:        "View Repository",
     viewCaseStudy:   "View Case Study",
@@ -388,7 +390,9 @@ export const en: Translations = {
           "Post-production and final editing",
         ],
         evidence: "Curiana Radio, a cultural publication with its own identity. Plus campaigns under NDA for institutional and banking clients with strict consistency requirements.",
-        url:      "https://curiana-radio.vercel.app",
+        // Restore this link when Curiana Radio is ready:
+        // url:      "https://curiana-radio.vercel.app",
+        url:      "",
       },
       {
         id:       "producto",

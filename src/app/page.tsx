@@ -46,22 +46,26 @@ const featuredWorkList: FeaturedWorkItem[] = [
     ],
     internalUrl: "/cargo-electric",
   },
-  {
-    id: "curiana-radio",
-    technologies: [
-      "Next.js 16",
-      "React 19",
-      "TypeScript",
-      "Tailwind v4",
-      "Python",
-      "Anthropic SDK",
-      "Supabase",
-      "Vercel Blob",
-    ],
-    internalUrl: "/direccion-creativa",
-    liveUrl: "https://curiana-radio.vercel.app",
-    githubUrl: "https://github.com/miguelgilurbina/curiana-radio",
-  },
+  // Curiana Radio queda fuera mientras el proyecto siga en construcción.
+  // Para reactivarlo: descomentar aquí, devolver el enlace a Navigation y la
+  // entrada a sitemap.ts, quitar el noindex de direccion-creativa/layout.tsx
+  // y reponer la evidencia en las áreas "ia" y "creativa" de /servicios.
+  // {
+  //   id: "curiana-radio",
+  //   technologies: [
+  //     "Next.js 16",
+  //     "React 19",
+  //     "TypeScript",
+  //     "Tailwind v4",
+  //     "Python",
+  //     "Anthropic SDK",
+  //     "Supabase",
+  //     "Vercel Blob",
+  //   ],
+  //   internalUrl: "/direccion-creativa",
+  //   liveUrl: "https://curiana-radio.vercel.app",
+  //   githubUrl: "https://github.com/miguelgilurbina/curiana-radio",
+  // },
 ];
 
 export default function HomePage() {
@@ -71,8 +75,8 @@ export default function HomePage() {
       <main className="container mx-auto px-4 py-8">
         <Hero image={fotoPerfil} />
         <FeaturedWork items={featuredWorkList} />
-        {/* Prompt Maker dejó de ser un proyecto aparte: hoy es la galería dentro de
-            Curiana Radio, que ya aparece en Trabajo Destacado. */}
+        {/* Prompt Maker dejó de ser un proyecto aparte: hoy es la galería dentro
+            de Curiana Radio, que está en construcción y fuera del sitio. */}
         {/* <FeaturedProject /> */}
         <Experience />
         <Skills />

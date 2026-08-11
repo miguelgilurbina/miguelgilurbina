@@ -24,7 +24,9 @@ export const es = {
 
   featuredWork: {
     sectionTitle:    "Trabajo Destacado",
-    sectionSubtitle: "Tres sistemas en producción: agentes de IA operando las dos ediciones de un programa real, una plataforma logística que reemplazó planillas, y un laboratorio propio de simulación multi-agente.",
+    // Reponer esta version al reactivar Curiana Radio:
+    // sectionSubtitle: "Tres sistemas en producción: agentes de IA operando las dos ediciones de un programa real, una plataforma logística que reemplazó planillas, y un laboratorio propio de simulación multi-agente.",
+    sectionSubtitle: "Dos sistemas en producción: agentes de IA operando las dos ediciones de un programa real, y una plataforma logística que reemplazó planillas por una sola herramienta de operación.",
     viewLive:        "Ver Live",
     viewCode:        "Ver Repositorio",
     viewCaseStudy:   "Ver Case Study",
@@ -386,7 +388,9 @@ export const es = {
           "Postproducción y montaje final",
         ],
         evidence: "Curiana Radio, publicación cultural con identidad propia. Además, campañas bajo NDA para clientes institucionales y de banca con requisitos estrictos de consistencia.",
-        url:      "https://curiana-radio.vercel.app",
+        // Reponer el enlace al reactivar Curiana Radio:
+        // url:      "https://curiana-radio.vercel.app",
+        url:      "",
       },
       {
         id:       "producto",

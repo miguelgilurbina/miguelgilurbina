@@ -18,7 +18,9 @@ const SECTION_HREFS = [
 ] as const;
 
 const PAGE_HREFS = [
-  { href: "/direccion-creativa", key: "creativeDirection" },
+  // Dirección Creativa vuelve al nav cuando Curiana Radio esté lista. La ruta
+  // sigue viva mientras tanto y se puede compartir por enlace directo.
+  // { href: "/direccion-creativa", key: "creativeDirection" },
 ] as const;
 
 export function Navigation({ mobile, onClose }: NavigationProps) {
