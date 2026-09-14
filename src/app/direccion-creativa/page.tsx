@@ -15,7 +15,7 @@ import {
 import { useLanguage } from "@/context/LanguageContext";
 
 const CURIANA_URL = "https://curiana-radio.vercel.app";
-const SIMULADOR_URL = "https://curiana-radio.vercel.app/simulador";
+const SIMULADOR_URL = "https://curiana-radio.vercel.app/kaketiana/experimento";
 
 // Marcador de imagen. Se reemplaza por <Image> al exportar los assets de Midjourney.
 function ImageSlot({
@@ -110,8 +110,8 @@ export default function DireccionCreativaPage() {
       ? "Una transmisión cultural desde Abya Yala: newsletter presentado como páginas web inmersivas, con música curada, narrativa experimental y visuales generados con IA."
       : "A cultural broadcast from Abya Yala: a newsletter presented as immersive web pages, with curated music, experimental narrative, and AI-generated visuals.",
     curianaBody: isEs
-      ? "No es un portafolio de imágenes: es una publicación con identidad propia, ediciones mensuales y un laboratorio de investigación adentro. Está en línea y se sigue desarrollando."
-      : "It is not an image portfolio: it is a publication with its own identity, monthly editions, and a research lab inside it. It is live and still in development.",
+      ? "No es un portafolio de imágenes: es una publicación con identidad propia, una galería de 821 obras, Jai Sounds —23 playlists curadas— y Kaketiana, la wiki que aloja el laboratorio de investigación. Está en línea y se sigue desarrollando."
+      : "It is not an image portfolio: it is a publication with its own identity, a gallery of 821 works, Jai Sounds — 23 curated playlists — and Kaketiana, the wiki that houses the research lab. It is live and still in development.",
     visitSite: isEs ? "Visitar Curiana Radio" : "Visit Curiana Radio",
 
     simLabel: isEs ? "Laboratorio lingüístico" : "Linguistic laboratory",
@@ -128,7 +128,7 @@ export default function DireccionCreativaPage() {
 
     statsTitle: isEs ? "Lo que se midió" : "What was measured",
     stats: [
-      { v: "1.262", l: isEs ? "palabras en el lexicón, 75 atestiguadas en crónicas" : "words in the lexicon, 75 attested in chronicles" },
+      { v: "1.262", l: isEs ? "palabras en el lexicón de la simulación" : "words in the simulation lexicon" },
       { v: "60",    l: isEs ? "agentes con rol, edad y red social propia" : "agents with their own role, age, and social network" },
       { v: "1.489", l: isEs ? "respuestas de agentes en 6 simulaciones curadas" : "agent responses across 6 curated simulations" },
       { v: "2,7×",  l: isEs ? "más convergencia que el grupo de control" : "more convergence than the control group" },
@@ -139,8 +139,8 @@ export default function DireccionCreativaPage() {
       {
         t: isEs ? "Cada palabra lleva su fuente" : "Every word carries its source",
         d: isEs
-          ? "De 1.262 formas, 75 están atestiguadas en crónicas (Oviedo, Las Casas, Galeotto Cey), 82 son reconstrucciones declaradas del proyecto y el resto viene de lenguas hermanas, marcado como tal. 441 formas hipotéticas fueron retiradas por no pasar validación."
-          : "Of 1,262 forms, 75 are attested in chronicles (Oviedo, Las Casas, Galeotto Cey), 82 are declared project reconstructions, and the rest come from sister languages, marked as such. 441 hypothetical forms were withdrawn for failing validation.",
+          ? "En el lexicón de la simulación, de 1.262 formas, 75 están atestiguadas en fuentes documentales, 82 son reconstrucciones declaradas del proyecto y el resto viene de lenguas hermanas, marcado como tal. 441 formas hipotéticas fueron retiradas por no pasar validación. Desde julio el canon se audita fuente por fuente y ya supera las 5.500 entradas; la próxima simulación correrá sobre él."
+          : "In the simulation lexicon, of 1,262 forms, 75 are attested in documentary sources, 82 are declared project reconstructions, and the rest come from sister languages, marked as such. 441 hypothetical forms were withdrawn for failing validation. Since July the canon has been audited source by source and now exceeds 5,500 entries; the next simulation will run on it.",
       },
       {
         t: isEs ? "Un experimento con grupo de control" : "An experiment with a control group",
@@ -155,7 +155,7 @@ export default function DireccionCreativaPage() {
           : "The first metric converged on its own through accumulation of shared vocabulary: an artifact of the instrument, not koineization. It was corrected, replaced by a reading that counts only forms born inside the simulation, and the earlier runs were flagged in the log rather than deleted.",
       },
     ],
-    simCta: isEs ? "Entrar al simulador" : "Enter the simulator",
+    simCta: isEs ? "Ver el experimento" : "See the experiment",
     simChips: [
       isEs ? "Sistemas multi-agente" : "Multi-agent systems",
       isEs ? "Diseño de experimentos" : "Experiment design",

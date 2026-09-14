@@ -10,6 +10,7 @@ import {
   IconRoute,
   IconReceipt,
   IconSettings,
+  IconCoin,
 } from "@tabler/icons-react"
 
 type StackItem = {
@@ -38,19 +39,20 @@ const layers: Layer[] = [
   },
   {
     label: "Módulos de la app",
-    cols: "grid-cols-2 sm:grid-cols-4",
+    cols: "grid-cols-2 sm:grid-cols-5",
     items: [
       { icon: IconChartBar,  label: "Analítica",      sub: "KPIs · heatmap · tendencias", accent: true },
       { icon: IconRoute,     label: "Rutas",          sub: "CRUD · filtros · estados",    accent: true },
-      { icon: IconReceipt,   label: "Facturación",    sub: "Proformas · billing",         accent: true },
-      { icon: IconSettings,  label: "Administración", sub: "Flota · conductores",         accent: true },
+      { icon: IconReceipt,   label: "Facturación",    sub: "Tarifarios · Excel",          accent: true },
+      { icon: IconCoin,      label: "Bonos",          sub: "Conductores · conciliación",  accent: true },
+      { icon: IconSettings,  label: "Administración", sub: "Flota · locales · usuarios",  accent: true },
     ],
   },
   {
     label: "Backend & datos",
     cols: "grid-cols-1 sm:grid-cols-3",
     items: [
-      { icon: IconBrandFirebase, label: "Firebase Auth",    sub: "autenticación + roles" },
+      { icon: IconBrandFirebase, label: "Firebase Auth",    sub: "roles admin · board · client" },
       { icon: IconBrandFirebase, label: "Firestore",        sub: "base de datos en tiempo real" },
       { icon: IconCloud,         label: "Vercel",           sub: "deploy + hosting" },
     ],
@@ -59,7 +61,7 @@ const layers: Layer[] = [
     label: "Exportaciones",
     cols: "grid-cols-1 sm:grid-cols-3",
     items: [
-      { icon: IconFileSpreadsheet, label: "ExcelJS",  sub: "proformas y rutas" },
+      { icon: IconFileSpreadsheet, label: "ExcelJS",  sub: "facturación y bonos" },
       { icon: IconFileTypePdf,     label: "jsPDF",    sub: "reportes ejecutivos" },
       { icon: IconChartBar,        label: "Recharts", sub: "gráficos interactivos" },
     ],

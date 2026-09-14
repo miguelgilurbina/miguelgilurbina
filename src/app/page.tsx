@@ -17,6 +17,39 @@ import fotoPerfil from "../../public/fotoPerfil.png";
 // Proyectos destacados (los textos viven en src/lib/i18n)
 const featuredWorkList: FeaturedWorkItem[] = [
   {
+    id: "cargo-electric",
+    technologies: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Firebase",
+      "Recharts",
+      "Tailwind v4",
+      "Vitest",
+      "Ionic 8",
+      "Angular 19",
+      "Vercel",
+    ],
+    internalUrl: "/cargo-electric",
+  },
+  {
+    id: "curiana-radio",
+    technologies: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind v4",
+      "MDX",
+      "Python",
+      "Claude Haiku 4.5",
+      "Supabase",
+      "Vercel Blob",
+    ],
+    internalUrl: "/direccion-creativa",
+    liveUrl: "https://curiana-radio.vercel.app",
+    githubUrl: "https://github.com/miguelgilurbina/curiana-radio",
+  },
+  {
     id: "claude-impact-lab",
     technologies: [
       "Next.js 14",
@@ -34,38 +67,21 @@ const featuredWorkList: FeaturedWorkItem[] = [
     secondaryUrl: "https://fintech.benditaia.cl/es/claude-impact-lab-kpi",
   },
   {
-    id: "cargo-electric",
+    id: "portokali",
     technologies: [
-      "Next.js",
+      "Next.js 15",
+      "React 18",
       "TypeScript",
-      "Firebase",
-      "Ionic 7",
-      "Angular 17",
-      "Chart.js",
+      "Tailwind v4",
+      "shadcn/ui",
+      "Supabase",
+      "Resend",
+      "Zod",
+      "GitHub Actions",
       "Vercel",
     ],
-    internalUrl: "/cargo-electric",
+    liveUrl: "https://portokali.cl",
   },
-  // Curiana Radio queda fuera mientras el proyecto siga en construcción.
-  // Para reactivarlo: descomentar aquí, devolver el enlace a Navigation y la
-  // entrada a sitemap.ts, quitar el noindex de direccion-creativa/layout.tsx
-  // y reponer la evidencia en las áreas "ia" y "creativa" de /servicios.
-  // {
-  //   id: "curiana-radio",
-  //   technologies: [
-  //     "Next.js 16",
-  //     "React 19",
-  //     "TypeScript",
-  //     "Tailwind v4",
-  //     "Python",
-  //     "Anthropic SDK",
-  //     "Supabase",
-  //     "Vercel Blob",
-  //   ],
-  //   internalUrl: "/direccion-creativa",
-  //   liveUrl: "https://curiana-radio.vercel.app",
-  //   githubUrl: "https://github.com/miguelgilurbina/curiana-radio",
-  // },
 ];
 
 export default function HomePage() {
@@ -75,8 +91,8 @@ export default function HomePage() {
       <main className="container mx-auto px-4 py-8">
         <Hero image={fotoPerfil} />
         <FeaturedWork items={featuredWorkList} />
-        {/* Prompt Maker dejó de ser un proyecto aparte: hoy es la galería dentro
-            de Curiana Radio, que está en construcción y fuera del sitio. */}
+        {/* Prompt Maker queda fuera del home: repo independiente sin actividad
+            desde abril de 2026. */}
         {/* <FeaturedProject /> */}
         <Experience />
         <Skills />

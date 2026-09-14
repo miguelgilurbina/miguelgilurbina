@@ -10,6 +10,7 @@ import {
   Bot,
   Radio,
   Truck,
+  Coffee,
   FileBarChart,
   type LucideIcon,
 } from "lucide-react";
@@ -33,6 +34,7 @@ const ICONS: Record<string, LucideIcon> = {
   "claude-impact-lab": Bot,
   "cargo-electric": Truck,
   "curiana-radio": Radio,
+  portokali: Coffee,
 };
 
 export function FeaturedWork({ items }: FeaturedWorkProps) {

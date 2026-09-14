@@ -11,6 +11,8 @@ import {
   IconExternalLink,
   IconBriefcase,
   IconCode,
+  IconCoin,
+  IconShieldCheck,
 } from "@tabler/icons-react"
 
 import { cn } from "@/lib/utils"
@@ -22,17 +24,17 @@ import { AdminTabs } from "@/components/historia/admin-tabs"
 export const metadata: Metadata = {
   title: "Cargo Electric — Historia de la Plataforma",
   description:
-    "De cero a producción en 5 meses: cómo reemplazamos múltiples Google Sheets por una plataforma centralizada de gestión de flota eléctrica.",
+    "Cómo reemplazamos múltiples Google Sheets —y el Excel de nómina de conductores— por una plataforma centralizada de gestión de flota eléctrica.",
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const stats = [
   { value: "14", label: "camiones eléctricos" },
-  { value: "154", label: "puntos de destino" },
-  { value: "16", label: "conductores" },
-  { value: "4", label: "módulos en producción" },
-  { value: "5", label: "meses de desarrollo" },
+  { value: "5", label: "módulos en producción" },
+  { value: "619", label: "commits propios" },
+  { value: "102", label: "PRs mergeados" },
+  { value: "8", label: "meses de web app" },
 ]
 
 const milestones = [
@@ -49,7 +51,7 @@ const milestones = [
     date: "23 Enero – 4 Febrero 2026",
     title: "Sistema de Facturación / Proformas",
     description:
-      "Módulo completo de billing: generación de proformas con el modelo de precios del cliente, filtros por fecha, flujo de aprobación y exportación a Excel.",
+      "Primer módulo de billing: cálculo de proformas con el modelo de precios del cliente, filtros por fecha y exportación a Excel.",
     highlight: true,
   },
   {
@@ -65,7 +67,7 @@ const milestones = [
     date: "13–20 Marzo 2026",
     title: "Administración: Locales, Camiones y Usuarios",
     description:
-      "Páginas CRUD dedicadas para gestionar los 154 puntos de destino, la flota de 14 camiones y los conductores/administradores del sistema.",
+      "Páginas CRUD dedicadas para gestionar los puntos de destino, la flota de 14 camiones y los conductores/administradores del sistema.",
     highlight: true,
   },
   {
@@ -87,10 +89,26 @@ const milestones = [
   {
     icon: IconArrowsExchange,
     date: "13 Mayo 2026",
-    title: "Nuevo modelo operacional",
+    title: "Diseño del modelo operacional",
     description:
-      "Diseño e implementación del nuevo modelo de datos operacional, con wizard de migración de rutas legacy y corrección de búsqueda histórica.",
+      "Diseño del siguiente modelo de datos operacional (journeys), documentado como schema para una etapa posterior, y corrección de la búsqueda histórica.",
+    highlight: false,
+  },
+  {
+    icon: IconCoin,
+    date: "24 Julio – Agosto 2026",
+    title: "Motor de bonos de conductores",
+    description:
+      "Reemplazo del Excel de nómina: cálculo por camión-día, tarifario con vigencia, tripulación manual, exportación a Excel y un snapshot que consume la app móvil. Reconciliado mes a mes contra la planilla real.",
     highlight: true,
+  },
+  {
+    icon: IconShieldCheck,
+    date: "Agosto 2026",
+    title: "Seguridad por roles y limpieza de deuda",
+    description:
+      "Autorización con acceso denegado por defecto en todas las Server Actions y matriz de roles centralizada (admin, board, client). Retiro del kit de migración y del ciclo de proformas que el producto no usaba, ESLint de 87 errores a 0 y telemetría con Vercel Analytics.",
+    highlight: false,
   },
 ]
 
@@ -131,20 +149,20 @@ const featureBlocks = [
       "Creación, edición inline y eliminación con confirmación",
       "Cambio de estado y turno directamente desde la tabla",
       "Filtros por rango de fechas y columnas configurables",
-      "Carga masiva desde Excel para importar múltiples rutas",
+      "Formato es-CL en montos, fechas y exportaciones",
     ],
     image: { src: "/images/now-routes.webm", alt: "Gestión de Rutas" },
   },
   {
     tag: "Facturación",
-    title: "Proformas — del registro a la factura en un flujo",
+    title: "Facturación — del registro de ruta al Excel del cliente",
     description:
-      "Carga rutas completadas desde Firestore o desde Excel, las agrupa por camión y calcula montos según la matriz de precios activa del cliente.",
+      "Toma las rutas completadas desde Firestore, las agrupa por camión y calcula montos según el tarifario vigente del cliente para el período.",
     bullets: [
       "Agrupación automática por camión con IVA 19% calculado",
-      "Cards expandibles para revisar y corregir ruta a ruta",
+      "Tarifarios con fecha de vigencia, editables desde la app",
       "Excel fiel al formato de referencia del cliente con fórmulas incluidas",
-      "Flujo completo: carga → revisión → descarga en una sola pantalla",
+      "Sin estados intermedios: lo que se descarga refleja las rutas registradas",
     ],
     image: { src: "/images/now-billing.webm", alt: "Módulo de Facturación" },
     reverse: true,
@@ -156,7 +174,7 @@ const adminCards = [
     tag: "Locales",
     title: "Puntos de destino",
     description:
-      "154 puntos de destino con código, nombre y estado. Un local inactivo desaparece de la asignación de rutas sin perder historial.",
+      "Puntos de destino con código, nombre y estado. Un local inactivo desaparece de la asignación de rutas sin perder historial.",
     image: { src: "/images/now-locales.webm", alt: "Gestión de Locales" },
   },
   {
@@ -170,7 +188,7 @@ const adminCards = [
     tag: "Usuarios",
     title: "Conductores y admins",
     description:
-      "Roles, vinculación a camión y activación/desactivación. Cuatro niveles de acceso: admin, ejecutivo, board y viewer.",
+      "Roles, vinculación a camión y activación/desactivación. Tres roles con acceso denegado por defecto: admin, board y client.",
     image: { src: "/images/now-usuarios.webm", alt: "Gestión de Usuarios" },
   },
 ]
@@ -237,7 +255,7 @@ export default function HistoriaPage() {
               <p className="mb-6 text-[1rem] leading-7 text-slate-400">
                 Asumí el rol de <span className="text-white font-medium">Product Owner</span> y{" "}
                 <span className="text-white font-medium">Full-Stack Engineer</span> — definí el producto,
-                diseñé la arquitectura y escribí cada línea de código en producción.
+                diseñé la arquitectura y escribí 619 de los 632 commits de la web app en producción.
               </p>
 
               <div className="flex flex-wrap gap-2">
@@ -311,7 +329,7 @@ export default function HistoriaPage() {
                 <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Una sola plataforma para toda la operación</li>
                 <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Datos en tiempo real desde Firestore</li>
                 <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Analítica operacional con KPIs y tendencias históricas</li>
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Facturación automatizada con modelo de precios del cliente</li>
+                <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Facturación y bonos de conductores calculados con tarifarios vigentes</li>
                 <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Arquitectura escalable lista para nuevos clientes</li>
               </ul>
             </div>
@@ -327,8 +345,9 @@ export default function HistoriaPage() {
           <SectionLabel>Estado actual</SectionLabel>
           <h2 className="mb-3 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">La app hoy</h2>
           <p className="mb-14 max-w-2xl text-[1.0625rem] text-muted-foreground">
-            Cuatro módulos que cubren el ciclo completo: desde el registro del movimiento diario hasta
-            la analítica y la facturación automatizada.
+            Los módulos que cubren el ciclo completo: desde el registro del movimiento diario hasta
+            la analítica y la facturación. El quinto, el motor de bonos de conductores, está en la historia
+            del desarrollo.
           </p>
 
           <div className="space-y-16 sm:space-y-20">
