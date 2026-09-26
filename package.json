@@ -9,31 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@radix-ui/react-dialog": "^1.1.2",
-    "@radix-ui/react-slot": "^1.1.0",
     "@tabler/icons-react": "^3.44.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
-    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.1.0",
-    "lucide-react": "^0.447.0",
     "next": "^16.1.6",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-intersection-observer": "^9.15.1",
-    "tailwind-merge": "^2.5.3",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwind-merge": "^2.5.3"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^9",
     "eslint-config-next": "^16.1.6",
     "postcss": "^8",
-    "tailwindcss": "^3.4.13",
+    "tailwindcss": "^4.3.3",
     "typescript": "^5"
   }
 }
