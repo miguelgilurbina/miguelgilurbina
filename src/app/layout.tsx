@@ -1,20 +1,32 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter, Outfit } from "next/font/google";
+import { Instrument_Serif, Archivo, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LanguageProvider } from "@/context/LanguageContext";
 
-const outfit = Outfit({
+// Tres voces del sistema MEGU: serif para la afirmación, grotesca para la
+// interfaz, mono para el dato.
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
   display: "swap",
 });
 
-const inter = Inter({
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-jetbrains-mono",
   display: "swap",
 });
 
@@ -77,7 +89,13 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    // Las variables de next/font van en <html>: los tokens --ff-* de :root las
+    // resuelven ahí, y en <body> llegarían tarde.
+    <html
+      lang="es"
+      suppressHydrationWarning
+      className={`${instrumentSerif.variable} ${archivo.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -124,8 +142,14 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${outfit.variable} ${inter.variable} font-sans`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+      <body className="font-sans">
+        <ThemeProvider
+          attribute="data-theme"
+          themes={["profesional", "experimental"]}
+          defaultTheme="profesional"
+          enableSystem={false}
+          storageKey="megu-theme"
+        >
           <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>
         <Analytics />

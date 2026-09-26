@@ -1,185 +1,176 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    /* ── Warm base palette ── */
-    --background: 37 40% 94%;        /* #F5F0E8 cream */
-    --foreground: 41 11% 16%;        /* #2D2A24 warm near-black */
+/* Sistema MEGU v1 — fuente de verdad: handoff/README.md.
+   Dos temas con la misma rejilla y tipografía: el profesional (papel) por
+   defecto y el experimental con [data-theme="experimental"] en <html>. */
 
-    --card: 43 32% 90%;              /* #EDE8DC dark cream */
-    --card-foreground: 41 11% 16%;
+@custom-variant dark (&:where([data-theme="experimental"], [data-theme="experimental"] *));
 
-    --popover: 43 32% 90%;
-    --popover-foreground: 41 11% 16%;
+:root {
+  /* color — tema profesional (papel) */
+  --paper: #F1ECE2;      --paper-2: #FBF8F1;   --paper-3: #E5DFD1;
+  --ink: #12100C;        --muted: #6B6250;
+  --rule: #CFC7B6;       --accent: #0F5132;
+  --accent-press: #0B3F26;
+  --on-accent: #F1ECE2;
+  --danger: #B3261E;     --danger-bg: #FDF6F4;
 
-    /* ── Indigo accent ── */
-    --primary: 245 58% 51%;          /* #4338CA indigo primary */
-    --primary-foreground: 37 40% 94%;
+  /* tipografía (las familias las inyecta next/font en layout.tsx) */
+  --ff-display: var(--font-instrument-serif), "Instrument Serif", Georgia, serif;
+  --ff-sans: var(--font-archivo), "Archivo", system-ui, sans-serif;
+  --ff-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
 
-    --secondary: 43 32% 90%;
-    --secondary-foreground: 41 11% 16%;
+  /* filete y sombra — el sistema es de 1px, no de sombras */
+  --radius: 2px;
+  --focus-ring: 0 0 0 3px rgb(15 81 50 / 0.18);
+  --sh-sticky: 0 1px 0 var(--ink), 0 6px 18px rgb(18 16 12 / 0.06);
+  --sh-lift: 0 10px 30px rgb(18 16 12 / 0.10);
 
-    --muted: 43 32% 90%;
-    --muted-foreground: 24 5% 45%;   /* #78716C warm gray */
+  /* motion */
+  --dur-instant: 80ms;   --dur-ui: 140ms;
+  --dur-header: 200ms;   --dur-curtain: 340ms;
+  --dur-reveal: 620ms;   --dur-image: 500ms;
+  --stagger: 60ms;
+}
 
-    --accent: 226 100% 94%;          /* #E0E7FF light indigo */
-    --accent-foreground: 245 58% 51%;
+[data-theme="experimental"] {
+  --paper: #0B0F0C;      --paper-2: #111614;   --paper-3: #18201B;
+  --ink: #E6E9E3;        --muted: #8A9A8F;
+  --rule: rgb(230 233 227 / 0.28);
+  --accent: #5BE39A;     --accent-press: #35C67C;
+  --on-accent: #07120B;
+  --focus-ring: 0 0 0 3px rgb(91 227 154 / 0.28);
+  --sh-sticky: 0 1px 0 var(--rule), 0 6px 18px rgb(0 0 0 / 0.5);
+  color-scheme: dark;
+}
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 37 40% 94%;
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-accent-press: var(--accent-press);
+  --color-on-accent: var(--on-accent);
+  --color-danger: var(--danger);
+  --color-danger-bg: var(--danger-bg);
 
-    --border: 39 14% 80%;            /* #D4CFC6 subtle border */
-    --input: 39 14% 80%;
-    --ring: 245 58% 51%;
+  --font-display: var(--ff-display);
+  --font-sans: var(--ff-sans);
+  --font-mono: var(--ff-mono);
 
-    --radius: 0.75rem;
-  }
+  --radius-sys: var(--radius);
+  --shadow-sticky: var(--sh-sticky);
+  --shadow-lift: var(--sh-lift);
 
-  .dark {
-    --background: 40 15% 8%;
-    --foreground: 37 40% 94%;        /* #F5F0E8 cream on dark */
+  /* Compatibilidad: nombres del sistema anterior (shadcn) apuntando a la
+     paleta nueva, para las vistas que todavía los usan. */
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --color-card: var(--paper-2);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--paper-2);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--on-accent);
+  --color-secondary: var(--paper-3);
+  --color-secondary-foreground: var(--ink);
+  --color-muted-foreground: var(--muted);
+  --color-accent-foreground: var(--on-accent);
+  --color-destructive: var(--danger);
+  --color-border: var(--rule);
+  --color-input: var(--rule);
+  --color-ring: var(--accent);
+}
 
-    --card: 40 12% 12%;
-    --card-foreground: 37 40% 94%;
+/* static: estas variables también se leen desde style={} (cortina de template.tsx). */
+@theme static {
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-curtain: cubic-bezier(0.76, 0, 0.24, 1);
 
-    --popover: 40 12% 12%;
-    --popover-foreground: 37 40% 94%;
+  --animate-shimmer: megu-shimmer 1.2s linear infinite;
+  --animate-spin-slow: spin 900ms linear infinite;
 
-    --primary: 239 84% 67%;          /* #6366F1 lighter indigo for dark */
-    --primary-foreground: 40 15% 8%;
-
-    --secondary: 40 10% 16%;
-    --secondary-foreground: 37 40% 94%;
-
-    --muted: 40 10% 16%;
-    --muted-foreground: 37 25% 60%;
-
-    --accent: 245 30% 20%;
-    --accent-foreground: 239 84% 67%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 37 40% 94%;
-
-    --border: 40 10% 20%;
-    --input: 40 10% 20%;
-    --ring: 239 84% 67%;
+  @keyframes megu-shimmer {
+    from { background-position: -260px 0; }
+    to   { background-position: 260px 0; }
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  *, ::before, ::after { border-color: var(--rule); }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--ff-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--dur-header) var(--ease-out), color var(--dur-header) var(--ease-out);
   }
 
-  ::selection {
-    background-color: hsl(245 58% 51% / 0.18);
-    color: hsl(var(--foreground));
+  a { color: inherit; text-decoration: none; }
+
+  /* Una sola regla de foco en todo el sistema: nunca outline:none sin reemplazo. */
+  :focus-visible { outline: none; box-shadow: var(--focus-ring); }
+  :focus:not(:focus-visible) { outline: none; }
+
+  ::selection { background: var(--accent); color: var(--on-accent); }
+
+  button:not(:disabled), [role="button"]:not(:disabled) { cursor: pointer; }
+}
+
+@layer components {
+  /* Contenedor de página: 1280 de ancho útil, margen 20 en móvil y 40 en escritorio. */
+  .wrap {
+    width: 100%;
+    max-width: 1360px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  @media (width >= 768px) {
+    .wrap { padding-inline: 40px; }
   }
 
-  ::-webkit-scrollbar {
-    width: 6px;
+  /* Etiqueta de dato en mono: la única voz donde vive --muted. */
+  .mono-label {
+    font-family: var(--ff-mono);
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
   }
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
+
+  .skeleton {
+    background-color: var(--paper-3);
+    background-image: linear-gradient(90deg, var(--paper-3) 0%, var(--paper-2) 50%, var(--paper-3) 100%);
+    background-size: 260px 100%;
+    animation: var(--animate-shimmer);
   }
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
-    border-radius: 999px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--muted-foreground));
+
+  /* Reveal de entrada: 620ms, 14px. El stagger lo da --i en cada hijo. */
+  .reveal {
+    animation: megu-rise var(--dur-reveal) var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * var(--stagger));
   }
 }
 
-@layer utilities {
-  /* Gradient text */
-  .text-gradient {
-    background: linear-gradient(135deg, #4338CA 0%, #6366F1 60%, #818CF8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-animate {
-    background: linear-gradient(135deg, #4338CA, #6366F1, #818CF8, #4338CA);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient-shift 6s ease infinite;
-  }
-
-  /* Glow effects */
-  .glow-primary {
-    box-shadow: 0 0 40px hsl(245 58% 51% / 0.15),
-                0 0 80px hsl(245 58% 51% / 0.05);
-  }
-
-  .glow-primary-sm {
-    box-shadow: 0 0 20px hsl(245 58% 51% / 0.2);
-  }
-
-  /* Card interactions */
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
-  }
-
-  .card-hover-glow {
-    transition: all 0.3s ease;
-  }
-  .card-hover-glow:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px hsl(245 58% 51% / 0.12),
-                0 2px 8px hsl(245 58% 51% / 0.06);
-  }
-
-  /* Gradient border */
-  .border-gradient-indigo {
-    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
-                linear-gradient(135deg, #4338CA, #6366F1) border-box;
-    border: 1.5px solid transparent;
-  }
+@keyframes megu-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
 }
 
-/* ── Keyframes ── */
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50%       { background-position: 100% 50%; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
-}
-
-@keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position:  200% center; }
-}
-
-@keyframes pulse-ring {
-  0%   { transform: scale(0.95); box-shadow: 0 0 0 0 hsl(245 58% 51% / 0.4); }
-  70%  { transform: scale(1);    box-shadow: 0 0 0 10px hsl(245 58% 51% / 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 hsl(245 58% 51% / 0); }
-}
-
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes subtle-bounce {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-4px); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

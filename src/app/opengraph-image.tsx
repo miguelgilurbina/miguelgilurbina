@@ -4,6 +4,13 @@ export const alt = "Miguel Gil — Desarrollo Web & IA";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// Sistema MEGU v1: tinta sobre papel, filete de 1px y un único acento verde.
+const PAPER = "#F1ECE2";
+const INK = "#12100C";
+const MUTED = "#6B6250";
+const RULE = "#CFC7B6";
+const ACCENT = "#0F5132";
+
 export default async function OpenGraphImage() {
   return new ImageResponse(
     (
@@ -14,63 +21,49 @@ export default async function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "linear-gradient(135deg, #1F1D1A 0%, #2D2A24 55%, #312E4A 100%)",
+          background: PAPER,
           padding: 72,
-          fontFamily: "sans-serif",
+          fontFamily: "serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div
-            style={{
-              width: 14,
-              height: 14,
-              borderRadius: 999,
-              background: "#6366F1",
-              display: "flex",
-            }}
-          />
-          <div style={{ color: "#A5A29B", fontSize: 26, letterSpacing: 2 }}>
-            MIGUELGILURBINA.COM
-          </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            borderBottom: `1px solid ${INK}`,
+            paddingBottom: 24,
+            fontFamily: "monospace",
+            fontSize: 22,
+            letterSpacing: 3,
+            color: MUTED,
+          }}
+        >
+          <div style={{ display: "flex", color: INK, fontWeight: 700, letterSpacing: 6 }}>MEGU</div>
+          <div style={{ display: "flex" }}>MIGUELGILURBINA.COM</div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div
-            style={{
-              color: "#F5F0E8",
-              fontSize: 82,
-              fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: -2,
-              display: "flex",
-            }}
-          >
-            Miguel Gil Urbina
+          <div style={{ display: "flex", color: INK, fontSize: 96, lineHeight: 1, letterSpacing: -2 }}>
+            De la idea a
           </div>
-          <div
-            style={{
-              color: "#A5B4FC",
-              fontSize: 40,
-              marginTop: 20,
-              lineHeight: 1.25,
-              display: "flex",
-            }}
-          >
-            Desarrollo web y soluciones de IA
+          <div style={{ display: "flex", fontSize: 96, lineHeight: 1.05, letterSpacing: -2 }}>
+            <span style={{ color: ACCENT, fontStyle: "italic" }}>producción</span>
+            <span style={{ color: INK, marginLeft: 24 }}>en cualquier stack.</span>
           </div>
         </div>
 
-        <div style={{ display: "flex", gap: 14 }}>
-          {["Next.js", "TypeScript", "Agentes IA", "Santiago, Chile"].map((chip) => (
+        <div style={{ display: "flex", gap: 14, fontFamily: "monospace" }}>
+          {["Miguel Gil Urbina", "Full Stack · IA", "Next.js", "Agentes Claude", "Santiago, CL"].map((chip) => (
             <div
               key={chip}
               style={{
                 display: "flex",
-                border: "1px solid #4B4842",
-                borderRadius: 999,
-                padding: "10px 24px",
-                color: "#D4CFC6",
-                fontSize: 24,
+                border: `1px solid ${RULE}`,
+                padding: "10px 18px",
+                color: INK,
+                fontSize: 20,
+                letterSpacing: 1,
               }}
             >
               {chip}
