@@ -161,6 +161,36 @@
   }
 }
 
+/* CV (/cv/[lang]): siempre en la paleta profesional, aunque el visitante
+   tenga activo el tema experimental, y listo para imprimir en A4. */
+.cv-doc {
+  --paper: #F1ECE2;  --paper-2: #FBF8F1;  --paper-3: #E5DFD1;
+  --ink: #12100C;    --muted: #6B6250;    --rule: #CFC7B6;
+  --accent: #0F5132; --accent-press: #0B3F26; --on-accent: #F1ECE2;
+  color-scheme: light;
+}
+
+@page cv {
+  size: A4;
+  margin: 12mm 0;
+}
+
+@media print {
+  html, body { background: #fff !important; }
+  nextjs-portal, .cv-toolbar { display: none !important; }
+  .cv-doc { page: cv; }
+  .cv-sheet {
+    width: auto !important;
+    margin: 0 !important;
+    border: 0 !important;
+    padding: 0 16mm !important;
+    background: #fff !important;
+  }
+  .cv-keep { break-inside: avoid; }
+  .cv-doc h2 { break-after: avoid; }
+  .cv-doc * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
 @keyframes megu-rise {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: none; }

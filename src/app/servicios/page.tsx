@@ -83,21 +83,6 @@ export default function ServiciosPage() {
           </ol>
         </section>
 
-        {/* ── Vía de precio fijo ───────────────────────────────────── */}
-        <section className="wrap pb-20">
-          <div className="flex flex-col gap-6 border border-accent bg-accent/[0.06] p-7 md:flex-row md:items-center md:p-8">
-            <div className="flex-1">
-              <span className="mono-label mb-3 block !text-accent">{s.productized.label}</span>
-              <h2 className="mb-2 font-display text-[26px] leading-[1.15] text-ink">{s.productized.title}</h2>
-              <p className="max-w-[60ch] text-[14px] leading-[1.6] text-ink/75">{s.productized.description}</p>
-            </div>
-            <a href={s.productized.url} target="_blank" rel="noopener noreferrer" className={buttonClass("primary", "lg", "shrink-0")}>
-              {s.productized.cta}
-              <IconExternal size={16} />
-            </a>
-          </div>
-        </section>
-
         {/* ── Proceso ──────────────────────────────────────────────── */}
         <section className="border-t border-ink">
           <div className="wrap py-14">

@@ -262,7 +262,7 @@ export const en: Translations = {
           "Migration from WordPress or another platform",
           "Delivered with source code and access in your name",
         ],
-        evidence: "Portokali (a specialty café in Vitacura that replaced its WordPress site with Next.js, MVP in seven days), Gabriel Colmenares' site, and Tu Web En 7 Días, my own productized service.",
+        evidence: "Portokali (a specialty café in Vitacura that replaced its WordPress site with Next.js, MVP in seven days) and Gabriel Colmenares' site.",
         url:      "https://portokali.cl",
       },
       {
@@ -326,13 +326,6 @@ export const en: Translations = {
         url:      "",
       },
     ],
-    productized: {
-      label:       "Fixed published price",
-      title:       "Just need a landing page and want the price now?",
-      description: "For that case I run a separate productized service, with a closed price, a 7-business-day timeline, and a money-back guarantee. It's all published.",
-      cta:         "See Tu Web En 7 Días",
-      url:         "https://tuweben7dias.com",
-    },
     processTitle:    "How we work",
     processSubtitle: "No mystery: you know what happens at each stage, and when.",
     process: [

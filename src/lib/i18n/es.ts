@@ -260,7 +260,7 @@ export const es = {
           "Migración desde WordPress u otra plataforma",
           "Entrega con código fuente y accesos a tu nombre",
         ],
-        evidence: "Portokali (café de especialidad en Vitacura, que reemplazó su WordPress por Next.js con MVP en siete días), el sitio de Gabriel Colmenares, y Tu Web En 7 Días, mi propio servicio productizado.",
+        evidence: "Portokali (café de especialidad en Vitacura, que reemplazó su WordPress por Next.js con MVP en siete días) y el sitio de Gabriel Colmenares.",
         url:      "https://portokali.cl",
       },
       {
@@ -324,13 +324,6 @@ export const es = {
         url:      "",
       },
     ],
-    productized: {
-      label:       "Precio fijo publicado",
-      title:       "¿Solo necesitas una landing y quieres saber el precio ahora?",
-      description: "Para ese caso tengo un servicio productizado aparte, con precio cerrado, plazo de 7 días hábiles y garantía de devolución. Está todo publicado.",
-      cta:         "Ver Tu Web En 7 Días",
-      url:         "https://tuweben7dias.com",
-    },
     processTitle:    "Cómo trabajamos",
     processSubtitle: "Sin misterio: sabes qué pasa en cada etapa y cuándo.",
     process: [
