@@ -1,19 +1,16 @@
 "use client";
 
-// Archivo visual (handoff 3a) + Curiana Radio y el Simulador Caquetío, que
-// antes vivían en /direccion-creativa.
+// Archivo visual (handoff 3a): series filtrables con lightbox y trabajo bajo NDA.
 import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { SiteHeader } from "@/components/megu/SiteHeader";
 import { SiteFooter } from "@/components/megu/SiteFooter";
-import { IconArrowLeft, IconArrowRight, IconExternal, IconSearch, IconClose } from "@/components/megu/icons";
-import { Button, Chip, Display, Stat, Tag, buttonClass } from "@/components/megu/ui";
+import { IconArrowLeft, IconArrowRight, IconSearch, IconClose } from "@/components/megu/icons";
+import { Button, Chip, Display, Tag, textLinkClass } from "@/components/megu/ui";
 import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
-
-const CURIANA_URL = "https://curiana-radio.vercel.app";
-const EXPERIMENT_URL = "https://curiana-radio.vercel.app/kaketiana/experimento";
 
 type Piece = ReturnType<typeof useLanguage>["t"]["archive"]["pieces"][number];
 
@@ -215,8 +212,6 @@ function Gallery() {
 export default function ArchivoPage() {
   const { t } = useLanguage();
   const a = t.archive;
-  const c = a.curiana;
-  const s = a.sim;
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -257,88 +252,17 @@ export default function ArchivoPage() {
                 >
                   <div className="mb-2 text-[13px] font-semibold leading-[1.3] text-ink">{serie.name}</div>
                   <p className="text-[12.5px] leading-[1.6] text-muted">{serie.desc}</p>
+                  {serie.id === "identidad" && (
+                    <Link href="/curiana-radio" className={textLinkClass("mt-3 text-[12.5px]")}>
+                      {t.curiana.title}
+                      <IconArrowRight size={16} />
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         </div>
-
-        {/* ── Curiana Radio ──────────────────────────────────────────── */}
-        <section id="curiana" className="scroll-mt-20 border-t border-ink">
-          <div className="wrap grid gap-10 py-14 md:py-20 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-            <div>
-              <span className="mono-label mb-5 block">{c.label}</span>
-              <Display className="mb-4 text-[44px] leading-none md:text-[56px]">{c.title}</Display>
-              <span className="inline-flex items-center gap-2 rounded-full border border-rule px-3.5 py-2 font-mono text-[10px] font-medium uppercase tracking-[0.1em] text-ink">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
-                {c.status}
-              </span>
-            </div>
-            <div className="flex flex-col gap-5">
-              <p className="text-[17px] leading-[1.6] text-ink">{c.lead}</p>
-              <p className="text-[15px] leading-[1.65] text-ink/75">{c.body}</p>
-              <a href={CURIANA_URL} target="_blank" rel="noopener noreferrer" className={buttonClass("primary", "md", "mt-2 self-start")}>
-                {c.cta}
-                <IconExternal size={16} />
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Simulador Caquetío ─────────────────────────────────────── */}
-        <section id="simulador" className="scroll-mt-20 border-t border-rule">
-          <div className="wrap py-14 md:py-20">
-            <div className="grid gap-10 lg:grid-cols-[220px_1fr] lg:gap-12">
-              <div>
-                <span className="mono-label block">{s.label}</span>
-              </div>
-              <div className="max-w-[70ch]">
-                <Display className="mb-4 text-[36px] leading-[1.05] md:text-[44px]">{s.title}</Display>
-                <p className="mb-8 text-[17px] leading-[1.6] text-ink">{s.lead}</p>
-                <div className="flex flex-col gap-4 text-[16px] leading-[1.7] text-ink/80">
-                  <p>{s.body1}</p>
-                  <p>{s.body2}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-12">
-              <span className="mono-label mb-4 block">{s.statsTitle}</span>
-              <dl className="grid grid-cols-2 gap-px border border-rule bg-rule lg:grid-cols-4">
-                {s.stats.map((st) => (
-                  <Stat key={st.label} value={st.value} label={st.label} />
-                ))}
-              </dl>
-            </div>
-
-            <div className="mt-12 grid gap-10 lg:grid-cols-[220px_1fr] lg:gap-12">
-              <Display as="h3" className="text-[26px] leading-[1.15]">{s.rigorTitle}</Display>
-              <ol className="flex max-w-[70ch] flex-col gap-7">
-                {s.rigor.map((item, i) => (
-                  <li key={item.t} className="grid grid-cols-[28px_1fr] items-baseline gap-3.5">
-                    <span className="font-mono text-[10px] font-medium leading-[1.6] text-accent">{String(i + 1).padStart(2, "0")}</span>
-                    <div>
-                      <h4 className="mb-1.5 text-[15px] font-semibold text-ink">{item.t}</h4>
-                      <p className="text-[15px] leading-[1.65] text-ink/75">{item.d}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
-
-            <div className="mt-10 flex flex-wrap items-center gap-2.5 lg:pl-[268px]">
-              {s.chips.map((chip) => (
-                <Tag key={chip}>{chip}</Tag>
-              ))}
-            </div>
-            <div className="mt-8 lg:pl-[268px]">
-              <a href={EXPERIMENT_URL} target="_blank" rel="noopener noreferrer" className={buttonClass("secondary", "md")}>
-                {s.cta}
-                <IconExternal size={16} />
-              </a>
-            </div>
-          </div>
-        </section>
 
         {/* ── Clientes bajo NDA + herramientas ───────────────────────── */}
         <section className="border-t border-ink">

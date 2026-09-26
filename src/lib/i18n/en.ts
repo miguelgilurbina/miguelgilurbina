@@ -73,7 +73,7 @@ export const en: Translations = {
         sub:   "Cultural publication and a simulation lab with 60 LLM agents. Ongoing research.",
         stack: "Next 16 · Python · Claude Haiku",
         year:  "2025 →",
-        href:  "/archivo#curiana",
+        href:  "/curiana-radio",
       },
       {
         id:    "claude-impact-lab",
@@ -175,15 +175,42 @@ export const en: Translations = {
       { id: "curiana",            series: "identidad",  title: "Curiana Radio",              meta: "Identity · brand mark",      alt: "The Curiana Radio symbol: a circle of concentric gold lines forming two spirals on a black background, with the name below." },
     ],
 
-    curiana: {
-      label:  "Flagship project",
-      title:  "Curiana Radio",
-      status: "Ongoing research",
-      lead:   "A cultural broadcast from Abya Yala: a newsletter presented as immersive web pages, with curated music, experimental narrative and AI-generated visuals.",
-      body:   "It is not an image portfolio: it is a publication with its own identity, a gallery of 821 works, Jai Sounds — 23 curated playlists — and Kaketiana, the wiki that houses the research lab. It is live and still in development.",
-      cta:    "Visit Curiana Radio",
+    nda: {
+      label: "Client work",
+      title: "Projects under NDA",
+      body:  "I have produced pieces under confidentiality agreements for institutional and banking clients, including campaigns with several recurring characters and content series with strict visual-consistency requirements. The pieces aren't shown; the capability is demonstrated by the open series on this page.",
     },
+    tools: ["Midjourney V7", "Character consistency", "Style lock", "Runway", "Kling", "Post-production and editing"],
+    toolsLabel: "Tools",
+  },
 
+  curiana: {
+    eyebrow: "Case 02 / 04 — Personal project · Ongoing research",
+    title:   "Curiana Radio",
+    lead:    "A cultural publication from Abya Yala that doubles as a laboratory: 60 LLM agents live in a simulated community speaking Caquetío, and the system measures whether a shared norm actually emerges or only appears to.",
+    meta: [
+      { label: "Role",   value: "Creator, developer and researcher" },
+      { label: "Scope",  value: "Publication and multi-agent lab" },
+      { label: "Period", value: "Nov 2025 — today" },
+      { label: "Stack",  value: "Next 16 · Python · Claude Haiku" },
+    ],
+    stats: [
+      { value: "60",    label: "LLM agents in simulation" },
+      { value: "5,518", label: "Entries in the lexical canon" },
+      { value: "269",   label: "Tests on the simulation engine" },
+      { value: "821",   label: "Works in the gallery" },
+      { value: "9",     label: "Executable guardians" },
+    ],
+    sections: ["Publication", "Simulator", "Results", "Rigour", "Status"],
+    publication: {
+      title:      "The publication",
+      lead:       "A cultural broadcast from Abya Yala: a newsletter presented as immersive web pages, with curated music, experimental narrative and AI-generated visuals.",
+      body:       "It is not an image portfolio: it is a publication with its own identity, a gallery of 821 works, Jai Sounds — 23 curated playlists — and Kaketiana, the wiki that houses the research lab. It is live and still in development.",
+      cta:        "Visit Curiana Radio",
+      figCaption: "fig. 01 — Curiana Radio identity · AI-generated image",
+      figAlt:     "The Curiana Radio symbol: a circle of concentric gold lines forming two spirals on a black background, with the name below.",
+      archive:    "See the Identity series in the archive",
+    },
     sim: {
       label: "Linguistic laboratory",
       title: "Caquetío Simulator",
@@ -206,14 +233,11 @@ export const en: Translations = {
       chips: ["Multi-agent systems", "Experiment design", "Computational linguistics", "Claude Haiku 4.5", "Metrics and ablation"],
       cta:   "See the experiment",
     },
-
-    nda: {
-      label: "Client work",
-      title: "Projects under NDA",
-      body:  "I have produced pieces under confidentiality agreements for institutional and banking clients, including campaigns with several recurring characters and content series with strict visual-consistency requirements. The pieces aren't shown; the capability is demonstrated by the open series on this page.",
+    status: {
+      title: "Current status",
+      body:  "Since July 2026 the simulations have been paused by methodological choice: before the next run, the lexical canon is being audited source by source. Nine executable invariants — the “guardians” — run in a single command and block the next run if the corpus, bibliography or language data drift out of sync, and every model call is recorded in a cost ledger.",
     },
-    tools: ["Midjourney V7", "Character consistency", "Style lock", "Runway", "Kling", "Post-production and editing"],
-    toolsLabel: "Tools",
+    quote: "The evidence is not that the simulation converges, but the distance between it and its control group.",
   },
 
   services: {

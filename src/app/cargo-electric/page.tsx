@@ -385,7 +385,7 @@ export default function CargoElectricPage() {
       </main>
 
       <SiteFooter
-        next={{ title: "Curiana Radio", meta: "Next 16 · Python · Claude Haiku — 2025 →", href: "/archivo#curiana" }}
+        next={{ title: "Curiana Radio", meta: "Next 16 · Python · Claude Haiku — 2025 →", href: "/curiana-radio" }}
       />
     </div>
   )

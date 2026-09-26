@@ -9,10 +9,10 @@ const nextConfig = {
                 destination: '/sst-crm.html',
                 permanent: false,
             },
-            // Dirección Creativa se fusionó en el Archivo visual (sistema MEGU v1).
+            // Dirección Creativa era sobre todo Curiana Radio, que ahora tiene su caso.
             {
                 source: '/direccion-creativa',
-                destination: '/archivo',
+                destination: '/curiana-radio',
                 permanent: true,
             },
         ];

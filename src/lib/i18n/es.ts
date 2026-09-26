@@ -71,7 +71,7 @@ export const es = {
         sub:   "Publicación cultural y laboratorio de simulación con 60 agentes LLM. Investigación en curso.",
         stack: "Next 16 · Python · Claude Haiku",
         year:  "2025 →",
-        href:  "/archivo#curiana",
+        href:  "/curiana-radio",
       },
       {
         id:    "claude-impact-lab",
@@ -173,15 +173,42 @@ export const es = {
       { id: "curiana",            series: "identidad",  title: "Curiana Radio",              meta: "Identidad · marca",            alt: "Símbolo de Curiana Radio: un círculo de líneas doradas concéntricas que forman dos espirales sobre fondo negro, con el nombre debajo." },
     ],
 
-    curiana: {
-      label:  "Proyecto insignia",
-      title:  "Curiana Radio",
-      status: "Investigación en curso",
-      lead:   "Una transmisión cultural desde Abya Yala: newsletter presentado como páginas web inmersivas, con música curada, narrativa experimental y visuales generados con IA.",
-      body:   "No es un portafolio de imágenes: es una publicación con identidad propia, una galería de 821 obras, Jai Sounds —23 playlists curadas— y Kaketiana, la wiki que aloja el laboratorio de investigación. Está en línea y se sigue desarrollando.",
-      cta:    "Visitar Curiana Radio",
+    nda: {
+      label: "Trabajo con clientes",
+      title: "Proyectos bajo NDA",
+      body:  "He desarrollado piezas bajo acuerdo de confidencialidad para clientes institucionales y de banca, incluyendo campañas con múltiples personajes recurrentes y series de contenido con requisitos estrictos de consistencia visual. Las piezas no se muestran; la capacidad queda demostrada en las series abiertas de esta página.",
     },
+    tools: ["Midjourney V7", "Consistencia de personaje", "Style lock", "Runway", "Kling", "Postproducción y montaje"],
+    toolsLabel: "Herramientas",
+  },
 
+  curiana: {
+    eyebrow: "Caso 02 / 04 — Proyecto propio · Investigación en curso",
+    title:   "Curiana Radio",
+    lead:    "Una publicación cultural desde Abya Yala que además funciona como laboratorio: 60 agentes LLM conviven en una comunidad simulada hablando caquetío, y el sistema mide si de verdad emerge una norma común o si solo lo parece.",
+    meta: [
+      { label: "Rol",     value: "Creador, desarrollador e investigador" },
+      { label: "Alcance", value: "Publicación y laboratorio multi-agente" },
+      { label: "Periodo", value: "Nov 2025 — hoy" },
+      { label: "Stack",   value: "Next 16 · Python · Claude Haiku" },
+    ],
+    stats: [
+      { value: "60",    label: "Agentes LLM en simulación" },
+      { value: "5.518", label: "Entradas en el canon léxico" },
+      { value: "269",   label: "Tests del motor de simulación" },
+      { value: "821",   label: "Obras en la galería" },
+      { value: "9",     label: "Guardianes ejecutables" },
+    ],
+    sections: ["Publicación", "Simulador", "Resultados", "Rigor", "Estado"],
+    publication: {
+      title:      "La publicación",
+      lead:       "Una transmisión cultural desde Abya Yala: newsletter presentado como páginas web inmersivas, con música curada, narrativa experimental y visuales generados con IA.",
+      body:       "No es un portafolio de imágenes: es una publicación con identidad propia, una galería de 821 obras, Jai Sounds —23 playlists curadas— y Kaketiana, la wiki que aloja el laboratorio de investigación. Está en línea y se sigue desarrollando.",
+      cta:        "Visitar Curiana Radio",
+      figCaption: "fig. 01 — Identidad de Curiana Radio · imagen generada con IA",
+      figAlt:     "Símbolo de Curiana Radio: un círculo de líneas doradas concéntricas que forman dos espirales sobre fondo negro, con el nombre debajo.",
+      archive:    "Ver la serie Identidad en el archivo",
+    },
     sim: {
       label: "Laboratorio lingüístico",
       title: "Simulador Caquetío",
@@ -204,14 +231,11 @@ export const es = {
       chips: ["Sistemas multi-agente", "Diseño de experimentos", "Lingüística computacional", "Claude Haiku 4.5", "Métricas y ablación"],
       cta:   "Ver el experimento",
     },
-
-    nda: {
-      label: "Trabajo con clientes",
-      title: "Proyectos bajo NDA",
-      body:  "He desarrollado piezas bajo acuerdo de confidencialidad para clientes institucionales y de banca, incluyendo campañas con múltiples personajes recurrentes y series de contenido con requisitos estrictos de consistencia visual. Las piezas no se muestran; la capacidad queda demostrada en las series abiertas de esta página.",
+    status: {
+      title: "Estado actual",
+      body:  "Desde julio de 2026 las simulaciones están en pausa por decisión de método: antes del siguiente run se audita el canon léxico fuente por fuente. Nueve invariantes ejecutables —los «guardianes»— corren en un comando y bloquean el próximo run si el corpus, la bibliografía o los datos de lengua quedan inconsistentes, y cada llamada al modelo queda registrada en un libro de costos.",
     },
-    tools: ["Midjourney V7", "Consistencia de personaje", "Style lock", "Runway", "Kling", "Postproducción y montaje"],
-    toolsLabel: "Herramientas",
+    quote: "La evidencia no es que la simulación converja, sino la distancia que la separa de su grupo de control.",
   },
 
   services: {

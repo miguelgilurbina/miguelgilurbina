@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Archivo visual — dirección de imagen con IA",
   description:
-    "Series generadas con IA sobre memoria, territorio y calle en el Caribe, más Curiana Radio y el Simulador Caquetío: 60 agentes reconstruyendo una lengua arahuaca, medido con grupo de control.",
+    "Series generadas con IA y dirigidas como cine: memoria, territorio, calle e identidad en el Caribe. Cada pieza declara que es imagen generada.",
   alternates: { canonical: "https://www.miguelgilurbina.com/archivo" },
   openGraph: {
     title: "Archivo visual — Miguel Gil",
-    description: "Memoria · Territorio · Calle · Identidad. Dirección de imagen con IA y Curiana Radio.",
+    description: "Memoria · Territorio · Calle · Identidad. Dirección de imagen con IA.",
     url: "https://www.miguelgilurbina.com/archivo",
   },
 };

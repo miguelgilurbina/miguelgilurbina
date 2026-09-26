@@ -14,7 +14,7 @@ import { useCvDownload } from "./useCvDownload";
    de scroll, enlaces visibles desde 768px y hamburguesa solo por debajo. */
 
 const LINKS = [
-  { key: "work",     href: "/#trabajo", match: ["/cargo-electric", "/claude-impact-lab"] },
+  { key: "work",     href: "/#trabajo", match: ["/cargo-electric", "/curiana-radio", "/claude-impact-lab"] },
   { key: "archive",  href: "/archivo",  match: ["/archivo"] },
   { key: "services", href: "/servicios", match: ["/servicios"] },
   { key: "about",    href: "/#sobre",   match: [] as string[] },
