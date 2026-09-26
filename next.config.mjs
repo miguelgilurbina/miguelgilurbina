@@ -9,6 +9,12 @@ const nextConfig = {
                 destination: '/sst-crm.html',
                 permanent: false,
             },
+            // Dirección Creativa se fusionó en el Archivo visual (sistema MEGU v1).
+            {
+                source: '/direccion-creativa',
+                destination: '/archivo',
+                permanent: true,
+            },
         ];
     },
     webpack: (config) => {

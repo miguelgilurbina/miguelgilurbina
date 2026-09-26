@@ -54,7 +54,7 @@ export function ShowcaseImage({
     return (
       <div
         className={cn(
-          "flex flex-col items-center justify-center gap-2 bg-muted text-muted-foreground/40",
+          "flex flex-col items-center justify-center gap-2 bg-paper-3 text-muted",
           aspectClassName,
           className
         )}
@@ -69,7 +69,7 @@ export function ShowcaseImage({
     return (
       <div
         ref={containerRef}
-        className={cn("relative overflow-hidden bg-muted", aspectClassName, className)}
+        className={cn("relative overflow-hidden bg-paper-3", aspectClassName, className)}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
@@ -88,7 +88,7 @@ export function ShowcaseImage({
         <button
           onClick={handleFullscreen}
           className={cn(
-            "absolute bottom-3 right-3 z-10 flex items-center gap-1.5 rounded-lg bg-black/60 px-3 py-1.5 text-[12px] font-medium text-white backdrop-blur-sm transition-all duration-200",
+            "absolute bottom-3 right-3 z-10 flex items-center gap-1.5 rounded-sys bg-ink/80 px-3 py-1.5 text-[12px] font-medium text-white backdrop-blur-xs transition-all duration-200",
             hovered && visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1 pointer-events-none"
           )}
         >
@@ -100,7 +100,7 @@ export function ShowcaseImage({
   }
 
   return (
-    <div className={cn("relative overflow-hidden bg-muted", aspectClassName, className)}>
+    <div className={cn("relative overflow-hidden bg-paper-3", aspectClassName, className)}>
       <Image
         src={src}
         alt={alt}

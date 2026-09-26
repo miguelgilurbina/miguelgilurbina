@@ -1,24 +1,21 @@
 import type { Metadata } from "next"
-import {
-  IconChartBar,
-  IconReceipt,
-  IconFileSpreadsheet,
-  IconUsersGroup,
-  IconCalendarStats,
-  IconPalette,
-  IconArrowsExchange,
-  IconBrandLinkedin,
-  IconExternalLink,
-  IconBriefcase,
-  IconCode,
-  IconCoin,
-  IconShieldCheck,
-} from "@tabler/icons-react"
 
 import { cn } from "@/lib/utils"
+import { SiteHeader } from "@/components/megu/SiteHeader"
+import { SiteFooter } from "@/components/megu/SiteFooter"
+import { IconCheck, IconClose } from "@/components/megu/icons"
+import {
+  CaseBody,
+  CaseHero,
+  CaseMeta,
+  CaseQuote,
+  CaseSection,
+  CaseStats,
+  Figure,
+  NumberedList,
+} from "@/components/megu/case"
 import { ShowcaseImage } from "@/components/historia/showcase-image"
 import { ArchitectureDiagram } from "@/components/historia/architecture-diagram"
-import { StickyNav } from "@/components/historia/sticky-nav"
 import { AdminTabs } from "@/components/historia/admin-tabs"
 
 export const metadata: Metadata = {
@@ -37,9 +34,46 @@ const stats = [
   { value: "8", label: "meses de web app" },
 ]
 
+const meta = [
+  { label: "Rol", value: "Product Owner · Full-Stack Engineer" },
+  { label: "Alcance", value: "Producto, arquitectura y entrega" },
+  { label: "Periodo", value: "Sep 2025 — hoy" },
+  { label: "Stack", value: "Next 16 · Firebase · Recharts" },
+]
+
+const sections = [
+  { id: "contexto", label: "Contexto" },
+  { id: "plataforma", label: "La app hoy" },
+  { id: "administracion", label: "Administración" },
+  { id: "historia", label: "Historia" },
+  { id: "arquitectura", label: "Arquitectura" },
+]
+
+const problems = [
+  "Sheets sin conexión entre sí — datos duplicados y desincronizados",
+  "Sin visibilidad del estado de la flota en tiempo real",
+  "Facturación manual propensa a errores por período",
+  "Imposible escalar sin multiplicar la carga operativa",
+]
+
+const before = [
+  "Múltiples Google Sheets sin conexión entre sí",
+  "Actualización manual, propensa a errores y duplicados",
+  "Sin visibilidad en tiempo real del estado de la flota",
+  "Facturación calculada a mano por período",
+  "Imposible escalar sin multiplicar la carga operativa",
+]
+
+const after = [
+  "Una sola plataforma para toda la operación",
+  "Datos en tiempo real desde Firestore",
+  "Analítica operacional con KPIs y tendencias históricas",
+  "Facturación y bonos de conductores calculados con tarifarios vigentes",
+  "Arquitectura escalable lista para nuevos clientes",
+]
+
 const milestones = [
   {
-    icon: IconChartBar,
     date: "14 Enero 2026",
     title: "Dashboard de Analítica",
     description:
@@ -47,7 +81,6 @@ const milestones = [
     highlight: true,
   },
   {
-    icon: IconReceipt,
     date: "23 Enero – 4 Febrero 2026",
     title: "Sistema de Facturación / Proformas",
     description:
@@ -55,7 +88,6 @@ const milestones = [
     highlight: true,
   },
   {
-    icon: IconFileSpreadsheet,
     date: "Marzo 2026",
     title: "Refinamiento de Rutas y exportación a Excel",
     description:
@@ -63,7 +95,6 @@ const milestones = [
     highlight: false,
   },
   {
-    icon: IconUsersGroup,
     date: "13–20 Marzo 2026",
     title: "Administración: Locales, Camiones y Usuarios",
     description:
@@ -71,7 +102,6 @@ const milestones = [
     highlight: true,
   },
   {
-    icon: IconCalendarStats,
     date: "16 Abril 2026",
     title: "Resumen Diario dinámico",
     description:
@@ -79,7 +109,6 @@ const milestones = [
     highlight: false,
   },
   {
-    icon: IconPalette,
     date: "21–29 Abril 2026",
     title: "Identidad de marca, uplift visual y seguridad",
     description:
@@ -87,7 +116,6 @@ const milestones = [
     highlight: false,
   },
   {
-    icon: IconArrowsExchange,
     date: "13 Mayo 2026",
     title: "Diseño del modelo operacional",
     description:
@@ -95,7 +123,6 @@ const milestones = [
     highlight: false,
   },
   {
-    icon: IconCoin,
     date: "24 Julio – Agosto 2026",
     title: "Motor de bonos de conductores",
     description:
@@ -103,7 +130,6 @@ const milestones = [
     highlight: true,
   },
   {
-    icon: IconShieldCheck,
     date: "Agosto 2026",
     title: "Seguridad por roles y limpieza de deuda",
     description:
@@ -138,7 +164,6 @@ const featureBlocks = [
       "Exportación a PDF ejecutivo con gráfico y drill-down incluidos",
     ],
     image: { src: "/images/now-analytics-ops.webm", alt: "Dashboard Operacional" },
-    reverse: true,
   },
   {
     tag: "Rutas",
@@ -165,7 +190,6 @@ const featureBlocks = [
       "Sin estados intermedios: lo que se descarga refleja las rutas registradas",
     ],
     image: { src: "/images/now-billing.webm", alt: "Módulo de Facturación" },
-    reverse: true,
   },
 ]
 
@@ -193,306 +217,176 @@ const adminCards = [
   },
 ]
 
-// ─── Sub-components ────────────────────────────────────────────────────────────
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="mb-3 flex items-center gap-2 text-xs font-semibold tracking-[0.1em] text-primary uppercase">
-      <span className="block h-0.5 w-5 rounded-full bg-primary" />
-      {children}
-    </div>
-  )
-}
-
-function RolePill({ icon: Icon, label }: { icon: React.ElementType; label: string }) {
-  return (
-    <div className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/8 px-3 py-1.5 text-[12px] font-medium text-slate-300">
-      <Icon className="size-3.5 text-blue-400" stroke={1.75} />
-      {label}
-    </div>
-  )
-}
-
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
-export default function HistoriaPage() {
+export default function CargoElectricPage() {
   return (
-    <div className="bg-background text-foreground">
-      <StickyNav />
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader />
 
-      {/* HERO */}
-      <header className="relative overflow-hidden bg-gradient-to-br from-[#0f172a] to-[#1e293b] px-6 py-16 text-white sm:py-24">
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 60% at 50% 0%, rgba(37,99,235,0.35) 0%, transparent 70%)",
-          }}
+      <main id="contenido" className="flex-1">
+        <CaseHero
+          eyebrow="Caso 01 / 04 — Logística · Startup de flota eléctrica · Chile"
+          title="Cargo Electric"
+          lead={
+            <>
+              Plataforma operacional desde cero. Asumí el rol de Product Owner y Full-Stack Engineer: definí el
+              producto, diseñé la arquitectura y escribí 619 de los 632 commits de la web app en producción.
+            </>
+          }
         />
-        <div className="relative mx-auto max-w-5xl">
-          <div className="grid items-center gap-10 md:grid-cols-2">
-            {/* Columna izquierda: identidad y rol */}
-            <div>
-              <div className="mb-6 flex items-center gap-3">
-                <img
-                  src="/cargo-electric-logo.png"
-                  alt="Cargo Electric"
-                  className="h-12 w-auto object-contain"
-                />
-                <div>
-                  <p className="text-[11px] font-semibold tracking-[0.12em] text-blue-400 uppercase">
-                    Cargo Electric
-                  </p>
-                  <p className="text-[13px] text-slate-400">Startup de logística eléctrica · Chile</p>
-                </div>
-              </div>
 
-              <h1 className="mb-4 text-[clamp(1.75rem,5vw,2.75rem)] font-bold leading-[1.15] tracking-tight">
-                Plataforma operacional
-                <span className="text-blue-400"> desde cero</span>
-              </h1>
+        <CaseMeta items={meta} />
+        <CaseStats items={stats} />
 
-              <p className="mb-6 text-[1rem] leading-7 text-slate-400">
-                Asumí el rol de <span className="text-white font-medium">Product Owner</span> y{" "}
-                <span className="text-white font-medium">Full-Stack Engineer</span> — definí el producto,
-                diseñé la arquitectura y escribí 619 de los 632 commits de la web app en producción.
+        <CaseBody sections={sections}>
+          {/* ── Contexto ─────────────────────────────────────────────── */}
+          <CaseSection
+            id="contexto"
+            first
+            title="El problema que resolvemos"
+            lead={
+              <p>
+                Cargo Electric opera una flota de camiones eléctricos de reparto urbano, y lo gestionaba todo con
+                Google Sheets dispersos, sin visibilidad en tiempo real y con facturación calculada a mano cada período.
               </p>
-
-              <div className="flex flex-wrap gap-2">
-                <RolePill icon={IconBriefcase} label="Product Owner" />
-                <RolePill icon={IconCode} label="Full-Stack Engineer" />
-                <RolePill icon={IconCalendarStats} label="Sep 2025 – hoy" />
-              </div>
-            </div>
-
-            {/* Columna derecha: el problema */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <p className="mb-4 text-[11px] font-semibold tracking-[0.12em] text-slate-400 uppercase">
-                El problema que resolvemos
-              </p>
-              <p className="mb-5 text-[1rem] leading-7 text-slate-300">
-                Cargo Electric opera una flota de camiones eléctricos de reparto urbano — y lo gestionaba
-                todo con Google Sheets dispersos, sin visibilidad en tiempo real y con facturación
-                calculada a mano cada período.
-              </p>
-              <ul className="space-y-2.5">
-                {[
-                  "Sheets sin conexión entre sí — datos duplicados y desincronizados",
-                  "Sin visibilidad del estado de la flota en tiempo real",
-                  "Facturación manual propensa a errores por período",
-                  "Imposible escalar sin multiplicar la carga operativa",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-[0.875rem] text-slate-400">
-                    <span className="mt-1 size-1.5 shrink-0 rounded-full bg-red-400" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* STATS */}
-      <div className="border-y border-border bg-muted/30 px-6 py-8">
-        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-6 sm:grid-cols-5">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-[2rem] font-bold tracking-tight text-foreground">{s.value}</div>
-              <div className="mt-0.5 text-[12px] text-muted-foreground">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* SOLUCIÓN (antes "Problema") */}
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-4xl">
-          <SectionLabel>La solución</SectionLabel>
-          <h2 className="mb-8 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-            De Sheets dispersos a operación en tiempo real
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-xl border border-red-200 bg-red-50 p-6 dark:border-red-900/40 dark:bg-red-950/20">
-              <p className="mb-3 text-[11px] font-semibold tracking-[0.1em] text-red-500 uppercase">Antes</p>
-              <ul className="space-y-2 text-[0.9375rem] text-muted-foreground">
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-red-400">✕</span>Múltiples Google Sheets sin conexión entre sí</li>
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-red-400">✕</span>Actualización manual, propensa a errores y duplicados</li>
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-red-400">✕</span>Sin visibilidad en tiempo real del estado de la flota</li>
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-red-400">✕</span>Facturación calculada a mano por período</li>
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-red-400">✕</span>Imposible escalar sin multiplicar la carga operativa</li>
-              </ul>
-            </div>
-            <div className="rounded-xl border border-green-200 bg-green-50 p-6 dark:border-green-900/40 dark:bg-green-950/20">
-              <p className="mb-3 text-[11px] font-semibold tracking-[0.1em] text-green-600 uppercase">Ahora</p>
-              <ul className="space-y-2 text-[0.9375rem] text-muted-foreground">
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Una sola plataforma para toda la operación</li>
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Datos en tiempo real desde Firestore</li>
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Analítica operacional con KPIs y tendencias históricas</li>
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Facturación y bonos de conductores calculados con tarifarios vigentes</li>
-                <li className="flex gap-2"><span className="mt-1 shrink-0 text-green-500">✓</span>Arquitectura escalable lista para nuevos clientes</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <hr className="mx-6 border-border" />
-
-      {/* PLATAFORMA HOY */}
-      <section id="plataforma" className="bg-muted/40 px-6 py-20">
-        <div className="mx-auto max-w-5xl">
-          <SectionLabel>Estado actual</SectionLabel>
-          <h2 className="mb-3 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">La app hoy</h2>
-          <p className="mb-14 max-w-2xl text-[1.0625rem] text-muted-foreground">
-            Los módulos que cubren el ciclo completo: desde el registro del movimiento diario hasta
-            la analítica y la facturación. El quinto, el motor de bonos de conductores, está en la historia
-            del desarrollo.
-          </p>
-
-          <div className="space-y-16 sm:space-y-20">
-            {featureBlocks.map((block) => (
-              <div
-                key={block.title}
-                className={cn(
-                  "grid items-center gap-8 md:grid-cols-2 md:gap-12",
-                  block.reverse && "[&>*:first-child]:md:order-2"
-                )}
-              >
-                <div>
-                  <span className="mb-3.5 inline-block rounded-md bg-primary/10 px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-primary uppercase">
-                    {block.tag}
-                  </span>
-                  <h3 className="mb-3 text-[1.25rem] font-bold tracking-tight sm:text-[1.375rem]">{block.title}</h3>
-                  <p className="mb-4 text-[0.9375rem] leading-7 text-muted-foreground">{block.description}</p>
-                  <ul className="space-y-2">
-                    {block.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-[0.9375rem] text-muted-foreground">
-                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="overflow-hidden rounded-xl border shadow-xl">
-                  <ShowcaseImage src={block.image.src} alt={block.image.alt} aspectClassName="aspect-video" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <hr className="mx-6 border-border" />
-
-      {/* ADMINISTRACIÓN */}
-      <section id="administracion" className="px-6 py-20">
-        <div className="mx-auto max-w-5xl">
-          <SectionLabel>Administración</SectionLabel>
-          <h2 className="mb-3 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-            Gestión de la flota y los actores
-          </h2>
-          <p className="mb-10 max-w-2xl text-[1.0625rem] text-muted-foreground">
-            Páginas dedicadas para crear y editar cada entidad del sistema. Los cambios de estado
-            se propagan en tiempo real a los módulos de operación y analítica.
-          </p>
-          <AdminTabs cards={adminCards} />
-        </div>
-      </section>
-
-      <hr className="mx-6 border-border" />
-
-      {/* TIMELINE */}
-      <section id="historia" className="bg-muted/40 px-6 py-20">
-        <div className="mx-auto max-w-5xl">
-          <SectionLabel>Historia</SectionLabel>
-          <h2 className="mb-3 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">Hitos del desarrollo</h2>
-          <p className="mb-14 max-w-2xl text-[1.0625rem] text-muted-foreground">
-            Desde el primer commit hasta el estado actual, cada fase incorporó nuevas capacidades sobre una base
-            sólida y real.
-          </p>
-
-          <div className="relative">
-            <div className="absolute top-0 bottom-0 left-6 hidden w-px bg-gradient-to-b from-primary to-border sm:block" />
-
-            <div className="space-y-10 sm:space-y-12">
-              {milestones.map((milestone) => {
-                const Icon = milestone.icon
-                return (
-                  <div key={milestone.title} className="relative flex gap-5 sm:gap-7">
-                    <div
-                      className={cn(
-                        "relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full border-2 bg-background",
-                        milestone.highlight
-                          ? "border-primary bg-primary text-primary-foreground shadow-[0_0_0_6px_rgba(37,99,235,0.12)]"
-                          : "border-border text-muted-foreground"
-                      )}
-                    >
-                      <Icon className="size-5" stroke={1.75} />
-                    </div>
-                    <div className="flex-1 pt-2.5">
-                      <div className="mb-1 text-xs font-semibold tracking-[0.08em] text-primary uppercase">
-                        {milestone.date}
-                      </div>
-                      <h3 className="mb-1.5 text-[1rem] font-semibold sm:text-[1.0625rem]">{milestone.title}</h3>
-                      <p className="max-w-xl text-[0.9375rem] text-muted-foreground">{milestone.description}</p>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <hr className="mx-6 border-border" />
-
-      {/* STACK Y ARQUITECTURA */}
-      <section id="arquitectura" className="px-6 py-20">
-        <div className="mx-auto max-w-5xl">
-          <SectionLabel>Tecnología</SectionLabel>
-          <h2 className="mb-3 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-            Stack y arquitectura
-          </h2>
-          <p className="mb-10 max-w-2xl text-[1.0625rem] text-muted-foreground">
-            Stack técnico en producción: capas de usuario, aplicación Next.js con App Router, base de datos
-            Firestore en tiempo real y exportaciones generadas en el cliente.
-          </p>
-          <ArchitectureDiagram />
-        </div>
-      </section>
-
-      <hr className="mx-6 border-border" />
-
-      {/* CTA */}
-      <section className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] px-6 py-20 text-center text-white">
-        <div className="mx-auto max-w-2xl">
-          <h2 className="mb-4 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-            ¿Quieres saber más sobre este proyecto?
-          </h2>
-          <p className="mb-8 text-lg text-slate-400">
-            Diseñé y construí esta plataforma de principio a fin — arquitectura, base de datos, UI y lógica de negocio.
-            Si tienes un problema similar o quieres conversar sobre el proceso, escríbeme.
-          </p>
-          <a
-            href="https://www.linkedin.com/in/miguelgilurbina"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-[15px] font-semibold text-white shadow-lg transition hover:bg-blue-500"
+            }
           >
-            <IconBrandLinkedin className="size-5" />
-            Miguel Gil Urbina
-            <IconExternalLink className="size-4 opacity-70" />
-          </a>
-        </div>
-      </section>
+            <NumberedList items={problems} />
 
-      <footer className="bg-[#0f172a] px-6 py-8 text-center text-sm text-slate-500">
-        <p>
-          <strong className="text-slate-400">Cargo Electric</strong> · Plataforma de gestión de flota eléctrica ·
-          2025–2026
-        </p>
-      </footer>
+            <div className="mt-10 grid gap-px border border-rule bg-rule md:grid-cols-2">
+              <div className="bg-paper p-6">
+                <span className="mono-label mb-4 block">Antes</span>
+                <ul className="flex flex-col gap-2.5">
+                  {before.map((item) => (
+                    <li key={item} className="flex gap-2.5 text-[15px] leading-[1.5] text-ink/75">
+                      <IconClose size={16} className="mt-1 shrink-0 text-danger" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-paper p-6">
+                <span className="mono-label mb-4 block !text-accent">Ahora</span>
+                <ul className="flex flex-col gap-2.5">
+                  {after.map((item) => (
+                    <li key={item} className="flex gap-2.5 text-[15px] leading-[1.5] text-ink">
+                      <IconCheck size={16} className="mt-1 shrink-0 text-accent" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </CaseSection>
+
+          {/* ── La app hoy ──────────────────────────────────────────── */}
+          <CaseSection
+            id="plataforma"
+            title="La app hoy"
+            lead={
+              <p>
+                Los módulos que cubren el ciclo completo: desde el registro del movimiento diario hasta la analítica y
+                la facturación. El quinto, el motor de bonos de conductores, está en la historia del desarrollo.
+              </p>
+            }
+            wide
+          >
+            <div className="flex flex-col gap-14">
+              {featureBlocks.map((block, i) => (
+                <div key={block.title} className="grid items-start gap-8 xl:grid-cols-[1fr_1.25fr]">
+                  <div className={cn(i % 2 === 1 && "xl:order-2")}>
+                    <span className="mono-label mb-3 block !text-accent">{block.tag}</span>
+                    <h3 className="mb-3 font-display text-[24px] leading-[1.15] text-ink">{block.title}</h3>
+                    <p className="mb-4 text-[15px] leading-[1.7] text-ink/80">{block.description}</p>
+                    <ul className="flex flex-col gap-2">
+                      {block.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2.5 text-[14.5px] leading-[1.5] text-ink/80">
+                          <IconCheck size={16} className="mt-0.5 shrink-0 text-accent" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <Figure caption={`fig. 0${i + 1} — ${block.image.alt}, captura de producción`}>
+                    <ShowcaseImage src={block.image.src} alt={block.image.alt} aspectClassName="aspect-video" />
+                  </Figure>
+                </div>
+              ))}
+            </div>
+          </CaseSection>
+
+          {/* ── Administración ──────────────────────────────────────── */}
+          <CaseSection
+            id="administracion"
+            title="Gestión de la flota y los actores"
+            lead={
+              <p>
+                Páginas dedicadas para crear y editar cada entidad del sistema. Los cambios de estado se propagan en
+                tiempo real a los módulos de operación y analítica.
+              </p>
+            }
+            wide
+          >
+            <AdminTabs cards={adminCards} />
+          </CaseSection>
+
+          {/* ── Historia ────────────────────────────────────────────── */}
+          <CaseSection
+            id="historia"
+            title="Hitos del desarrollo"
+            lead={
+              <p>
+                Desde el primer commit hasta el estado actual, cada fase incorporó nuevas capacidades sobre una base
+                sólida y real.
+              </p>
+            }
+          >
+            <ol className="max-w-[70ch] border-l border-rule">
+              {milestones.map((m) => (
+                <li key={m.title} className="relative pb-8 pl-7 last:pb-0">
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      "absolute -left-[5px] top-1.5 h-[9px] w-[9px] border",
+                      m.highlight ? "border-accent bg-accent" : "border-ink bg-paper"
+                    )}
+                  />
+                  <span className="mono-label mb-1.5 block !text-[9.5px]">{m.date}</span>
+                  <h3 className="mb-1.5 text-[16px] font-semibold text-ink">{m.title}</h3>
+                  <p className="text-[15px] leading-[1.65] text-ink/75">{m.description}</p>
+                </li>
+              ))}
+            </ol>
+          </CaseSection>
+
+          {/* ── Arquitectura ────────────────────────────────────────── */}
+          <CaseSection
+            id="arquitectura"
+            title="Stack y arquitectura"
+            lead={
+              <p>
+                Stack técnico en producción: capas de usuario, aplicación Next.js con App Router, base de datos
+                Firestore en tiempo real y exportaciones generadas en el cliente.
+              </p>
+            }
+            wide
+          >
+            <div className="border border-ink bg-paper-3 p-5 md:p-7">
+              <ArchitectureDiagram />
+            </div>
+          </CaseSection>
+
+          <CaseQuote>
+            Diseñé y construí esta plataforma de principio a fin: arquitectura, base de datos, interfaz y lógica de
+            negocio.
+          </CaseQuote>
+        </CaseBody>
+      </main>
+
+      <SiteFooter
+        next={{ title: "Curiana Radio", meta: "Next 16 · Python · Claude Haiku — 2025 →", href: "/archivo#curiana" }}
+      />
     </div>
   )
 }

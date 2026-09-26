@@ -1,22 +1,53 @@
 "use client";
 
 import Link from "next/link"
-import {
-  IconArrowLeft,
-  IconExternalLink,
-  IconRobot,
-  IconGavel,
-  IconUsersGroup,
-  IconWorld,
-  IconCalendarStats,
-  IconCode,
-  IconChartBar,
-} from "@tabler/icons-react"
+import { IconRobot, IconGavel, IconUsersGroup, IconWorld } from "@tabler/icons-react"
 import { useLanguage } from "@/context/LanguageContext"
+import { SiteHeader } from "@/components/megu/SiteHeader"
+import { SiteFooter } from "@/components/megu/SiteFooter"
+import { IconArrowLeft, IconCheck, IconClose, IconExternal } from "@/components/megu/icons"
+import { buttonClass, textLinkClass } from "@/components/megu/ui"
+import {
+  CaseBody,
+  CaseHero,
+  CaseMeta,
+  CaseQuote,
+  CaseSection,
+  CaseStats,
+  NumberedList,
+} from "@/components/megu/case"
 
 // ─── Copy ─────────────────────────────────────────────────────────────────────
 
 const AGENT_ICONS = [IconRobot, IconGavel, IconUsersGroup, IconWorld]
+
+// Rótulos del layout editorial (1d) que no estaban en COPY.
+const LAYOUT = {
+  es: {
+    eyebrow: "Caso 03 / 04 — Bendita IA × Anthropic · 2026",
+    meta: [
+      { label: "Rol", value: "Lead Frontend · integración de agentes" },
+      { label: "Alcance", value: "Plataforma de dos verticales" },
+      { label: "Periodo", value: "Abr — Ago 2026" },
+      { label: "Stack", value: "Next 14 · Supabase · Claude API" },
+    ],
+    sections: ["Problema", "Decisión", "Arquitectura", "Auditoría", "Mi trabajo", "Aprendizajes", "Stack"],
+    indexNote: "Las cifras salen del reporte de impacto y de los resultados publicados por el programa.",
+  },
+  en: {
+    eyebrow: "Case 03 / 04 — Bendita IA × Anthropic · 2026",
+    meta: [
+      { label: "Role", value: "Lead Frontend · agent integration" },
+      { label: "Scope", value: "Platform for two verticals" },
+      { label: "Period", value: "Apr — Aug 2026" },
+      { label: "Stack", value: "Next 14 · Supabase · Claude API" },
+    ],
+    sections: ["Problem", "Decision", "Architecture", "Audit", "My work", "Lessons", "Stack"],
+    indexNote: "Figures come from the impact report and the results published by the programme.",
+  },
+} as const
+
+const SECTION_IDS = ["problema", "decision", "arquitectura", "auditoria", "trabajo", "aprendizajes", "stack"]
 
 const COPY = {
   es: {
@@ -230,315 +261,190 @@ const COPY = {
   },
 } as const
 
-// ─── Sub-components ────────────────────────────────────────────────────────────
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="mb-3 flex items-center gap-2 text-xs font-semibold tracking-[0.1em] text-[#c2410c] uppercase dark:text-[#e8916b]">
-      <span className="block h-0.5 w-5 rounded-full bg-[#c2410c] dark:bg-[#e8916b]" />
-      {children}
-    </div>
-  )
-}
-
-function RolePill({ icon: Icon, label }: { icon: React.ElementType; label: string }) {
-  return (
-    <div className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.08] px-3 py-1.5 text-[12px] font-medium text-slate-300">
-      <Icon className="size-3.5 text-[#e8916b]" stroke={1.75} />
-      {label}
-    </div>
-  )
-}
-
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
 export default function ClaudeImpactLabPage() {
   const { lang } = useLanguage()
-  const c = COPY[lang === "en" ? "en" : "es"]
-  const pillIcons = [IconCode, IconRobot, IconCalendarStats]
+  const key = lang === "en" ? "en" : "es"
+  const c = COPY[key]
+  const l = LAYOUT[key]
+  const sections = SECTION_IDS.map((id, i) => ({ id, label: l.sections[i] }))
 
   return (
-    <div className="bg-background text-foreground">
-      {/* HERO */}
-      <header className="relative overflow-hidden bg-gradient-to-br from-[#141210] to-[#241d18] px-6 py-16 text-white sm:py-24">
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 60% at 50% 0%, rgba(217,119,87,0.30) 0%, transparent 70%)",
-          }}
-        />
-        <div className="relative mx-auto max-w-5xl">
-          <Link
-            href="/"
-            className="mb-8 inline-flex items-center gap-1.5 text-[13px] text-slate-400 transition-colors hover:text-white"
-          >
-            <IconArrowLeft className="size-3.5" />
-            {c.back}
-          </Link>
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader />
 
-          <div className="grid items-start gap-10 md:grid-cols-2">
-            <div>
-              <p className="mb-2 text-[11px] font-semibold tracking-[0.12em] text-[#e8916b] uppercase">
-                {c.kicker}
-              </p>
-              <p className="mb-6 text-[13px] text-slate-400">{c.partners}</p>
+      <main id="contenido" className="flex-1">
+        <CaseHero eyebrow={l.eyebrow} title="Claude Impact Lab" lead={c.intro}>
+          <p className="reveal mt-6 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-muted" style={{ ["--i" as string]: 3 }}>
+            {c.partners}
+          </p>
+        </CaseHero>
 
-              <h1 className="mb-4 text-[clamp(1.75rem,5vw,2.75rem)] font-bold leading-[1.15] tracking-tight">
-                {c.titleA}
-                <span className="text-[#e8916b]">{c.titleB}</span>
-              </h1>
+        <CaseMeta items={[...l.meta]} />
+        <CaseStats items={[...c.stats]} />
 
-              <p className="mb-6 text-[1rem] leading-7 text-slate-400">{c.intro}</p>
+        <CaseBody sections={sections} note={l.indexNote}>
+          {/* ── Problema ─────────────────────────────────────────────── */}
+          <CaseSection id="problema" first title={c.problemLabel} lead={<p>{c.problemLead}</p>}>
+            <NumberedList items={[...c.problems]} />
+          </CaseSection>
 
-              <div className="flex flex-wrap gap-2">
-                {c.pills.map((label, i) => (
-                  <RolePill key={label} icon={pillIcons[i]} label={label} />
-                ))}
+          <CaseQuote>
+            {c.titleA}
+            <em className="text-accent">{c.titleB}</em>
+          </CaseQuote>
+
+          {/* ── Decisión de diseño ───────────────────────────────────── */}
+          <CaseSection id="decision" title={c.designTitle} lead={<p>{c.designBody}</p>} wide>
+            <div className="grid gap-px border border-rule bg-rule md:grid-cols-2">
+              <div className="bg-paper p-6">
+                <span className="mono-label mb-4 block">{c.notLabel}</span>
+                <ul className="flex flex-col gap-2.5">
+                  {c.notDid.map((x) => (
+                    <li key={x} className="flex gap-2.5 text-[15px] leading-[1.5] text-ink/75">
+                      <IconClose size={16} className="mt-1 shrink-0 text-danger" />
+                      {x}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-paper p-6">
+                <span className="mono-label mb-4 block !text-accent">{c.didLabel}</span>
+                <ul className="flex flex-col gap-2.5">
+                  {c.did.map((x) => (
+                    <li key={x} className="flex gap-2.5 text-[15px] leading-[1.5] text-ink">
+                      <IconCheck size={16} className="mt-1 shrink-0 text-accent" />
+                      {x}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
+          </CaseSection>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <p className="mb-4 text-[11px] font-semibold tracking-[0.12em] text-slate-400 uppercase">
-                {c.problemLabel}
-              </p>
-              <p className="mb-5 text-[1rem] leading-7 text-slate-300">{c.problemLead}</p>
-              <ul className="space-y-2.5">
-                {c.problems.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-[0.875rem] text-slate-400">
-                    <span className="mt-1 size-1.5 shrink-0 rounded-full bg-[#e8916b]" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* STATS */}
-      <div className="border-y border-border bg-muted/30 px-6 py-8">
-        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-6 sm:grid-cols-5">
-          {c.stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-[2rem] font-bold tracking-tight text-foreground">{s.value}</div>
-              <div className="mt-0.5 text-[12px] text-muted-foreground">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* DECISIÓN DE DISEÑO */}
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-4xl">
-          <SectionLabel>{c.designLabel}</SectionLabel>
-          <h2 className="mb-6 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-            {c.designTitle}
-          </h2>
-          <p className="mb-8 max-w-3xl text-[1.0625rem] leading-8 text-muted-foreground">
-            {c.designBody}
-          </p>
-
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-xl border border-red-200 bg-red-50 p-6 dark:border-red-900/40 dark:bg-red-950/20">
-              <p className="mb-3 text-[11px] font-semibold tracking-[0.1em] text-red-500 uppercase">
-                {c.notLabel}
-              </p>
-              <ul className="space-y-2 text-[0.9375rem] text-muted-foreground">
-                {c.notDid.map((x) => (
-                  <li key={x} className="flex gap-2">
-                    <span className="mt-1 shrink-0 text-red-400">✕</span>
-                    {x}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 dark:border-emerald-900/40 dark:bg-emerald-950/20">
-              <p className="mb-3 text-[11px] font-semibold tracking-[0.1em] text-emerald-600 uppercase">
-                {c.didLabel}
-              </p>
-              <ul className="space-y-2 text-[0.9375rem] text-muted-foreground">
-                {c.did.map((x) => (
-                  <li key={x} className="flex gap-2">
-                    <span className="mt-1 shrink-0 text-emerald-500">✓</span>
-                    {x}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AGENTES */}
-      <section className="border-t border-border bg-muted/20 px-6 py-16">
-        <div className="mx-auto max-w-4xl">
-          <SectionLabel>{c.archLabel}</SectionLabel>
-          <h2 className="mb-4 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-            {c.archTitle}
-          </h2>
-          <p className="mb-9 max-w-3xl text-[1.0625rem] leading-8 text-muted-foreground">
-            {c.archBody}
-          </p>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            {c.agents.map((a, i) => {
-              const Icon = AGENT_ICONS[i]
-              return (
-                <div key={a.name} className="rounded-xl border border-border bg-card p-6">
-                  <div className="mb-3 flex items-center gap-3">
-                    <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#c2410c]/10 text-[#c2410c] dark:text-[#e8916b]">
-                      <Icon className="size-5" stroke={1.75} />
+          {/* ── Arquitectura: cuatro agentes ─────────────────────────── */}
+          <CaseSection id="arquitectura" title={c.archTitle} lead={<p>{c.archBody}</p>} wide>
+            <div className="grid gap-px border border-ink bg-ink md:grid-cols-2">
+              {c.agents.map((a, i) => {
+                const Icon = AGENT_ICONS[i]
+                return (
+                  <div key={a.name} className="bg-paper p-6">
+                    <div className="mb-3 flex items-center gap-3">
+                      <span className="flex size-9 shrink-0 items-center justify-center border border-rule text-accent">
+                        <Icon className="size-5" stroke={1.5} />
+                      </span>
+                      <div>
+                        <h3 className="text-[15px] font-semibold leading-tight text-ink">{a.name}</h3>
+                        <p className="mt-1 font-mono text-[9.5px] font-medium uppercase tracking-[0.08em] text-muted">Claude {a.model}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-[1rem] font-bold leading-tight">{a.name}</h3>
-                      <p className="text-[12px] text-muted-foreground">Claude {a.model}</p>
-                    </div>
+                    <p className="mb-3 text-[14.5px] leading-[1.6] text-ink/80">{a.desc}</p>
+                    <p className="border-l-2 border-accent/40 pl-3 text-[13.5px] italic leading-[1.6] text-ink/65">{a.note}</p>
                   </div>
-                  <p className="mb-3 text-[0.9375rem] leading-6 text-muted-foreground">{a.desc}</p>
-                  <p className="border-l-2 border-[#c2410c]/30 pl-3 text-[0.875rem] leading-6 text-muted-foreground/85 italic">
-                    {a.note}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* AUDITORÍA */}
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-4xl">
-          <SectionLabel>{c.auditLabel}</SectionLabel>
-          <h2 className="mb-6 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-            {c.auditTitle}
-          </h2>
-          <div className="grid gap-8 md:grid-cols-[1.4fr_1fr]">
-            <div>
-              <p className="mb-5 text-[1.0625rem] leading-8 text-muted-foreground">{c.auditP1}</p>
-              <p className="text-[1.0625rem] leading-8 text-muted-foreground">{c.auditP2}</p>
+                )
+              })}
             </div>
-            <div className="rounded-xl border border-border bg-card p-6">
-              <p className="mb-4 text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
-                {c.scoreLabel}
-              </p>
-              <div className="space-y-3 text-[0.9375rem]">
-                <div className="flex items-baseline justify-between gap-3 border-b border-border pb-3">
-                  <span className="text-muted-foreground">{c.scoreMentor}</span>
-                  <span className="font-bold text-foreground">40%</span>
-                </div>
-                <div className="flex items-baseline justify-between gap-3 border-b border-border pb-3">
-                  <span className="text-muted-foreground">{c.scoreJudges}</span>
-                  <span className="font-bold text-foreground">60%</span>
-                </div>
-                <p className="pt-1 text-[0.8125rem] leading-6 text-muted-foreground">{c.scoreNote}</p>
+          </CaseSection>
+
+          {/* ── Auditoría y puntaje ──────────────────────────────────── */}
+          <CaseSection id="auditoria" title={c.auditTitle} wide>
+            <div className="grid gap-8 xl:grid-cols-[1.4fr_1fr]">
+              <div className="flex max-w-[70ch] flex-col gap-5 text-[16px] leading-[1.7] text-ink/80 md:text-[17px]">
+                <p>{c.auditP1}</p>
+                <p>{c.auditP2}</p>
+              </div>
+              <div className="self-start border border-ink bg-paper-2 p-6">
+                <span className="mono-label mb-4 block">{c.scoreLabel}</span>
+                <dl className="flex flex-col text-[15px]">
+                  <div className="flex items-baseline justify-between gap-3 border-b border-rule pb-3">
+                    <dt className="text-ink/75">{c.scoreMentor}</dt>
+                    <dd className="font-display text-[28px] leading-none text-ink">40%</dd>
+                  </div>
+                  <div className="flex items-baseline justify-between gap-3 border-b border-rule py-3">
+                    <dt className="text-ink/75">{c.scoreJudges}</dt>
+                    <dd className="font-display text-[28px] leading-none text-ink">60%</dd>
+                  </div>
+                </dl>
+                <p className="pt-4 text-[13px] leading-[1.6] text-muted">{c.scoreNote}</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </CaseSection>
 
-      {/* CONTRIBUCIÓN */}
-      <section className="border-t border-border bg-muted/20 px-6 py-16">
-        <div className="mx-auto max-w-4xl">
-          <SectionLabel>{c.workLabel}</SectionLabel>
-          <h2 className="mb-4 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-            {c.workTitle}
-          </h2>
-          <p className="mb-9 max-w-3xl text-[1.0625rem] leading-8 text-muted-foreground">
-            {c.workBody}
-          </p>
+          {/* ── Mi trabajo ───────────────────────────────────────────── */}
+          <CaseSection id="trabajo" title={c.workTitle} lead={<p>{c.workBody}</p>}>
+            <ol className="flex max-w-[70ch] flex-col border-t border-ink">
+              {c.contributions.map((x, i) => (
+                <li key={x.title} className="grid grid-cols-[28px_1fr] gap-3.5 border-b border-rule py-6">
+                  <span className="font-mono text-[10px] font-medium leading-[1.9] text-accent">{String(i + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3 className="mb-1.5 text-[16px] font-semibold text-ink">{x.title}</h3>
+                    <p className="text-[15px] leading-[1.7] text-ink/75">{x.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </CaseSection>
 
-          <div className="space-y-4">
-            {c.contributions.map((x, i) => (
-              <div key={x.title} className="flex gap-4 rounded-xl border border-border bg-card p-6">
-                <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#c2410c]/10 text-[13px] font-bold text-[#c2410c] dark:text-[#e8916b]">
-                  {i + 1}
+          {/* ── Aprendizajes ─────────────────────────────────────────── */}
+          <CaseSection id="aprendizajes" title={c.learnTitle}>
+            <div className="flex max-w-[70ch] flex-col gap-7">
+              {c.lessons.map((x) => (
+                <div key={x.t} className="border-l-2 border-accent pl-5">
+                  <h3 className="mb-1.5 font-display text-[22px] leading-[1.2] text-ink">{x.t}</h3>
+                  <p className="text-[15px] leading-[1.7] text-ink/75">{x.d}</p>
                 </div>
-                <div>
-                  <h3 className="mb-1.5 text-[1.0625rem] font-bold">{x.title}</h3>
-                  <p className="text-[0.9375rem] leading-7 text-muted-foreground">{x.body}</p>
+              ))}
+            </div>
+          </CaseSection>
+
+          {/* ── Stack ────────────────────────────────────────────────── */}
+          <CaseSection id="stack" title={c.stackTitle} wide>
+            <dl className="divide-y divide-rule border border-ink">
+              {c.stack.map(([k, v]) => (
+                <div key={k} className="grid gap-1 px-5 py-4 sm:grid-cols-[190px_1fr] sm:gap-4 md:px-6">
+                  <dt className="mono-label !text-accent">{k}</dt>
+                  <dd className="text-[14.5px] leading-[1.6] text-ink/80">{v}</dd>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              ))}
+            </dl>
+          </CaseSection>
 
-      {/* LECCIONES */}
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-4xl">
-          <SectionLabel>{c.learnLabel}</SectionLabel>
-          <h2 className="mb-8 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-            {c.learnTitle}
-          </h2>
-          <div className="space-y-6">
-            {c.lessons.map((x) => (
-              <div key={x.t} className="border-l-2 border-[#c2410c]/40 pl-5">
-                <h3 className="mb-1.5 text-[1.0625rem] font-bold">{x.t}</h3>
-                <p className="text-[0.9375rem] leading-7 text-muted-foreground">{x.d}</p>
-              </div>
-            ))}
+          {/* ── Cierre ───────────────────────────────────────────────── */}
+          <div className="mt-12 border-t border-rule pt-10">
+            <h2 className="mb-3 font-display text-[28px] leading-[1.1] text-ink md:text-[34px]">{c.ctaTitle}</h2>
+            <p className="mb-7 max-w-[62ch] text-[16px] leading-[1.7] text-ink/80">{c.ctaBody}</p>
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="https://fintech.benditaia.cl/es/claude-impact-lab"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonClass("primary")}
+              >
+                {c.ctaLive}
+                <IconExternal size={16} />
+              </a>
+              <a
+                href="https://fintech.benditaia.cl/es/claude-impact-lab-kpi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonClass("secondary")}
+              >
+                {c.ctaReport}
+                <IconExternal size={16} />
+              </a>
+              <Link href="/#trabajo" className={textLinkClass("text-[13px]")}>
+                <IconArrowLeft size={16} />
+                {c.back}
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </CaseBody>
+      </main>
 
-      {/* STACK */}
-      <section className="border-t border-border bg-muted/20 px-6 py-16">
-        <div className="mx-auto max-w-4xl">
-          <SectionLabel>{c.stackLabel}</SectionLabel>
-          <h2 className="mb-8 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-            {c.stackTitle}
-          </h2>
-          <div className="divide-y divide-border overflow-hidden rounded-xl border border-border bg-card">
-            {c.stack.map(([k, v]) => (
-              <div key={k} className="grid gap-1 px-6 py-4 sm:grid-cols-[190px_1fr] sm:gap-4">
-                <div className="text-[0.875rem] font-bold text-[#c2410c] dark:text-[#e8916b]">{k}</div>
-                <div className="text-[0.9375rem] leading-6 text-muted-foreground">{v}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-3 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
-            {c.ctaTitle}
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-[1.0625rem] leading-8 text-muted-foreground">
-            {c.ctaBody}
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href="https://fintech.benditaia.cl/es/claude-impact-lab"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              <IconExternalLink className="size-4" />
-              {c.ctaLive}
-            </a>
-            <a
-              href="https://fintech.benditaia.cl/es/claude-impact-lab-kpi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-accent hover:border-primary/25"
-            >
-              <IconChartBar className="size-4" />
-              {c.ctaReport}
-            </a>
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-accent hover:border-primary/25"
-            >
-              <IconArrowLeft className="size-4" />
-              {c.back}
-            </Link>
-          </div>
-        </div>
-      </section>
+      <SiteFooter
+        next={{ title: "Portokali Café", meta: "Next 15 · Supabase · Resend — 2026", href: "https://portokali.cl" }}
+      />
     </div>
   )
 }

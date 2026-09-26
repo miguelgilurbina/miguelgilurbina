@@ -71,21 +71,19 @@ const layers: Layer[] = [
 function StackChip({ icon: Icon, label, sub, accent }: StackItem) {
   return (
     <div
-      className={`flex items-start gap-2.5 rounded-xl border p-3.5 ${
-        accent
-          ? "border-blue-500/30 bg-blue-600/10 text-blue-300"
-          : "border-border bg-card text-foreground"
+      className={`flex items-start gap-2.5 border p-3.5 ${
+        accent ? "border-ink bg-paper text-ink" : "border-rule bg-paper-2 text-ink"
       }`}
     >
       {Icon && (
         <Icon
-          className={`mt-0.5 size-4 shrink-0 ${accent ? "text-blue-400" : "text-muted-foreground"}`}
-          stroke={1.75}
+          className={`mt-0.5 size-4 shrink-0 ${accent ? "text-accent" : "text-muted"}`}
+          stroke={1.5}
         />
       )}
       <div>
         <p className="text-[13px] font-semibold leading-tight">{label}</p>
-        {sub && <p className="mt-0.5 text-[11px] text-muted-foreground">{sub}</p>}
+        {sub && <p className="mt-1 font-mono text-[9.5px] uppercase tracking-[0.06em] text-muted">{sub}</p>}
       </div>
     </div>
   )
@@ -96,7 +94,7 @@ export function ArchitectureDiagram() {
     <div className="space-y-8">
       {layers.map((layer) => (
         <div key={layer.label}>
-          <p className="mb-3 text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
+          <p className="mb-3 text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
             {layer.label}
           </p>
           <div className={`grid gap-2.5 ${layer.cols ?? "grid-cols-2 sm:grid-cols-4"}`}>
