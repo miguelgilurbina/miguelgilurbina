@@ -45,13 +45,6 @@ export const es = {
     },
   },
 
-  stats: [
-    { value: "2024 →",       label: "Desarrollo full stack en producción" },
-    { value: "6 años",       label: "Gestión comercial en el sector tech" },
-    { value: "2 verticales", label: "Programa de Anthropic en Chile, sobre una sola plataforma" },
-    { value: "7 días",       label: "Del kickoff al MVP con un cliente real" },
-  ],
-
   work: {
     title:    "Trabajo seleccionado",
     count:    "04 de 04 · 2025–2026",

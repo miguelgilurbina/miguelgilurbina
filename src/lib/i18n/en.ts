@@ -47,13 +47,6 @@ export const en: Translations = {
     },
   },
 
-  stats: [
-    { value: "2024 →",      label: "Full stack development in production" },
-    { value: "6 years",     label: "Commercial management in tech" },
-    { value: "2 verticals", label: "Anthropic's programme in Chile, on a single platform" },
-    { value: "7 days",      label: "From kickoff to MVP with a real client" },
-  ],
-
   work: {
     title:    "Selected work",
     count:    "04 of 04 · 2025–2026",

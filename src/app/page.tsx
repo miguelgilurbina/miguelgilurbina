@@ -6,7 +6,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/megu/SiteHeader";
 import { SiteFooter, EMAIL, GITHUB_URL, LINKEDIN_URL, WHATSAPP_URL } from "@/components/megu/SiteFooter";
 import { IconArrowNE, IconArrowRight, IconClock, IconCode, IconDownload, IconMail } from "@/components/megu/icons";
-import { Display, Stat, Tag, buttonClass } from "@/components/megu/ui";
+import { Display, Tag, buttonClass } from "@/components/megu/ui";
 import { useCvDownload } from "@/components/megu/useCvDownload";
 import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
@@ -77,7 +77,7 @@ function HeroExperimental() {
   const x = t.hero.exp;
 
   return (
-    <section className="relative hidden overflow-hidden border-b border-rule bg-paper dark:block">
+    <section className="relative hidden overflow-hidden bg-paper dark:block">
       <Image
         src="/images/archivo/palafitos-noche.webp"
         alt={x.imgAlt}
@@ -142,21 +142,6 @@ function HeroExperimental() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Stats() {
-  const { t } = useLanguage();
-  return (
-    <div className="border-y border-ink">
-      <div className="wrap !px-0 md:!px-10">
-        <dl className="grid grid-cols-2 gap-px bg-rule lg:grid-cols-4">
-          {t.stats.map((s) => (
-            <Stat key={s.label} value={s.value} label={s.label} />
-          ))}
-        </dl>
-      </div>
-    </div>
   );
 }
 
@@ -328,7 +313,8 @@ export default function HomePage() {
       <main id="contenido" className="flex-1">
         <HeroProfessional />
         <HeroExperimental />
-        <Stats />
+        {/* Sin franja de cifras hasta tener métricas de impacto (issue #4). */}
+        <div className="border-t border-ink" aria-hidden="true" />
         <WorkIndex />
         <About />
         <ContactBlock />

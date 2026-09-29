@@ -8,10 +8,6 @@ From idea to production, across any stack.
 
 Full stack developer focused on agentic systems: I design, build and ship platforms where the model does part of the work and the human keeps the decision. Before programming I spent six years in commercial and channel management in the tech sector, which is why I build products that solve business problems, not just technical ones.
 
-| 2024 → | 6 years | 2 verticals | 7 days |
-| :-- | :-- | :-- | :-- |
-| full stack development in production | commercial management in tech | Anthropic's programme in Chile, on a single platform | from kickoff to MVP with a real client |
-
 ## Selected work
 
 ### Cargo Electric — logistics platform for an electric fleet

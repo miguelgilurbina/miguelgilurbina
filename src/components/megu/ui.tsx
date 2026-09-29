@@ -131,15 +131,3 @@ export function Display({
     </Tag>
   );
 }
-
-/** Celda de cifra: serif grande + etiqueta mono. */
-export function Stat({ value, label, muted }: { value: string; label: string; muted?: boolean }) {
-  return (
-    <div className="bg-paper px-5 py-5 md:px-6 md:py-[22px]">
-      <div className={cn("font-display text-[32px] leading-none md:text-[44px]", muted ? "text-muted" : "text-ink")}>
-        {value}
-      </div>
-      <div className="mono-label mt-2 !text-[9.5px] !leading-[1.5] !tracking-[0.08em]">{label}</div>
-    </div>
-  );
-}
