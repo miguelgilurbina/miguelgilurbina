@@ -127,16 +127,6 @@ export default async function CvPage({ params }: Props) {
         <section>
           <SectionTitle n={1}>{cv.labels.profile}</SectionTitle>
           <p className="max-w-[75ch] text-[12.5px] leading-[1.6] text-ink">{cv.profile}</p>
-          <dl className="cv-keep mt-4 grid grid-cols-2 gap-px border border-rule bg-rule sm:grid-cols-4">
-            {cv.stats.map((s) => (
-              <div key={s.label} className="bg-paper-2 px-3 py-2.5">
-                <dd className="font-display text-[24px] leading-none text-ink">{s.value}</dd>
-                <dt className="mt-1.5 font-mono text-[8px] font-medium uppercase leading-[1.4] tracking-[0.08em] text-muted">
-                  {s.label}
-                </dt>
-              </div>
-            ))}
-          </dl>
         </section>
 
         {/* ── Experiencia ────────────────────────────────────────── */}

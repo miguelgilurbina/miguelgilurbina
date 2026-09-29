@@ -40,7 +40,6 @@ export type CvContent = {
     other: string;
   };
   profile: string;
-  stats: { value: string; label: string }[];
   experience: Entry[];
   projects: Project[];
   skills: { group: string; items: string }[];
@@ -76,13 +75,7 @@ export const CV: Record<CvLang, CvContent> = {
       other: "English version",
     },
     profile:
-      "Full stack con foco en sistemas agénticos: diseño, construyo y pongo en producción plataformas donde el modelo hace parte del trabajo y la persona mantiene la decisión. Antes de programar pasé seis años en gestión comercial y canales en el sector tecnológico; por eso construyo productos que resuelven problemas de negocio, no solo problemas técnicos.",
-    stats: [
-      { value: "9+", label: "Años entre negocio y tecnología" },
-      { value: "4", label: "Proyectos con usuarios reales" },
-      { value: "3.277", label: "Evaluaciones operadas con agentes Claude" },
-      { value: "619", label: "Commits propios en Cargo Electric" },
-    ],
+      "Desarrollador full stack desde 2024, con foco en sistemas agénticos: diseño, construyo y pongo en producción plataformas donde el modelo hace parte del trabajo y la persona mantiene la decisión. Antes pasé seis años en gestión comercial y canales en el sector tecnológico; por eso construyo productos que resuelven problemas de negocio, no solo problemas técnicos.",
     experience: [
       {
         period: "Sep 2025 — hoy",
@@ -204,13 +197,7 @@ export const CV: Record<CvLang, CvContent> = {
       other: "Versión en español",
     },
     profile:
-      "Full stack developer focused on agentic systems: I design, build and ship platforms where the model does part of the work and the human keeps the decision. Before programming I spent six years in commercial and channel management in the tech sector, which is why I build products that solve business problems, not just technical ones.",
-    stats: [
-      { value: "9+", label: "Years between business and engineering" },
-      { value: "4", label: "Projects with real users" },
-      { value: "3,277", label: "Evaluations run with Claude agents" },
-      { value: "619", label: "Of my commits at Cargo Electric" },
-    ],
+      "Full stack developer since 2024, focused on agentic systems: I design, build and ship platforms where the model does part of the work and the human keeps the decision. Before that I spent six years in commercial and channel management in the tech sector, which is why I build products that solve business problems, not just technical ones.",
     experience: [
       {
         period: "Sep 2025 — today",

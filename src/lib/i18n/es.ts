@@ -32,7 +32,7 @@ export const es = {
       h1and:      "y",
       h1b:        "construyo",
       h1c:        "imágenes.",
-      lead:       "Nueve años entre negocio y tecnología, y una práctica visual propia: series generadas con IA sobre memoria y territorio caribeño. La misma disciplina en los dos lados: criterio, iteración y algo terminado.",
+      lead:       "Desarrollo en producción desde 2024, seis años antes en gestión comercial y una práctica visual propia: series generadas con IA sobre memoria y territorio caribeño. La misma disciplina en los dos lados: criterio, iteración y algo terminado.",
       ctaArchive: "Ver archivo visual",
       available:  "Disponible",
       figLabel:   "fig. 01 — fondo",
@@ -46,10 +46,10 @@ export const es = {
   },
 
   stats: [
-    { value: "9+",    label: "Años entre negocio y tecnología" },
-    { value: "4",     label: "Proyectos con usuarios reales" },
-    { value: "3.277", label: "Evaluaciones operadas con agentes Claude" },
-    { value: "2026",  label: "Diplomado IA Generativa · U. de Chile" },
+    { value: "2024 →",       label: "Desarrollo full stack en producción" },
+    { value: "6 años",       label: "Gestión comercial en el sector tech" },
+    { value: "2 verticales", label: "Programa de Anthropic en Chile, sobre una sola plataforma" },
+    { value: "7 días",       label: "Del kickoff al MVP con un cliente real" },
   ],
 
   work: {

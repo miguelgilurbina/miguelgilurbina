@@ -34,7 +34,7 @@ export const en: Translations = {
       h1and:      "and",
       h1b:        "I build",
       h1c:        "images.",
-      lead:       "Nine years between business and engineering, and a visual practice of my own: AI-generated series on Caribbean memory and territory. The same discipline on both sides: judgement, iteration and something finished.",
+      lead:       "Shipping to production since 2024, six years in commercial management before that, and a visual practice of my own: AI-generated series on Caribbean memory and territory. The same discipline on both sides: judgement, iteration and something finished.",
       ctaArchive: "See the visual archive",
       available:  "Available",
       figLabel:   "fig. 01 — background",
@@ -48,10 +48,10 @@ export const en: Translations = {
   },
 
   stats: [
-    { value: "9+",    label: "Years between business and engineering" },
-    { value: "4",     label: "Projects with real users" },
-    { value: "3,277", label: "Evaluations run with Claude agents" },
-    { value: "2026",  label: "Generative AI diploma · U. de Chile" },
+    { value: "2024 →",      label: "Full stack development in production" },
+    { value: "6 years",     label: "Commercial management in tech" },
+    { value: "2 verticals", label: "Anthropic's programme in Chile, on a single platform" },
+    { value: "7 days",      label: "From kickoff to MVP with a real client" },
   ],
 
   work: {

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     template: "%s | Miguel Gil",
   },
   description:
-    "Desarrollo web y soluciones de IA para negocios en Chile: sitios, sistemas a medida, agentes con LLM y dirección creativa. Full Stack Developer con 8+ años combinando estrategia comercial y tecnología.",
+    "Desarrollo web y soluciones de IA para negocios en Chile: sitios, sistemas a medida, agentes con LLM y dirección creativa. Full Stack Developer desde 2024, con seis años previos en gestión comercial en el sector tecnológico.",
   keywords: [
     "Desarrollo web Chile",
     "Landing page Santiago",
