@@ -1,76 +1,77 @@
-Miguel Eduardo Gil Urbina
-Full Stack Engineer & AI Workflow Architect
-Metodología AI-first · End-to-End Solutions · Rapid Stack Adoption
-📍 Santiago, Chile  |  📧 miguel.gil.9210@gmail.com  |  🌐 miguelgilurbina.com  |  💼 LinkedIn
+# Miguel Gil Urbina
 
-About Me
-Full Stack Engineer with an AI-first methodology: I design and ship end-to-end solutions with high delivery speed and the ability to onboard into any stack without friction.
-I combine technical product expertise with business acumen — allowing me to not just execute, but define architecture, set priorities, and make decisions that drive real impact. My generative AI-powered workflows enable autonomous problem-solving and compressed development cycles without compromising quality.
+**Full Stack Developer · AI Implementation** — Santiago, Chile
 
-From idea to production, across any stack, faster than expected.
+From idea to production, across any stack.
 
-🚀 Featured Project
-Prompt Maker — Collaborative AI Prompt Platform
-🌐 Live  |  📂 Code
-A full-stack platform for creating, sharing and discovering optimized prompts — built as a collaborative repository where prompt makers contribute and explore AI workflows.
-Stack: Next.js · React 19 · TypeScript · PostgreSQL · Prisma ORM · Next-Auth · Zod · Jest
-Key features:
+[miguelgilurbina.com](https://www.miguelgilurbina.com) · [LinkedIn](https://www.linkedin.com/in/miguelgilurbina/) · [miguel.gil.9210@gmail.com](mailto:miguel.gil.9210@gmail.com) · CV: [English](https://www.miguelgilurbina.com/Miguel_Gil_CV_EN.pdf) / [Español](https://www.miguelgilurbina.com/Miguel_Gil_CV_ES.pdf)
 
-Dynamic variable system for reusable, parameterizable prompts
-Granular access control (public / private) with JWT authentication
-Real-time preview before saving or sharing
-Serverless architecture with robust data validation
+Full stack developer focused on agentic systems: I design, build and ship platforms where the model does part of the work and the human keeps the decision. Before programming I spent six years in commercial and channel management in the tech sector, which is why I build products that solve business problems, not just technical ones.
 
-💼 Professional Experience
-Full Stack Engineer & Product Owner · Cargo Electric Blue SPA · Sep 2024 – Present
-Built a complete logistics platform from the ground up using an AI-first approach:
+| 9+ | 4 | 3,277 | 619 |
+| :-- | :-- | :-- | :-- |
+| years between business and engineering | projects with real users | evaluations run with Claude agents | of my commits at Cargo Electric |
 
-Delivered a full back office web app in Next.js 14 within 1 month — billing system, operational dashboards, and admin management
-Contributed to existing mobile app (Angular 19 + Ionic 8), onboarding into an unfamiliar stack with no ramp-up friction
-Designed Firebase data architecture for 100% end-to-end operational coverage: data modeling, validation schemas (Zod), role-based access control, and live production migration
-Acting as Product Owner: defined roadmap, prioritized features, and made architecture decisions aligned with business goals
+## Selected work
 
-Next.js 16 Angular 19 Ionic 8 Firebase TypeScript Zod Chart.js Claude Code Nodemailer
+### Cargo Electric — logistics platform for an electric fleet
+`2025 →` · Full Stack Developer & Product Owner
 
-AI Research Contributor · Outlier · Nov 2024 – Aug 2025
+Internal platform that replaced spreadsheets and the payroll workbook: drivers log routes from the mobile app, and the back office brings together analytics, rate-card invoicing, a driver bonus engine and fleet administration. Author of 619 of the web app's 632 commits and 102 merged PRs.
 
-Evaluated GPT-4, Claude and Gemini for enterprise use cases
-Developed benchmarking methodologies and quality standards for prompt engineering
-Collaborated with international teams on AI implementation best practices
+Next.js 16 · React 19 · TypeScript · Firebase · Recharts · Vitest · Ionic 8 · Angular 19 — [Case study](https://www.miguelgilurbina.com/cargo-electric)
 
-Full Stack Developer & QA Specialist · Vemex Digital · May 2024 – Dec 2024
+### Curiana Radio — cultural publication and multi-agent lab
+`2025 →` · Creator, developer and researcher · ongoing research
 
-Built responsive web apps with React and Next.js following enterprise quality standards
-Led testing strategy including unit, integration and performance optimization
+A cultural publication from Abya Yala that doubles as a laboratory: 60 LLM agents speak Caquetío, an extinct Arawakan language reconstructed through the comparative method. A controlled experiment measured 2.7× more convergence than the control group, backed by 269 engine tests and 9 executable invariants.
 
-Commercial Manager & Channel Development · Hikvision · Dahua · SSTT · Orama · Wetland · 2017 – 2023
-6 years leading national distribution networks in the tech sector. This commercial background directly informs my ability to build products that solve real business problems, not just technical ones.
+Next.js 16 · Python · Claude Haiku 4.5 · Supabase · Vercel Blob — [Case study](https://www.miguelgilurbina.com/curiana-radio) · [Live](https://curiana-radio.vercel.app) · [Code](https://github.com/miguelgilurbina/curiana-radio)
 
-🛠️ Technical Stack
-AreaToolsFrontendAngular 19 · Ionic 8 · React 19 · Next.js 14 · TypeScript · Tailwind CSSBackendNode.js · Firebase · PostgreSQL · Prisma ORM · REST APIsAI & AgentsClaude Code · Gemini CLI · OpenAI Codex · LangChain · LangGraph · RAGPrompt Eng.Agent design · AI-first workflows · Model evaluation · System promptsAutomationZapier · Make · N8NToolingGit · GitHub · Vercel · Docker · Scrum · Jest
+### Claude Impact Lab Chile — AI agents in production
+`2026` · Lead Frontend & AI Agent Developer · Bendita IA, with Anthropic as Technical Partner
 
-🎓 Education & Certifications
+The platform that ran both verticals of Anthropic's programme in Chile, Fintech and Longevity: 1,656 applications, 100 competing teams and 3,277 evaluations. Four Claude agents with their own tool sets and permission scopes; the evaluation agent pre-scores sub-checks with evidence and the human evaluator makes the final call.
 
-🎓 Prompt Engineering & Generative AI · The Prompt Academy · 2025
-🎓 Graduate Diploma in Generative AI for Organizations · Universidad de Chile, FEN · 2025–2026
+Next.js 14 · TypeScript · Supabase · Claude API · Anthropic SDK · Vitest · Playwright — [Case study](https://www.miguelgilurbina.com/claude-impact-lab) · [Impact report](https://fintech.benditaia.cl/es/claude-impact-lab-kpi)
 
-LangChain · LangGraph · RAG · LangServe · Docker · Multi-agent chatbot (capstone)
+### Portokali Café — client website
+`2026` · Lead developer, with Poweredia
 
-🎓 Certified Web Developer · Digital House Coding School · 2022–2024
-🏅 Professional Scrum Master · Certiprof · 2023
-🎓 B.S. Environmental Engineering · Universidad de Falcón, Venezuela · 2009–2014
+Specialty café in Vitacura: from WordPress to Next.js 15 with an MVP in seven days. Forms stored in Supabase with Resend notifications, Toteat and Justo integrations, and a production audit that caught a form silently losing job applications for five months.
 
-🌎 Languages
+Next.js 15 · TypeScript · Supabase · Resend · GitHub Actions — [Live](https://portokali.cl)
 
-Spanish: Native
-English: Professional fluency
+## Experience
 
-### 📫 Connect With Me
+| Period | Role | Company |
+| :-- | :-- | :-- |
+| Sep 2025 — today | Full Stack Developer & Product Owner | Cargo Electric Blue SpA |
+| Apr — Aug 2026 | Lead Frontend & AI Agent Developer | Bendita IA · Claude Impact Lab Chile |
+| Nov 2024 — Aug 2025 | AI Research Contributor | Outlier |
+| May — Dec 2024 | Full Stack Developer & QA | Vemex Digital |
+| 2017 — 2023 | Commercial & channel management | Hikvision · Dahua · SSTT · Orama · Wetland |
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/miguelgilurbina/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/miguelgilurbina)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:miguel.gil.9210@gmail.com)
+## Stack
+
+| Area | Tools |
+| :-- | :-- |
+| AI and agents | Claude API · Anthropic SDK · tool use · AI-assisted evaluation · LangChain · LangGraph · RAG · Claude Code |
+| Frontend | Next.js 14–16 · React 18/19 · TypeScript · Tailwind CSS · Angular 19 · Ionic 8 |
+| Data and backend | Supabase / PostgreSQL · Firebase / Firestore · Node.js · Python · REST APIs |
+| Quality and delivery | Vitest · Playwright · GitHub Actions · Vercel · Docker · Git |
+| Product | Product ownership · Scrum · stakeholder management · public tenders |
+
+## Education
+
+- **Diploma in Generative AI in Organizations** — Universidad de Chile, FEN · 2025–2026
+- **Prompt Engineering and Generative AI** — The Prompt Academy · 2025
+- **Certified Web Developer** — Digital House Coding School · 2022–2024
+- **Scrum Master Professional Certificate** — Certiprof · 2023
+- **Environmental Engineer** — Universidad de Falcón, Venezuela · 2009–2014
+
+Spanish (native) · English (professional)
 
 ---
 
-_"Building the bridge between AI innovation and practical business solutions"_
+This repository is also the source of [miguelgilurbina.com](https://www.miguelgilurbina.com): Next.js 16, Tailwind CSS v4 and the MEGU design system (Instrument Serif · Archivo · JetBrains Mono).
