@@ -33,7 +33,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.miguelgilurbina.com"),
   title: {
-    default: "Miguel Gil — AI First Full Stack Developer",
+    default: "Miguel Gil — Full Stack Developer · AI Implementation",
     template: "%s | Miguel Gil",
   },
   description:
@@ -60,15 +60,15 @@ export const metadata: Metadata = {
     alternateLocale: "en_US",
     url: "https://www.miguelgilurbina.com",
     siteName: "Miguel Gil — Portfolio",
-    title: "Miguel Gil — Desarrollo Web & Soluciones de IA",
+    title: "Miguel Gil — Full Stack Developer · AI Implementation",
     description:
-      "Landing pages en 7 días, sistemas a medida y agentes con LLM. Full Stack Developer en Santiago, Chile.",
+      "Full Stack Developer con foco en sistemas agénticos: agentes de IA en producción, plataformas de operación y producto de punta a punta. Santiago, Chile.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Miguel Gil — Desarrollo Web & Soluciones de IA",
+    title: "Miguel Gil — Full Stack Developer · AI Implementation",
     description:
-      "Landing pages en 7 días, sistemas a medida y agentes con LLM. Santiago, Chile.",
+      "Full Stack Developer con foco en sistemas agénticos: agentes de IA en producción, plataformas de operación y producto de punta a punta. Santiago, Chile.",
   },
   robots: {
     index: true,
