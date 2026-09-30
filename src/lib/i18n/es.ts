@@ -53,7 +53,7 @@ export const es = {
       {
         id:    "cargo-electric",
         title: "Cargo Electric",
-        sub:   "Operación, finanzas y personas de una flota eléctrica en una sola plataforma, para equipos internos y clientes.",
+        sub:   "Una plataforma para la operación, las finanzas y las personas de una flota eléctrica, con más de 10.000 rutas registradas.",
         stack: "Next 16 · Firebase · Recharts",
         year:  "2025 →",
         href:  "/cargo-electric",

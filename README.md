@@ -15,7 +15,7 @@ Independent since September 2025, working with clients on a freelance basis. Ope
 ### Cargo Electric: logistics platform for an electric fleet
 `2025 →` · Full Stack Developer & Product Owner
 
-One platform for the company's operations, analytics, finance and people management, automating invoicing and bonus calculations that used to be done by hand in spreadsheets. It serves internal teams (admin and board) and executives at Cargo's clients; drivers log routes from the mobile app. Author of 619 of the web app's 632 commits and 102 merged PRs.
+One platform for the company's operations, analytics, finance and people management, holding 10,000+ operational route records that used to live in spreadsheets, and automating invoicing and bonus calculations that were done by hand. It serves internal teams (admin and board) and executives at Cargo's clients; drivers log routes from the mobile app. Author of 619 of the web app's 632 commits and 102 merged PRs.
 
 Next.js 16 · React 19 · TypeScript · Firebase · Recharts · Vitest · Ionic 8 · Angular 19 | [Case study](https://www.miguelgilurbina.com/cargo-electric)
 

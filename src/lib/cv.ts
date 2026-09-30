@@ -100,9 +100,9 @@ export const CV: Record<CvLang, CvContent> = {
             period: "Cliente desde Sep 2025",
             note: "Logística de última milla con flota eléctrica",
             bullets: [
-              "Concentré en una sola plataforma la operación, la analítica, las finanzas y la gestión de personas de la empresa, y automaticé la facturación y el cálculo de bonos que antes se hacían a mano en planillas. La usan equipos internos (administración y directorio) y ejecutivos de los clientes de Cargo.",
+              "Llevé más de 10.000 registros de rutas operacionales desde planillas a una sola plataforma que concentra operación, analítica, finanzas y gestión de personas. La usan equipos internos (administración y directorio) y ejecutivos de los clientes de Cargo.",
               "Motor de bonos de conductores que reemplazó el Excel de nómina: cálculo por camión-día, tarifario con vigencia y conciliación mensual contra la planilla real.",
-              "Analítica con Recharts (resumen diario, dashboard operacional con drill-down y PDF ejecutivo) y facturación con tarifarios exportada a Excel en el formato del cliente.",
+              "Analítica con Recharts (resumen diario, dashboard operacional con drill-down y PDF ejecutivo) y facturación automatizada con tarifarios, exportada a Excel en el formato del cliente.",
               "Back office en Next.js 16 sobre Firebase/Firestore con acceso por rol (administración, directorio y cliente) en todas las Server Actions: autor de 619 de los 632 commits de la web app y de 102 PRs mergeados.",
               "Tests en Vitest, ESLint llevado de 87 errores a 0 y contribuciones a la app móvil de conductores (Ionic 8, Angular 19 y Capacitor).",
             ],
@@ -232,9 +232,9 @@ export const CV: Record<CvLang, CvContent> = {
             period: "Client since Sep 2025",
             note: "Last-mile logistics with an electric fleet",
             bullets: [
-              "Brought the company's operations, analytics, finance and people management into a single platform, automating invoicing and bonus calculations that used to be done by hand in spreadsheets. Used by internal teams (admin and board) and by executives at Cargo's clients.",
+              "Moved 10,000+ operational route records from spreadsheets into a single platform for operations, analytics, finance and people management, used by internal teams (admin and board) and by executives at Cargo's clients.",
               "Driver bonus engine that replaced the payroll workbook: per truck-day calculation, rate cards with effective dates, and monthly reconciliation against the real payroll sheet.",
-              "Recharts analytics (daily summary, operations dashboard with drill-down and an executive PDF) and rate-card invoicing exported to Excel in the client's format.",
+              "Recharts analytics (daily summary, operations dashboard with drill-down and an executive PDF) and automated rate-card invoicing exported to Excel in the client's format.",
               "Next.js 16 back office on Firebase/Firestore with role-based access (admin, board and client) on every Server Action: author of 619 of the web app's 632 commits and 102 merged PRs.",
               "Vitest tests, ESLint taken from 87 errors to 0, and contributions to the drivers' mobile app (Ionic 8, Angular 19 and Capacitor).",
             ],

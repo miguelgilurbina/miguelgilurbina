@@ -27,10 +27,9 @@ export const metadata: Metadata = {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const stats = [
+  { value: "10.000+", label: "rutas operacionales registradas" },
   { value: "14", label: "camiones eléctricos" },
   { value: "5", label: "módulos en producción" },
-  { value: "619", label: "commits propios" },
-  { value: "102", label: "PRs mergeados" },
   { value: "8", label: "meses de web app" },
 ]
 
@@ -231,7 +230,8 @@ export default function CargoElectricPage() {
           lead={
             <>
               Una sola plataforma para la operación, la analítica, las finanzas y la gestión de personas de una
-              startup de logística eléctrica, usada por su equipo interno y por los ejecutivos de sus clientes. Fui
+              startup de logística eléctrica, con más de 10.000 rutas registradas que antes vivían en planillas. La usan su
+              equipo interno y los ejecutivos de sus clientes. Fui
               Product Owner y Full-Stack Engineer: definí el producto, diseñé la arquitectura y escribí 619 de los 632
               commits de la web app.
             </>
