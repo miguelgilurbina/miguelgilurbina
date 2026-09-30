@@ -109,7 +109,6 @@ export default function RootLayout({
                   name: "Miguel Gil Urbina",
                   url: "https://www.miguelgilurbina.com",
                   jobTitle: "Full Stack Developer & AI Implementation Specialist",
-                  worksFor: { "@type": "Organization", name: "Cargo Eléctric" },
                   address: { "@type": "PostalAddress", addressLocality: "Santiago", addressCountry: "CL" },
                   email: "miguel.gil.9210@gmail.com",
                   sameAs: [

@@ -4,13 +4,24 @@
 
 export type CvLang = "es" | "en";
 
+// Un cliente dentro de una etapa independiente (freelance).
+type Client = {
+  name: string;
+  role: string;
+  period: string;
+  note?: string;
+  bullets: string[];
+  stack?: string;
+};
+
 type Entry = {
   period: string;
   title: string;
   org: string;
   note?: string;
-  bullets: string[];
+  bullets?: string[];
   stack?: string;
+  clients?: Client[];
 };
 
 type Project = {
@@ -63,7 +74,7 @@ export const CV: Record<CvLang, CvContent> = {
     name: "Miguel Eduardo Gil Urbina",
     role: "Full Stack Developer · AI Implementation",
     location: "Santiago, Chile",
-    availability: "Disponible · remoto o híbrido",
+    availability: "Disponible para contrato directo o freelance · remoto (UTC-3) o híbrido en Santiago",
     labels: {
       profile: "Perfil",
       experience: "Experiencia",
@@ -79,31 +90,50 @@ export const CV: Record<CvLang, CvContent> = {
     experience: [
       {
         period: "Sep 2025 – hoy",
-        title: "Full Stack Developer & Product Owner",
-        org: "Cargo Electric Blue SpA",
-        note: "Logística de última milla con flota eléctrica",
-        bullets: [
-          "Back office en Next.js 16 que reemplazó planillas y el Excel de nómina por una sola plataforma de operación: autor de 619 de los 632 commits de la web app y de 102 PRs mergeados.",
-          "Motor de bonos de conductores: cálculo por camión-día, tarifario con vigencia y conciliación mensual contra la planilla real.",
-          "Analítica con Recharts (resumen diario, dashboard operacional con drill-down y PDF ejecutivo) y facturación con tarifarios exportada a Excel en el formato del cliente.",
-          "Modelo de datos en Firebase/Firestore con autorización por rol en todas las Server Actions, tests en Vitest y ESLint llevado de 87 errores a 0.",
-          "Contribuciones a la app móvil de conductores (Ionic 8, Angular 19 y Capacitor) para el registro de rutas en terreno.",
+        title: "Full Stack Developer",
+        org: "Independiente · freelance",
+        note: "Desarrollo por encargo para clientes, sin contrato laboral directo.",
+        clients: [
+          {
+            name: "Cargo Electric Blue SpA",
+            role: "Full Stack Developer & Product Owner",
+            period: "Cliente desde Sep 2025",
+            note: "Logística de última milla con flota eléctrica",
+            bullets: [
+              "Back office en Next.js 16 que reemplazó planillas y el Excel de nómina por una sola plataforma de operación: autor de 619 de los 632 commits de la web app y de 102 PRs mergeados.",
+              "Motor de bonos de conductores: cálculo por camión-día, tarifario con vigencia y conciliación mensual contra la planilla real.",
+              "Analítica con Recharts (resumen diario, dashboard operacional con drill-down y PDF ejecutivo) y facturación con tarifarios exportada a Excel en el formato del cliente.",
+              "Modelo de datos en Firebase/Firestore con autorización por rol en todas las Server Actions, tests en Vitest y ESLint llevado de 87 errores a 0.",
+              "Contribuciones a la app móvil de conductores (Ionic 8, Angular 19 y Capacitor) para el registro de rutas en terreno.",
+            ],
+            stack: "Next.js 16 · React 19 · TypeScript · Firebase · Recharts · Vitest · Ionic 8 · Angular 19",
+          },
+          {
+            name: "Bendita IA · Claude Impact Lab Chile",
+            role: "Lead Frontend & AI Agent Developer",
+            period: "Abr – Ago 2026",
+            note: "Programa de Anthropic en Chile, con Anthropic como Technical Partner",
+            bullets: [
+              "Plataforma que operó las dos verticales del programa, Fintech y Longevidad: 1.656 postulaciones, 100 equipos en competencia y 3.277 evaluaciones registradas.",
+              "Portal de evaluadores integrado con agentes Claude (Haiku y Sonnet 4.5) que pre-evalúan 10 sub-checks por equipo con evidencia; la decisión final queda en el evaluador humano.",
+              "Leaderboard en vivo con Supabase Realtime y ceremonias de premiación ante 250 y ~200 asistentes.",
+              "Motor de rúbrica configurable sin deploy, abstracción multi-tenant por vertical y motor de certificados con verificación pública.",
+              "166 commits en un repo con ~970 casos de test: Vitest, Playwright E2E y suites de guardrails para los agentes.",
+            ],
+            stack: "Next.js 14 · TypeScript · Supabase · Claude API · Anthropic SDK · Vitest · Playwright",
+          },
+          {
+            name: "Portokali Café",
+            role: "Desarrollador principal, junto a Poweredia",
+            period: "Mar – Sep 2026",
+            note: "Café de especialidad en Vitacura",
+            bullets: [
+              "Migración de WordPress a Next.js 15 con MVP en producción en siete días, a partir de un prototipo en React.",
+              "Formularios en Supabase con aviso por Resend e integración con Toteat y Justo; una auditoría posterior detectó un formulario que perdía postulaciones hacía cinco meses.",
+            ],
+            stack: "Next.js 15 · TypeScript · Supabase · Resend · GitHub Actions",
+          },
         ],
-        stack: "Next.js 16 · React 19 · TypeScript · Firebase · Recharts · Vitest · Ionic 8 · Angular 19",
-      },
-      {
-        period: "Abr – Ago 2026",
-        title: "Lead Frontend & AI Agent Developer",
-        org: "Bendita IA · Claude Impact Lab Chile",
-        note: "Programa de Anthropic en Chile, con Anthropic como Technical Partner",
-        bullets: [
-          "Plataforma que operó las dos verticales del programa, Fintech y Longevidad: 1.656 postulaciones, 100 equipos en competencia y 3.277 evaluaciones registradas.",
-          "Portal de evaluadores integrado con agentes Claude (Haiku y Sonnet 4.5) que pre-evalúan 10 sub-checks por equipo con evidencia; la decisión final queda en el evaluador humano.",
-          "Leaderboard en vivo con Supabase Realtime y ceremonias de premiación ante 250 y ~200 asistentes.",
-          "Motor de rúbrica configurable sin deploy, abstracción multi-tenant por vertical y motor de certificados con verificación pública.",
-          "166 commits en un repo con ~970 casos de test: Vitest, Playwright E2E y suites de guardrails para los agentes.",
-        ],
-        stack: "Next.js 14 · TypeScript · Supabase · Claude API · Anthropic SDK · Vitest · Playwright",
       },
       {
         period: "Nov 2024 – Ago 2025",
@@ -144,15 +174,6 @@ export const CV: Record<CvLang, CvContent> = {
         stack: "Next.js 16 · Python · Claude Haiku 4.5 · Supabase · Vercel Blob",
       },
       {
-        title: "Portokali Café",
-        url: "https://portokali.cl",
-        urlLabel: "portokali.cl",
-        role: "Desarrollador principal · cliente, con Poweredia",
-        period: "Mar – Sep 2026",
-        body: "Café de especialidad en Vitacura: de WordPress a Next.js 15 con MVP en siete días. Formularios en Supabase con aviso por Resend, integración con Toteat y Justo, y una auditoría que detectó un formulario que perdía postulaciones hacía cinco meses.",
-        stack: "Next.js 15 · TypeScript · Supabase · Resend · GitHub Actions",
-      },
-      {
         title: "Chatbot médico multiagente",
         role: "Proyecto final · Diplomado IA Generativa, U. de Chile",
         period: "Ene 2026",
@@ -166,7 +187,7 @@ export const CV: Record<CvLang, CvContent> = {
       { group: "Datos y backend", items: "Supabase / PostgreSQL · Firebase / Firestore · Node.js · Python · REST APIs" },
       { group: "Calidad y entrega", items: "Vitest · Playwright · GitHub Actions · Vercel · Docker · Git" },
       { group: "Producto", items: "Product ownership · Scrum · gestión de stakeholders · licitaciones públicas" },
-      { group: "Idiomas", items: "Español nativo · inglés profesional" },
+      { group: "Idiomas", items: "Español nativo · inglés avanzado (C1), fluido hablado y escrito" },
     ],
     education: [
       { period: "Oct 2025 – Ene 2026", title: "Diplomado en IA Generativa en Organizaciones", org: "Universidad de Chile, FEN" },
@@ -185,7 +206,7 @@ export const CV: Record<CvLang, CvContent> = {
     name: "Miguel Eduardo Gil Urbina",
     role: "Full Stack Developer · AI Implementation",
     location: "Santiago, Chile",
-    availability: "Available · remote or hybrid",
+    availability: "Open to full-time or contract roles · remote (UTC-3) or hybrid in Santiago",
     labels: {
       profile: "Profile",
       experience: "Experience",
@@ -201,31 +222,50 @@ export const CV: Record<CvLang, CvContent> = {
     experience: [
       {
         period: "Sep 2025 – today",
-        title: "Full Stack Developer & Product Owner",
-        org: "Cargo Electric Blue SpA",
-        note: "Last-mile logistics with an electric fleet",
-        bullets: [
-          "Next.js 16 back office that replaced spreadsheets and the payroll workbook with a single operations platform: author of 619 of the web app's 632 commits and 102 merged PRs.",
-          "Driver bonus engine: per truck-day calculation, rate cards with effective dates, and monthly reconciliation against the real payroll sheet.",
-          "Recharts analytics (daily summary, operations dashboard with drill-down and an executive PDF) and rate-card invoicing exported to Excel in the client's format.",
-          "Firebase/Firestore data model with role-based authorization on every Server Action, Vitest tests, and ESLint taken from 87 errors to 0.",
-          "Contributions to the drivers' mobile app (Ionic 8, Angular 19 and Capacitor) for route logging in the field.",
+        title: "Full Stack Developer",
+        org: "Independent · freelance",
+        note: "Client work under service agreements, no direct employment contract.",
+        clients: [
+          {
+            name: "Cargo Electric Blue SpA",
+            role: "Full Stack Developer & Product Owner",
+            period: "Client since Sep 2025",
+            note: "Last-mile logistics with an electric fleet",
+            bullets: [
+              "Next.js 16 back office that replaced spreadsheets and the payroll workbook with a single operations platform: author of 619 of the web app's 632 commits and 102 merged PRs.",
+              "Driver bonus engine: per truck-day calculation, rate cards with effective dates, and monthly reconciliation against the real payroll sheet.",
+              "Recharts analytics (daily summary, operations dashboard with drill-down and an executive PDF) and rate-card invoicing exported to Excel in the client's format.",
+              "Firebase/Firestore data model with role-based authorization on every Server Action, Vitest tests, and ESLint taken from 87 errors to 0.",
+              "Contributions to the drivers' mobile app (Ionic 8, Angular 19 and Capacitor) for route logging in the field.",
+            ],
+            stack: "Next.js 16 · React 19 · TypeScript · Firebase · Recharts · Vitest · Ionic 8 · Angular 19",
+          },
+          {
+            name: "Bendita IA · Claude Impact Lab Chile",
+            role: "Lead Frontend & AI Agent Developer",
+            period: "Apr – Aug 2026",
+            note: "Anthropic's programme in Chile, with Anthropic as Technical Partner",
+            bullets: [
+              "Platform that ran both verticals of the programme, Fintech and Longevity: 1,656 applications, 100 competing teams and 3,277 evaluations recorded.",
+              "Evaluator portal integrated with Claude agents (Haiku and Sonnet 4.5) that pre-score 10 sub-checks per team with evidence; the final call stays with the human evaluator.",
+              "Live leaderboard on Supabase Realtime and awards ceremonies in front of 250 and ~200 attendees.",
+              "Rubric engine configurable without a deploy, per-vertical multi-tenant abstraction, and a certificate engine with public verification.",
+              "166 commits in a repo with ~970 test cases: Vitest, Playwright E2E and guardrail suites for the agents.",
+            ],
+            stack: "Next.js 14 · TypeScript · Supabase · Claude API · Anthropic SDK · Vitest · Playwright",
+          },
+          {
+            name: "Portokali Café",
+            role: "Lead developer, with Poweredia",
+            period: "Mar – Sep 2026",
+            note: "Specialty café in Vitacura",
+            bullets: [
+              "Migration from WordPress to Next.js 15 with an MVP in production in seven days, starting from a React prototype.",
+              "Forms stored in Supabase with Resend notifications and Toteat and Justo integrations; a later audit caught a form silently losing job applications for five months.",
+            ],
+            stack: "Next.js 15 · TypeScript · Supabase · Resend · GitHub Actions",
+          },
         ],
-        stack: "Next.js 16 · React 19 · TypeScript · Firebase · Recharts · Vitest · Ionic 8 · Angular 19",
-      },
-      {
-        period: "Apr – Aug 2026",
-        title: "Lead Frontend & AI Agent Developer",
-        org: "Bendita IA · Claude Impact Lab Chile",
-        note: "Anthropic's programme in Chile, with Anthropic as Technical Partner",
-        bullets: [
-          "Platform that ran both verticals of the programme, Fintech and Longevity: 1,656 applications, 100 competing teams and 3,277 evaluations recorded.",
-          "Evaluator portal integrated with Claude agents (Haiku and Sonnet 4.5) that pre-score 10 sub-checks per team with evidence; the final call stays with the human evaluator.",
-          "Live leaderboard on Supabase Realtime and awards ceremonies in front of 250 and ~200 attendees.",
-          "Rubric engine configurable without a deploy, per-vertical multi-tenant abstraction, and a certificate engine with public verification.",
-          "166 commits in a repo with ~970 test cases: Vitest, Playwright E2E and guardrail suites for the agents.",
-        ],
-        stack: "Next.js 14 · TypeScript · Supabase · Claude API · Anthropic SDK · Vitest · Playwright",
       },
       {
         period: "Nov 2024 – Aug 2025",
@@ -266,15 +306,6 @@ export const CV: Record<CvLang, CvContent> = {
         stack: "Next.js 16 · Python · Claude Haiku 4.5 · Supabase · Vercel Blob",
       },
       {
-        title: "Portokali Café",
-        url: "https://portokali.cl",
-        urlLabel: "portokali.cl",
-        role: "Lead developer · client, with Poweredia",
-        period: "Mar – Sep 2026",
-        body: "Specialty café in Vitacura: from WordPress to Next.js 15 with an MVP in seven days. Forms stored in Supabase with Resend notifications, Toteat and Justo integrations, and an audit that caught a form silently losing job applications for five months.",
-        stack: "Next.js 15 · TypeScript · Supabase · Resend · GitHub Actions",
-      },
-      {
         title: "Multi-agent medical chatbot",
         role: "Capstone · Generative AI diploma, U. de Chile",
         period: "Jan 2026",
@@ -288,7 +319,7 @@ export const CV: Record<CvLang, CvContent> = {
       { group: "Data and backend", items: "Supabase / PostgreSQL · Firebase / Firestore · Node.js · Python · REST APIs" },
       { group: "Quality and delivery", items: "Vitest · Playwright · GitHub Actions · Vercel · Docker · Git" },
       { group: "Product", items: "Product ownership · Scrum · stakeholder management · public tenders" },
-      { group: "Languages", items: "Spanish (native) · English (professional)" },
+      { group: "Languages", items: "Spanish (native) · English: fluent, spoken and written (C1)" },
     ],
     education: [
       { period: "Oct 2025 – Jan 2026", title: "Diploma in Generative AI in Organizations", org: "Universidad de Chile, FEN" },

@@ -47,9 +47,26 @@ function SectionTitle({ n, children }: { n: number; children: ReactNode }) {
   );
 }
 
-function Row({ left, children }: { left: ReactNode; children: ReactNode }) {
+function Bullets({ items }: { items: string[] }) {
   return (
-    <div className="cv-keep grid gap-1 sm:grid-cols-[30mm_1fr] sm:gap-4">
+    <ul className="mt-1.5 flex flex-col gap-1">
+      {items.map((b) => (
+        <li key={b} className="grid grid-cols-[10px_1fr] text-[11.5px] leading-[1.5] text-ink/85">
+          <span className="mt-[7px] h-[3px] w-[3px] bg-accent" aria-hidden="true" />
+          <span>{b}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function StackLine({ children }: { children: ReactNode }) {
+  return <p className="mt-1.5 font-mono text-[8.5px] uppercase leading-[1.5] tracking-[0.06em] text-muted">{children}</p>;
+}
+
+function Row({ left, children, keep = true }: { left: ReactNode; children: ReactNode; keep?: boolean }) {
+  return (
+    <div className={`${keep ? "cv-keep " : ""}grid gap-1 sm:grid-cols-[30mm_1fr] sm:gap-4`}>
       <div className="font-mono text-[9.5px] font-medium leading-[1.6] text-muted">{left}</div>
       <div className="min-w-0">{children}</div>
     </div>
@@ -116,11 +133,12 @@ export default async function CvPage({ params }: Props) {
                 )}
               </li>
             ))}
-            <li className="mt-1 inline-flex items-center gap-1.5 text-muted">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
-              {cv.availability}
-            </li>
           </ul>
+          {/* Disponibilidad a lo ancho: en la columna de contacto ensanchaba el encabezado. */}
+          <p className="flex items-center gap-1.5 font-mono text-[9.5px] leading-[1.45] text-ink sm:col-span-2">
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+            {cv.availability}
+          </p>
         </header>
 
         {/* ── Perfil ─────────────────────────────────────────────── */}
@@ -134,21 +152,32 @@ export default async function CvPage({ params }: Props) {
           <SectionTitle n={2}>{cv.labels.experience}</SectionTitle>
           <div className="flex flex-col gap-4">
             {cv.experience.map((e) => (
-              <Row key={e.title + e.org} left={e.period}>
+              // La etapa independiente es larga: se deja cortar entre clientes
+              // y cada cliente se mantiene entero en su página.
+              <Row key={e.title + e.org} left={e.period} keep={!e.clients}>
                 <h3 className="text-[12.5px] font-semibold leading-[1.35] text-ink">
                   {e.title} <span className="font-normal text-muted">· {e.org}</span>
                 </h3>
                 {e.note && <p className="text-[11px] italic leading-[1.4] text-muted">{e.note}</p>}
-                <ul className="mt-1.5 flex flex-col gap-1">
-                  {e.bullets.map((b) => (
-                    <li key={b} className="grid grid-cols-[10px_1fr] text-[11.5px] leading-[1.5] text-ink/85">
-                      <span className="mt-[7px] h-[3px] w-[3px] bg-accent" aria-hidden="true" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-                {e.stack && (
-                  <p className="mt-1.5 font-mono text-[8.5px] uppercase leading-[1.5] tracking-[0.06em] text-muted">{e.stack}</p>
+                {e.bullets && <Bullets items={e.bullets} />}
+                {e.stack && <StackLine>{e.stack}</StackLine>}
+                {e.clients && (
+                  <div className="mt-3 flex flex-col gap-3.5">
+                    {e.clients.map((c) => (
+                      <div key={c.name} className="cv-keep border-l border-rule pl-3">
+                        <h4 className="flex flex-wrap items-baseline justify-between gap-x-3">
+                          <span className="text-[12px] font-semibold leading-[1.35] text-ink">{c.name}</span>
+                          <span className="font-mono text-[9px] font-medium text-muted">{c.period}</span>
+                        </h4>
+                        <p className="text-[11px] leading-[1.4] text-ink/80">
+                          {c.role}
+                          {c.note && <span className="italic text-muted"> · {c.note}</span>}
+                        </p>
+                        <Bullets items={c.bullets} />
+                        {c.stack && <StackLine>{c.stack}</StackLine>}
+                      </div>
+                    ))}
+                  </div>
                 )}
               </Row>
             ))}

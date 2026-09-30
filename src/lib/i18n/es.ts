@@ -88,8 +88,7 @@ export const es = {
   about: {
     label: "Trayectoria",
     items: [
-      { period: "2025 →",  role: "Full Stack Developer & Product Owner", org: "Cargo Eléctric" },
-      { period: "2026",    role: "Lead Frontend & AI Agent Developer",   org: "Bendita IA × Anthropic" },
+      { period: "2025 →",  role: "Full Stack Developer independiente", org: "Cargo Electric · Bendita IA · Portokali" },
       { period: "2024–25", role: "AI Research Contributor",              org: "Outlier" },
       { period: "2024",    role: "Full Stack Developer & QA",            org: "Vemex Digital" },
       { period: "2017–23", role: "Gestión comercial y canales",          org: "Hikvision · Dahua · SSTT" },

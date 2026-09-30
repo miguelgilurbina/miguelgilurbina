@@ -6,7 +6,9 @@ From idea to production, across any stack.
 
 [miguelgilurbina.com](https://www.miguelgilurbina.com) · [LinkedIn](https://www.linkedin.com/in/miguelgilurbina/) · [miguel.gil.9210@gmail.com](mailto:miguel.gil.9210@gmail.com) · CV: [English](https://www.miguelgilurbina.com/Miguel_Gil_CV_EN.pdf) / [Español](https://www.miguelgilurbina.com/Miguel_Gil_CV_ES.pdf)
 
-Full stack developer focused on agentic systems: I design, build and ship platforms where the model does part of the work and the human keeps the decision. Before programming I spent six years in commercial and channel management in the tech sector, which is why I build products that solve business problems, not just technical ones.
+Full stack developer since 2024, focused on agentic systems: I design, build and ship platforms where the model does part of the work and the human keeps the decision. Before that I spent six years in commercial and channel management in the tech sector, which is why I build products that solve business problems, not just technical ones.
+
+Independent since September 2025, working with clients on a freelance basis. Open to full-time or contract roles, remote (UTC-3) or hybrid in Santiago.
 
 ## Selected work
 
@@ -42,8 +44,7 @@ Next.js 15 · TypeScript · Supabase · Resend · GitHub Actions | [Live](https:
 
 | Period | Role | Company |
 | :-- | :-- | :-- |
-| Sep 2025 – today | Full Stack Developer & Product Owner | Cargo Electric Blue SpA |
-| Apr – Aug 2026 | Lead Frontend & AI Agent Developer | Bendita IA · Claude Impact Lab Chile |
+| Sep 2025 – today | Full Stack Developer, independent (freelance) | Clients: Cargo Electric Blue SpA (since Sep 2025), Bendita IA · Claude Impact Lab Chile, Portokali Café |
 | Nov 2024 – Aug 2025 | AI Research Contributor | Outlier |
 | May – Dec 2024 | Full Stack Developer & QA | Vemex Digital |
 | 2017 – 2023 | Commercial & channel management | Hikvision · Dahua · SSTT · Orama · Wetland |
@@ -66,7 +67,7 @@ Next.js 15 · TypeScript · Supabase · Resend · GitHub Actions | [Live](https:
 - **Scrum Master Professional Certificate** · Certiprof · 2023
 - **Environmental Engineer** · Universidad de Falcón, Venezuela · 2009–2014
 
-Spanish (native) · English (professional)
+Spanish (native) · English: fluent, spoken and written (C1)
 
 ---
 
