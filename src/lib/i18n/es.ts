@@ -53,7 +53,7 @@ export const es = {
       {
         id:    "cargo-electric",
         title: "Cargo Electric",
-        sub:   "Plataforma logística de una flota eléctrica que reemplazó planillas y el Excel de nómina.",
+        sub:   "Operación, finanzas y personas de una flota eléctrica en una sola plataforma, para equipos internos y clientes.",
         stack: "Next 16 · Firebase · Recharts",
         year:  "2025 →",
         href:  "/cargo-electric",

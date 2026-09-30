@@ -65,11 +65,11 @@ const before = [
 ]
 
 const after = [
-  "Una sola plataforma para toda la operación",
+  "Una sola plataforma para operación, analítica, finanzas y gestión de personas",
   "Datos en tiempo real desde Firestore",
   "Analítica operacional con KPIs y tendencias históricas",
   "Facturación y bonos de conductores calculados con tarifarios vigentes",
-  "Arquitectura escalable lista para nuevos clientes",
+  "Equipo interno (administración y directorio) y ejecutivos de clientes en la misma app, con acceso por rol",
 ]
 
 const milestones = [
@@ -230,8 +230,10 @@ export default function CargoElectricPage() {
           title="Cargo Electric"
           lead={
             <>
-              Plataforma operacional desde cero. Asumí el rol de Product Owner y Full-Stack Engineer: definí el
-              producto, diseñé la arquitectura y escribí 619 de los 632 commits de la web app en producción.
+              Una sola plataforma para la operación, la analítica, las finanzas y la gestión de personas de una
+              startup de logística eléctrica, usada por su equipo interno y por los ejecutivos de sus clientes. Fui
+              Product Owner y Full-Stack Engineer: definí el producto, diseñé la arquitectura y escribí 619 de los 632
+              commits de la web app.
             </>
           }
         />

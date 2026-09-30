@@ -55,7 +55,7 @@ export const en: Translations = {
       {
         id:    "cargo-electric",
         title: "Cargo Electric",
-        sub:   "Logistics platform for an electric fleet that replaced spreadsheets and the payroll workbook.",
+        sub:   "Operations, finance and people management for an electric fleet in one platform, used by internal teams and clients.",
         stack: "Next 16 · Firebase · Recharts",
         year:  "2025 →",
         href:  "/cargo-electric",
