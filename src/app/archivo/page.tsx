@@ -26,7 +26,7 @@ function Tile({ piece, index, onOpen, generated }: { piece: Piece; index: number
       <button
         type="button"
         onClick={onOpen}
-        aria-label={`${piece.title} — ${piece.alt}`}
+        aria-label={`${piece.title}: ${piece.alt}`}
         className={cn(
           "group relative block w-full overflow-hidden border border-ink",
           square ? "aspect-square" : "aspect-[3/2]",

@@ -94,7 +94,7 @@ export function SiteHeader() {
         )}
       >
         <div className="wrap flex h-full items-center justify-between">
-          <Link href="/" className="flex items-center gap-[11px] text-ink hover:text-ink" aria-label="MEGU — inicio">
+          <Link href="/" className="flex items-center gap-[11px] text-ink hover:text-ink" aria-label="MEGU, inicio">
             <LogoMark size={compact ? 22 : 28} className="max-md:!h-5 max-md:!w-5" />
             <span className="font-sans text-[12px] font-extrabold tracking-[0.16em]">MEGU</span>
           </Link>

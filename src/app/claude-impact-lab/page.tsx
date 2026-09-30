@@ -24,22 +24,22 @@ const AGENT_ICONS = [IconRobot, IconGavel, IconUsersGroup, IconWorld]
 // Rótulos del layout editorial (1d) que no estaban en COPY.
 const LAYOUT = {
   es: {
-    eyebrow: "Caso 03 / 04 — Bendita IA × Anthropic · 2026",
+    eyebrow: "Caso 03 / 04 · Bendita IA × Anthropic · 2026",
     meta: [
       { label: "Rol", value: "Lead Frontend · integración de agentes" },
       { label: "Alcance", value: "Plataforma de dos verticales" },
-      { label: "Periodo", value: "Abr — Ago 2026" },
+      { label: "Periodo", value: "Abr – Ago 2026" },
       { label: "Stack", value: "Next 14 · Supabase · Claude API" },
     ],
     sections: ["Problema", "Decisión", "Arquitectura", "Auditoría", "Mi trabajo", "Aprendizajes", "Stack"],
     indexNote: "Las cifras salen del reporte de impacto y de los resultados publicados por el programa.",
   },
   en: {
-    eyebrow: "Case 03 / 04 — Bendita IA × Anthropic · 2026",
+    eyebrow: "Case 03 / 04 · Bendita IA × Anthropic · 2026",
     meta: [
       { label: "Role", value: "Lead Frontend · agent integration" },
       { label: "Scope", value: "Platform for two verticals" },
-      { label: "Period", value: "Apr — Aug 2026" },
+      { label: "Period", value: "Apr – Aug 2026" },
       { label: "Stack", value: "Next 14 · Supabase · Claude API" },
     ],
     sections: ["Problem", "Decision", "Architecture", "Audit", "My work", "Lessons", "Stack"],
@@ -56,7 +56,7 @@ const COPY = {
     partners: "Bendita IA · Anthropic como Technical Partner",
     titleA: "Agentes que no deciden,",
     titleB: " pero hacen posible decidir",
-    intro: "La plataforma que operó el primer Claude Impact Lab de América Latina —la edición Fintech, en el Chile Fintech Forum de mayo— y después su segunda vertical, Longevidad, sobre la misma base de código. Fui Lead Frontend del proyecto: el leaderboard en vivo, el portal de evaluadores y el motor de puntaje.",
+    intro: "La plataforma que operó el primer Claude Impact Lab de América Latina (la edición Fintech, en el Chile Fintech Forum de mayo) y después su segunda vertical, Longevidad, sobre la misma base de código. Fui Lead Frontend del proyecto: el leaderboard en vivo, el portal de evaluadores y el motor de puntaje.",
     pills: ["Lead Frontend", "Integración de agentes", "Abr – Ago 2026"],
     problemLabel: "El problema real",
     problemLead: "Un evento nacional con 899 postulaciones, 48 equipos compitiendo y veinte evaluadores voluntarios con dos días para revisarlo todo. La aritmética no cierra.",
@@ -96,7 +96,7 @@ const COPY = {
     archBody: "No es un chatbot con cuatro personalidades: son cuatro superficies distintas, cada una con su propio conjunto de herramientas, su propio nivel de autenticación y su propio modelo elegido según la tarea.",
     agents: [
       { name: "Copiloto de administración", model: "Sonnet 4.5",
-        desc: "Asiste al equipo organizador. Las herramientas de lectura corren solas; las de escritura —aprobar equipos, cerrar evaluaciones, guardar rúbrica— quedan detrás de aprobación humana explícita.",
+        desc: "Asiste al equipo organizador. Las herramientas de lectura corren solas; las de escritura (aprobar equipos, cerrar evaluaciones, guardar rúbrica) quedan detrás de aprobación humana explícita.",
         note: "Sonnet y no Haiku por una razón concreta: el loop de aprobar veinte equipos en una sola conversación es largo y con muchas herramientas, y ahí un modelo más liviano se pierde a mitad de camino." },
       { name: "Asistente de evaluación", model: "Haiku 4.5",
         desc: "Pre-evalúa cada entregable en diez sub-checks binarios y entrega, junto al veredicto, la evidencia textual que lo sustenta. El mentor o juez confirma o corrige con un click.",
@@ -106,7 +106,7 @@ const COPY = {
         note: "El alcance de permisos es parte del diseño del agente, no una capa que se agrega después." },
       { name: "Asistente público", model: "Haiku 4.5",
         desc: "Sin login. Dos herramientas y nada más: preguntas frecuentes curadas por el equipo y búsqueda de recursos públicos. Cero acceso a datos de usuarios.",
-        note: "Rate limiting persistido en base de datos, no en memoria —en serverless la memoria miente—, más protección contra inyección de prompt y tope de iteraciones." },
+        note: "Rate limiting persistido en base de datos, no en memoria (en serverless, la memoria miente), más protección contra inyección de prompt y tope de iteraciones." },
     ],
     auditLabel: "Lo que medimos",
     auditTitle: "Auditoría de divergencia entre humano e IA",
@@ -127,7 +127,7 @@ const COPY = {
       { title: "Motor de puntaje y rúbrica configurable",
         body: "Después del evento cerré los vacíos de scoring que la auditoría dejó al descubierto: mediana de los tres jueces en lugar de promedio, tope real en 100, y ponderación mentor/juez editable por evento desde el panel de administración sin necesidad de un deploy. Uno de esos ajustes cambiaba el primer lugar. Esa base es la que después se extendió a media truncada cuando Longevidad llegó con dieciséis jueces." },
       { title: "Abstracción multi-tenant",
-        body: "Junto al equipo, moví la configuración de evento —tracks, reglas, rúbrica, marca, fechas— a una capa de resolución por vertical, y en agosto cerré los lugares donde Bendi y la rúbrica seguían leyendo la vertical original. Eso permitió lanzar Longevidad sobre la misma base de código en lugar de duplicar el proyecto." },
+        body: "Junto al equipo, moví la configuración de evento (tracks, reglas, rúbrica, marca, fechas) a una capa de resolución por vertical, y en agosto cerré los lugares donde Bendi y la rúbrica seguían leyendo la vertical original. Eso permitió lanzar Longevidad sobre la misma base de código en lugar de duplicar el proyecto." },
       { title: "Tour guiado por rol y motor de certificados",
         body: "Un recorrido con spotlight diferenciado para participante, mentor y juez, porque en un evento de 48 horas nadie lee documentación. Y, al cierre, el motor de certificados de punta a punta: parametrizable por evento, con verificación pública por QR, botón para agregarlo a LinkedIn y menciones especiales." },
     ],
@@ -139,14 +139,14 @@ const COPY = {
       { t: "La configuración por vertical se filtra por donde no la buscas",
         d: "Al abrir una segunda vertical, aparecieron lugares donde el sistema seguía resolviendo la rúbrica del evento original. El aprendizaje fue estructural: la vertical activa tiene que ser una única fuente de verdad consultada en el borde, no un parámetro que cada módulo hereda por su cuenta." },
       { t: "La auditoría posterior vale tanto como el evento",
-        d: "Al revisar el cálculo de puntajes después del cierre encontramos diferencias de criterio —promedio contra mediana, topes, ponderaciones— que en un caso movían el primer lugar. Cerrarlas con tests fue más valioso que cualquier feature nueva, y es la razón por la que la segunda edición partió sobre terreno firme." },
+        d: "Al revisar el cálculo de puntajes después del cierre encontramos diferencias de criterio (promedio contra mediana, topes, ponderaciones) que en un caso movían el primer lugar. Cerrarlas con tests fue más valioso que cualquier feature nueva, y es la razón por la que la segunda edición partió sobre terreno firme." },
     ],
     stackLabel: "Stack",
     stackTitle: "Con qué está construido",
     stack: [
       ["Frontend", "Next.js 14 (App Router) · React 18 · TypeScript estricto · Tailwind CSS · next-intl"],
-      ["Datos y tiempo real", "Supabase — PostgreSQL, RLS por rol, Realtime, Storage"],
-      ["IA", "Claude API vía Anthropic SDK — Haiku 4.5 y Sonnet 4.5, tool use, base de conocimiento por vertical"],
+      ["Datos y tiempo real", "Supabase: PostgreSQL, RLS por rol, Realtime, Storage"],
+      ["IA", "Claude API vía Anthropic SDK: Haiku 4.5 y Sonnet 4.5, tool use, base de conocimiento por vertical"],
       ["Calidad", "Vitest · Playwright E2E, incluyendo suites de guardrails para los agentes"],
       ["Operación", "GitHub Actions (lint → tipos → tests → build) · conventional commits · Vercel · Resend"],
     ],
@@ -161,7 +161,7 @@ const COPY = {
     partners: "Bendita IA · Anthropic as Technical Partner",
     titleA: "Agents that don't decide,",
     titleB: " but make deciding possible",
-    intro: "The platform that ran the first Claude Impact Lab in Latin America — the Fintech edition, at May's Chile Fintech Forum — and then its second vertical, Longevity, on the same codebase. I was Lead Frontend on the project: the live leaderboard, the evaluator portal and the scoring engine.",
+    intro: "The platform that ran the first Claude Impact Lab in Latin America (the Fintech edition, at May's Chile Fintech Forum) and then its second vertical, Longevity, on the same codebase. I was Lead Frontend on the project: the live leaderboard, the evaluator portal and the scoring engine.",
     pills: ["Lead Frontend", "Agent integration", "Apr – Aug 2026"],
     problemLabel: "The real problem",
     problemLead: "A national event with 899 applications, 48 competing teams and twenty volunteer evaluators with two days to review all of it. The arithmetic doesn't work.",
@@ -200,7 +200,7 @@ const COPY = {
     archBody: "This isn't one chatbot with four personalities: they're four distinct surfaces, each with its own tool set, its own authentication level, and its own model chosen to fit the task.",
     agents: [
       { name: "Admin copilot", model: "Sonnet 4.5",
-        desc: "Assists the organising team. Read tools run on their own; write tools — approving teams, closing evaluations, saving the rubric — sit behind explicit human approval.",
+        desc: "Assists the organising team. Read tools run on their own; write tools (approving teams, closing evaluations, saving the rubric) sit behind explicit human approval.",
         note: "Sonnet rather than Haiku for a concrete reason: approving twenty teams in a single conversation is a long, tool-heavy loop, and a lighter model loses the thread halfway through." },
       { name: "Evaluation assistant", model: "Haiku 4.5",
         desc: "Pre-scores every submission across ten binary sub-checks and returns, alongside the verdict, the verbatim evidence that supports it. The mentor or judge confirms or corrects with a click.",
@@ -210,7 +210,7 @@ const COPY = {
         note: "Permission scope is part of the agent's design, not a layer bolted on afterwards." },
       { name: "Public assistant", model: "Haiku 4.5",
         desc: "No login. Two tools and nothing else: curated FAQs and public resource search. Zero access to user data.",
-        note: "Rate limiting persisted in the database rather than in memory — in serverless, in-memory limits lie — plus prompt-injection protection and an iteration cap." },
+        note: "Rate limiting persisted in the database rather than in memory (in serverless, in-memory limits lie), plus prompt-injection protection and an iteration cap." },
     ],
     auditLabel: "What we measured",
     auditTitle: "Auditing human-vs-AI divergence",
@@ -231,7 +231,7 @@ const COPY = {
       { title: "Scoring engine and configurable rubric",
         body: "After the event I closed the scoring gaps the audit exposed: median of the three judges instead of the mean, a real cap at 100, and mentor/judge weighting editable per event from the admin panel with no deploy. One of those adjustments changed first place. That foundation was later extended to a trimmed mean when Longevity arrived with sixteen judges." },
       { title: "Multi-tenant abstraction",
-        body: "With the team, I moved event configuration — tracks, rules, rubric, branding, dates — into a per-vertical resolution layer, and in August closed the places where Bendi and the rubric were still reading the original vertical. That let the programme launch Longevity on the same codebase instead of forking the project." },
+        body: "With the team, I moved event configuration (tracks, rules, rubric, branding, dates) into a per-vertical resolution layer, and in August closed the places where Bendi and the rubric were still reading the original vertical. That let the programme launch Longevity on the same codebase instead of forking the project." },
       { title: "Role-aware guided tour and certificate engine",
         body: "A spotlight walkthrough differentiated for participant, mentor and judge, because nobody reads documentation during a 48-hour event. And, at the close, the end-to-end certificate engine: per-event parameters, public QR verification, an add-to-LinkedIn button and special mentions." },
     ],
@@ -243,14 +243,14 @@ const COPY = {
       { t: "Per-vertical config leaks in places you don't look",
         d: "When we opened a second vertical, places surfaced where the system was still resolving the original event's rubric. The lesson was structural: the active vertical has to be a single source of truth consulted at the edge, not a parameter each module inherits on its own." },
       { t: "The post-event audit is worth as much as the event",
-        d: "Reviewing the score computation after the close, we found criteria differences — mean versus median, caps, weightings — that in one case moved first place. Closing them with tests was worth more than any new feature, and it's why the second edition started on solid ground." },
+        d: "Reviewing the score computation after the close, we found criteria differences (mean versus median, caps, weightings) that in one case moved first place. Closing them with tests was worth more than any new feature, and it's why the second edition started on solid ground." },
     ],
     stackLabel: "Stack",
     stackTitle: "What it's built with",
     stack: [
       ["Frontend", "Next.js 14 (App Router) · React 18 · strict TypeScript · Tailwind CSS · next-intl"],
-      ["Data & realtime", "Supabase — PostgreSQL, role-based RLS, Realtime, Storage"],
-      ["AI", "Claude API via the Anthropic SDK — Haiku 4.5 and Sonnet 4.5, tool use, per-vertical knowledge base"],
+      ["Data & realtime", "Supabase: PostgreSQL, role-based RLS, Realtime, Storage"],
+      ["AI", "Claude API via the Anthropic SDK: Haiku 4.5 and Sonnet 4.5, tool use, per-vertical knowledge base"],
       ["Quality", "Vitest · Playwright E2E, including guardrail suites for the agents"],
       ["Operations", "GitHub Actions (lint → types → tests → build) · conventional commits · Vercel · Resend"],
     ],
@@ -443,7 +443,7 @@ export default function ClaudeImpactLabPage() {
       </main>
 
       <SiteFooter
-        next={{ title: "Portokali Café", meta: "Next 15 · Supabase · Resend — 2026", href: "https://portokali.cl" }}
+        next={{ title: "Portokali Café", meta: "Next 15 · Supabase · Resend · 2026", href: "https://portokali.cl" }}
       />
     </div>
   )

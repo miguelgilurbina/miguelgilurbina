@@ -33,7 +33,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.miguelgilurbina.com"),
   title: {
-    default: "Miguel Gil — Full Stack Developer · AI Implementation",
+    default: "Miguel Gil | Full Stack Developer · AI Implementation",
     template: "%s | Miguel Gil",
   },
   description:
@@ -59,14 +59,14 @@ export const metadata: Metadata = {
     locale: "es_CL",
     alternateLocale: "en_US",
     url: "https://www.miguelgilurbina.com",
-    siteName: "Miguel Gil — Portfolio",
-    title: "Miguel Gil — Full Stack Developer · AI Implementation",
+    siteName: "Miguel Gil | Portfolio",
+    title: "Miguel Gil | Full Stack Developer · AI Implementation",
     description:
       "Full Stack Developer con foco en sistemas agénticos: agentes de IA en producción, plataformas de operación y producto de punta a punta. Santiago, Chile.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Miguel Gil — Full Stack Developer · AI Implementation",
+    title: "Miguel Gil | Full Stack Developer · AI Implementation",
     description:
       "Full Stack Developer con foco en sistemas agénticos: agentes de IA en producción, plataformas de operación y producto de punta a punta. Santiago, Chile.",
   },
@@ -124,7 +124,7 @@ export default function RootLayout({
                 {
                   "@type": "ProfessionalService",
                   "@id": "https://www.miguelgilurbina.com/#service",
-                  name: "Miguel Gil — Desarrollo Web & IA",
+                  name: "Miguel Gil · Desarrollo Web & IA",
                   url: "https://www.miguelgilurbina.com/servicios",
                   provider: { "@id": "https://www.miguelgilurbina.com/#person" },
                   areaServed: { "@type": "Country", name: "Chile" },

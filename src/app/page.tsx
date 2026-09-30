@@ -166,7 +166,7 @@ function WorkIndex() {
                 href={item.href}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noopener noreferrer" : undefined}
-                aria-label={external ? `${item.title} — ${w.external}` : undefined}
+                aria-label={external ? `${item.title} (${w.external})` : undefined}
                 className="group grid grid-cols-[1fr_auto] items-start gap-x-5 gap-y-2 py-5 transition-[background-color,padding] duration-[160ms] ease-out hover:bg-ink md:grid-cols-[52px_1fr_210px_78px_32px] md:items-center md:px-3 md:py-[26px] md:hover:pl-5"
               >
                 <span className="font-mono text-[11px] font-medium text-muted group-hover:text-paper/60 max-md:order-first">

@@ -105,7 +105,7 @@ function CaseIndex({ sections, note }: { sections: CaseSectionRef[]; note?: stri
                 active === s.id ? "border-accent text-ink" : "border-transparent text-muted hover:text-ink"
               )}
             >
-              {String(i + 1).padStart(2, "0")} — {s.label}
+              {String(i + 1).padStart(2, "0")} · {s.label}
             </a>
           </li>
         ))}

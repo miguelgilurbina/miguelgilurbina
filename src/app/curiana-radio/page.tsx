@@ -119,7 +119,7 @@ export default function CurianaRadioPage() {
       </main>
 
       <SiteFooter
-        next={{ title: "Claude Impact Lab Chile", meta: "Next 14 · Supabase · Claude API — 2026", href: "/claude-impact-lab" }}
+        next={{ title: "Claude Impact Lab Chile", meta: "Next 14 · Supabase · Claude API · 2026", href: "/claude-impact-lab" }}
       />
     </div>
   );

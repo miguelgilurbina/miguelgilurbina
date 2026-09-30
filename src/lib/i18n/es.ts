@@ -35,7 +35,7 @@ export const es = {
       lead:       "Desarrollo en producción desde 2024, seis años antes en gestión comercial y una práctica visual propia: series generadas con IA sobre memoria y territorio caribeño. La misma disciplina en los dos lados: criterio, iteración y algo terminado.",
       ctaArchive: "Ver archivo visual",
       available:  "Disponible",
-      figLabel:   "fig. 01 — fondo",
+      figLabel:   "fig. 01 · fondo",
       figRows: [
         { k: "serie",  v: "Territorio / Agua" },
         { k: "pieza",  v: "Palafitos al anochecer" },
@@ -117,11 +117,11 @@ export const es = {
   },
 
   footer: {
-    tagline:  "Miguel Gil Urbina — ingeniería de producto y dirección de imagen con IA. Santiago, Chile.",
+    tagline:  "Miguel Gil Urbina: ingeniería de producto y dirección de imagen con IA. Santiago, Chile.",
     sections: "Secciones",
     contact:  "Contacto",
     archive:  "Archivo visual",
-    system:   "Sistema MEGU v1 — Instrument Serif · Archivo · JetBrains Mono",
+    system:   "Sistema MEGU v1 · Instrument Serif · Archivo · JetBrains Mono",
     next:     "Siguiente proyecto",
   },
 
@@ -133,8 +133,8 @@ export const es = {
   },
 
   archive: {
-    metaTitle: "Archivo visual — dirección de imagen con IA",
-    label:     "Archivo — dirección de imagen con IA",
+    metaTitle: "Archivo visual: dirección de imagen con IA",
+    label:     "Archivo · dirección de imagen con IA",
     titleA:    "Archivo",
     titleEm:   "visual",
     intro:     "Series generadas con modelos de imagen y dirigidas como cine: una decisión de luz, encuadre y época por serie. No son pruebas de prompt, son investigación sobre memoria, agua y calle en el Caribe.",
@@ -176,13 +176,13 @@ export const es = {
   },
 
   curiana: {
-    eyebrow: "Caso 02 / 04 — Proyecto propio · Investigación en curso",
+    eyebrow: "Caso 02 / 04 · Proyecto propio · Investigación en curso",
     title:   "Curiana Radio",
     lead:    "Una publicación cultural desde Abya Yala que además funciona como laboratorio: 60 agentes LLM conviven en una comunidad simulada hablando caquetío, y el sistema mide si de verdad emerge una norma común o si solo lo parece.",
     meta: [
       { label: "Rol",     value: "Creador, desarrollador e investigador" },
       { label: "Alcance", value: "Publicación y laboratorio multi-agente" },
-      { label: "Periodo", value: "Nov 2025 — hoy" },
+      { label: "Periodo", value: "Nov 2025 – hoy" },
       { label: "Stack",   value: "Next 16 · Python · Claude Haiku" },
     ],
     stats: [
@@ -196,9 +196,9 @@ export const es = {
     publication: {
       title:      "La publicación",
       lead:       "Una transmisión cultural desde Abya Yala: newsletter presentado como páginas web inmersivas, con música curada, narrativa experimental y visuales generados con IA.",
-      body:       "No es un portafolio de imágenes: es una publicación con identidad propia, una galería de 821 obras, Jai Sounds —23 playlists curadas— y Kaketiana, la wiki que aloja el laboratorio de investigación. Está en línea y se sigue desarrollando.",
+      body:       "No es un portafolio de imágenes: es una publicación con identidad propia, una galería de 821 obras, Jai Sounds (23 playlists curadas) y Kaketiana, la wiki que aloja el laboratorio de investigación. Está en línea y se sigue desarrollando.",
       cta:        "Visitar Curiana Radio",
-      figCaption: "fig. 01 — Identidad de Curiana Radio · imagen generada con IA",
+      figCaption: "fig. 01 · Identidad de Curiana Radio, imagen generada con IA",
       figAlt:     "Símbolo de Curiana Radio: un círculo de líneas doradas concéntricas que forman dos espirales sobre fondo negro, con el nombre debajo.",
       archive:    "Ver la serie Identidad en el archivo",
     },
@@ -206,7 +206,7 @@ export const es = {
       label: "Laboratorio lingüístico",
       title: "Simulador Caquetío",
       lead:  "Una lengua arahuaca que dejó de hablarse hace cuatro siglos, reconstruida y entregada a una comunidad de agentes para medir si vuelve a converger en una norma común.",
-      body1: "El caquetío sobrevive en topónimos, crónicas coloniales y unas decenas de palabras registradas. El proyecto lo reconstruye parcialmente con el método comparativo de la lingüística histórica —inferir la forma probable comparando el wayuunaiki y el lokono vivos con el taíno documentado— y lo entrega a sesenta personajes del siglo XV, cada uno un agente con rol, edad, red social y manera propia de hablar.",
+      body1: "El caquetío sobrevive en topónimos, crónicas coloniales y unas decenas de palabras registradas. El proyecto lo reconstruye parcialmente con el método comparativo de la lingüística histórica (inferir la forma probable comparando el wayuunaiki y el lokono vivos con el taíno documentado) y lo entrega a sesenta personajes del siglo XV, cada uno un agente con rol, edad, red social y manera propia de hablar.",
       body2: "Los agentes conversan día a día. Inventan palabras cuando el mundo lo exige, adoptan las de otros, y un observador mide cada turno: cuánto caquetío hay en el habla, qué formas nacen y mueren, y si las maneras de hablar se acercan entre sí.",
       statsTitle: "Lo que se midió",
       stats: [
@@ -226,13 +226,13 @@ export const es = {
     },
     status: {
       title: "Estado actual",
-      body:  "Desde julio de 2026 las simulaciones están en pausa por decisión de método: antes del siguiente run se audita el canon léxico fuente por fuente. Nueve invariantes ejecutables —los «guardianes»— corren en un comando y bloquean el próximo run si el corpus, la bibliografía o los datos de lengua quedan inconsistentes, y cada llamada al modelo queda registrada en un libro de costos.",
+      body:  "Desde julio de 2026 las simulaciones están en pausa por decisión de método: antes del siguiente run se audita el canon léxico fuente por fuente. Nueve invariantes ejecutables, los «guardianes», corren en un comando y bloquean el próximo run si el corpus, la bibliografía o los datos de lengua quedan inconsistentes, y cada llamada al modelo queda registrada en un libro de costos.",
     },
     quote: "La evidencia no es que la simulación converja, sino la distancia que la separa de su grupo de control.",
   },
 
   services: {
-    metaTitle:       "Servicios — Desarrollo, IA y dirección creativa",
+    metaTitle:       "Servicios: desarrollo, IA y dirección creativa",
     metaDescription: "Desde sitios web hasta sistemas con agentes de IA. Qué puedo construir, con qué lo respaldo y cómo trabajamos.",
     badge:           "Disponible para proyectos",
     title:           "Qué puedo construir",
@@ -283,7 +283,7 @@ export const es = {
           "Integración con ChatGPT, Claude y Gemini",
           "Evaluación y medición de resultados",
         ],
-        evidence: "Claude Impact Lab Chile: la plataforma que corrió las dos verticales del programa de Anthropic en el país —Fintech y Longevidad— con cuatro agentes Claude en producción. 1.656 postulaciones y 3.277 evaluaciones entre las dos ediciones. Más el Simulador Caquetío —sesenta agentes y experimento de control— y nueve meses evaluando modelos en Outlier.",
+        evidence: "Claude Impact Lab Chile: la plataforma que corrió las dos verticales del programa de Anthropic en el país (Fintech y Longevidad) con cuatro agentes Claude en producción. 1.656 postulaciones y 3.277 evaluaciones entre las dos ediciones. Más el Simulador Caquetío, con sesenta agentes y experimento de control, y nueve meses evaluando modelos en Outlier.",
         url:      "/claude-impact-lab",
       },
       {

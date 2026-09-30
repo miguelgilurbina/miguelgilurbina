@@ -57,7 +57,7 @@ export const CV_LINKS = LINKS;
 export const CV: Record<CvLang, CvContent> = {
   es: {
     meta: {
-      title: "CV — Miguel Gil Urbina",
+      title: "CV | Miguel Gil Urbina",
       description: "Currículum de Miguel Gil Urbina: Full Stack Developer con foco en sistemas agénticos. Santiago, Chile.",
     },
     name: "Miguel Eduardo Gil Urbina",
@@ -78,7 +78,7 @@ export const CV: Record<CvLang, CvContent> = {
       "Desarrollador full stack desde 2024, con foco en sistemas agénticos: diseño, construyo y pongo en producción plataformas donde el modelo hace parte del trabajo y la persona mantiene la decisión. Antes pasé seis años en gestión comercial y canales en el sector tecnológico; por eso construyo productos que resuelven problemas de negocio, no solo problemas técnicos.",
     experience: [
       {
-        period: "Sep 2025 — hoy",
+        period: "Sep 2025 – hoy",
         title: "Full Stack Developer & Product Owner",
         org: "Cargo Electric Blue SpA",
         note: "Logística de última milla con flota eléctrica",
@@ -92,7 +92,7 @@ export const CV: Record<CvLang, CvContent> = {
         stack: "Next.js 16 · React 19 · TypeScript · Firebase · Recharts · Vitest · Ionic 8 · Angular 19",
       },
       {
-        period: "Abr — Ago 2026",
+        period: "Abr – Ago 2026",
         title: "Lead Frontend & AI Agent Developer",
         org: "Bendita IA · Claude Impact Lab Chile",
         note: "Programa de Anthropic en Chile, con Anthropic como Technical Partner",
@@ -106,7 +106,7 @@ export const CV: Record<CvLang, CvContent> = {
         stack: "Next.js 14 · TypeScript · Supabase · Claude API · Anthropic SDK · Vitest · Playwright",
       },
       {
-        period: "Nov 2024 — Ago 2025",
+        period: "Nov 2024 – Ago 2025",
         title: "AI Research Contributor",
         org: "Outlier",
         bullets: [
@@ -115,7 +115,7 @@ export const CV: Record<CvLang, CvContent> = {
         ],
       },
       {
-        period: "May — Dic 2024",
+        period: "May – Dic 2024",
         title: "Full Stack Developer & QA",
         org: "Vemex Digital",
         bullets: [
@@ -124,7 +124,7 @@ export const CV: Record<CvLang, CvContent> = {
         ],
       },
       {
-        period: "2017 — 2023",
+        period: "2017 – 2023",
         title: "Gestión comercial y canales de distribución",
         org: "Hikvision · Dahua · SSTT · Orama · Wetland",
         bullets: [
@@ -139,7 +139,7 @@ export const CV: Record<CvLang, CvContent> = {
         url: "https://curiana-radio.vercel.app",
         urlLabel: "curiana-radio.vercel.app",
         role: "Proyecto propio · investigación en curso",
-        period: "Nov 2025 — hoy",
+        period: "Nov 2025 – hoy",
         body: "Publicación cultural y laboratorio de simulación: 60 agentes LLM hablan caquetío, una lengua arahuaca reconstruida con método comparativo. Experimento con grupo de control (2,7× más convergencia que el control), 269 tests del motor y 9 invariantes ejecutables.",
         stack: "Next.js 16 · Python · Claude Haiku 4.5 · Supabase · Vercel Blob",
       },
@@ -148,7 +148,7 @@ export const CV: Record<CvLang, CvContent> = {
         url: "https://portokali.cl",
         urlLabel: "portokali.cl",
         role: "Desarrollador principal · cliente, con Poweredia",
-        period: "Mar — Sep 2026",
+        period: "Mar – Sep 2026",
         body: "Café de especialidad en Vitacura: de WordPress a Next.js 15 con MVP en siete días. Formularios en Supabase con aviso por Resend, integración con Toteat y Justo, y una auditoría que detectó un formulario que perdía postulaciones hacía cinco meses.",
         stack: "Next.js 15 · TypeScript · Supabase · Resend · GitHub Actions",
       },
@@ -169,17 +169,17 @@ export const CV: Record<CvLang, CvContent> = {
       { group: "Idiomas", items: "Español nativo · inglés profesional" },
     ],
     education: [
-      { period: "Oct 2025 — Ene 2026", title: "Diplomado en IA Generativa en Organizaciones", org: "Universidad de Chile, FEN" },
-      { period: "Jun — Jul 2025", title: "Prompt Engineering e IA Generativa", org: "The Prompt Academy" },
-      { period: "Oct 2022 — Jul 2024", title: "Certified Web Developer", org: "Digital House Coding School" },
+      { period: "Oct 2025 – Ene 2026", title: "Diplomado en IA Generativa en Organizaciones", org: "Universidad de Chile, FEN" },
+      { period: "Jun – Jul 2025", title: "Prompt Engineering e IA Generativa", org: "The Prompt Academy" },
+      { period: "Oct 2022 – Jul 2024", title: "Certified Web Developer", org: "Digital House Coding School" },
       { period: "Jul 2023", title: "Certificado Profesional de Scrum Master", org: "Certiprof" },
-      { period: "2009 — 2014", title: "Ingeniero Ambiental", org: "Universidad de Falcón, Venezuela", note: "Mención honorífica en el trabajo de grado." },
+      { period: "2009 – 2014", title: "Ingeniero Ambiental", org: "Universidad de Falcón, Venezuela", note: "Mención honorífica en el trabajo de grado." },
     ],
   },
 
   en: {
     meta: {
-      title: "CV — Miguel Gil Urbina",
+      title: "CV | Miguel Gil Urbina",
       description: "Résumé of Miguel Gil Urbina: Full Stack Developer focused on agentic systems. Santiago, Chile.",
     },
     name: "Miguel Eduardo Gil Urbina",
@@ -200,7 +200,7 @@ export const CV: Record<CvLang, CvContent> = {
       "Full stack developer since 2024, focused on agentic systems: I design, build and ship platforms where the model does part of the work and the human keeps the decision. Before that I spent six years in commercial and channel management in the tech sector, which is why I build products that solve business problems, not just technical ones.",
     experience: [
       {
-        period: "Sep 2025 — today",
+        period: "Sep 2025 – today",
         title: "Full Stack Developer & Product Owner",
         org: "Cargo Electric Blue SpA",
         note: "Last-mile logistics with an electric fleet",
@@ -214,7 +214,7 @@ export const CV: Record<CvLang, CvContent> = {
         stack: "Next.js 16 · React 19 · TypeScript · Firebase · Recharts · Vitest · Ionic 8 · Angular 19",
       },
       {
-        period: "Apr — Aug 2026",
+        period: "Apr – Aug 2026",
         title: "Lead Frontend & AI Agent Developer",
         org: "Bendita IA · Claude Impact Lab Chile",
         note: "Anthropic's programme in Chile, with Anthropic as Technical Partner",
@@ -228,7 +228,7 @@ export const CV: Record<CvLang, CvContent> = {
         stack: "Next.js 14 · TypeScript · Supabase · Claude API · Anthropic SDK · Vitest · Playwright",
       },
       {
-        period: "Nov 2024 — Aug 2025",
+        period: "Nov 2024 – Aug 2025",
         title: "AI Research Contributor",
         org: "Outlier",
         bullets: [
@@ -237,7 +237,7 @@ export const CV: Record<CvLang, CvContent> = {
         ],
       },
       {
-        period: "May — Dec 2024",
+        period: "May – Dec 2024",
         title: "Full Stack Developer & QA",
         org: "Vemex Digital",
         bullets: [
@@ -246,7 +246,7 @@ export const CV: Record<CvLang, CvContent> = {
         ],
       },
       {
-        period: "2017 — 2023",
+        period: "2017 – 2023",
         title: "Commercial & channel management",
         org: "Hikvision · Dahua · SSTT · Orama · Wetland",
         bullets: [
@@ -261,7 +261,7 @@ export const CV: Record<CvLang, CvContent> = {
         url: "https://curiana-radio.vercel.app",
         urlLabel: "curiana-radio.vercel.app",
         role: "Personal project · ongoing research",
-        period: "Nov 2025 — today",
+        period: "Nov 2025 – today",
         body: "Cultural publication and simulation lab: 60 LLM agents speak Caquetío, an Arawakan language reconstructed through the comparative method. Controlled experiment (2.7× more convergence than the control), 269 engine tests and 9 executable invariants.",
         stack: "Next.js 16 · Python · Claude Haiku 4.5 · Supabase · Vercel Blob",
       },
@@ -270,7 +270,7 @@ export const CV: Record<CvLang, CvContent> = {
         url: "https://portokali.cl",
         urlLabel: "portokali.cl",
         role: "Lead developer · client, with Poweredia",
-        period: "Mar — Sep 2026",
+        period: "Mar – Sep 2026",
         body: "Specialty café in Vitacura: from WordPress to Next.js 15 with an MVP in seven days. Forms stored in Supabase with Resend notifications, Toteat and Justo integrations, and an audit that caught a form silently losing job applications for five months.",
         stack: "Next.js 15 · TypeScript · Supabase · Resend · GitHub Actions",
       },
@@ -291,11 +291,11 @@ export const CV: Record<CvLang, CvContent> = {
       { group: "Languages", items: "Spanish (native) · English (professional)" },
     ],
     education: [
-      { period: "Oct 2025 — Jan 2026", title: "Diploma in Generative AI in Organizations", org: "Universidad de Chile, FEN" },
-      { period: "Jun — Jul 2025", title: "Prompt Engineering and Generative AI", org: "The Prompt Academy" },
-      { period: "Oct 2022 — Jul 2024", title: "Certified Web Developer", org: "Digital House Coding School" },
+      { period: "Oct 2025 – Jan 2026", title: "Diploma in Generative AI in Organizations", org: "Universidad de Chile, FEN" },
+      { period: "Jun – Jul 2025", title: "Prompt Engineering and Generative AI", org: "The Prompt Academy" },
+      { period: "Oct 2022 – Jul 2024", title: "Certified Web Developer", org: "Digital House Coding School" },
       { period: "Jul 2023", title: "Scrum Master Professional Certificate", org: "Certiprof" },
-      { period: "2009 — 2014", title: "Environmental Engineer", org: "Universidad de Falcón, Venezuela", note: "Honourable mention for the thesis." },
+      { period: "2009 – 2014", title: "Environmental Engineer", org: "Universidad de Falcón, Venezuela", note: "Honourable mention for the thesis." },
     ],
   },
 };

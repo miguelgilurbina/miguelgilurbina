@@ -19,9 +19,9 @@ import { ArchitectureDiagram } from "@/components/historia/architecture-diagram"
 import { AdminTabs } from "@/components/historia/admin-tabs"
 
 export const metadata: Metadata = {
-  title: "Cargo Electric — Historia de la Plataforma",
+  title: "Cargo Electric: historia de la plataforma",
   description:
-    "Cómo reemplazamos múltiples Google Sheets —y el Excel de nómina de conductores— por una plataforma centralizada de gestión de flota eléctrica.",
+    "Cómo reemplazamos múltiples Google Sheets y el Excel de nómina de conductores por una plataforma centralizada de gestión de flota eléctrica.",
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -37,7 +37,7 @@ const stats = [
 const meta = [
   { label: "Rol", value: "Product Owner · Full-Stack Engineer" },
   { label: "Alcance", value: "Producto, arquitectura y entrega" },
-  { label: "Periodo", value: "Sep 2025 — hoy" },
+  { label: "Periodo", value: "Sep 2025 – hoy" },
   { label: "Stack", value: "Next 16 · Firebase · Recharts" },
 ]
 
@@ -50,7 +50,7 @@ const sections = [
 ]
 
 const problems = [
-  "Sheets sin conexión entre sí — datos duplicados y desincronizados",
+  "Sheets sin conexión entre sí: datos duplicados y desincronizados",
   "Sin visibilidad del estado de la flota en tiempo real",
   "Facturación manual propensa a errores por período",
   "Imposible escalar sin multiplicar la carga operativa",
@@ -141,7 +141,7 @@ const milestones = [
 const featureBlocks = [
   {
     tag: "Analítica",
-    title: "Resumen Diario — operación completa en tiempo real",
+    title: "Resumen Diario: operación completa en tiempo real",
     description:
       "Consolida toda la actividad mensual de la flota conectado directamente a Firestore. Muestra en tiempo real el estado de cada camión, las rutas del día y los KPIs del período.",
     bullets: [
@@ -154,7 +154,7 @@ const featureBlocks = [
   },
   {
     tag: "Analítica",
-    title: "Dashboard Operacional — tiempos y cuellos de botella",
+    title: "Dashboard Operacional: tiempos y cuellos de botella",
     description:
       "Panel de métricas con filtros por período, camión y conductor. Identifica automáticamente el segmento operativo de mayor impacto y entrega una recomendación.",
     bullets: [
@@ -167,7 +167,7 @@ const featureBlocks = [
   },
   {
     tag: "Rutas",
-    title: "Gestión de Rutas — registro del movimiento diario",
+    title: "Gestión de Rutas: registro del movimiento diario",
     description:
       "Tabla completa con todas las columnas operativas: guía, estado, turno, tipo de carga, origen, destino, conductor, camión, hora y tarifa.",
     bullets: [
@@ -180,7 +180,7 @@ const featureBlocks = [
   },
   {
     tag: "Facturación",
-    title: "Facturación — del registro de ruta al Excel del cliente",
+    title: "Facturación: del registro de ruta al Excel del cliente",
     description:
       "Toma las rutas completadas desde Firestore, las agrupa por camión y calcula montos según el tarifario vigente del cliente para el período.",
     bullets: [
@@ -226,7 +226,7 @@ export default function CargoElectricPage() {
 
       <main id="contenido" className="flex-1">
         <CaseHero
-          eyebrow="Caso 01 / 04 — Logística · Startup de flota eléctrica · Chile"
+          eyebrow="Caso 01 / 04 · Logística · Startup de flota eléctrica · Chile"
           title="Cargo Electric"
           lead={
             <>
@@ -308,7 +308,7 @@ export default function CargoElectricPage() {
                       ))}
                     </ul>
                   </div>
-                  <Figure caption={`fig. 0${i + 1} — ${block.image.alt}, captura de producción`}>
+                  <Figure caption={`fig. 0${i + 1} · ${block.image.alt}, captura de producción`}>
                     <ShowcaseImage src={block.image.src} alt={block.image.alt} aspectClassName="aspect-video" />
                   </Figure>
                 </div>
@@ -385,7 +385,7 @@ export default function CargoElectricPage() {
       </main>
 
       <SiteFooter
-        next={{ title: "Curiana Radio", meta: "Next 16 · Python · Claude Haiku — 2025 →", href: "/curiana-radio" }}
+        next={{ title: "Curiana Radio", meta: "Next 16 · Python · Claude Haiku · 2025 →", href: "/curiana-radio" }}
       />
     </div>
   )

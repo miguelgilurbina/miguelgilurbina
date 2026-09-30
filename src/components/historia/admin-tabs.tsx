@@ -27,7 +27,7 @@ export function AdminTabs({ cards }: { cards: AdminCard[] }) {
       </div>
 
       <div className="grid items-start gap-8 xl:grid-cols-[1.3fr_1fr]">
-        <Figure caption={`${card.tag} — captura de producción`}>
+        <Figure caption={`${card.tag} · captura de producción`}>
           <ShowcaseImage src={card.image.src} alt={card.image.alt} aspectClassName="aspect-video" />
         </Figure>
         <div>

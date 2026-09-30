@@ -201,7 +201,7 @@ export default async function CvPage({ params }: Props) {
               <Row key={ed.title} left={ed.period}>
                 <p className="text-[11.5px] leading-[1.45] text-ink">
                   <span className="font-semibold">{ed.title}</span> <span className="text-muted">· {ed.org}</span>
-                  {ed.note && <span className="text-muted"> — {ed.note}</span>}
+                  {ed.note && <span className="text-muted"> · {ed.note}</span>}
                 </p>
               </Row>
             ))}

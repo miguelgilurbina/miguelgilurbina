@@ -37,7 +37,7 @@ export const en: Translations = {
       lead:       "Shipping to production since 2024, six years in commercial management before that, and a visual practice of my own: AI-generated series on Caribbean memory and territory. The same discipline on both sides: judgement, iteration and something finished.",
       ctaArchive: "See the visual archive",
       available:  "Available",
-      figLabel:   "fig. 01 — background",
+      figLabel:   "fig. 01 · background",
       figRows: [
         { k: "series", v: "Territory / Water" },
         { k: "piece",  v: "Stilt houses at dusk" },
@@ -119,11 +119,11 @@ export const en: Translations = {
   },
 
   footer: {
-    tagline:  "Miguel Gil Urbina — product engineering and AI image direction. Santiago, Chile.",
+    tagline:  "Miguel Gil Urbina: product engineering and AI image direction. Santiago, Chile.",
     sections: "Sections",
     contact:  "Contact",
     archive:  "Visual archive",
-    system:   "MEGU system v1 — Instrument Serif · Archivo · JetBrains Mono",
+    system:   "MEGU system v1 · Instrument Serif · Archivo · JetBrains Mono",
     next:     "Next project",
   },
 
@@ -135,8 +135,8 @@ export const en: Translations = {
   },
 
   archive: {
-    metaTitle: "Visual archive — AI image direction",
-    label:     "Archive — AI image direction",
+    metaTitle: "Visual archive: AI image direction",
+    label:     "Archive · AI image direction",
     titleA:    "Visual",
     titleEm:   "archive",
     intro:     "Series made with image models and directed like film: one decision on light, framing and period per series. These aren't prompt tests; they're research into memory, water and street life in the Caribbean.",
@@ -178,13 +178,13 @@ export const en: Translations = {
   },
 
   curiana: {
-    eyebrow: "Case 02 / 04 — Personal project · Ongoing research",
+    eyebrow: "Case 02 / 04 · Personal project · Ongoing research",
     title:   "Curiana Radio",
     lead:    "A cultural publication from Abya Yala that doubles as a laboratory: 60 LLM agents live in a simulated community speaking Caquetío, and the system measures whether a shared norm actually emerges or only appears to.",
     meta: [
       { label: "Role",   value: "Creator, developer and researcher" },
       { label: "Scope",  value: "Publication and multi-agent lab" },
-      { label: "Period", value: "Nov 2025 — today" },
+      { label: "Period", value: "Nov 2025 – today" },
       { label: "Stack",  value: "Next 16 · Python · Claude Haiku" },
     ],
     stats: [
@@ -198,9 +198,9 @@ export const en: Translations = {
     publication: {
       title:      "The publication",
       lead:       "A cultural broadcast from Abya Yala: a newsletter presented as immersive web pages, with curated music, experimental narrative and AI-generated visuals.",
-      body:       "It is not an image portfolio: it is a publication with its own identity, a gallery of 821 works, Jai Sounds — 23 curated playlists — and Kaketiana, the wiki that houses the research lab. It is live and still in development.",
+      body:       "It is not an image portfolio: it is a publication with its own identity, a gallery of 821 works, Jai Sounds (23 curated playlists) and Kaketiana, the wiki that houses the research lab. It is live and still in development.",
       cta:        "Visit Curiana Radio",
-      figCaption: "fig. 01 — Curiana Radio identity · AI-generated image",
+      figCaption: "fig. 01 · Curiana Radio identity, AI-generated image",
       figAlt:     "The Curiana Radio symbol: a circle of concentric gold lines forming two spirals on a black background, with the name below.",
       archive:    "See the Identity series in the archive",
     },
@@ -208,7 +208,7 @@ export const en: Translations = {
       label: "Linguistic laboratory",
       title: "Caquetío Simulator",
       lead:  "An Arawakan language that fell silent four centuries ago, reconstructed and handed to a community of agents to measure whether it converges again into a shared norm.",
-      body1: "Caquetío survives in place names, colonial chronicles and a few dozen recorded words. The project partially reconstructs it using the comparative method of historical linguistics — inferring the probable form by comparing living Wayuunaiki and Lokono against documented Taíno — and hands it to sixty 15th-century characters, each an agent with a role, age, social network and its own way of speaking.",
+      body1: "Caquetío survives in place names, colonial chronicles and a few dozen recorded words. The project partially reconstructs it using the comparative method of historical linguistics (inferring the probable form by comparing living Wayuunaiki and Lokono against documented Taíno) and hands it to sixty 15th-century characters, each an agent with a role, age, social network and its own way of speaking.",
       body2: "The agents converse day by day. They invent words when the world demands it, adopt each other's, and an observer scores every turn: how much Caquetío is in the speech, which forms are born and die, and whether ways of speaking draw closer together.",
       statsTitle: "What was measured",
       stats: [
@@ -228,13 +228,13 @@ export const en: Translations = {
     },
     status: {
       title: "Current status",
-      body:  "Since July 2026 the simulations have been paused by methodological choice: before the next run, the lexical canon is being audited source by source. Nine executable invariants — the “guardians” — run in a single command and block the next run if the corpus, bibliography or language data drift out of sync, and every model call is recorded in a cost ledger.",
+      body:  "Since July 2026 the simulations have been paused by methodological choice: before the next run, the lexical canon is being audited source by source. Nine executable invariants, the “guardians”, run in a single command and block the next run if the corpus, bibliography or language data drift out of sync, and every model call is recorded in a cost ledger.",
     },
     quote: "The evidence is not that the simulation converges, but the distance between it and its control group.",
   },
 
   services: {
-    metaTitle:       "Services — Development, AI, and creative direction",
+    metaTitle:       "Services: development, AI and creative direction",
     metaDescription: "From websites to AI agent systems. What I can build, what backs it up, and how we work together.",
     badge:           "Available for projects",
     title:           "What I can build",
@@ -277,7 +277,7 @@ export const en: Translations = {
         id:       "ia",
         name:     "Applied AI and agents",
         tagline:  "Language-model systems that are measured, not just promised",
-        description: "Chatbots that answer from your own documentation, agents that carry tasks end to end, and LLM automation — with the judgment to tell you when AI is the wrong tool.",
+        description: "Chatbots that answer from your own documentation, agents that carry tasks end to end, and LLM automation, with the judgment to tell you when AI is the wrong tool.",
         deliverables: [
           "Chatbots over your own documentation (RAG)",
           "Agents that carry tasks end to end",
@@ -285,7 +285,7 @@ export const en: Translations = {
           "Integration with ChatGPT, Claude, and Gemini",
           "Evaluation and measurement of results",
         ],
-        evidence: "Claude Impact Lab Chile: the platform that ran both verticals of Anthropic's program in the country — Fintech and Longevity — with four Claude agents in production. 1,656 applications and 3,277 evaluations across the two editions. Plus the Caquetío Simulator — sixty agents and a control experiment — and nine months evaluating models at Outlier.",
+        evidence: "Claude Impact Lab Chile: the platform that ran both verticals of Anthropic's program in the country (Fintech and Longevity) with four Claude agents in production. 1,656 applications and 3,277 evaluations across the two editions. Plus the Caquetío Simulator, with sixty agents and a control experiment, and nine months evaluating models at Outlier.",
         url:      "/claude-impact-lab",
       },
       {
@@ -330,7 +330,7 @@ export const en: Translations = {
     faqTitle: "Frequently asked questions",
     faq: [
       { q: "Why aren't prices published?",           a: "Because the range is too wide: a landing page and an agent system don't cost the same. I'd rather hear the case and give you a real number than post an invented range I'd have to walk back later. You leave the first call knowing what it costs." },
-      { q: "What does a project usually cost?",      a: "It depends on scope. If you have a budget in mind, tell me up front and I'll be straight about whether it covers what you need — I'd rather have that conversation first than after three meetings." },
+      { q: "What does a project usually cost?",      a: "It depends on scope. If you have a budget in mind, tell me up front and I'll be straight about whether it covers what you need. I'd rather have that conversation first than after three meetings." },
       { q: "Do you work with clients outside Chile?", a: "Yes. I work remotely and have collaborated with international teams; we can coordinate in Spanish or English." },
       { q: "Do I own the code?",                     a: "Always. Delivery includes the source code and access in your name. You're not locked in with me." },
       { q: "What happens after delivery?",           a: "You can take a monthly maintenance plan, ask me for specific changes when you need them, or carry on by yourself with the code I handed over. All three are fine." },
